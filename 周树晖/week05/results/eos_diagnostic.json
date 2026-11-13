@@ -1,0 +1,15 @@
+{
+  "base_model": "Qwen/Qwen3-0.6B-Base",
+  "revision": "da87bfb608c14b7cf20ba1ce41287e8de496c0cd",
+  "reserved_token_embeddings_identical": true,
+  "compared_ids": [
+    151644,
+    151645
+  ],
+  "native_eos": "<|endoftext|>",
+  "native_eos_id": 151643,
+  "observed_old_protocol_validation_errors": "First two validation samples had exactly one wrong answer token each: im_end.",
+  "old_im_end_nll_on_first_sample": 7.768658638000488,
+  "resolution": "Use the base model native endoftext EOS; retain position-based padding label mask. Retrain from the unchanged base weights.",
+  "tie_word_embeddings": true
+}
