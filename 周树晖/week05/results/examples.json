@@ -1,0 +1,58 @@
+[
+  {
+    "id": "test-0000",
+    "input": "帮我整理这条售后申请：商品是瑜伽垫，订单号是SO183940。主要是到货后发现坏了。我的要求：我要把它退回去。另外，麻烦加急",
+    "target": {
+      "order_id": "SO183940",
+      "product": "瑜伽垫",
+      "intent": "return",
+      "problem": "damaged",
+      "urgent": true
+    },
+    "base": "根据用户提供的信息，整理出一条售后申请。要求：1. 严格按照JSON格式输出。2. 字段必须为order_id、product、intent、problem、urgent。3. 产品名称为瑜伽垫，订单号为SO183940。4. 用户表达是“到货后发现坏了”，并要求“退回去”。5. 问题为“坏了”，且问题类型为“damaged”。6. 用户要求“加急”，且要求“尽快处理”。7. 问题类型为“damaged”，且问题类型为“damaged”。8. 问题",
+    "sft": "{\"order_id\":\"SO183940\",\"product\":\"瑜伽垫\",\"intent\":\"return\",\"problem\":\"damaged\",\"urgent\":true}",
+    "sft_correct": true
+  },
+  {
+    "id": "test-0001",
+    "input": "客服您好！订单号是SO780131 / 商品是背包。实际情况：过了预计日期还没到货。希望这样解决：我要求退款。时效要求：按正常流程处理就好",
+    "target": {
+      "order_id": "SO780131",
+      "product": "背包",
+      "intent": "refund",
+      "problem": "late_delivery",
+      "urgent": false
+    },
+    "base": "您好，订单号SO780131，商品是背包。您需要退款，但货物已经过了预计日期。建议您先联系物流公司确认货物状态，再根据物流信息决定是否需要退款。如果物流信息不明确，可以尝试联系卖家或物流公司确认。如果卖家或物流公司无法提供明确的物流信息，可以尝试联系卖家或物流公司确认是否需要退款。如果卖家或物流公司无法提供明确的物流信息，可以尝试联系卖家或物流公司确认是否需要退款。如果卖家或物流公司无法提供明确的物流信息，可以尝试联系卖家或物流公司确认是否需要退款。如果卖家或",
+    "sft": "{\"order_id\":\"SO780131\",\"product\":\"背包\",\"intent\":\"refund\",\"problem\":\"late_delivery\",\"urgent\":false}",
+    "sft_correct": true
+  },
+  {
+    "id": "test-0002",
+    "input": "帮我整理这条售后申请：商品是电动牙刷，订单号是SO240106。主要是过了预计日期还没到货。我的要求：我想申请退款。另外，按正常流程处理就好",
+    "target": {
+      "order_id": "SO240106",
+      "product": "电动牙刷",
+      "intent": "refund",
+      "problem": "late_delivery",
+      "urgent": false
+    },
+    "base": "根据用户提供的信息，我需要整理出一条售后申请。以下是整理后的JSON对象：\n\n```json\n{\n  \"order_id\": \"SO240106\",\n  \"product\": \"电动牙刷\",\n  \"intent\": \"refund\",\n  \"problem\": \"late_delivery\",\n  \"urgent\": true\n}\n```\n\n### 解释：\n- **order_id**: 订单号是SO240106。\n- **product**: 商品是电动牙刷。\n- **intent**: 用户希望申请退款。\n- **problem**: 用户提到货期过期，导致未到货。\n- **",
+    "sft": "{\"order_id\":\"SO240106\",\"product\":\"电动牙刷\",\"intent\":\"refund\",\"problem\":\"late_delivery\",\"urgent\":false}",
+    "sft_correct": true
+  },
+  {
+    "id": "test-0003",
+    "input": "客服您好！我没有提供订单号 / 商品是雨伞。实际情况：尺码不合适。希望这样解决：请给我换一件。时效要求：这单不用优先处理",
+    "target": {
+      "order_id": null,
+      "product": "雨伞",
+      "intent": "replace",
+      "problem": "wrong_size",
+      "urgent": false
+    },
+    "base": "您好！我理解您的需求。根据您的描述，您希望更换一件尺码不合适的产品。以下是处理建议：\n\n1. **产品信息**：请提供商品的详细信息，包括商品名称、尺码、颜色等。\n2. **订单信息**：请提供订单号或商品信息，以便我进行匹配。\n3. **问题描述**：请详细描述尺码不合适的情况，包括尺码的差异和更换的必要性。\n4. **时效要求**：请说明更换产品的时效要求，以便我安排处理。\n\n请提供这些信息，我将尽快为您处理。",
+    "sft": "{\"order_id\":null,\"product\":\"雨伞\",\"intent\":\"replace\",\"problem\":\"wrong_size\",\"urgent\":false}",
+    "sft_correct": true
+  }
+]
