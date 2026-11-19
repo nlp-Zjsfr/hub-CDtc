@@ -1,0 +1,5 @@
+评测 500 条 | 训练+推理 4.8s | ngram=1,2 C=1.0
+| 方法 | 准确率 | Macro-F1 | 解析失败 |
+|---|---|---|---|
+| TF-IDF+SVM (ngram=1,2, C=1.0) | 0.512 | 0.4721 | 0 |
+→ 结果写入 D:\AILearn\AI课程\作业\week06\baselines\outputs\tfidf_pred.json
