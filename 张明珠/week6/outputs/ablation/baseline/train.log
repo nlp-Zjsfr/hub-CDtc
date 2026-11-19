@@ -1,0 +1,34 @@
+[base] RoBERTa -> D:\hub-CDtc\张明珠\week6\nlp_roberta_backbone_base_std
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 17887.88it/s]
+[transformers] [1mBertModel LOAD REPORT[0m from: D:\hub-CDtc\张明珠\week6\nlp_roberta_backbone_base_std
+Key                                    | Status     |  | 
+---------------------------------------+------------+--+-
+LayerNorm.weight                       | UNEXPECTED |  | 
+cls.predicitions.bias                  | UNEXPECTED |  | 
+cls.predictions.transform.dense.bias   | UNEXPECTED |  | 
+cls.predictions.transform.dense.weight | UNEXPECTED |  | 
+LayerNorm.bias                         | UNEXPECTED |  | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+[load] 忽略 5 个多余 key（预训练头 cls.* / 根部 LayerNorm，正常）
+[cfg] pool=cls loss=CE class_weight=on fgm=off epochs=3 seed=42 steps/epoch=834 eval_n=10000 save=on
+  epoch 1 step 0/834 loss=2.7208
+  epoch 1 step 200/834 loss=1.5133
+  epoch 1 step 400/834 loss=0.9732
+  epoch 1 step 600/834 loss=1.2536
+  epoch 1 step 800/834 loss=1.0360
+epoch 1: val_acc=0.5625 val_f1=0.5466
+  epoch 2 step 0/834 loss=1.1036
+  epoch 2 step 200/834 loss=0.9549
+  epoch 2 step 400/834 loss=1.4881
+  epoch 2 step 600/834 loss=0.9963
+  epoch 2 step 800/834 loss=1.4112
+epoch 2: val_acc=0.5759 val_f1=0.5674
+  epoch 3 step 0/834 loss=0.8311
+  epoch 3 step 200/834 loss=0.9953
+  epoch 3 step 400/834 loss=0.9370
+  epoch 3 step 600/834 loss=1.0570
+  epoch 3 step 800/834 loss=0.9622
+epoch 3: val_acc=0.5757 val_f1=0.564
+最佳 val Macro-F1 = 0.5674（epoch 2）→ D:\hub-CDtc\张明珠\week6\outputs\ablation\baseline\roberta_ckpt.pt
