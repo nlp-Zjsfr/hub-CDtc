@@ -1,0 +1,12 @@
+{
+  "bert-base-chinese": {
+    "experiment": "exp2",
+    "epoch": 3,
+    "val_macro_f1": 0.9736885772362301
+  },
+  "roberta_base": {
+    "experiment": "exp4",
+    "epoch": 3,
+    "val_macro_f1": 0.9744615509019521
+  }
+}

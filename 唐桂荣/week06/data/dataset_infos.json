@@ -1,0 +1,1 @@
+{"default": {"features": {"product_name": {"_type": "Value"}, "category": {"_type": "Value"}}, "splits": {"train": {"name": "train", "dataset_name": "product-classification-hiring-demo"}, "test": {"name": "test", "dataset_name": "product-classification-hiring-demo"}}}}

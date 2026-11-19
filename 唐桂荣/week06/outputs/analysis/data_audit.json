@@ -1,0 +1,253 @@
+{
+  "normalization_key": "NFKC, Unicode casefold, remove Unicode whitespace; keep original product_name as model input",
+  "raw_dataset": {
+    "train": {
+      "rows": 15997,
+      "category_counts": {
+        "冷藏即饮果汁": 646,
+        "即饮奶茶": 1017,
+        "即饮茶": 1777,
+        "口香糖": 564,
+        "方便面": 1180,
+        "牙膏": 2350,
+        "白酒": 2103,
+        "硬糖": 1887,
+        "软糖": 1691,
+        "非冷藏即饮果汁": 2782
+      },
+      "character_lengths": {
+        "n": 15997,
+        "min": 4,
+        "median": 14.0,
+        "p95": 21,
+        "max": 34
+      }
+    },
+    "test": {
+      "rows": 4003,
+      "category_counts": {
+        "冷藏即饮果汁": 160,
+        "即饮奶茶": 256,
+        "即饮茶": 444,
+        "口香糖": 141,
+        "方便面": 294,
+        "牙膏": 588,
+        "白酒": 526,
+        "硬糖": 472,
+        "软糖": 418,
+        "非冷藏即饮果汁": 704
+      },
+      "character_lengths": {
+        "n": 4003,
+        "min": 4,
+        "median": 15.0,
+        "p95": 21,
+        "max": 32
+      }
+    }
+  },
+  "exact_match": {
+    "train": {
+      "unique_names": 15765,
+      "duplicate_name_groups": 210,
+      "additional_rows_with_repeated_name": 232,
+      "same_name_conflicting_labels": 1
+    },
+    "test": {
+      "unique_names": 3991,
+      "duplicate_name_groups": 12,
+      "additional_rows_with_repeated_name": 12,
+      "same_name_conflicting_labels": 0
+    },
+    "train_test_overlap": {
+      "shared_names": 85,
+      "train_rows": 93,
+      "test_rows": 86,
+      "shared_names_with_conflicting_labels": 0
+    }
+  },
+  "normalized_match": {
+    "train": {
+      "unique_names": 15765,
+      "duplicate_name_groups": 210,
+      "additional_rows_with_repeated_name": 232,
+      "same_name_conflicting_labels": 1
+    },
+    "test": {
+      "unique_names": 3991,
+      "duplicate_name_groups": 12,
+      "additional_rows_with_repeated_name": 12,
+      "same_name_conflicting_labels": 0
+    },
+    "train_test_overlap": {
+      "shared_names": 85,
+      "train_rows": 93,
+      "test_rows": 86,
+      "shared_names_with_conflicting_labels": 0
+    }
+  },
+  "cleaning_preview": {
+    "train": {
+      "excluded_overlap_rows": 0,
+      "excluded_conflicting_label_rows": 2,
+      "excluded_same_label_duplicate_rows": 231,
+      "retained_rows": 15764,
+      "category_counts": {
+        "冷藏即饮果汁": 634,
+        "即饮奶茶": 1003,
+        "即饮茶": 1747,
+        "口香糖": 559,
+        "方便面": 1170,
+        "牙膏": 2318,
+        "白酒": 2071,
+        "硬糖": 1865,
+        "软糖": 1675,
+        "非冷藏即饮果汁": 2722
+      }
+    },
+    "test": {
+      "excluded_overlap_rows": 86,
+      "excluded_conflicting_label_rows": 0,
+      "excluded_same_label_duplicate_rows": 11,
+      "retained_rows": 3906,
+      "category_counts": {
+        "冷藏即饮果汁": 155,
+        "即饮奶茶": 248,
+        "即饮茶": 431,
+        "口香糖": 137,
+        "方便面": 293,
+        "牙膏": 581,
+        "白酒": 513,
+        "硬糖": 457,
+        "软糖": 406,
+        "非冷藏即饮果汁": 685
+      }
+    }
+  },
+  "raw_combined_character_lengths": {
+    "n": 20000,
+    "min": 4,
+    "median": 14.0,
+    "p95": 21,
+    "max": 34
+  },
+  "clean_tokenizer_lengths_including_special_tokens": {
+    "bert-base-chinese": {
+      "tokenizer_class": "BertTokenizer",
+      "do_lower_case": false,
+      "number_of_special_tokens": 2,
+      "splits": {
+        "train": {
+          "n": 15764,
+          "min": 6,
+          "median": 14.0,
+          "p95": 19,
+          "max": 31,
+          "truncation": {
+            "32": {
+              "rows": 0,
+              "rate": 0.0
+            },
+            "64": {
+              "rows": 0,
+              "rate": 0.0
+            }
+          }
+        },
+        "test": {
+          "n": 3906,
+          "min": 6,
+          "median": 14.0,
+          "p95": 19,
+          "max": 29,
+          "truncation": {
+            "32": {
+              "rows": 0,
+              "rate": 0.0
+            },
+            "64": {
+              "rows": 0,
+              "rate": 0.0
+            }
+          }
+        },
+        "combined": {
+          "n": 19670,
+          "min": 6,
+          "median": 14.0,
+          "p95": 19,
+          "max": 31,
+          "truncation": {
+            "32": {
+              "rows": 0,
+              "rate": 0.0
+            },
+            "64": {
+              "rows": 0,
+              "rate": 0.0
+            }
+          }
+        }
+      }
+    },
+    "roberta_base": {
+      "tokenizer_class": "BertTokenizer",
+      "do_lower_case": true,
+      "number_of_special_tokens": 2,
+      "splits": {
+        "train": {
+          "n": 15764,
+          "min": 6,
+          "median": 14.0,
+          "p95": 19,
+          "max": 31,
+          "truncation": {
+            "32": {
+              "rows": 0,
+              "rate": 0.0
+            },
+            "64": {
+              "rows": 0,
+              "rate": 0.0
+            }
+          }
+        },
+        "test": {
+          "n": 3906,
+          "min": 6,
+          "median": 14.0,
+          "p95": 19,
+          "max": 29,
+          "truncation": {
+            "32": {
+              "rows": 0,
+              "rate": 0.0
+            },
+            "64": {
+              "rows": 0,
+              "rate": 0.0
+            }
+          }
+        },
+        "combined": {
+          "n": 19670,
+          "min": 6,
+          "median": 14.0,
+          "p95": 19,
+          "max": 31,
+          "truncation": {
+            "32": {
+              "rows": 0,
+              "rate": 0.0
+            },
+            "64": {
+              "rows": 0,
+              "rate": 0.0
+            }
+          }
+        }
+      }
+    }
+  },
+  "transformers_version": "5.18.0"
+}
