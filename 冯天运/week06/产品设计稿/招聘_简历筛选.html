@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>简历筛选工作台 · talent_match</title>
+<style>
+  :root{
+    --ink:#0c1f1e; --text:#31474a; --sub:#6b8280; --muted:#95a9a7;
+    --line:#e3ecea; --line2:#eef4f3;
+    --bg:#f7f9f9; --card:#ffffff;
+    --teal:#0f766e; --teal-d:#0b5750; --teal-l:#f0fdfa; --teal-b:#cbfaf3;
+    --amber:#d97706; --amber-l:#fffbeb; --amber-b:#fde68a;
+    --blue:#2563eb; --blue-l:#eff6ff; --blue-b:#dbeafe;
+    --gray:#94a3b8;
+    --shadow:0 1px 2px rgba(12,31,30,.04), 0 8px 20px rgba(12,31,30,.055);
+    --sans:"Microsoft YaHei","PingFang SC","Noto Sans SC",system-ui,sans-serif;
+    --mono:Consolas,"Cascadia Mono",ui-monospace,monospace;
+  }
+  *{box-sizing:border-box}
+  html,body{height:100%;margin:0}
+  body{
+    font-family:var(--sans); font-size:13px; color:var(--text);
+    background:var(--bg); overflow:hidden;
+    -webkit-font-smoothing:antialiased;
+  }
+  .app{height:100vh; display:grid; grid-template-rows:58px 1fr}
+
+  .top{
+    display:flex; align-items:center; gap:14px; padding:0 16px;
+    background:#fff; border-bottom:1px solid var(--line);
+  }
+  .logo{
+    width:32px;height:32px;border-radius:9px;flex:none;
+    background:linear-gradient(150deg,#0f766e,#0891b2);
+    display:grid;place-items:center;
+    box-shadow:0 4px 10px rgba(15,118,110,.28);
+  }
+  .brand .nm{font-size:15px;font-weight:700;color:var(--ink);letter-spacing:.2px;line-height:1.25}
+  .brand .sub{font-family:var(--mono);font-size:10px;color:var(--muted);letter-spacing:.4px}
+  .vbar{width:1px;height:24px;background:var(--line);flex:none}
+
+  .jdpick{
+    display:flex;align-items:center;gap:9px;padding:5px 11px 5px 10px;
+    border:1px solid var(--line);border-radius:10px;background:#fbfdfd;cursor:pointer;
+  }
+  .jdpick:hover{border-color:#bcd6d2;background:#f6fbfa}
+  .jdpick .lb{font-size:10.5px;color:var(--muted);border-right:1px solid var(--line);padding-right:8px}
+  .jdpick .nm{font-size:12.5px;font-weight:600;color:var(--ink)}
+  .jdpick .cnt{
+    font-family:var(--mono);font-size:10px;color:var(--teal);background:var(--teal-l);
+    border:1px solid var(--teal-b);border-radius:5px;padding:0 5px;
+  }
+  .caret{width:0;height:0;border-left:4px solid transparent;border-right:4px solid transparent;border-top:5px solid #9db3b0}
+
+  .hstats{margin-left:auto;display:flex;align-items:center;gap:0}
+  .hstat{padding:0 16px;border-right:1px solid var(--line2)}
+  .hstat:first-child{padding-left:0}
+  .hstat:last-of-type{border-right:0}
+  .hstat .k{font-size:10.5px;color:var(--sub);line-height:1.4;white-space:nowrap}
+  .hstat .v{
+    font-family:var(--mono);font-size:18px;font-weight:700;color:var(--ink);
+    letter-spacing:-.4px;line-height:1.25;display:flex;align-items:baseline;gap:3px;
+  }
+  .hstat .v small{font-family:var(--sans);font-size:10.5px;font-weight:400;color:var(--muted)}
+  .hstat .v.t{color:var(--teal)}
+  .hstat .v.a{color:var(--amber)}
+  .avatar{
+    width:30px;height:30px;border-radius:50%;background:#e0f2f0;color:#0b5750;
+    display:grid;place-items:center;font-size:12px;font-weight:700;margin-left:12px;
+  }
+
+  .wrap{
+    display:grid; grid-template-rows:104px 1fr 28px; gap:10px;
+    padding:12px 16px 10px; min-height:0;
+  }
+  .card{background:var(--card);border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow)}
+
+  .funnel{display:flex;align-items:center;padding:8px 14px;gap:14px;overflow:hidden}
+  .f-lead{width:158px;flex:none;display:flex;flex-direction:column;justify-content:center;border-right:1px dashed var(--line);padding-right:14px}
+  .f-lead .t{font-size:13px;font-weight:700;color:var(--ink);display:flex;align-items:center;gap:6px}
+  .f-lead .t .d{width:6px;height:6px;border-radius:50%;background:var(--teal);box-shadow:0 0 0 3px rgba(15,118,110,.12)}
+  .f-lead .s{font-size:10.5px;color:var(--muted);margin-top:3px;line-height:1.5}
+  .f-lead .rate{
+    margin-top:6px;font-size:10.5px;color:var(--amber);background:var(--amber-l);
+    border:1px solid var(--amber-b);border-radius:5px;padding:1px 6px;align-self:flex-start;
+  }
+  .f-mid{flex:1;min-width:0;display:flex;flex-direction:column;justify-content:center;gap:6px}
+  .f-stages{display:flex;align-items:center;min-width:0}
+  .stage{flex:0 0 200px;min-width:0;display:flex;flex-direction:column;justify-content:center;padding:0 2px}
+  .stage .lb{font-size:11px;color:var(--sub);display:flex;align-items:center;gap:4px}
+  .stage .lb i{width:7px;height:7px;border-radius:2px;display:inline-block}
+  .stage .n{font-family:var(--mono);font-size:24px;font-weight:700;color:var(--ink);letter-spacing:-.8px;line-height:1.2}
+  .stage .n small{font-family:var(--sans);font-size:10.5px;font-weight:400;color:var(--muted);margin-left:2px;letter-spacing:0}
+  .stage .p{font-family:var(--mono);font-size:10.5px;color:var(--muted)}
+  .stage .p b{color:var(--teal);font-weight:600}
+  .arrow{
+    flex:1 1 auto;min-width:104px;max-width:210px;
+    display:flex;flex-direction:column;align-items:center;gap:2px;
+    color:var(--muted);padding:0 4px;
+  }
+  .arrow .drop{
+    font-family:var(--mono);font-size:10px;color:#b45309;font-weight:700;
+    background:var(--amber-l);border:1px solid var(--amber-b);border-radius:999px;
+    padding:0 6px;line-height:15px;white-space:nowrap;
+  }
+  .arrow .cv{width:100%;display:flex;align-items:center;gap:2px}
+  .arrow .cv .ln{flex:1;height:1px;background:linear-gradient(90deg,#e3ecea,#c9dcd8)}
+  .arrow .cv .tip{width:0;height:0;border-top:3.5px solid transparent;border-bottom:3.5px solid transparent;border-left:5px solid #c9dcd8}
+  .arrow .pct{font-family:var(--mono);font-size:9.5px;color:#9db3b0;white-space:nowrap}
+  .f-bar{flex:none;width:100%;display:flex;align-items:center;gap:10px;margin-top:4px}
+  .f-bar .lab{flex:none;font-size:9.5px;color:var(--muted);font-family:var(--mono);letter-spacing:.2px}
+  .f-track{flex:1;height:8px;border-radius:5px;overflow:hidden;display:flex;background:#f1f6f5;min-width:120px}
+  .f-track i{display:block;height:100%}
+  .f-legend{display:flex;gap:10px;font-size:10px;color:var(--sub);flex:none;font-family:var(--mono)}
+  .f-legend span{display:flex;align-items:center;gap:3px}
+  .f-legend b{color:var(--ink);font-weight:600}
+  .f-legend i{width:6px;height:6px;border-radius:2px;display:inline-block}
+
+  .cols{display:grid;grid-template-columns:300px minmax(0,1fr) 340px;gap:10px;min-height:0}
+
+  .col{display:flex;flex-direction:column;gap:8px;min-height:0;min-width:0}
+  .ph{display:flex;align-items:center;gap:6px;padding:0 2px;flex:none;height:22px}
+  .ph .t{font-size:12.5px;font-weight:700;color:var(--ink)}
+  .ph .n{
+    font-family:var(--mono);font-size:10px;font-weight:400;color:var(--sub);
+    background:#eef4f3;border-radius:5px;padding:1px 5px;
+  }
+  .ph .sp{margin-left:auto;display:flex;align-items:center;gap:6px;font-size:10.5px;color:var(--muted)}
+  .ph .sort{display:flex;align-items:center;gap:3px;cursor:pointer}
+  .ph .sort b{color:var(--teal);font-weight:600}
+
+  .batch{
+    flex:none;border:1px solid var(--teal-b);border-radius:10px;background:linear-gradient(180deg,#f6fdfb,#fff);
+    padding:8px 10px;display:flex;flex-direction:column;gap:3px;
+  }
+  .batch .h{display:flex;align-items:center;gap:6px;font-size:11px;font-weight:600;color:var(--teal-d)}
+  .batch .h .n{font-family:var(--mono);font-size:12px;color:var(--ink)}
+  .batch .h .st{margin-left:auto;font-size:9.5px;color:#0b5750;background:#fff;border:1px solid var(--teal-b);border-radius:4px;padding:0 4px}
+  .batch .bq{font-size:10.5px;color:var(--text);line-height:1.45}
+  .batch .bq b{color:var(--teal-d)}
+  .batch .bar{height:4px;border-radius:2px;background:#e2f4f0;overflow:hidden}
+  .batch .bar i{display:block;height:100%;background:linear-gradient(90deg,#0f766e,#5eead4)}
+  .batch .fo{font-family:var(--mono);font-size:9.5px;color:var(--sub);display:flex;justify-content:space-between}
+
+  .clist{flex:1;min-height:0;overflow-y:auto;overflow-x:hidden;display:flex;flex-direction:column;gap:7px;padding-right:3px}
+  .clist::-webkit-scrollbar{width:5px}
+  .clist::-webkit-scrollbar-thumb{background:#d3e2df;border-radius:3px}
+  .clist::-webkit-scrollbar-track{background:transparent}
+
+  .cand{
+    position:relative;background:#fff;border:1px solid var(--line);border-radius:12px;
+    padding:9px 10px 9px 11px;display:grid;grid-template-columns:46px 1fr;gap:9px;
+    cursor:pointer;transition:box-shadow .15s,border-color .15s,transform .15s;
+  }
+  .cand:hover{border-color:#c8dcd8;box-shadow:0 4px 12px rgba(12,31,30,.07)}
+  .cand.on{
+    border-color:#7cc9bd;background:linear-gradient(180deg,#f7fefc,#fff);
+    box-shadow:0 2px 6px rgba(15,118,110,.10),0 8px 20px rgba(15,118,110,.08);
+  }
+  .cand.on::before{content:"";position:absolute;left:0;top:12px;bottom:12px;width:3px;border-radius:0 3px 3px 0;background:var(--teal)}
+  .cand .ringwrap{display:flex;flex-direction:column;align-items:center;justify-content:center}
+  .ring{width:44px;height:44px;display:block}
+  .ring .num{font-family:var(--mono);font-size:14px;font-weight:700}
+  .cand .r{min-width:0;display:flex;flex-direction:column;gap:2px}
+  .cand .meta{font-size:9.5px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .cand .r1{display:flex;align-items:baseline;gap:6px;min-width:0}
+  .cand .nm{font-size:13.5px;font-weight:700;color:var(--ink);letter-spacing:.3px;white-space:nowrap}
+  .cand .pos{
+    font-size:10.5px;color:var(--sub);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+  }
+  .cand .now{
+    margin-left:auto;flex:none;font-size:9px;color:var(--teal);
+    background:var(--teal-l);border:1px solid var(--teal-b);border-radius:4px;padding:0 4px;
+  }
+  .tags{display:flex;gap:4px;flex-wrap:nowrap;overflow:hidden}
+  .tag{
+    font-size:10px;color:#0b5750;background:#f1faf8;border:1px solid #dcf0ec;
+    border-radius:4px;padding:0 4px;white-space:nowrap;line-height:15px;
+  }
+  .tag.blue{color:#1d4ed8;background:#f4f7ff;border-color:#e0e8fb}
+  .tag.gray{color:#64748b;background:#f6f8f9;border-color:#e8eef0}
+  .risk{
+    display:flex;align-items:center;gap:4px;font-size:10px;color:#a86a09;
+    white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+  }
+  .risk svg{flex:none}
+  .risk.none{color:#8fa5a2}
+
+  .col-mid{gap:8px}
+  .candhead{flex:none;padding:11px 14px;display:flex;align-items:center;gap:14px}
+  .idblock{width:268px;flex:none;min-width:0}
+  .idblock .l1{display:flex;align-items:center;gap:8px}
+  .idblock .nm{font-size:17px;font-weight:700;color:var(--ink);letter-spacing:.4px}
+  .idblock .badge{
+    font-size:10px;color:#0b5750;background:var(--teal-l);border:1px solid var(--teal-b);
+    border-radius:4px;padding:1px 5px;
+  }
+  .idblock .l2{font-size:11px;color:var(--sub);margin-top:3px;line-height:1.5;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .idblock .l2 b{color:var(--text);font-weight:600}
+  .idblock .l3{font-family:var(--mono);font-size:10.5px;color:var(--muted);margin-top:2px;white-space:nowrap}
+
+  .rel{flex:1;min-width:0;border-left:1px dashed var(--line);padding-left:14px;display:flex;flex-direction:column;gap:5px}
+  .rel .hd{font-size:10.5px;color:var(--muted);display:flex;align-items:center;gap:5px}
+  .rel .hd .ai{font-size:9.5px;color:var(--teal);background:var(--teal-l);border:1px solid var(--teal-b);border-radius:4px;padding:0 4px}
+  .rel .chain{display:flex;align-items:center;gap:0;flex-wrap:nowrap;min-width:0}
+  .node{
+    font-size:10.5px;color:var(--ink);background:#f8fbfb;border:1px solid var(--line);
+    border-radius:6px;padding:2px 7px;white-space:nowrap;
+  }
+  .node.me{background:var(--teal-l);border-color:#a5e3d8;color:#0b5750;font-weight:600}
+  .node.proj{background:#f6f8ff;border-color:#dfe6fb;color:#1d4ed8}
+  .edge{display:flex;flex-direction:column;align-items:center;width:64px;flex:none}
+  .edge .lb{font-size:9px;color:var(--muted);line-height:1.2}
+  .edge .ln{width:100%;height:1px;background:#c9dcd8;display:flex;justify-content:flex-end}
+  .edge .ln i{width:0;height:0;border-top:3px solid transparent;border-bottom:3px solid transparent;border-left:4px solid #c9dcd8;margin-top:-2.5px}
+  .rel .sub{font-size:10px;color:var(--sub);display:flex;gap:10px;font-family:var(--mono)}
+  .rel .sub em{font-style:normal;color:var(--teal-d);font-weight:600}
+
+  .scorebox{width:104px;flex:none;border-left:1px dashed var(--line);padding-left:14px;display:flex;flex-direction:column;align-items:center;gap:2px}
+  .scorebox .lb{font-size:10px;color:var(--muted)}
+  .scorebox .rank{font-size:10px;color:var(--sub);font-family:var(--mono);margin-top:1px}
+  .scorebox .rank b{color:var(--teal)}
+
+  .sbreak{flex:none;display:flex;align-items:center;gap:14px;padding:8px 14px}
+  .sbreak .lbl{
+    flex:none;font-size:11px;font-weight:600;color:var(--ink);width:58px;line-height:1.35;
+  }
+  .sbreak .lbl span{display:block;font-size:9.5px;font-weight:400;color:var(--muted)}
+  .sb{flex:1;min-width:0;display:flex;flex-direction:column;gap:3px}
+  .sb .top{display:flex;align-items:baseline;justify-content:space-between;font-size:10.5px;color:var(--sub)}
+  .sb .top b{font-family:var(--mono);font-size:11.5px;color:var(--ink);font-weight:700}
+  .sb .top b i{font-style:normal;color:var(--muted);font-size:10px;font-weight:400}
+  .sb .tr{height:5px;border-radius:3px;background:#eef4f3;overflow:hidden;display:flex}
+  .sb .tr i{display:block;height:100%;border-radius:3px}
+  .sbreak .why{
+    flex:none;width:236px;border-left:1px dashed var(--line);padding-left:12px;
+    font-size:10.5px;color:var(--sub);line-height:1.5;
+  }
+  .sbreak .why b{color:var(--amber);font-weight:600}
+
+  .doc{flex:1;min-height:0;display:flex;flex-direction:column;overflow:hidden}
+  .doc .dbar{
+    flex:none;display:flex;align-items:center;gap:8px;padding:7px 14px;
+    border-bottom:1px solid var(--line2);background:#fbfefd;
+  }
+  .doc .dbar .t{font-size:12px;font-weight:700;color:var(--ink)}
+  .doc .dbar .ai{
+    font-size:9.5px;color:var(--teal);background:var(--teal-l);border:1px solid var(--teal-b);
+    border-radius:4px;padding:0 4px;font-weight:600;
+  }
+  .doc .dbar .n{font-family:var(--mono);font-size:10px;color:var(--sub)}
+  .doc .dbar .legend{margin-left:auto;display:flex;align-items:center;gap:10px;font-size:10px;color:var(--sub)}
+  .doc .dbar .legend span{display:flex;align-items:center;gap:4px}
+  .doc .dbar .legend i{width:10px;height:8px;border-radius:2px;display:inline-block}
+  .doc .dbar .legend i.hit{background:#bbf7d0;border:1px solid #86efac}
+  .doc .dbar .legend i.rk{background:#fde68a;border:1px solid #fcd34d}
+  .doc .dbar .legend i.ms{background:#f1f5f9;border:1px dashed #cbd5e1}
+
+  .sheet{flex:1;min-height:0;overflow:hidden;padding:10px 16px 12px;position:relative}
+  .aresume{font-size:12.3px;line-height:1.72;color:#2c4245}
+  .sec{display:flex;align-items:center;gap:8px;margin:4px 0 3px}
+  .sec:first-child{margin-top:0}
+  .sec .pg{
+    font-family:var(--mono);font-size:9px;color:#a9bcba;border:1px solid var(--line);
+    border-radius:3px;padding:0 3px;flex:none;line-height:13px;
+  }
+  .sec .t{font-size:11px;font-weight:700;color:var(--teal-d);letter-spacing:.6px;flex:none}
+  .sec .ln{flex:1;height:1px;background:var(--line2)}
+  .sec .m{font-size:9.5px;color:var(--muted);flex:none;font-family:var(--mono)}
+  .row{display:flex;gap:10px}
+  .row .when{width:112px;flex:none;font-family:var(--mono);font-size:10.5px;color:var(--sub);padding-top:1px;white-space:nowrap}
+  .row .bd{flex:1;min-width:0}
+  .row .bd b{color:var(--ink);font-weight:600}
+  .row .bd .co{color:var(--sub);font-size:11.5px}
+  .psub{display:flex;align-items:flex-start;gap:6px;margin-top:0}
+  .psub .dot{width:3px;height:3px;border-radius:50%;background:#b6cbc8;flex:none;margin-top:8px}
+  .psub .tx{flex:1;min-width:0}
+  .hl{
+    background:linear-gradient(180deg,transparent 58%,rgba(16,185,129,.26) 58%);
+    color:#0b5750;
+  }
+  .rk{
+    background:linear-gradient(180deg,transparent 58%,rgba(251,191,36,.42) 58%);
+    color:#92400e;
+  }
+  .ms{background:#f4f7f8;color:#93a5a9;border-bottom:1px dashed #c3d2d0;padding-bottom:1px}
+  .an{
+    display:inline-block;font-size:9px;font-family:var(--mono);border-radius:3px;padding:0 3px;
+    vertical-align:2px;margin-left:1px;white-space:nowrap;
+  }
+  .an.g{color:#047857;background:#ecfdf5;border:1px solid #a7f3d0}
+  .an.y{color:#b45309;background:#fffbeb;border:1px solid #fde68a}
+  .an.n{color:#64748b;background:#f1f5f9;border:1px solid #e2e8f0}
+  .kw{font-family:var(--mono);font-size:11.5px;color:var(--ink)}
+
+  .col-side{gap:8px}
+  .scard{flex:none;padding:10px 12px;display:flex;flex-direction:column;gap:7px;min-height:0}
+  .scard.grow{flex:1;min-height:0}
+  .scard.grow .jdl{flex:1;justify-content:space-between}
+  .sh{display:flex;align-items:center;gap:6px}
+  .sh .t{font-size:12px;font-weight:700;color:var(--ink)}
+  .sh .ai{font-size:9.5px;color:var(--teal);background:var(--teal-l);border:1px solid var(--teal-b);border-radius:4px;padding:0 4px;font-weight:600}
+  .sh .n{font-family:var(--mono);font-size:10px;color:var(--sub);background:#f2f7f6;border-radius:4px;padding:1px 5px}
+  .sh .sp{margin-left:auto;font-family:var(--mono);font-size:10px;color:var(--muted)}
+  .sh .sp b{color:var(--teal);font-weight:700}
+
+  .jdl{display:flex;flex-direction:column;gap:5px}
+  .jd{display:grid;grid-template-columns:15px 1fr;gap:6px;padding:4px 0;border-bottom:1px dashed var(--line2)}
+  .jd:last-child{border-bottom:0;padding-bottom:0}
+  .jd .ic{
+    width:14px;height:14px;border-radius:4px;display:grid;place-items:center;
+    font-size:9px;font-weight:700;margin-top:2px;
+  }
+  .jd.hit .ic{background:#ecfdf5;color:#047857;border:1px solid #a7f3d0}
+  .jd.miss .ic{background:#fef2f2;color:#b91c1c;border:1px solid #fecaca}
+  .jd.unk .ic{background:#f8fafc;color:#94a3b8;border:1px solid #e2e8f0}
+  .jd .req{font-size:11.5px;color:var(--ink);line-height:1.4;display:flex;align-items:baseline;gap:5px}
+  .jd .req .st{font-size:9px;border-radius:3px;padding:0 3px;flex:none;line-height:14px}
+  .jd.hit .req .st{color:#047857;background:#ecfdf5}
+  .jd.miss .req .st{color:#b91c1c;background:#fef2f2}
+  .jd.unk .req .st{color:#a86a09;background:#fffbeb}
+  .jd .ev{
+    font-size:10.5px;color:var(--sub);margin-top:2px;line-height:1.45;
+    border-left:2px solid var(--line);padding-left:6px;
+  }
+  .jd.hit .ev{border-left-color:#a7f3d0}
+  .jd.miss .ev{border-left-color:#fecaca}
+  .jd.unk .ev{border-left-color:#fde68a}
+  .jd .ev b{color:var(--text);font-weight:600}
+  .jd .ev code{
+    font-family:var(--mono);font-size:10px;background:#f4f8f7;color:#0b5750;
+    border-radius:3px;padding:0 3px;
+  }
+
+  .iqs{display:flex;flex-direction:column;gap:6px}
+  .qg{display:flex;align-items:center;gap:6px;margin-top:2px}
+  .qg:first-child{margin-top:0}
+  .qg .gt{font-size:10px;font-weight:700;color:var(--teal-d);letter-spacing:.4px;flex:none}
+  .qg .gl{flex:1;height:1px;background:var(--line2)}
+  .qg .gc{font-family:var(--mono);font-size:9px;color:var(--muted);flex:none}
+  .iq{display:grid;grid-template-columns:14px 1fr;gap:5px;align-items:start}
+  .iq .no{
+    font-family:var(--mono);font-size:9.5px;color:#9db3b0;line-height:1.5;
+  }
+  .iq .tx{font-size:11px;color:var(--text);line-height:1.5;min-width:0}
+  .qnote{font-size:9.5px;color:var(--muted);border-top:1px dashed var(--line);padding-top:5px;line-height:1.4}
+  .iq .tx .src{
+    font-family:var(--mono);font-size:9px;color:var(--blue);background:var(--blue-l);
+    border:1px solid var(--blue-b);border-radius:3px;padding:0 3px;white-space:nowrap;margin-left:3px;
+  }
+
+  .acts{flex:none;display:flex;gap:7px}
+  .btn{
+    font:inherit;font-size:12px;padding:9px 0;border-radius:8px;cursor:pointer;
+    border:1px solid var(--line);background:#fff;color:var(--text);flex:1;
+    display:flex;align-items:center;justify-content:center;gap:5px;
+  }
+  .btn:hover{border-color:#c2d8d4;background:#fbfefd}
+  .btn.primary{
+    flex:1.35;background:linear-gradient(180deg,#12887e,#0b6a62);border-color:#0b6a62;color:#fff;
+    font-weight:600;box-shadow:0 4px 10px rgba(15,118,110,.22);
+  }
+  .btn.primary:hover{background:linear-gradient(180deg,#0f766e,#0a5f58)}
+  .btn.danger{flex:.72;color:#b91c1c;border-color:#f3d6d6;background:#fffafa}
+  .btn.danger:hover{background:#fff5f5;border-color:#eab8b8}
+
+  .foot{
+    display:flex;align-items:center;gap:12px;padding:0 4px;
+    font-size:10.5px;color:var(--muted);font-family:var(--mono);
+  }
+  .foot .ok{color:#0f766e;font-weight:700;font-family:var(--sans);font-size:10.5px}
+  .foot .sep{width:1px;height:11px;background:var(--line)}
+  .foot .sp{margin-left:auto;display:flex;gap:12px}
+  .foot .m b{color:var(--sub);font-weight:700}
+</style>
+</head>
+<body>
+<div class="app">
+
+  <header class="top">
+    <div class="logo">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M3 5h18l-7 8v6l-4 2v-8z"/>
+      </svg>
+    </div>
+    <div class="brand">
+      <div class="nm">简历筛选工作台</div>
+      <div class="sub">talent_match</div>
+    </div>
+    <div class="vbar"></div>
+
+    <div class="jdpick">
+      <span class="lb">在招岗位</span>
+      <span class="nm">NLP 算法工程师</span>
+      <span class="cnt">246 份</span>
+      <span class="caret"></span>
+    </div>
+
+    <div class="hstats">
+      <div class="hstat"><div class="k">今日简历</div><div class="v">246</div></div>
+      <div class="hstat"><div class="k">强匹配</div><div class="v t">38</div></div>
+      <div class="hstat"><div class="k">待人工确认</div><div class="v a">12</div></div>
+      <div class="hstat"><div class="k">单份解析</div><div class="v">1.4<small>s</small></div></div>
+      <div class="avatar">招</div>
+    </div>
+  </header>
+
+  <div class="wrap">
+
+    <section class="funnel card">
+      <div class="f-lead">
+        <div class="t"><span class="d"></span>今日招聘漏斗</div>
+        <div class="s">11-11 14:30 更新<br>在招 3 个岗位 · 秋招补录</div>
+        <div class="rate">投递→强匹配 15.4%</div>
+      </div>
+
+      <div class="f-mid">
+        <div class="f-stages">
+          <div class="stage">
+            <div class="lb"><i style="background:#a9bfbb"></i>投递</div>
+            <div class="n">246<small>份</small></div>
+            <div class="p">昨 218 · 秋招冲刺</div>
+          </div>
+          <div class="arrow">
+            <div class="drop">掉 208</div>
+            <div class="cv"><span class="ln"></span><span class="tip"></span></div>
+            <div class="pct">15.4% 通过</div>
+          </div>
+          <div class="stage">
+            <div class="lb"><i style="background:#5eead4"></i>强匹配</div>
+            <div class="n" style="color:#0f766e">38<small>份</small></div>
+            <div class="p">分数 ≥ 80 分</div>
+          </div>
+          <div class="arrow">
+            <div class="drop">掉 26</div>
+            <div class="cv"><span class="ln"></span><span class="tip"></span></div>
+            <div class="pct">31.6% 约面</div>
+          </div>
+          <div class="stage">
+            <div class="lb"><i style="background:#60a5fa"></i>已约面</div>
+            <div class="n" style="color:#2563eb">12<small>人</small></div>
+            <div class="p">今天 4 场在排</div>
+          </div>
+          <div class="arrow">
+            <div class="drop">掉 9</div>
+            <div class="cv"><span class="ln"></span><span class="tip"></span></div>
+            <div class="pct">25.0% 过面</div>
+          </div>
+          <div class="stage">
+            <div class="lb"><i style="background:#0f766e"></i>待入职</div>
+            <div class="n" style="color:#0b5750">3<small>人</small></div>
+            <div class="p">最早 11-20 到岗</div>
+          </div>
+        </div>
+        <div class="f-bar">
+          <span class="lab">246 份去向</span>
+          <div class="f-track">
+            <i style="width:84.6%;background:#e2ebe9"></i>
+            <i style="width:10.6%;background:#99f6e4"></i>
+            <i style="width:3.7%;background:#60a5fa"></i>
+            <i style="width:1.1%;background:#0f766e"></i>
+          </div>
+          <div class="f-legend">
+            <span><i style="background:#e2ebe9"></i>初筛未过 <b>208</b></span>
+            <span><i style="background:#99f6e4"></i>强匹配待约 <b>26</b></span>
+            <span><i style="background:#60a5fa"></i>已约面 <b>9</b></span>
+            <span><i style="background:#0f766e"></i>待入职 <b>3</b></span>
+          </div>
+        </div>
+      </div>
+
+
+    </section>
+
+    <div class="cols">
+
+      <div class="col">
+        <div class="ph">
+          <span class="t">候选人</span><span class="n">6 / 246</span>
+          <span class="sp">
+            <span class="sort">匹配分 ↓</span>
+          </span>
+        </div>
+
+        <div class="batch">
+          <div class="h">批量筛查 <span class="n">80 份</span><span class="st">后台任务</span></div>
+          <div class="bq">问题：<b>30 天内到岗 + 有 RAG 项目</b></div>
+          <div class="bar"><i style="width:83%"></i></div>
+          <div class="fo"><span>66 / 80</span><span>命中 9 · 均 1.4 s</span></div>
+        </div>
+
+        <div class="clist" id="clist"></div>
+      </div>
+
+      <div class="col col-mid">
+
+        <div class="candhead card">
+          <div class="idblock">
+            <div class="l1">
+              <span class="nm">张 * 明</span>
+              <span class="badge">强匹配</span>
+            </div>
+            <div class="l2">应聘 <b>NLP 算法工程师</b> · 本科 · 3 年 2 个月</div>
+            <div class="l3">期望 45k · 上海 · 1386****412</div>
+          </div>
+
+          <div class="rel">
+            <div class="hd">关系画像<span class="ai">候选人 · 公司 · 项目</span></div>
+            <div class="chain">
+              <span class="node me">张 * 明</span>
+              <span class="edge"><span class="lb">任职 3 年</span><span class="ln"><i></i></span></span>
+              <span class="node">某某科技（300 人）</span>
+              <span class="edge"><span class="lb">主导</span><span class="ln"><i></i></span></span>
+              <span class="node proj">RAG 知识库问答</span>
+            </div>
+            <div class="sub">
+              <span>同司投递 <em>2</em> 人</span>
+              <span>同校 <em>34</em> 人</span>
+              <span>内推 <em>1</em> 人</span>
+              <span>图谱 <em>3,120</em> 实体</span>
+            </div>
+          </div>
+
+          <div class="scorebox">
+            <span class="lb">匹配分</span>
+            <svg class="ring" width="60" height="60" viewBox="0 0 60 60">
+              <circle cx="30" cy="30" r="24" fill="none" stroke="#e6efed" stroke-width="5"></circle>
+              <circle cx="30" cy="30" r="24" fill="none" stroke="#0f766e" stroke-width="5"
+                      stroke-linecap="round" stroke-dasharray="150.8" stroke-dashoffset="19.6"
+                      transform="rotate(-90 30 30)"></circle>
+              <text class="num" x="30" y="31" text-anchor="middle" dominant-baseline="central"
+                    fill="#0c1f1e" font-size="18" font-weight="700">87</text>
+            </svg>
+            <span class="rank">同岗位前 <b>6%</b></span>
+          </div>
+        </div>
+
+        <div class="sbreak card">
+          <div class="lbl">打分拆解<span>可解释</span></div>
+          <div class="sb">
+            <div class="top"><span>经验</span><b>35<i>/40</i></b></div>
+            <div class="tr"><i style="width:87.5%;background:#0f766e"></i><i style="width:12.5%;background:#eef4f3"></i></div>
+          </div>
+          <div class="sb">
+            <div class="top"><span>技能</span><b>30<i>/35</i></b></div>
+            <div class="tr"><i style="width:85.7%;background:#0f766e"></i><i style="width:14.3%;background:#eef4f3"></i></div>
+          </div>
+          <div class="sb">
+            <div class="top"><span>项目</span><b>15<i>/15</i></b></div>
+            <div class="tr"><i style="width:100%;background:#0f766e"></i></div>
+          </div>
+          <div class="sb">
+            <div class="top"><span>其他</span><b>7<i>/10</i></b></div>
+            <div class="tr"><i style="width:70%;background:#d97706"></i><i style="width:30%;background:#eef4f3"></i></div>
+          </div>
+          <div class="why">
+            扣分：期望薪资 <b>超上限 12%</b>、学历未达硕士<br>加分：3 年 2 个月经验、RAG、自建标注集
+          </div>
+        </div>
+
+        <div class="doc card">
+          <div class="dbar">
+            <span class="t">简历高亮视图</span>
+            <span class="ai">AI 抽取</span>
+            <span class="n">命中 12 处 · 风险 2 处 · 缺失 1 处</span>
+            <span class="legend">
+              <span><i class="hit"></i>命中要点</span>
+              <span><i class="rk"></i>风险</span>
+              <span><i class="ms"></i>缺失</span>
+            </span>
+          </div>
+
+          <div class="sheet">
+            <div class="aresume">
+
+              <div class="sec"><span class="pg">01</span><span class="t">基本信息 / 求职意向</span><span class="ln"></span><span class="m">抽取 6 字段</span></div>
+              <div class="row">
+                <div class="when">个人</div>
+                <div class="bd">张 * 明　男　1996.07　本科　上海　1386****412</div>
+              </div>
+              <div class="row">
+                <div class="when">求职意向</div>
+                <div class="bd">NLP 算法工程师　期望薪资 <span class="rk">45k</span><span class="an y">超上限 12%</span>　到岗时间 <span class="ms">未提及</span><span class="an n">缺失</span></div>
+              </div>
+
+              <div class="sec"><span class="pg">02</span><span class="t">个人简介</span><span class="ln"></span><span class="m">抽取 4 字段</span></div>
+              <div class="row">
+                <div class="when">自述</div>
+                <div class="bd">
+                  <span class="hl">3 年 NLP 工程经验</span><span class="an g">3 年 NLP</span>，主要做文本分类与信息抽取；<span class="hl">熟悉 RAG 检索增强</span><span class="an g">RAG / 检索</span>，能独立完成标注、训练、上线整条链路。
+                </div>
+              </div>
+
+              <div class="sec"><span class="pg">03</span><span class="t">工作经历</span><span class="ln"></span><span class="m">2 段 · 3 年 2 个月</span></div>
+              <div class="row">
+                <div class="when">2022.09–至今</div>
+                <div class="bd">
+                  <b>某某科技</b> <span class="co">（约 300 人）· NLP 算法工程师</span>
+                  <div class="psub"><span class="dot"></span><span class="tx">负责客服工单意图分类，<span class="hl">线上准确率 0.91</span>，日均处理 8.2 万条</span></div>
+                  <div class="psub"><span class="dot"></span><span class="tx">主导知识库问答 RAG 项目，<span class="hl">召回率 0.72 → 0.91</span><span class="an g">RAG 项目</span></span></div>
+                  <div class="psub"><span class="dot"></span><span class="tx"><span class="hl">自建 1.2 万条标注集</span>并制定标注规范，节省外包成本约 4 万 / 年</span></div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="when">2021.03–2022.08</div>
+                <div class="bd">
+                  <b>某某信息</b> <span class="co">（约 60 人）· 算法实习生</span>
+                  <div class="psub"><span class="dot"></span><span class="tx">负责 320 万条语料清洗、去重与格式统一（<span class="kw">Python</span> / <span class="kw">Spark</span>）</span></div>
+                </div>
+              </div>
+
+              <div class="sec"><span class="pg">04</span><span class="t">项目经历</span><span class="ln"></span><span class="m">1 个主项目</span></div>
+              <div class="row">
+                <div class="when">2023.04–2023.10</div>
+                <div class="bd">
+                  <b>某某知识库问答</b> <span class="co">· 检索 + 重排 + 生成三段式</span>
+                  <div class="psub"><span class="dot"></span><span class="tx"><span class="hl">端到端回答准确率 0.83</span>，单次响应 2.6 s，覆盖 1,800 篇制度文档</span></div>
+                  <div class="psub"><span class="dot"></span><span class="tx">使用开源大模型 API 做生成，<span class="rk">未做模型微调</span><span class="an y">缺 SFT / LoRA 经验</span></span></div>
+                </div>
+              </div>
+
+              <div class="sec"><span class="pg">05</span><span class="t">教育 / 其他</span><span class="ln"></span><span class="m">抽取 9 字段</span></div>
+              <div class="row">
+                <div class="when">2017.09–2021.06</div>
+                <div class="bd">某某大学　计算机科学与技术　<b>本科</b>（岗位要求硕士，<span class="ms">不满足</span>）</div>
+              </div>
+              <div class="row">
+                <div class="when">其他</div>
+                <div class="bd">
+                  1 篇中文会议论文（第二作者）；目前在职，<span class="rk">交接期约 30 天，到岗日期未明确</span><span class="an y">到岗风险</span>
+                </div>
+              </div>
+              <div class="row">
+                <div class="when">技能</div>
+                <div class="bd"><span class="hl">Python / PyTorch / Spark / 向量检索（Milvus）</span><span class="an g">抽取 6 项</span></div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col col-side">
+
+        <div class="scard card grow" style="padding-bottom:8px">
+          <div class="sh">
+            <span class="t">JD 对齐</span><span class="ai">检索匹配</span>
+            <span class="n">4 / 6</span>
+            <span class="sp"><b>4</b> 命中 · 1 缺失 · 1 风险</span>
+          </div>
+          <div class="jdl">
+            <div class="jd hit">
+              <span class="ic">✓</span>
+              <div>
+                <div class="req">3 年以上 NLP 工程经验<span class="st">命中</span></div>
+                <div class="ev"><code>2022.09–至今</code> 文本分类 / 信息抽取 → <b>3 年 2 个月</b></div>
+              </div>
+            </div>
+            <div class="jd hit">
+              <span class="ic">✓</span>
+              <div>
+                <div class="req">熟悉 RAG / 检索增强<span class="st">命中</span></div>
+                <div class="ev"><code>召回 0.72 → 0.91</code> 知识库问答，1,800 篇文档</div>
+              </div>
+            </div>
+            <div class="jd hit">
+              <span class="ic">✓</span>
+              <div>
+                <div class="req">能独立做标注与数据清洗<span class="st">命中</span></div>
+                <div class="ev"><code>自建 1.2 万条标注集</code>；320 万条语料去重</div>
+              </div>
+            </div>
+            <div class="jd hit">
+              <span class="ic">✓</span>
+              <div>
+                <div class="req">能接受 30 人规模团队<span class="st">命中</span></div>
+                <div class="ev">现任 <code>300 人</code>公司，简历未提规模限制</div>
+              </div>
+            </div>
+            <div class="jd miss">
+              <span class="ic">✕</span>
+              <div>
+                <div class="req">硕士及以上学历<span class="st">缺失</span></div>
+                <div class="ev">某某大学 <code>本科</code>计算机，全文未提在读硕士</div>
+              </div>
+            </div>
+            <div class="jd unk">
+              <span class="ic">?</span>
+              <div>
+                <div class="req">期望 ≤ 40k，30 天内到岗<span class="st">风险</span></div>
+                <div class="ev"><code>45k</code> 超上限 12%；到岗日期未提及</div>
+              </div>
+            </div>
+          </div>
+          <div class="qnote">6 条要求 ↔ 简历 5 段逐句对齐 · 命中 4 条、缺失 1 条、风险 1 条</div>
+        </div>
+
+        <div class="scard card">
+          <div class="sh">
+            <span class="t">自动生成面试题</span><span class="ai">基于简历</span>
+            <span class="sp">6 条 · 2.1 s</span>
+          </div>
+          <div class="iqs">
+            <div class="qg"><span class="gt">验证经验</span><span class="gl"></span><span class="gc">据第 3 段</span></div>
+            <div class="iq"><span class="no">01</span><span class="tx">准确率 0.91 是怎么算的？基线模型是什么？<span class="src">第 3 段</span></span></div>
+            <div class="iq"><span class="no">02</span><span class="tx">召回 0.72→0.91，主要靠切分还是重排？<span class="src">第 3 段</span></span></div>
+            <div class="qg"><span class="gt">探边界</span><span class="gl"></span><span class="gc">据第 3、4 段</span></div>
+            <div class="iq"><span class="no">03</span><span class="tx">标注集和线上分布不一致时，你靠什么发现？<span class="src">第 3 段</span></span></div>
+            <div class="iq"><span class="no">04</span><span class="tx">只有单卡 24G，RAG 方案你会怎么砍？<span class="src">第 4 段</span></span></div>
+            <div class="qg"><span class="gt">考察动机</span><span class="gl"></span><span class="gc">据第 1、5 段</span></div>
+            <div class="iq"><span class="no">05</span><span class="tx">从 300 人到 30 人团队，你最在意什么？<span class="src">第 1 段</span></span></div>
+            <div class="iq"><span class="no">06</span><span class="tx">期望 45k、上限 40k，这个差距你怎么看？<span class="src">第 1 段</span></span></div>
+          </div>
+          <div class="qnote">由简历 5 段 + JD 缺失项生成 · 点任一条可编辑后再发</div>
+        </div>
+
+        <div class="acts">
+          <button class="btn primary">发面试邀约</button>
+          <button class="btn">加人才池</button>
+          <button class="btn danger">不通过</button>
+        </div>
+
+      </div>
+    </div>
+
+    <footer class="foot">
+      <span class="ok">● 解析服务正常</span>
+      <span class="sep"></span>
+      <span>简历库 <b style="color:#31474a">12,408</b> 份</span>
+      <span class="sep"></span>
+      <span>抽取字段 <b style="color:#31474a">18</b> 个 / 份</span>
+      <span class="sep"></span>
+      <span>批量并发 <b style="color:#31474a">8</b> 路 · 80 份 1 分 52 秒</span>
+      <span class="sp">
+        <span class="m">单份解析 <b>1.4s</b></span>
+        <span class="m">P99 <b>2.9s</b></span>
+        <span class="m">JD 对齐召回 <b>0.93</b></span>
+        <span class="m">打分一致性 <b>0.88</b></span>
+      </span>
+    </footer>
+
+  </div>
+</div>
+
+<script>
+/* ============================================================
+   为什么全写在脚本里、不接后端：
+   这是给同学看的「产品设计稿」，要能离线双击打开、随便投屏。
+   数据写死成一维数组，改一行就能换个候选人，方便课堂上临场改例子。
+   ============================================================ */
+
+/* 六个候选人。分数决定圆环颜色，所以阈值集中写在 ringColor 里，
+   而不是散落到每张卡上——以后调整「强匹配」的门槛只改一个地方。 */
+const CANDS = [
+  { n:'张 * 明', pos:'NLP 算法工程师',   meta:'某某科技 · 本科 · 上海', s:87, tags:['3 年 NLP','RAG / Agent','1 篇论文'], risk:'期望薪资 45k，超上限 12%', on:true },
+  { n:'李 * 婷', pos:'NLP 算法工程师',   meta:'某某集团 · 硕士 · 杭州', s:82, tags:['4 年 NLP','抽取 / 分类','大厂背景'], risk:'到岗需 45 天，偏长'            },
+  { n:'王 * 浩', pos:'算法工程师（NLP）', meta:'某某网络 · 本科 · 上海', s:76, tags:['2 年 NLP','LoRA 微调','开源 repo'], risk:'缺 RAG 项目经验'               },
+  { n:'陈 * 琪', pos:'高级算法工程师',   meta:'某某数据 · 硕士 · 北京', s:74, tags:['5 年 算法','知识图谱','带 3 人'],    risk:'期望职级 P7，超出岗位'         },
+  { n:'刘 * 宇', pos:'算法工程师（NLP）', meta:'某某科技 · 本科 · 深圳', s:68, tags:['3 年 算法','文本匹配','—'],         risk:'简历有 8 个月空窗'             },
+  { n:'赵 * 凡', pos:'算法工程师',       meta:'某某云 · 本科 · 上海',   s:55, tags:['1 年 转岗','语料清洗','—'],         risk:'岗位要求 3 年以上经验'         }
+];
+
+/* 80 分以上算强匹配（深青），70–79 是可约面（蓝），再低就灰掉——
+   颜色跟着业务阈值走，招聘同学扫一眼就知道哪些要重点看。 */
+function ringColor(s){
+  if (s >= 80) return '#0f766e';   // 强匹配：可以直接约面
+  if (s >= 70) return '#2563eb';   // 可看：需要人工确认
+  if (s >= 60) return '#64748b';   // 边缘：先放人才池
+  return '#94a3b8';                // 不满足硬条件
+}
+
+/* 圆环用 stroke-dasharray 画：
+   周长 C = 2πr，把「未完成部分」放进 dashoffset，进度条就正好停在分数位置。
+   半径 18 → C ≈ 113.1，和下面常量对应，改半径时两个数要一起改。 */
+const R = 18, C = 2 * Math.PI * R;
+
+function ringSVG(s){
+  const off = C * (1 - s / 100);
+  return `
+    <svg class="ring" viewBox="0 0 44 44">
+      <circle cx="22" cy="22" r="${R}" fill="none" stroke="#eaf2f1" stroke-width="4"></circle>
+      <circle cx="22" cy="22" r="${R}" fill="none" stroke="${ringColor(s)}" stroke-width="4"
+              stroke-linecap="round" stroke-dasharray="${C.toFixed(1)}"
+              stroke-dashoffset="${off.toFixed(1)}" transform="rotate(-90 22 22)"></circle>
+      <text class="num" x="22" y="23" text-anchor="middle" dominant-baseline="central"
+            fill="${s >= 70 ? '#0c1f1e' : '#7c8f8d'}">${s}</text>
+    </svg>`;
+}
+
+/* 标签配色：第一个标签用主色，后面交替，避免六张卡都一个颜色看不清层次 */
+function tagHTML(t, i){
+  const cls = i === 0 ? '' : (i === 1 ? 'blue' : 'gray');
+  const dash = t === '—';
+  return `<span class="tag ${dash ? 'gray' : cls}">${t}</span>`;
+}
+
+const listEl = document.getElementById('clist');
+
+function renderList(){
+  listEl.innerHTML = CANDS.map((c, i) => `
+    <div class="cand ${c.on ? 'on' : ''}" data-i="${i}">
+      <div class="ringwrap">${ringSVG(c.s)}</div>
+      <div class="r">
+        <div class="r1">
+          <span class="nm">${c.n}</span>
+          <span class="pos">${c.pos}</span>
+          ${c.on ? '<span class="now">查看中</span>' : ''}
+        </div>
+        <div class="tags">${c.tags.map(tagHTML).join('')}</div>
+        <div class="meta">${c.meta}</div>
+        <div class="risk">
+          <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="#d97706" stroke-width="2.4" stroke-linecap="round">
+            <path d="M12 8v5M12 17h.01"></path><circle cx="12" cy="12" r="9"></circle>
+          </svg>
+          ${c.risk}
+        </div>
+      </div>
+    </div>`).join('');
+}
+renderList();
+
+/* 点卡片只切换「当前查看」高亮：
+   设计稿里没有真的去拉另一份简历（简历正文只做了张 * 明这一份），
+   真实产品在这里会把右两栏换成该候选人的数据。 */
+listEl.addEventListener('click', e => {
+  const card = e.target.closest('.cand');
+  if (!card) return;
+  const i = Number(card.dataset.i);
+  CANDS.forEach((c, j) => { c.on = (j === i); });
+  renderList();
+});
+</script>
+</body>
+</html>

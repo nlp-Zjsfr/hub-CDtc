@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>合同审查工作台 · legal_review</title>
+<style>
+  /* ============================================================
+     法务产品设计稿（示意数据）。
+     和投研/医疗/客服/招聘一样，这一屏也是「同一套底层能力」做的，
+     但法务的界面必须是法务的样子：**读的是文档，不是表格**。
+     所以这里没有队列大表格，只有「合同原文 + 条款级批注 + 意见书」。
+     ============================================================ */
+  :root{
+    --paper:#faf8f5;      /* 纸感底 */
+    --page:#efece5;
+    --ink:#1c1917;        /* 墨 */
+    --ink2:#44403c;
+    --sub:#78716c;
+    --muted:#a8a29e;
+    --line:#e7e2d9;
+    --line2:#f0ece5;
+    --red:#b91c1c;
+    --red-bg:#fef2f2;
+    --amber:#b45309;
+    --amber-bg:#fffbeb;
+    --green:#15803d;
+    --green-bg:#f0fdf4;
+    --blue:#1d4ed8;
+    --card:#ffffff;
+    --sans:"Microsoft YaHei","PingFang SC","Noto Sans SC",system-ui,sans-serif;
+    --serif:"Songti SC","SimSun","Noto Serif SC",serif;
+    --mono:Consolas,ui-monospace,monospace;
+  }
+  *{box-sizing:border-box}
+  html,body{height:100%;margin:0}
+  body{
+    font-family:var(--sans);font-size:13px;color:var(--ink2);
+    background:var(--page);overflow:hidden;-webkit-font-smoothing:antialiased;
+  }
+  .app{display:flex;flex-direction:column;height:100vh}
+
+  /* ---------- 顶部：案卷信息条（深墨色，像卷宗封皮） ---------- */
+  .topbar{
+    height:54px;flex:none;background:linear-gradient(180deg,#1c1917,#292524);
+    display:flex;align-items:center;gap:14px;padding:0 18px;color:#e7e5e4;
+  }
+  .logo{
+    width:30px;height:30px;border-radius:6px;flex:none;
+    background:linear-gradient(140deg,#f59e0b,#b45309);
+    color:#1c1917;font-weight:700;font-size:15px;display:grid;place-items:center;
+    font-family:var(--serif);
+  }
+  .pname{font-size:14px;font-weight:700;color:#fafaf9;letter-spacing:.5px}
+  .pcode{font-size:10.5px;color:#78716c;font-family:var(--mono)}
+  .divv{width:1px;height:22px;background:#44403c;flex:none}
+  .docname{font-size:13px;color:#fafaf9;font-weight:600}
+  .docmeta{font-size:11px;color:#a8a29e}
+  .docmeta b{color:#d6d3d1;font-weight:500;font-family:var(--mono)}
+  .topright{margin-left:auto;display:flex;align-items:center;gap:8px}
+  .stamp{
+    font-size:11px;padding:4px 10px;border-radius:5px;
+    background:rgba(185,28,28,.18);color:#fca5a5;border:1px solid rgba(248,113,113,.35);
+  }
+  .tbtn{
+    font:inherit;font-size:12px;padding:6px 11px;border-radius:6px;cursor:pointer;
+    background:#292524;border:1px solid #44403c;color:#e7e5e4;
+  }
+  .tbtn:hover{background:#3f3a36}
+  .tbtn.gold{background:linear-gradient(180deg,#f59e0b,#d97706);border-color:#d97706;color:#1c1917;font-weight:700}
+  .tbtn.gold:hover{filter:brightness(1.06)}
+
+  /* ---------- 主体两栏 ---------- */
+  .body{flex:1;display:grid;grid-template-columns:1fr 408px;min-height:0;gap:0}
+
+  /* ---------- 左：文档阅读器 ---------- */
+  .reader{display:flex;flex-direction:column;min-width:0;min-height:0;background:var(--paper);border-right:1px solid var(--line)}
+  .rtools{
+    height:44px;flex:none;display:flex;align-items:center;gap:8px;
+    padding:0 16px;background:#fffdf9;border-bottom:1px solid var(--line);
+  }
+  .seg{display:flex;background:#f5f2ec;border-radius:7px;padding:2px}
+  .seg button{
+    font:inherit;font-size:12px;padding:4px 12px;border:0;border-radius:5px;
+    background:transparent;color:var(--sub);cursor:pointer;
+  }
+  .seg button.on{background:#fff;color:var(--ink);font-weight:600;box-shadow:0 1px 2px rgba(28,25,23,.12)}
+  .rtools .sp{margin-left:auto;display:flex;align-items:center;gap:6px}
+  .pill{
+    font-size:11px;padding:3px 8px;border-radius:999px;border:1px solid var(--line);
+    color:var(--sub);background:#fff;display:flex;align-items:center;gap:5px;cursor:pointer;
+  }
+  .pill:hover{border-color:#ddd6cb}
+  .pill .dot{width:6px;height:6px;border-radius:50%}
+  .pill .dot.r{background:var(--red)}
+  .pill .dot.a{background:var(--amber)}
+
+  .doc{flex:1;min-height:0;overflow:auto;padding:22px 30px 26px}
+  .paper{
+    max-width:720px;margin:0 auto;background:#fff;border:1px solid #eae5db;
+    border-radius:3px;box-shadow:0 1px 2px rgba(28,25,23,.05),0 12px 30px rgba(28,25,23,.06);
+    padding:34px 44px 40px;
+  }
+  .docTitle{
+    text-align:center;font-family:var(--serif);font-size:21px;font-weight:700;color:var(--ink);
+    letter-spacing:2px;margin:0 0 6px;
+  }
+  .docSub{text-align:center;font-family:var(--serif);font-size:12px;color:var(--sub);margin-bottom:22px}
+  .docSub .k{font-family:var(--sans)}
+  .clause{margin:0 0 14px;position:relative;padding-left:12px}
+  .clause .no{
+    position:absolute;left:-10px;top:1px;font-family:var(--mono);font-size:10.5px;
+    color:var(--muted);background:var(--paper);padding:0 2px;
+  }
+  .clause h4{
+    font-family:var(--serif);font-size:14px;font-weight:700;color:var(--ink);
+    margin:0 0 4px;letter-spacing:.5px;
+  }
+  .clause p{
+    font-family:var(--serif);font-size:13.5px;line-height:1.95;color:#292524;margin:0;text-align:justify;
+  }
+  /* 风险高亮：红底 + 左侧红条；待确认：黄底 */
+  mark.risk{
+    background:linear-gradient(180deg,transparent 8%,#fee2e2 8%,#fee2e2 92%,transparent 92%);
+    color:#7f1d1d;padding:1px 2px;border-radius:2px;cursor:pointer;
+    box-shadow:inset 3px 0 0 var(--red);
+  }
+  mark.warn{
+    background:linear-gradient(180deg,transparent 8%,#fef3c7 8%,#fef3c7 92%,transparent 92%);
+    color:#78350f;padding:1px 2px;border-radius:2px;cursor:pointer;
+    box-shadow:inset 3px 0 0 var(--amber);
+  }
+  /* 行内批注气泡（法务产品的核心交互：意见长在条款旁边） */
+  .note{
+    margin:8px 0 12px;padding:9px 12px;border-radius:8px;
+    background:var(--red-bg);border:1px solid #fecaca;border-left:3px solid var(--red);
+    display:flex;gap:9px;align-items:flex-start;
+  }
+  .note.warn{background:var(--amber-bg);border-color:#fde68a;border-left-color:var(--amber)}
+  .note .who{
+    flex:none;font-size:10.5px;font-family:var(--mono);color:var(--red);
+    background:#fff;border:1px solid #fecaca;border-radius:4px;padding:1px 5px;margin-top:1px;
+  }
+  .note.warn .who{color:var(--amber);border-color:#fde68a}
+  .note .txt{font-size:12px;line-height:1.7;color:#7f1d1d}
+  .note.warn .txt{color:#78350f}
+  .note .txt b{color:var(--ink)}
+  .note .act{margin-left:auto;flex:none;display:flex;gap:5px}
+  .mini{
+    font:inherit;font-size:11px;padding:2px 7px;border-radius:5px;cursor:pointer;
+    background:#fff;border:1px solid #fecaca;color:var(--red);
+  }
+  .mini:hover{background:#fff5f5}
+  .mini.done{border-color:#bbf7d0;color:var(--green);background:#f0fdf4}
+
+  /* 底部风险热力条：按条款位置看「风险堆在哪」 */
+  .heat{
+    flex:none;height:44px;display:flex;align-items:center;gap:10px;
+    padding:0 16px;background:#fffdf9;border-top:1px solid var(--line);
+  }
+  .heat .lab{font-size:11px;color:var(--sub);flex:none}
+  .heat .bar{flex:1;display:flex;gap:3px;align-items:flex-end;height:18px}
+  .heat .bar i{flex:1;height:6px;border-radius:2px;background:#eae5db}
+  .heat .bar i.r{height:18px;background:var(--red)}
+  .heat .bar i.a{height:13px;background:var(--amber)}
+  .heat .lg{display:flex;gap:10px;font-size:10.5px;color:var(--muted);flex:none}
+  .heat .lg span{display:flex;align-items:center;gap:4px}
+  .heat .lg i{width:7px;height:7px;border-radius:2px;display:inline-block}
+
+  /* ---------- 右：审查意见面板 ---------- */
+  .panel{display:flex;flex-direction:column;min-height:0;min-width:0;background:#fff;border-left:1px solid var(--line)}
+  .ptop{flex:none;padding:13px 15px 11px;border-bottom:1px solid var(--line2)}
+  .ptitle{display:flex;align-items:center;gap:8px;font-size:13.5px;font-weight:700;color:var(--ink);margin-bottom:10px}
+  .ptitle .cnt{font-family:var(--mono);font-size:10.5px;font-weight:400;color:var(--muted);background:#f5f2ec;padding:1px 6px;border-radius:5px}
+  .rsum{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin-bottom:10px}
+  .rbox{padding:8px 10px;border-radius:8px;border:1px solid var(--line);background:#fffdf9}
+  .rbox .k{font-size:10.5px;color:var(--sub)}
+  .rbox .v{font-family:var(--mono);font-size:18px;font-weight:700;line-height:1.3}
+  .rbox.hi{border-color:#fecaca;background:var(--red-bg)}
+  .rbox.hi .v{color:var(--red)}
+  .rbox.mid{border-color:#fde68a;background:var(--amber-bg)}
+  .rbox.mid .v{color:var(--amber)}
+  .rbox.lo .v{color:var(--green)}
+  .diffbar{
+    display:flex;align-items:center;gap:8px;font-size:11px;color:var(--sub);
+    padding:7px 9px;border-radius:7px;background:#f8f6f2;border:1px dashed #e0dad0;
+  }
+  .diffbar b{font-family:var(--mono);color:var(--ink);font-weight:600}
+  .diffbar .sp{margin-left:auto;color:var(--blue);cursor:pointer;font-size:11px}
+
+  .opinions{flex:1;min-height:0;overflow:auto;padding:12px 15px}
+  .op{
+    border:1px solid var(--line);border-radius:9px;padding:10px 11px;margin-bottom:9px;
+    background:#fff;cursor:pointer;transition:box-shadow .15s,border-color .15s;
+  }
+  .op:hover{border-color:#d6cec2;box-shadow:0 4px 12px rgba(28,25,23,.07)}
+  .op.on{border-color:#fca5a5;box-shadow:0 0 0 3px rgba(185,28,28,.07)}
+  .op .hd{display:flex;align-items:center;gap:7px;margin-bottom:6px}
+  .op .cidx{font-family:var(--mono);font-size:10.5px;color:var(--muted)}
+  .op .ctitle{font-size:12.5px;font-weight:700;color:var(--ink)}
+  .lv{font-size:10.5px;padding:1px 6px;border-radius:4px;font-weight:600;margin-left:auto}
+  .lv.hi{background:var(--red-bg);color:var(--red);border:1px solid #fecaca}
+  .lv.mid{background:var(--amber-bg);color:var(--amber);border:1px solid #fde68a}
+  .lv.lo{background:var(--green-bg);color:var(--green);border:1px solid #bbf7d0}
+  .op .line{font-size:11.5px;line-height:1.7;color:var(--sub)}
+  .op .line b{color:var(--ink2);font-weight:600}
+  .op .sugg{
+    margin-top:6px;padding:6px 8px;border-radius:6px;background:#f0fdf4;
+    border-left:2px solid var(--green);font-size:11.5px;line-height:1.65;color:#14532d;
+  }
+  .op .basis{margin-top:6px;display:flex;gap:6px;flex-wrap:wrap;font-size:10.5px;color:var(--muted)}
+  .op .basis span{background:#f5f2ec;border-radius:4px;padding:1px 5px;font-family:var(--mono)}
+
+  .moreop{
+    margin:2px 0 10px;padding:7px 10px;border-radius:7px;background:#f8f6f2;
+    border:1px dashed #e0dad0;font-size:11px;color:var(--sub);cursor:pointer;
+  }
+  .moreop:hover{background:#f3efe8}  .rules{flex:none;padding:11px 15px;border-top:1px solid var(--line2);background:#fffdf9}
+  .rules .rt{font-size:11.5px;font-weight:700;color:var(--ink);margin-bottom:7px;display:flex;align-items:center;gap:6px}
+  .rlist{display:grid;grid-template-columns:1fr 1fr;gap:5px 10px;font-size:11px;color:var(--sub)}
+  .rlist div{display:flex;align-items:center;gap:5px;font-family:var(--mono)}
+  .rlist .hit{color:var(--red)}
+  .rlist .pass{color:var(--muted)}
+
+  .pfoot{flex:none;padding:11px 12px 13px;border-top:1px solid var(--line2);display:flex;gap:6px}
+  .abtn{
+    flex:1;min-width:0;font:inherit;font-size:11.5px;padding:8px 0;border-radius:7px;cursor:pointer;
+    border:1px solid var(--line);background:#fff;color:var(--ink2);
+  }
+  .abtn:hover{background:#faf8f5}
+  .abtn.pass{border-color:#bbf7d0;background:var(--green-bg);color:#15803d;font-weight:600}
+  .abtn.rej{border-color:#fecaca;background:var(--red-bg);color:var(--red);font-weight:600}
+  .abtn.gold{background:linear-gradient(180deg,#292524,#1c1917);border-color:#1c1917;color:#fafaf9;font-weight:600}
+
+  ::-webkit-scrollbar{width:9px;height:9px}
+  ::-webkit-scrollbar-thumb{background:#d8d2c7;border-radius:5px;border:2px solid transparent;background-clip:padding-box}
+  ::-webkit-scrollbar-track{background:transparent}
+</style>
+</head>
+<body>
+<div class="app">
+
+  <!-- 顶部：卷宗信息 -->
+  <div class="topbar">
+    <div class="logo">法</div>
+    <div>
+      <div class="pname">合同审查工作台</div>
+      <div class="pcode">legal_review</div>
+    </div>
+    <div class="divv"></div>
+    <div>
+      <div class="docname">采购框架协议 <span style="font-family:var(--mono);font-size:11px;color:#a8a29e">v3</span></div>
+      <div class="docmeta">对方主体 <b>华信供应链有限公司</b> · 合同金额 <b>¥1,280 万</b> · 我方角色 <b>乙方</b></div>
+    </div>
+    <div class="topright">
+      <span class="stamp">● 未用印 · 待审查</span>
+      <button class="tbtn">与标准模板比对</button>
+      <button class="tbtn">导出意见书</button>
+      <button class="tbtn gold">提交审批</button>
+    </div>
+  </div>
+
+  <div class="body">
+    <!-- 左：文档阅读器 -->
+    <div class="reader">
+      <div class="rtools">
+        <div class="seg">
+          <button class="on">原文</button>
+          <button>与模板差异</button>
+          <button>批注</button>
+        </div>
+        <div class="sp">
+          <span class="pill"><span class="dot r"></span>高风险 3</span>
+          <span class="pill"><span class="dot a"></span>待确认 2</span>
+          <span class="pill">上一处 ↑</span>
+          <span class="pill">下一处 ↓</span>
+        </div>
+      </div>
+
+      <div class="doc">
+        <div class="paper">
+          <div class="docTitle">采购框架协议</div>
+          <div class="docSub">甲方：华信供应链有限公司　|　乙方：<span class="k">某某科技有限公司</span>　|　签订地：上海</div>
+
+          <div class="clause">
+            <span class="no">01</span>
+            <h4>第一条　定义</h4>
+            <p>本协议所称「货物」指附件一所列物料；「交付」指货物运抵乙方指定仓库并经乙方签收。</p>
+          </div>
+
+          <div class="clause">
+            <span class="no">03</span>
+            <h4>第三条　价格与支付</h4>
+            <p>合同总金额为人民币 <b>1,280 万元</b>，含 13% 增值税。乙方应在货物验收合格后
+            <mark class="warn">120 日内</mark>支付全部货款，逾期未付的，甲方有权暂停供货。</p>
+            <div class="note warn">
+              <span class="who">B-03</span>
+              <span class="txt"><b>账期超内部标准：</b>内部标准为验收后 ≤ 90 天，本条为 120 天，且未约定逾期付款利息。</span>
+              <span class="act"><button class="mini">采纳</button><button class="mini">忽略</button></span>
+            </div>
+          </div>
+
+          <div class="clause">
+            <span class="no">05</span>
+            <h4>第五条　质量保证</h4>
+            <p>质保期为交付之日起 12 个月，质保期内非人为损坏由甲方免费更换或维修。</p>
+          </div>
+
+          <div class="clause">
+            <span class="no">06</span>
+            <h4>第六条　保密</h4>
+            <p>双方对因履行本协议获知的对方商业秘密负有保密义务，保密期限为
+            <mark class="warn">自信息提供之日起 1 年</mark>。保密义务不因本协议终止而免除。</p>
+            <div class="note warn">
+              <span class="who">A-02</span>
+              <span class="txt"><b>保密期偏短：</b>内部标准为「合同终止后 3 年」，本条仅 1 年且起算点前置。</span>
+              <span class="act"><button class="mini">采纳</button><button class="mini">忽略</button></span>
+            </div>
+          </div>
+
+          <div class="clause">
+            <span class="no">08</span>
+            <h4>第八条　违约与赔偿</h4>
+            <p>任何一方违约，应赔偿对方因此遭受的全部损失。
+            <mark class="risk">赔偿范围包括直接损失、间接损失及可得利益损失，且不设赔偿上限</mark>。
+            甲方迟延交付的，每迟延一日按合同总额的 0.5% 支付违约金。</p>
+            <div class="note">
+              <span class="who">A-07</span>
+              <span class="txt"><b>无限责任条款：</b>未设赔偿上限且覆盖间接损失，属高风险条款。
+              建议改为「赔偿总额不超过本合同总金额的 20%，且不含间接损失与可得利益损失」。</span>
+              <span class="act"><button class="mini">采纳</button><button class="mini">忽略</button></span>
+            </div>
+          </div>
+
+          <div class="clause">
+            <span class="no">10</span>
+            <h4>第十条　争议解决</h4>
+            <p>因本协议引起的争议，双方应友好协商；协商不成的，
+            <mark class="risk">提交甲方所在地有管辖权的人民法院诉讼解决</mark>。</p>
+            <div class="note">
+              <span class="who">C-04</span>
+              <span class="txt"><b>管辖不利：</b>约定对方所在地法院，异地诉讼成本高。建议改为我方所在地法院或上海仲裁委员会仲裁。</span>
+              <span class="act"><button class="mini">采纳</button><button class="mini">忽略</button></span>
+            </div>
+          </div>
+
+          <div class="clause">
+            <span class="no">12</span>
+            <h4>第十二条　生效</h4>
+            <p>本协议自双方法定代表人或授权代表签字并加盖公章之日起生效，一式肆份，双方各执贰份。</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 风险热力条：一眼看出风险堆在哪些条款 -->
+      <div class="heat">
+        <span class="lab">风险分布（按条款）</span>
+        <div class="bar">
+          <i></i><i></i><i class="a"></i><i></i><i></i><i class="a"></i><i></i>
+          <i class="r"></i><i></i><i class="r"></i><i></i><i></i>
+        </div>
+        <div class="lg">
+          <span><i style="background:var(--red)"></i>高风险 3</span>
+          <span><i style="background:var(--amber)"></i>待确认 2</span>
+          <span><i style="background:#eae5db"></i>已通过</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 右：审查意见 -->
+    <div class="panel">
+      <div class="ptop">
+        <div class="ptitle">审查意见<span class="cnt">5 条 · 3 高风险</span></div>
+        <div class="rsum">
+          <div class="rbox hi"><div class="k">高风险</div><div class="v">3</div></div>
+          <div class="rbox mid"><div class="k">待确认</div><div class="v">2</div></div>
+          <div class="rbox lo"><div class="k">已通过</div><div class="v">7</div></div>
+        </div>
+        <div class="diffbar">
+          <span>与标准模板比对：新增 <b>2</b> 段 · 删除 <b>1</b> 段 · 修改 <b>5</b> 处</span>
+          <span class="sp">查看差异 →</span>
+        </div>
+      </div>
+
+      <div class="opinions">
+        <div class="op on">
+          <div class="hd">
+            <span class="cidx">第八条</span>
+            <span class="ctitle">违约与赔偿</span>
+            <span class="lv hi">高风险</span>
+          </div>
+          <div class="line"><b>问题：</b>赔偿责任未设上限，且包含间接损失与可得利益损失。</div>
+          <div class="sugg">改为「赔偿总额不超过本合同总金额的 20%，不含间接损失与可得利益损失」</div>
+          <div class="basis"><span>A-07 无限责任</span><span>《民法典》第 585 条</span><span>命中置信度 0.96</span></div>
+        </div>
+
+        <div class="op">
+          <div class="hd">
+            <span class="cidx">第十条</span>
+            <span class="ctitle">争议解决</span>
+            <span class="lv hi">高风险</span>
+          </div>
+          <div class="line"><b>问题：</b>约定由甲方（对方）所在地法院管辖，异地诉讼成本高、周期长。</div>
+          <div class="sugg">改为「我方所在地人民法院」或「上海仲裁委员会仲裁」</div>
+          <div class="basis"><span>C-04 管辖约定</span><span>《民事诉讼法》第 35 条</span><span>置信度 0.93</span></div>
+        </div>
+
+        <div class="op">
+          <div class="hd">
+            <span class="cidx">第三条</span>
+            <span class="ctitle">价格与支付</span>
+            <span class="lv mid">待确认</span>
+          </div>
+          <div class="line"><b>问题：</b>验收后 120 天付款，超内部标准 90 天；未约定逾期付款利息。</div>
+          <div class="sugg">压到 60 天，或增加「逾期按日万分之五计息」</div>
+          <div class="basis"><span>B-03 账期</span><span>内部标准 ≤ 90 天</span><span>置信度 0.89</span></div>
+        </div>
+
+
+        <div class="moreop">还有 2 条：第六条 保密（待确认）、第十二条 生效（已通过）　展开 ↓</div>
+      </div>
+
+      <div class="rules">
+        <div class="rt">规则命中（内部审查规则库）
+          <span class="cnt" style="font-family:var(--mono);font-size:10.5px;font-weight:400;color:var(--muted);background:#f5f2ec;padding:1px 6px;border-radius:5px">4 / 18</span>
+        </div>
+        <div class="rlist">
+          <div class="hit">A-07 无限责任 · 命中</div>
+          <div class="hit">C-04 管辖约定 · 命中</div>
+          <div class="hit">B-03 账期超标 · 命中</div>
+          <div class="hit">A-02 保密期 · 命中</div>
+          <div class="pass">B-05 用工责任 · 未涉及</div>
+          <div class="pass">A-11 数据出境 · 未涉及</div>
+        </div>
+      </div>
+
+      <div class="pfoot">
+        <button class="abtn rej">驳回</button>
+        <button class="abtn">修改后通过</button>
+        <button class="abtn gold">生成意见书</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+/* ============================================================
+   这份是静态设计稿，只有很少一点交互，目的是让人能「摸一下」：
+   1. 点原文/差异/批注 三个视图切换（差异视图用同一份文档加不同标记模拟）
+   2. 点右侧意见卡 → 左侧对应条款高亮一下（模拟「意见和条款联动」）
+   ============================================================ */
+
+// 视图切换：只切高亮样式，不重排文档（真实产品里差异视图是另一份渲染结果）
+const segBtns = document.querySelectorAll('.seg button');
+const docEl = document.querySelector('.doc');
+const marks = document.querySelectorAll('mark');
+
+segBtns.forEach(b => {
+  b.addEventListener('click', () => {
+    segBtns.forEach(x => x.classList.remove('on'));
+    b.classList.add('on');
+    const mode = b.textContent.trim();
+    // 差异视图：把风险标黄、改动词加下划线，模拟「与模板不一致的地方」
+    docEl.classList.toggle('diffmode', mode === '与模板差异');
+    // 批注视图：把行内批注气泡收起，只看一处摘要（这里用透明度示意）
+    docEl.classList.toggle('annotmode', mode === '批注');
+  });
+});
+
+// 意见卡 → 条款联动：滚动到对应条款并闪一下
+document.querySelectorAll('.op').forEach(op => {
+  op.addEventListener('click', () => {
+    document.querySelectorAll('.op').forEach(x => x.classList.remove('on'));
+    op.classList.add('on');
+    const idx = op.querySelector('.cidx').textContent.trim();   // 例如「第八条」
+    const target = [...document.querySelectorAll('.clause h4')].find(h => h.textContent.includes(idx));
+    if (!target) return;
+    target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    // 用一次短暂的背景闪动表示「我定位到这一条了」
+    const clause = target.closest('.clause');
+    clause.style.transition = 'background .25s';
+    clause.style.background = '#fffbeb';
+    setTimeout(() => { clause.style.background = 'transparent'; }, 700);
+  });
+});
+</script>
+
+<style>
+  /* 差异 / 批注 两个视图的视觉差异（放在这里方便对照上面的基础样式） */
+  .doc.diffmode mark.risk{
+    background:linear-gradient(180deg,transparent 8%,#fef3c7 8%,#fef3c7 92%,transparent 92%);
+    color:#78350f;box-shadow:inset 3px 0 0 var(--amber);
+  }
+  .doc.diffmode .note{opacity:.35}
+  .doc.annotmode .note{display:none}
+  .doc.annotmode .clause{padding-left:16px}
+</style>
+</body>
+</html>
