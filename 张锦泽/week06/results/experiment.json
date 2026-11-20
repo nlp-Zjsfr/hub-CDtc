@@ -1,0 +1,15 @@
+{
+  "data_sha256": "b343e247ee77c6da2aa1a992e314c31d1b779aaf7d0305b65d09d1bdcc629946",
+  "labels": [
+    "体育",
+    "教育",
+    "科技",
+    "财经"
+  ],
+  "seed": 42,
+  "epochs": 3,
+  "batch_size": 8,
+  "max_length": 64,
+  "bert_model": "google-bert/bert-base-chinese",
+  "roberta_model": "hfl/chinese-roberta-wwm-ext"
+}
