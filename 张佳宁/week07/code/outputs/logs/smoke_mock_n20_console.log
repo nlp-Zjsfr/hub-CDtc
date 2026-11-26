@@ -1,0 +1,25 @@
+数据：dev_extract.jsonl → 采样 20 条（seed=42，规则见 event_data.canonical_order）
+输出：D:\1aSTUDY\AI_Agent\hub-CDtc\张佳宁\week07\code\outputs\llm\pred_smoke_mock_n20.jsonl
+[mock] 离线假模型：不联网、不占 GPU —— 数字仅用于验证流水线，不可写进实验结论！
+  [ 10/20] 合法 10 条，平均 0.00s/条
+  [ 20/20] 合法 19 条，平均 0.00s/条
+
+统计 → D:\1aSTUDY\AI_Agent\hub-CDtc\张佳宁\week07\code\outputs\llm\report_smoke_mock_n20.json（总耗时 0s）
+
+==============================================================================
+结果：smoke_mock_n20（mock/zero，20 条）
+==============================================================================
+  trigger F1   : 0.9744   (P=1.0000 R=0.9500)
+  argument F1  : 0.6094   (P=1.0000 R=0.4382)
+  event  F1    : 0.0000
+  type_macro_f1: 0.9583
+  JSON 合法率  : 95.0%（结构性修复 0 条，围栏/废话剥离 1 条）
+  解析失败     : 1 条 | 空回复 0 条
+  幻觉论元     : 0 次 | 触发词找不到 0 次
+  平均延迟     : 0.0s/条（p50=0.0s）
+  token        : prompt 0 + completion 0 = 0
+统一评测 → D:\1aSTUDY\AI_Agent\hub-CDtc\张佳宁\week07\code\outputs\metrics\llm\smoke_mock_n20.json
+
+⚠ 本次是 mock/--dry-run：指标只证明流水线通了，不能当实验结果。
+
+下一步：把这条预测和其它方案一起画进对比图（eval/plot_compare.py）

@@ -1,0 +1,28 @@
+数据：dev_extract_clean.jsonl → 采样 64 条（seed=42，规则见 event_data.canonical_order）
+输出：D:\1aSTUDY\AI_Agent\hub-CDtc\张佳宁\week07\code\outputs\llm\pred_hw_final_deepseek_n64.jsonl
+[api] base_url=https://api.deepseek.com model=deepseek-flash max_tokens=384 few_shot=False
+  [ 10/64] 合法 10 条，平均 0.75s/条
+  [ 20/64] 合法 20 条，平均 0.72s/条
+  [ 30/64] 合法 30 条，平均 0.75s/条
+  [ 40/64] 合法 40 条，平均 0.75s/条
+  [ 50/64] 合法 50 条，平均 0.77s/条
+  [ 60/64] 合法 60 条，平均 0.78s/条
+  [ 64/64] 合法 64 条，平均 0.78s/条
+
+统计 → D:\1aSTUDY\AI_Agent\hub-CDtc\张佳宁\week07\code\outputs\llm\report_hw_final_deepseek_n64.json（总耗时 50s）
+
+==============================================================================
+结果：hw_final_deepseek_n64（api/zero，64 条）
+==============================================================================
+  trigger F1   : 0.7460   (P=0.7581 R=0.7344)
+  argument F1  : 0.5271   (P=0.5551 R=0.5018)
+  event  F1    : 0.0635
+  type_macro_f1: 0.8270
+  JSON 合法率  : 100.0%（结构性修复 0 条，围栏/废话剥离 0 条）
+  解析失败     : 0 条 | 空回复 0 条
+  幻觉论元     : 3 次 | 触发词找不到 0 次
+  平均延迟     : 0.78s/条（p50=0.778s）
+  token        : prompt 54416 + completion 5948 = 60364
+统一评测 → D:\1aSTUDY\AI_Agent\hub-CDtc\张佳宁\week07\code\outputs\metrics\llm\hw_final_deepseek_n64.json
+
+下一步：把这条预测和其它方案一起画进对比图（eval/plot_compare.py）

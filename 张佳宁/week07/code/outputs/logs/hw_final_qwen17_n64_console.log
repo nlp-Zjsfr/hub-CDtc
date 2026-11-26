@@ -1,0 +1,29 @@
+数据：dev_extract_clean.jsonl → 采样 64 条（seed=42，规则见 event_data.canonical_order）
+输出：D:\1aSTUDY\AI_Agent\hub-CDtc\张佳宁\week07\code\outputs\llm\pred_hw_final_qwen17_n64.jsonl
+[gpu] 当前显存占用 2444 MiB（阈值 1500 MiB）
+[gpu][警告] 显存占用较高，可能有其它 GPU 任务在跑；8GB 卡同时跑两个任务很容易 OOM。
+[local] 设备=cuda 模型=D:\1aSTUDY\AI_Agent\pretrain_models\Qwen3-1.7B batch=8 dtype=bf16
+  [ 16/64] 合法 14 条，平均 0.84s/条
+  [ 24/64] 合法 22 条，平均 0.85s/条
+  [ 32/64] 合法 29 条，平均 0.79s/条
+  [ 40/64] 合法 35 条，平均 0.78s/条
+  [ 56/64] 合法 51 条，平均 0.74s/条
+  [ 64/64] 合法 58 条，平均 0.74s/条
+
+统计 → D:\1aSTUDY\AI_Agent\hub-CDtc\张佳宁\week07\code\outputs\llm\report_hw_final_qwen17_n64.json（总耗时 47s）
+
+==============================================================================
+结果：hw_final_qwen17_n64（local/zero，64 条）
+==============================================================================
+  trigger F1   : 0.4536   (P=0.6667 R=0.3438)
+  argument F1  : 0.2420   (P=0.3174 R=0.1956)
+  event  F1    : 0.0000
+  type_macro_f1: 0.4457
+  JSON 合法率  : 90.62%（结构性修复 0 条，围栏/废话剥离 0 条）
+  解析失败     : 6 条 | 空回复 0 条
+  幻觉论元     : 16 次 | 触发词找不到 3 次
+  平均延迟     : 0.741s/条（p50=0.729s）
+  token        : prompt 58373 + completion 10424 = 68797
+统一评测 → D:\1aSTUDY\AI_Agent\hub-CDtc\张佳宁\week07\code\outputs\metrics\llm\hw_final_qwen17_n64.json
+
+下一步：把这条预测和其它方案一起画进对比图（eval/plot_compare.py）

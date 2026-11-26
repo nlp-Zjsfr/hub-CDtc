@@ -1,0 +1,39 @@
+{
+  "method": "hw_final_rule",
+  "argv": [
+    "rule/run_rule.py",
+    "--data_dir",
+    "data/processed",
+    "--name",
+    "hw_final_rule"
+  ],
+  "args": null,
+  "env": {
+    "python": "3.12.16",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "time": "2026-11-26 21:30:37",
+    "torch": "2.14.1+cu126",
+    "cuda_available": true,
+    "gpu": "NVIDIA GeForce RTX 4080 SUPER",
+    "transformers": "4.55.0"
+  },
+  "runtime_s": 2.32,
+  "metrics": {
+    "trigger": 0.6168,
+    "argument": 0.174,
+    "event_exact": 0.0161
+  },
+  "type_macro_f1": 0.8118,
+  "num_triggers": 99,
+  "num_company_dict": 3679,
+  "trigger_hit_rate": 0.9978,
+  "failure_counts": {
+    "wrong_trigger": 214,
+    "arg_spurious": 517,
+    "wrong_type": 141,
+    "exact": 15,
+    "arg_missing": 41,
+    "no_trigger": 2
+  },
+  "notes": "L0 规则基线（触发词词典 + 正则论元）"
+}

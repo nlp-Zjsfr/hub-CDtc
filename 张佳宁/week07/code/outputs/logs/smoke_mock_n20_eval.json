@@ -1,0 +1,60 @@
+{
+  "method": "smoke_mock_n20",
+  "argv": [
+    "llm_zero_shot\\llm_extract.py",
+    "--dry-run",
+    "--mode",
+    "zero",
+    "--n",
+    "20",
+    "--tag",
+    "smoke_mock_n20"
+  ],
+  "args": "Namespace(backend='api', mode='zero', n=20, seed=42, data=None, tag='smoke_mock_n20', out='', model='deepseek-v4-flash', model_path=None, max_tokens=512, max_new_tokens=384, gen_batch=8, dtype='auto', max_length=1280, retries=3, dry_run=True, print_prompt=False, no_eval=False, from_raw='')",
+  "env": {
+    "python": "3.12.16",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "time": "2026-11-25 22:19:38",
+    "torch": "2.14.1+cu126",
+    "cuda_available": true,
+    "gpu": "NVIDIA GeForce RTX 4080 SUPER",
+    "transformers": "4.55.0"
+  },
+  "runtime_s": 0.13,
+  "metrics": {
+    "trigger": 0.9744,
+    "argument": 0.6094,
+    "event_exact": 0.0
+  },
+  "type_macro_f1": 0.9583,
+  "report": {
+    "tag": "smoke_mock_n20",
+    "backend": "mock",
+    "mode": "zero",
+    "n": 20,
+    "model": "mock",
+    "seed": 42,
+    "few_shot_examples": 0,
+    "json_valid_rate": 95.0,
+    "parse_fail": 1,
+    "empty_reply": 0,
+    "repaired": 0,
+    "noise_stripped": 1,
+    "type_invalid": 0,
+    "role_invalid": 0,
+    "trigger_not_in_source": 0,
+    "arg_not_in_source": 0,
+    "latency_mean_s": 0.0,
+    "latency_p50_s": 0.0,
+    "total_s": 0.0,
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "total_tokens": 0,
+    "api_errors": 0,
+    "pred_path": "D:\\1aSTUDY\\AI_Agent\\hub-CDtc\\张佳宁\\week07\\code\\outputs\\llm\\pred_smoke_mock_n20.jsonl",
+    "gold_subset": "D:\\1aSTUDY\\AI_Agent\\hub-CDtc\\张佳宁\\week07\\code\\outputs\\llm\\gold_n20.jsonl",
+    "eval_ids": "D:\\1aSTUDY\\AI_Agent\\hub-CDtc\\张佳宁\\week07\\code\\outputs\\llm\\eval_ids.json",
+    "is_mock": true
+  },
+  "notes": "LLM api/zero 事件抽取"
+}

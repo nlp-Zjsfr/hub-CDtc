@@ -1,0 +1,17 @@
+epoch 1/1 | train_loss=2.5841 | inner_loss=1.5106 inner_spanF1=0.0000 | dev_spanF1(监控)=0.0000 | 8s
+  ★ 内层验证最优 → 保存 bert_linear_sample.pt
+加载最优 checkpoint（epoch 1，内层验证 spanF1=0.0000）
+dev 解码：300 句，其中没抽到触发词 300 句
+样本数 300（缺预测 0 条）
+  trigger      P=0.0000 R=0.0000 F1=0.0000 (tp=0 fp=0 fn=300)
+  argument     P=0.0000 R=0.0000 F1=0.0000 (tp=0 fp=0 fn=1325)
+  event_exact  P=0.0000 R=0.0000 F1=0.0000 (tp=0 fp=0 fn=300)
+  type_macro_f1 = 0.0000
+  n200 子集：trigger F1=0.0000 arg F1=0.0000 → bert_linear_sample_n200.json
+  指标已写入 → D:\1aSTUDY\AI_Agent\hub-CDtc\张佳宁\week07\code\outputs\metrics\disc\bert_linear_sample.json
+
+【非法 BIO 统计（dev，模型原始输出）】
+  序列数 300：含非法序列 0 条（0.0%），其中非法开头 0 处、非法转移 0 处
+  训练集对照：含非法序列 0 条（0.0%）
+
+训练耗时 8s | 推理延迟 2.69 ms/句 | 峰值显存 1847 MiB
