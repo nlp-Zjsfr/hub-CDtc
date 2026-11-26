@@ -1,0 +1,30 @@
+{"text": "张三在北京的清华大学学习人工智能。", "entities": [{"text": "张三", "start": 0, "end": 2, "type": "PER"}, {"text": "北京", "start": 3, "end": 5, "type": "LOC"}, {"text": "清华大学", "start": 6, "end": 10, "type": "ORG"}]}
+{"text": "李明从上海前往杭州参加会议。", "entities": [{"text": "李明", "start": 0, "end": 2, "type": "PER"}, {"text": "上海", "start": 3, "end": 5, "type": "LOC"}, {"text": "杭州", "start": 7, "end": 9, "type": "LOC"}]}
+{"text": "王伟加入了腾讯。", "entities": [{"text": "王伟", "start": 0, "end": 2, "type": "PER"}, {"text": "腾讯", "start": 5, "end": 7, "type": "ORG"}]}
+{"text": "刘洋毕业于复旦大学，目前住在深圳。", "entities": [{"text": "刘洋", "start": 0, "end": 2, "type": "PER"}, {"text": "复旦大学", "start": 5, "end": 9, "type": "ORG"}, {"text": "深圳", "start": 14, "end": 16, "type": "LOC"}]}
+{"text": "陈晨在浙江大学做研究。", "entities": [{"text": "陈晨", "start": 0, "end": 2, "type": "PER"}, {"text": "浙江大学", "start": 3, "end": 7, "type": "ORG"}]}
+{"text": "赵敏从南京坐高铁去武汉。", "entities": [{"text": "赵敏", "start": 0, "end": 2, "type": "PER"}, {"text": "南京", "start": 3, "end": 5, "type": "LOC"}, {"text": "武汉", "start": 9, "end": 11, "type": "LOC"}]}
+{"text": "广州的中山大学举办学术论坛。", "entities": [{"text": "广州", "start": 0, "end": 2, "type": "LOC"}, {"text": "中山大学", "start": 3, "end": 7, "type": "ORG"}]}
+{"text": "李四计划明年去东京旅行。", "entities": [{"text": "李四", "start": 0, "end": 2, "type": "PER"}, {"text": "东京", "start": 7, "end": 9, "type": "LOC"}]}
+{"text": "新华社报道了成都的科技展。", "entities": [{"text": "新华社", "start": 0, "end": 3, "type": "ORG"}, {"text": "成都", "start": 6, "end": 8, "type": "LOC"}]}
+{"text": "周晓雨在苏州创办了远航科技公司。", "entities": [{"text": "周晓雨", "start": 0, "end": 3, "type": "PER"}, {"text": "苏州", "start": 4, "end": 6, "type": "LOC"}, {"text": "远航科技公司", "start": 9, "end": 15, "type": "ORG"}]}
+{"text": "陈宇前往厦门参观集美大学。", "entities": [{"text": "陈宇", "start": 0, "end": 2, "type": "PER"}, {"text": "厦门", "start": 4, "end": 6, "type": "LOC"}, {"text": "集美大学", "start": 8, "end": 12, "type": "ORG"}]}
+{"text": "黄静在重庆的西南大学读书。", "entities": [{"text": "黄静", "start": 0, "end": 2, "type": "PER"}, {"text": "重庆", "start": 3, "end": 5, "type": "LOC"}, {"text": "西南大学", "start": 6, "end": 10, "type": "ORG"}]}
+{"text": "新加坡迎来了来自马来西亚的游客。", "entities": [{"text": "新加坡", "start": 0, "end": 3, "type": "LOC"}, {"text": "马来西亚", "start": 8, "end": 12, "type": "LOC"}]}
+{"text": "林安在青岛参加了海洋科技展。", "entities": [{"text": "林安", "start": 0, "end": 2, "type": "PER"}, {"text": "青岛", "start": 3, "end": 5, "type": "LOC"}]}
+{"text": "华为在深圳举行新品发布会。", "entities": [{"text": "华为", "start": 0, "end": 2, "type": "ORG"}, {"text": "深圳", "start": 3, "end": 5, "type": "LOC"}]}
+{"text": "小组今天完成了全部实验。", "entities": []}
+{"text": "天气不错，适合散步。", "entities": []}
+{"text": "张三与张三的同事一起参观了故宫。", "entities": [{"text": "张三", "start": 0, "end": 2, "type": "PER"}, {"text": "张三", "start": 3, "end": 5, "type": "PER"}, {"text": "故宫", "start": 13, "end": 15, "type": "LOC"}]}
+{"text": "北京大学的研究团队取得了新进展。", "entities": [{"text": "北京大学", "start": 0, "end": 4, "type": "ORG"}]}
+{"text": "中国银行在上海设立了新的服务网点。", "entities": [{"text": "中国银行", "start": 0, "end": 4, "type": "ORG"}, {"text": "上海", "start": 5, "end": 7, "type": "LOC"}]}
+{"text": "许文在长沙的湖南大学任教。", "entities": [{"text": "许文", "start": 0, "end": 2, "type": "PER"}, {"text": "长沙", "start": 3, "end": 5, "type": "LOC"}, {"text": "湖南大学", "start": 6, "end": 10, "type": "ORG"}]}
+{"text": "赵敏与孙浩一起前往西安。", "entities": [{"text": "赵敏", "start": 0, "end": 2, "type": "PER"}, {"text": "孙浩", "start": 3, "end": 5, "type": "PER"}, {"text": "西安", "start": 9, "end": 11, "type": "LOC"}]}
+{"text": "阿里巴巴在杭州举办技术交流活动。", "entities": [{"text": "阿里巴巴", "start": 0, "end": 4, "type": "ORG"}, {"text": "杭州", "start": 5, "end": 7, "type": "LOC"}]}
+{"text": "刘洋和李明在广州见面。", "entities": [{"text": "刘洋", "start": 0, "end": 2, "type": "PER"}, {"text": "李明", "start": 3, "end": 5, "type": "PER"}, {"text": "广州", "start": 6, "end": 8, "type": "LOC"}]}
+{"text": "吴桐从法国巴黎返回中国。", "entities": [{"text": "吴桐", "start": 0, "end": 2, "type": "PER"}, {"text": "法国", "start": 3, "end": 5, "type": "LOC"}, {"text": "巴黎", "start": 5, "end": 7, "type": "LOC"}, {"text": "中国", "start": 9, "end": 11, "type": "LOC"}]}
+{"text": "明天上午十点开会。", "entities": []}
+{"text": "苏宁易购在南京举行会议。", "entities": [{"text": "苏宁易购", "start": 0, "end": 4, "type": "ORG"}, {"text": "南京", "start": 5, "end": 7, "type": "LOC"}]}
+{"text": "李欣到四川大学参加讲座。", "entities": [{"text": "李欣", "start": 0, "end": 2, "type": "PER"}, {"text": "四川大学", "start": 3, "end": 7, "type": "ORG"}]}
+{"text": "上海交通大学邀请了陈博士参加论坛。", "entities": [{"text": "上海交通大学", "start": 0, "end": 6, "type": "ORG"}, {"text": "陈", "start": 9, "end": 10, "type": "PER"}]}
+{"text": "林晓去昆明探望朋友。", "entities": [{"text": "林晓", "start": 0, "end": 2, "type": "PER"}, {"text": "昆明", "start": 3, "end": 5, "type": "LOC"}]}
