@@ -1,0 +1,46 @@
+{
+  "tag": "bert_cpu300",
+  "dataset": "duee_fin",
+  "task_type": "event",
+  "provider": "local-bert",
+  "model": "bert-base-chinese",
+  "mode": "finetune-2ep",
+  "n": 300,
+  "metrics": {
+    "n": 300,
+    "entity": {
+      "p": 0.0,
+      "r": 0.0,
+      "f1": 0.0
+    },
+    "hallucination_rate": 0.0,
+    "trigger": {
+      "p": 0.0,
+      "r": 0.0,
+      "f1": 0.0
+    },
+    "event_exact": {
+      "p": 0.0,
+      "r": 0.0,
+      "f1": 0.0
+    }
+  },
+  "json_valid": 300,
+  "repaired": 0,
+  "parse_fail": 0,
+  "prompt_tokens": 0,
+  "completion_tokens": 0,
+  "total_tokens": 0,
+  "elapsed_s": 603.9,
+  "is_mock": false,
+  "train_args": {
+    "dataset": "duee_fin",
+    "model": "bert-base-chinese",
+    "epochs": 2,
+    "batch_size": 8,
+    "lr": 3e-05,
+    "max_len": 128,
+    "n": 300,
+    "tag": "bert_cpu300"
+  }
+}

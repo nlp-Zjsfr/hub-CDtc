@@ -1,0 +1,36 @@
+{
+  "tag": "bert_cmeee10_roberta",
+  "dataset": "cmeee",
+  "task_type": "entity",
+  "provider": "local-bert",
+  "model": "chinese-roberta-wwm-ext",
+  "mode": "finetune-10ep",
+  "n": 16,
+  "metrics": {
+    "n": 16,
+    "entity": {
+      "p": 0.8621,
+      "r": 0.7812,
+      "f1": 0.8197
+    },
+    "hallucination_rate": 0.0
+  },
+  "json_valid": 16,
+  "repaired": 0,
+  "parse_fail": 0,
+  "prompt_tokens": 0,
+  "completion_tokens": 0,
+  "total_tokens": 0,
+  "elapsed_s": 45.7,
+  "is_mock": false,
+  "train_args": {
+    "dataset": "cmeee",
+    "model": "chinese-roberta-wwm-ext",
+    "epochs": 10,
+    "batch_size": 8,
+    "lr": 3e-05,
+    "max_len": 256,
+    "n": 16,
+    "tag": "bert_cmeee10_roberta"
+  }
+}
