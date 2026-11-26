@@ -1,0 +1,222 @@
+import os
+import json
+import torch
+import torch.nn as nn
+from torchcrf import CRF
+from collections import defaultdict, Counter
+import numpy as np
+
+EMBEDDING_DIM = 128
+HIDDEN_DIM = 256
+MAX_LEN = 256
+DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+
+class BiLSTM_CRF(nn.Module):
+    def __init__(self, vocab_size, tag2id):
+        super().__init__()
+        self.embedding = nn.Embedding(vocab_size, EMBEDDING_DIM, padding_idx=0)
+        self.lstm = nn.LSTM(EMBEDDING_DIM, HIDDEN_DIM // 2, num_layers=1, bidirectional=True, batch_first=True)
+        self.hidden2tag = nn.Linear(HIDDEN_DIM, len(tag2id))
+        self.crf = CRF(len(tag2id), batch_first=True)
+
+    def forward(self, x, tags=None, mask=None):
+        embeds = self.embedding(x)
+        lstm_out, _ = self.lstm(embeds)
+        emissions = self.hidden2tag(lstm_out)
+        if tags is not None:
+            return -self.crf(emissions, tags, mask=mask, reduction='mean')
+        else:
+            return self.crf.decode(emissions, mask=mask)
+
+def extract_entities(text, pred_tags, id2tag):
+    """从BIO序列中还原出实体"""
+    entities = []
+    current_entity = None
+    
+    for i, tag_id in enumerate(pred_tags):
+        tag = id2tag[tag_id]
+        if tag.startswith("B-"):
+            if current_entity:
+                entities.append(current_entity)
+            current_entity = {"type": tag[2:], "start": i, "text": text[i]}
+        elif tag.startswith("I-") and current_entity and tag[2:] == current_entity["type"]:
+            current_entity["text"] += text[i]
+            current_entity["end"] = i + 1
+        else:
+            if current_entity:
+                entities.append(current_entity)
+                current_entity = None
+                
+    if current_entity:
+        entities.append(current_entity)
+        
+    # 补全缺失的 end 字段
+    for ent in entities:
+        if "end" not in ent:
+            ent["end"] = ent["start"] + len(ent["text"])
+            
+    return entities
+
+def construct_event(entities):
+    """将抽取出的实体拼装为 Event 格式"""
+    trigger = None
+    args = []
+    for ent in entities:
+        if ent["type"] == "Trigger":
+            trigger = ent
+        else:
+            args.append({"role": ent["type"], "text": ent["text"], "start": ent["start"], "end": ent["end"]})
+            
+    if trigger:
+        return {
+            "type": "Unknown", # 序列标注本身无法推断具体是哪类事件（除非你加分类头），这里为了对齐 F1，默认填Unknown，Event F1计算时不强求type，只强求内部元素一致
+            "trigger": {"text": trigger["text"], "start": trigger["start"], "end": trigger["end"]},
+            "args": args
+        }
+    return None
+
+def calculate_f1(tp, fp, fn):
+    p = tp / (tp + fp) if (tp + fp) > 0 else 0.0
+    r = tp / (tp + fn) if (tp + fn) > 0 else 0.0
+    f1 = 2 * p * r / (p + r) if (p + r) > 0 else 0.0
+    return round(p, 4), round(r, 4), round(f1, 4)
+
+def main():
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    root_dir = os.path.dirname(script_dir)
+    model_dir = os.path.join(root_dir, "output", "bilstm_crf")
+    
+    model_path = os.path.join(model_dir, "bilstm_crf_model.pt")
+    dev_text_path = os.path.join(root_dir, "data", "processed", "dev_detect_clean.jsonl")
+    dev_gt_path = os.path.join(root_dir, "data", "processed", "dev_extract_clean.jsonl")
+    output_path = os.path.join(model_dir, "bilstm.jsonl")
+
+    if not os.path.exists(model_path):
+        print(f"❌ 找不到模型: {model_path}，请先运行 bilstm_train.py")
+        return
+
+    print("1. 加载模型与字典...")
+    ckpt = torch.load(model_path, map_location=DEVICE)
+    char2id = ckpt["char2id"]
+    tag2id = ckpt["tag2id"]
+    id2tag = ckpt["id2tag"]
+    
+    model = BiLSTM_CRF(len(char2id), tag2id).to(DEVICE)
+    model.load_state_dict(ckpt["model_state"])
+    model.eval()
+
+    print("2. 加载验证集数据...")
+    gt_data = defaultdict(list)
+    with open(dev_gt_path, 'r', encoding='utf-8') as f:
+        for line in f:
+            if not line.strip(): continue
+            item = json.loads(line)
+            if item.get("event"):
+                gt_data[item["sent_id"]].append(item["event"])
+
+    print("3. 开始推理与计算指标...")
+    print(f"当前使用的设备是: {DEVICE}")
+    stats = {"trig": {"tp":0, "fp":0, "fn":0}, "arg": {"tp":0, "fp":0, "fn":0}, "event": {"tp":0, "fp":0, "fn":0}}
+    results = []
+
+    with open(dev_text_path, 'r', encoding='utf-8') as f, open(output_path, 'w', encoding='utf-8') as f_out:
+        for line in f:
+            if not line.strip(): continue
+            item = json.loads(line)
+            sent_id = item["sent_id"]
+            text = item["text"]
+            
+            # 1. 文本截断
+            if len(text) > MAX_LEN:
+                text = text[:MAX_LEN]
+            
+            # 2. 模型预测
+            x_ids = [char2id.get(c, char2id["<UNK>"]) for c in text]
+            x_tensor = torch.tensor([x_ids]).to(DEVICE)
+            mask = torch.tensor([[1]*len(x_ids)], dtype=torch.bool).to(DEVICE)
+            
+            with torch.no_grad():
+                pred_tags = model(x_tensor, mask=mask)[0]
+                
+            # 3. 解析实体与拼装事件
+            entities = extract_entities(text, pred_tags, id2tag)
+            pred_event = construct_event(entities)
+            true_events = gt_data.get(sent_id, [])
+            
+            # 4. 统计指标 (严格匹配)
+            # Trigger
+            if pred_event:
+                is_trig_match = any(gt["trigger"]["text"] == pred_event["trigger"]["text"] and gt["trigger"]["start"] == pred_event["trigger"]["start"] for gt in true_events)
+                if is_trig_match:
+                    stats["trig"]["tp"] += 1
+                else:
+                    stats["trig"]["fp"] += 1
+                
+                # Args (简化的集合匹配)
+                pred_args = {(a["role"], a["text"], a["start"]) for a in pred_event["args"]}
+                gt_args = set()
+                for gt in true_events:
+                    for a in gt.get("args", []):
+                        gt_args.add((a["role"], a["text"], a["start"]))
+                
+                tp_a = len(pred_args.intersection(gt_args))
+                stats["arg"]["tp"] += tp_a
+                stats["arg"]["fp"] += len(pred_args) - tp_a
+                stats["arg"]["fn"] += len(gt_args) - tp_a
+                
+                # Event (必须 Trigger 和 Args 全对)
+                is_event_match = any(
+                    gt["trigger"]["text"] == pred_event["trigger"]["text"] and 
+                    set((a["role"], a["text"]) for a in gt.get("args", [])) == set((a["role"], a["text"]) for a in pred_event["args"])
+                    for gt in true_events
+                )
+                if is_event_match:
+                    stats["event"]["tp"] += 1
+                else:
+                    stats["event"]["fp"] += 1
+            else:
+                # 没预测出事件
+                pass
+
+            if true_events:
+                stats["trig"]["fn"] += len(true_events)
+                stats["event"]["fn"] += len(true_events)
+                if not pred_event:
+                    for gt in true_events:
+                        stats["arg"]["fn"] += len(gt.get("args", []))
+
+            # 记录结果
+            results.append({
+                "sent_id": sent_id,
+                "text": text,
+                "pred_event": pred_event,
+                "true_events": true_events
+            })
+
+    # 5. 计算全局指标
+    t_p, t_r, t_f1 = calculate_f1(stats["trig"]["tp"], stats["trig"]["fp"], stats["trig"]["fn"])
+    a_p, a_r, a_f1 = calculate_f1(stats["arg"]["tp"], stats["arg"]["fp"], stats["arg"]["fn"])
+    e_p, e_r, e_f1 = calculate_f1(stats["event"]["tp"], stats["event"]["fp"], stats["event"]["fn"])
+
+    metrics = {
+        "Trigger": {"Precision": t_p, "Recall": t_r, "F1": t_f1},
+        "Argument": {"Precision": a_p, "Recall": a_r, "F1": a_f1},
+        "Event": {"Precision": e_p, "Recall": e_r, "F1": e_f1}
+    }
+
+    # 写入输出文件
+    with open(output_path, 'w', encoding='utf-8') as f_out:
+        f_out.write(json.dumps({"global_metrics": metrics}, ensure_ascii=False) + "\n")
+        for res in results:
+            f_out.write(json.dumps(res, ensure_ascii=False) + "\n")
+
+    print("\n" + "="*50)
+    print("✅ BiLSTM+CRF 验证完成！全局指标如下：")
+    print(f" - Trigger F1 : {t_f1:.4f} (P: {t_p:.4f}, R: {t_r:.4f})")
+    print(f" - Argument F1: {a_f1:.4f} (P: {a_p:.4f}, R: {a_r:.4f})")
+    print(f" - Event F1   : {e_f1:.4f} (P: {e_p:.4f}, R: {e_r:.4f})")
+    print(f"\n📁 详细结果已保存至: {output_path}")
+    print("="*50)
+
+if __name__ == "__main__":
+    main()

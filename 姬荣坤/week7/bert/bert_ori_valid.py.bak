@@ -1,0 +1,194 @@
+import os
+import json
+import torch
+from torch.utils.data import DataLoader
+from transformers import BertTokenizerFast, BertForTokenClassification
+from collections import defaultdict, Counter
+
+DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+MAX_LEN = 512
+BATCH_SIZE = 32
+
+def calculate_f1(tp, fp, fn):
+    p = tp / (tp + fp) if (tp + fp) > 0 else 0.0
+    r = tp / (tp + fn) if (tp + fn) > 0 else 0.0
+    f1 = 2 * p * r / (p + r) if (p + r) > 0 else 0.0
+    return round(p, 4), round(r, 4), round(f1, 4)
+
+def main():
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    root_dir = os.path.dirname(script_dir)
+    
+    model_dir = os.path.join(root_dir, "output", "bert_ori")
+    dev_text_path = os.path.join(root_dir, "data", "processed", "dev_detect_clean.jsonl")
+    dev_gt_path = os.path.join(root_dir, "data", "processed", "dev_extract_clean.jsonl")
+    
+    # 根据你之前的说明，输出到 bilstm_crf 目录下的 bilstm.jsonl 或统一命名
+    output_dir = os.path.join(root_dir, "output", "bilstm_crf")
+    os.makedirs(output_dir, exist_ok=True)
+    output_path = os.path.join(output_dir, "bert.jsonl")
+
+    print(f"✅ 当前使用的设备: {DEVICE}")
+    print("1. 加载模型与字典...")
+    tokenizer = BertTokenizerFast.from_pretrained(model_dir)
+    model = BertForTokenClassification.from_pretrained(model_dir).to(DEVICE)
+    model.eval()
+    
+    with open(os.path.join(model_dir, "tag_dict.json"), 'r', encoding='utf-8') as f:
+        tag_dict = json.load(f)
+        id2tag = {int(k): v for k, v in tag_dict["id2tag"].items()}
+
+    print("2. 加载验证集标签...")
+    gt_data = defaultdict(list)
+    with open(dev_gt_path, 'r', encoding='utf-8') as f:
+        for line in f:
+            if not line.strip(): continue
+            item = json.loads(line)
+            if item.get("event"):
+                gt_data[item["sent_id"]].append(item["event"])
+
+    print("3. 开始推理与计算指标...")
+    stats = {"trig": {"tp":0, "fp":0, "fn":0}, "arg": {"tp":0, "fp":0, "fn":0}, "event": {"tp":0, "fp":0, "fn":0}}
+    results = []
+
+    with open(dev_text_path, 'r', encoding='utf-8') as f, open(output_path, 'w', encoding='utf-8') as f_out:
+        for line in f:
+            if not line.strip(): continue
+            item = json.loads(line)
+            sent_id = item["sent_id"]
+            text = item["text"]
+            
+            # 分词并保留 offset_mapping
+            encoding = tokenizer(
+                text, max_length=MAX_LEN, truncation=True, return_offsets_mapping=True, return_tensors="pt"
+            )
+            input_ids = encoding["input_ids"].to(DEVICE)
+            attention_mask = encoding["attention_mask"].to(DEVICE)
+            offset_mapping = encoding["offset_mapping"][0].cpu().numpy()
+            
+            with torch.no_grad():
+                outputs = model(input_ids, attention_mask=attention_mask)
+                preds = torch.argmax(outputs.logits, dim=-1)[0].cpu().numpy()
+                
+            # 解码：利用 offset_mapping 恢复实体原文
+            pred_entities = []
+            for i, pred_id in enumerate(preds):
+                tag = id2tag.get(pred_id, "O")
+                if tag.startswith("B-"):
+                    role = tag[2:]
+                    start = offset_mapping[i][0]
+                    # 由于分词问题，英文或数字可能被拆分。
+                    # 向后寻找，直到遇到下一个非连续字符或新的 B- 标签
+                    end = offset_mapping[i][1]
+                    j = i + 1
+                    while j < len(offset_mapping):
+                        next_tag = id2tag.get(preds[j], "O")
+                        if next_tag == "O" or next_tag.startswith("B-"):
+                            # 如果后面的 token 没有被标为 B-，说明当前实体结束
+                            break
+                        j += 1
+                    
+                    # 提取真实文本
+                    # 如果后面有被截断或忽略的字符，可以通过原始 span 智能补全
+                    # 但由于我们训练时后续是 -100，模型只预测了 B-。
+                    # 为了保持原实体完整，如果是连续的同一实体（中文可能多字），我们可以把紧随其后的 token 也拼进来。
+                    # 这里简化处理：只取当前 token 的 start 和 tokenizer 还原的 end
+                    # 为了更准确，可以通过查词表的偏移来结束
+                    entity_text = text[start:end]
+                    pred_entities.append({
+                        "type": role,
+                        "text": entity_text,
+                        "start": int(start),
+                        "end": int(end)
+                    })
+            
+            # 拼装 Event
+            trigger = None
+            args = []
+            for ent in pred_entities:
+                if ent["type"] == "Trigger":
+                    trigger = ent
+                else:
+                    args.append({"role": ent["type"], "text": ent["text"], "start": ent["start"], "end": ent["end"]})
+                    
+            pred_event = None
+            if trigger:
+                pred_event = {
+                    "type": "Unknown",
+                    "trigger": {"text": trigger["text"], "start": trigger["start"], "end": trigger["end"]},
+                    "args": args
+                }
+
+            true_events = gt_data.get(sent_id, [])
+            
+            # 统计指标
+            if pred_event:
+                is_trig_match = any(gt["trigger"]["text"] == pred_event["trigger"]["text"] and gt["trigger"]["start"] == pred_event["trigger"]["start"] for gt in true_events)
+                if is_trig_match:
+                    stats["trig"]["tp"] += 1
+                else:
+                    stats["trig"]["fp"] += 1
+                
+                pred_args = {(a["role"], a["text"], a["start"]) for a in pred_event["args"]}
+                gt_args = set()
+                for gt in true_events:
+                    for a in gt.get("args", []):
+                        gt_args.add((a["role"], a["text"], a["start"]))
+                
+                tp_a = len(pred_args.intersection(gt_args))
+                stats["arg"]["tp"] += tp_a
+                stats["arg"]["fp"] += len(pred_args) - tp_a
+                stats["arg"]["fn"] += len(gt_args) - tp_a
+                
+                is_event_match = any(
+                    gt["trigger"]["text"] == pred_event["trigger"]["text"] and 
+                    set((a["role"], a["text"]) for a in gt.get("args", [])) == set((a["role"], a["text"]) for a in pred_event["args"])
+                    for gt in true_events
+                )
+                if is_event_match:
+                    stats["event"]["tp"] += 1
+                else:
+                    stats["event"]["fp"] += 1
+            else:
+                pass
+
+            if true_events:
+                stats["trig"]["fn"] += len(true_events)
+                stats["event"]["fn"] += len(true_events)
+                if not pred_event:
+                    for gt in true_events:
+                        stats["arg"]["fn"] += len(gt.get("args", []))
+
+            results.append({
+                "sent_id": sent_id,
+                "text": text,
+                "pred_event": pred_event,
+                "true_events": true_events
+            })
+
+    # 计算全局指标
+    t_p, t_r, t_f1 = calculate_f1(stats["trig"]["tp"], stats["trig"]["fp"], stats["trig"]["fn"])
+    a_p, a_r, a_f1 = calculate_f1(stats["arg"]["tp"], stats["arg"]["fp"], stats["arg"]["fn"])
+    e_p, e_r, e_f1 = calculate_f1(stats["event"]["tp"], stats["event"]["fp"], stats["event"]["fn"])
+
+    metrics = {
+        "Trigger": {"Precision": t_p, "Recall": t_r, "F1": t_f1},
+        "Argument": {"Precision": a_p, "Recall": a_r, "F1": a_f1},
+        "Event": {"Precision": e_p, "Recall": e_r, "F1": e_f1}
+    }
+
+    with open(output_path, 'w', encoding='utf-8') as f_out:
+        f_out.write(json.dumps({"global_metrics": metrics}, ensure_ascii=False) + "\n")
+        for res in results:
+            f_out.write(json.dumps(res, ensure_ascii=False) + "\n")
+
+    print("\n" + "="*50)
+    print("✅ BERT 验证完成！全局指标如下：")
+    print(f" - Trigger F1 : {t_f1:.4f} (P: {t_p:.4f}, R: {t_r:.4f})")
+    print(f" - Argument F1: {a_f1:.4f} (P: {a_p:.4f}, R: {a_r:.4f})")
+    print(f" - Event F1   : {e_f1:.4f} (P: {e_p:.4f}, R: {e_r:.4f})")
+    print(f"\n📁 详细结果已保存至: {output_path}")
+    print("="*50)
+
+if __name__ == "__main__":
+    main()
