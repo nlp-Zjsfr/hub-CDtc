@@ -1,0 +1,155 @@
+[
+  {
+    "doc_id": "60229be25b3f52bdbbd91ea664591a72",
+    "title": "理想汽车拟将美国IPO定价在招股区间顶端或更高水平",
+    "events": [
+      {
+        "type": "公司上市",
+        "trigger": {
+          "text": "IPO",
+          "start": 44,
+          "end": 47
+        },
+        "args": [
+          {
+            "role": "上市公司",
+            "text": "理想汽车",
+            "start": 20,
+            "end": 24
+          },
+          {
+            "role": "发行价格",
+            "text": "8-10美元",
+            "start": 78,
+            "end": 84
+          }
+        ],
+        "sent_idx": 0,
+        "confidence": 1.0
+      }
+    ],
+    "needs_review": false
+  },
+  {
+    "doc_id": "10be7f956da35f15fa4a9ad2a4556960",
+    "title": "北京市监局约谈美团、饿了么等6家网络平台，严禁销售长江禁捕水域水产品",
+    "events": [
+      {
+        "type": "被约谈",
+        "trigger": {
+          "text": "约谈",
+          "start": 76,
+          "end": 78
+        },
+        "args": [
+          {
+            "role": "被约谈方",
+            "text": "美团",
+            "start": 30,
+            "end": 32
+          },
+          {
+            "role": "被约谈方",
+            "text": "饿了么",
+            "start": 33,
+            "end": 36
+          },
+          {
+            "role": "被约谈方",
+            "text": "京东",
+            "start": 37,
+            "end": 39
+          },
+          {
+            "role": "被约谈方",
+            "text": "微店",
+            "start": 40,
+            "end": 42
+          },
+          {
+            "role": "被约谈方",
+            "text": "抖音",
+            "start": 43,
+            "end": 45
+          },
+          {
+            "role": "被约谈方",
+            "text": "快手",
+            "start": 46,
+            "end": 48
+          },
+          {
+            "role": "约谈方",
+            "text": "北京市市场监管局",
+            "start": 13,
+            "end": 22
+          }
+        ],
+        "sent_idx": 0,
+        "confidence": 1.0
+      },
+      {
+        "type": "被约谈",
+        "trigger": {
+          "text": "要求",
+          "start": 94,
+          "end": 96
+        },
+        "args": [
+          {
+            "role": "被约谈方",
+            "text": "电商平台",
+            "start": 97,
+            "end": 101
+          },
+          {
+            "role": "约谈方",
+            "text": "市市场监管局",
+            "start": 88,
+            "end": 94
+          }
+        ],
+        "sent_idx": 1,
+        "confidence": 1.0
+      }
+    ],
+    "needs_review": true
+  },
+  {
+    "doc_id": "be11a1377c0d97bd5f5da146990597fa",
+    "title": "安泰科技间接参股公司天宜上佳22日科创板上市",
+    "events": [
+      {
+        "type": "公司上市",
+        "trigger": {
+          "text": "上市",
+          "start": 24,
+          "end": 26
+        },
+        "args": [
+          {
+            "role": "上市公司",
+            "text": "天宜上佳",
+            "start": 17,
+            "end": 21
+          },
+          {
+            "role": "上市时间",
+            "text": "7月22日",
+            "start": 68,
+            "end": 73
+          },
+          {
+            "role": "上市地点",
+            "text": "上交所科创板",
+            "start": 74,
+            "end": 80
+          }
+        ],
+        "sent_idx": 0,
+        "confidence": 1.0
+      }
+    ],
+    "needs_review": true
+  }
+]
