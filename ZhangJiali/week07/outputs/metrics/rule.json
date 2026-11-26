@@ -1,0 +1,37 @@
+{
+  "num_samples": 930,
+  "missing_predictions": 0,
+  "trigger": {
+    "precision": 0.6175,
+    "recall": 0.6161,
+    "f1": 0.6168,
+    "tp": 573,
+    "fp": 355,
+    "fn": 357
+  },
+  "argument": {
+    "precision": 0.1738,
+    "recall": 0.1742,
+    "f1": 0.174,
+    "tp": 718,
+    "fp": 3413,
+    "fn": 3404
+  },
+  "event_exact": {
+    "precision": 0.0162,
+    "recall": 0.0161,
+    "f1": 0.0161,
+    "tp": 15,
+    "fp": 913,
+    "fn": 915
+  },
+  "type_macro_f1": 0.8118,
+  "meta": {
+    "method": "rule",
+    "train_s": 0.0,
+    "ms_per_sentence": 0.631,
+    "n_triggers": 99,
+    "n_companies": 3679,
+    "num_eval": 930
+  }
+}

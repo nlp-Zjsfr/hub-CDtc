@@ -1,0 +1,38 @@
+{
+  "history": [
+    {
+      "epoch": 1,
+      "train_loss": 186.82081,
+      "inner_span_f1": 0.238921,
+      "elapsed_s": 29.5
+    },
+    {
+      "epoch": 2,
+      "train_loss": 78.581702,
+      "inner_span_f1": 0.491872,
+      "elapsed_s": 28.4
+    },
+    {
+      "epoch": 3,
+      "train_loss": 55.465173,
+      "inner_span_f1": 0.568003,
+      "elapsed_s": 28.7
+    }
+  ],
+  "meta": {
+    "method": "bilstm_crf",
+    "train_s": 86.7,
+    "params_m": 1.31,
+    "ms_per_sentence": 4.0,
+    "peak_gpu_mb": 869.1,
+    "epochs": 3,
+    "max_len": 256,
+    "best_epoch": 3,
+    "inner_span_f1": 0.568,
+    "vocab_size": 3269,
+    "num_labels": 149,
+    "pretrained": false,
+    "seed": 42,
+    "num_eval": 930
+  }
+}

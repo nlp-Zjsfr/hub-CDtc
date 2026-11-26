@@ -1,0 +1,4 @@
+__pycache__/
+*.pyc
+outputs/checkpoints/bert_linear.pt
+pretrained_model/model.safetensors

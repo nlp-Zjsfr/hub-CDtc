@@ -1,0 +1,45 @@
+{
+  "num_samples": 930,
+  "missing_predictions": 0,
+  "trigger": {
+    "precision": 0.9179,
+    "recall": 0.7215,
+    "f1": 0.8079,
+    "tp": 671,
+    "fp": 60,
+    "fn": 259
+  },
+  "argument": {
+    "precision": 0.6473,
+    "recall": 0.4546,
+    "f1": 0.5341,
+    "tp": 1874,
+    "fp": 1021,
+    "fn": 2248
+  },
+  "event_exact": {
+    "precision": 0.1231,
+    "recall": 0.0968,
+    "f1": 0.1084,
+    "tp": 90,
+    "fp": 641,
+    "fn": 840
+  },
+  "type_macro_f1": 0.7207,
+  "meta": {
+    "method": "bilstm_crf",
+    "train_s": 86.7,
+    "params_m": 1.31,
+    "ms_per_sentence": 4.0,
+    "peak_gpu_mb": 869.1,
+    "epochs": 3,
+    "max_len": 256,
+    "best_epoch": 3,
+    "inner_span_f1": 0.568,
+    "vocab_size": 3269,
+    "num_labels": 149,
+    "pretrained": false,
+    "seed": 42,
+    "num_eval": 930
+  }
+}

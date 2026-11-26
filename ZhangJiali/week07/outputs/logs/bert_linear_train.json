@@ -1,0 +1,40 @@
+{
+  "history": [
+    {
+      "epoch": 1,
+      "train_loss": 1.027091,
+      "inner_span_f1": 0.550146,
+      "elapsed_s": 64.1
+    },
+    {
+      "epoch": 2,
+      "train_loss": 0.252478,
+      "inner_span_f1": 0.667674,
+      "elapsed_s": 65.1
+    },
+    {
+      "epoch": 3,
+      "train_loss": 0.18296,
+      "inner_span_f1": 0.684388,
+      "elapsed_s": 65.5
+    }
+  ],
+  "meta": {
+    "method": "bert_linear",
+    "pretrained": "bert-base-chinese",
+    "train_s": 195.7,
+    "params_m": 102.4,
+    "ms_per_sentence": 7.131,
+    "peak_gpu_mb": 4127.6,
+    "epochs": 3,
+    "max_len": 256,
+    "batch_size": 16,
+    "lr": 2e-05,
+    "best_epoch": 3,
+    "inner_span_f1": 0.6844,
+    "num_labels": 149,
+    "n_truncated": 122,
+    "seed": 42,
+    "num_eval": 930
+  }
+}
