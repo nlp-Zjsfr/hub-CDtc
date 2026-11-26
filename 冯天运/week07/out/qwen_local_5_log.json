@@ -1,0 +1,36 @@
+{
+  "tag": "qwen_local_5",
+  "dataset": "duee_fin",
+  "task_type": "event",
+  "provider": "local",
+  "model": "Qwen3-0.6B",
+  "mode": "zero",
+  "n": 5,
+  "metrics": {
+    "n": 5,
+    "entity": {
+      "p": 0.0,
+      "r": 0.0,
+      "f1": 0.0
+    },
+    "hallucination_rate": 0.0,
+    "trigger": {
+      "p": 0.0,
+      "r": 0.0,
+      "f1": 0.0
+    },
+    "event_exact": {
+      "p": 0.0,
+      "r": 0.0,
+      "f1": 0.0
+    }
+  },
+  "json_valid": 4,
+  "repaired": 0,
+  "parse_fail": 1,
+  "prompt_tokens": 0,
+  "completion_tokens": 0,
+  "total_tokens": 0,
+  "elapsed_s": 815.4,
+  "is_mock": false
+}

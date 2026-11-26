@@ -1,0 +1,363 @@
+[
+  {
+    "id": "mini_001",
+    "sent_id": "mini_001",
+    "events": [
+      {
+        "type": "实体集合",
+        "trigger": {
+          "text": "",
+          "start": -1,
+          "end": -1
+        },
+        "args": [
+          {
+            "role": "症状",
+            "text": "发热"
+          },
+          {
+            "role": "症状",
+            "text": "咳嗽"
+          },
+          {
+            "role": "疾病",
+            "text": "肺炎"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "mini_002",
+    "sent_id": "mini_002",
+    "events": [
+      {
+        "type": "实体集合",
+        "trigger": {
+          "text": "",
+          "start": -1,
+          "end": -1
+        },
+        "args": [
+          {
+            "role": "药物",
+            "text": "阿莫西林"
+          },
+          {
+            "role": "治疗",
+            "text": "抗感染治疗"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "mini_003",
+    "sent_id": "mini_003",
+    "events": [
+      {
+        "type": "实体集合",
+        "trigger": {
+          "text": "",
+          "start": -1,
+          "end": -1
+        },
+        "args": [
+          {
+            "role": "检查",
+            "text": "胸部CT"
+          },
+          {
+            "role": "临床表现",
+            "text": "双肺纹理增粗"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "mini_004",
+    "sent_id": "mini_004",
+    "events": [
+      {
+        "type": "实体集合",
+        "trigger": {
+          "text": "",
+          "start": -1,
+          "end": -1
+        },
+        "args": [
+          {
+            "role": "疾病",
+            "text": "高血压"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "mini_005",
+    "sent_id": "mini_005",
+    "events": []
+  },
+  {
+    "id": "mini_006",
+    "sent_id": "mini_006",
+    "events": [
+      {
+        "type": "实体集合",
+        "trigger": {
+          "text": "",
+          "start": -1,
+          "end": -1
+        },
+        "args": [
+          {
+            "role": "解剖部位",
+            "text": "肝脏"
+          },
+          {
+            "role": "身体部位",
+            "text": "上腹"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "mini_007",
+    "sent_id": "mini_007",
+    "events": [
+      {
+        "type": "实体集合",
+        "trigger": {
+          "text": "",
+          "start": -1,
+          "end": -1
+        },
+        "args": [
+          {
+            "role": "药物",
+            "text": "布洛芬"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "mini_008",
+    "sent_id": "mini_008",
+    "events": [
+      {
+        "type": "实体集合",
+        "trigger": {
+          "text": "",
+          "start": -1,
+          "end": -1
+        },
+        "args": [
+          {
+            "role": "检查",
+            "text": "心电图"
+          },
+          {
+            "role": "疾病",
+            "text": "心肌缺血"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "mini_009",
+    "sent_id": "mini_009",
+    "events": [
+      {
+        "type": "实体集合",
+        "trigger": {
+          "text": "",
+          "start": -1,
+          "end": -1
+        },
+        "args": [
+          {
+            "role": "疾病",
+            "text": "糖尿病视网膜病变"
+          },
+          {
+            "role": "治疗",
+            "text": "激光治疗"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "mini_010",
+    "sent_id": "mini_010",
+    "events": [
+      {
+        "type": "实体集合",
+        "trigger": {
+          "text": "",
+          "start": -1,
+          "end": -1
+        },
+        "args": [
+          {
+            "role": "临床表现",
+            "text": "查体"
+          },
+          {
+            "role": "临床表现",
+            "text": "扁桃体肿大"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "mini_011",
+    "sent_id": "mini_011",
+    "events": [
+      {
+        "type": "实体集合",
+        "trigger": {
+          "text": "",
+          "start": -1,
+          "end": -1
+        },
+        "args": [
+          {
+            "role": "检查",
+            "text": "胃镜"
+          },
+          {
+            "role": "疾病",
+            "text": "胃溃疡"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "mini_012",
+    "sent_id": "mini_012",
+    "events": [
+      {
+        "type": "实体集合",
+        "trigger": {
+          "text": "",
+          "start": -1,
+          "end": -1
+        },
+        "args": [
+          {
+            "role": "药物",
+            "text": "阿司匹林"
+          },
+          {
+            "role": "治疗",
+            "text": "抗血小板治疗"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "mini_013",
+    "sent_id": "mini_013",
+    "events": [
+      {
+        "type": "实体集合",
+        "trigger": {
+          "text": "",
+          "start": -1,
+          "end": -1
+        },
+        "args": [
+          {
+            "role": "症状",
+            "text": "头痛"
+          },
+          {
+            "role": "症状",
+            "text": "头晕"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "mini_014",
+    "sent_id": "mini_014",
+    "events": [
+      {
+        "type": "实体集合",
+        "trigger": {
+          "text": "",
+          "start": -1,
+          "end": -1
+        },
+        "args": [
+          {
+            "role": "解剖部位",
+            "text": "肾脏"
+          },
+          {
+            "role": "解剖部位",
+            "text": "心脏"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "mini_015",
+    "sent_id": "mini_015",
+    "events": [
+      {
+        "type": "实体集合",
+        "trigger": {
+          "text": "",
+          "start": -1,
+          "end": -1
+        },
+        "args": [
+          {
+            "role": "科室",
+            "text": "皮肤"
+          },
+          {
+            "role": "疾病",
+            "text": "湿疹"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "mini_016",
+    "sent_id": "mini_016",
+    "events": [
+      {
+        "type": "实体集合",
+        "trigger": {
+          "text": "",
+          "start": -1,
+          "end": -1
+        },
+        "args": [
+          {
+            "role": "检查",
+            "text": "血常规"
+          },
+          {
+            "role": "临床表现",
+            "text": "白细胞升高"
+          }
+        ]
+      }
+    ]
+  }
+]
