@@ -1,0 +1,19 @@
+# 预训练权重不入库：约 1.7 GB，超过 GitHub 单文件 100 MB 限制，
+# 且 GitHub 不允许向公开 fork 上传新的 LFS 对象。需要时按 README 里的命令下载。
+common/pretrain_models/*
+!common/pretrain_models/README.md
+
+# 训练产物（checkpoint 约 400 MB/个）
+outputs/*.pt
+outputs/*.bin
+outputs/*.ckpt
+outputs/*.safetensors
+
+# 由 train_data/*.tgz 自动解压、切分生成，可复现
+train_data/zh.test.csv
+data/domain/
+
+# Python / IDE
+__pycache__/
+*.py[cod]
+.idea/

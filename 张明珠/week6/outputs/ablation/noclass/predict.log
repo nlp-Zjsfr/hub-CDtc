@@ -1,0 +1,19 @@
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 18648.85it/s]
+[transformers] [1mBertModel LOAD REPORT[0m from: D:\hub-CDtc\张明珠\week6\nlp_roberta_backbone_base_std
+Key                                    | Status     |  | 
+---------------------------------------+------------+--+-
+LayerNorm.weight                       | UNEXPECTED |  | 
+cls.predictions.transform.dense.bias   | UNEXPECTED |  | 
+LayerNorm.bias                         | UNEXPECTED |  | 
+cls.predicitions.bias                  | UNEXPECTED |  | 
+cls.predictions.transform.dense.weight | UNEXPECTED |  | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+[load] 忽略 5 个多余 key（预训练头 cls.* / 根部 LayerNorm，正常）
+[eval] ckpt=roberta_ckpt.pt | base -> D:\hub-CDtc\张明珠\week6\nlp_roberta_backbone_base_std
+评测 8901 条（干净集）| 3.8 ms/条 | ECE=0.0969
+| 方法 | 准确率 | Macro-F1 | 解析失败 |
+|---|---|---|---|
+| RoBERTa 微调 | 0.5743 | 0.5682 | 0 |
+→ 结果写入 D:\hub-CDtc\张明珠\week6\outputs\ablation\noclass\pred_full.json

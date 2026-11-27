@@ -1,0 +1,10 @@
+# 本项目实际验证环境：Python 3.14.4；GPU构建详见requirements-lock.txt。
+# 安装到已有可用PyTorch环境时，2.12.0+cu130满足torch==2.12.0。
+torch==2.12.0
+numpy==2.4.4
+scipy==1.18.1
+scikit-learn==1.9.0
+matplotlib==3.11.1
+joblib==1.6.0
+# Windows的zoneinfo需要时区数据库；Linux通常已由系统提供。
+tzdata>=2024.1

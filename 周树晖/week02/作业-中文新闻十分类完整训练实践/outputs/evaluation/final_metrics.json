@@ -1,0 +1,88 @@
+{
+  "evaluated_at": "2026-10-22T12:32:09.211007+08:00",
+  "n_test": 9983,
+  "metrics": {
+    "selected_mlp": {
+      "accuracy": 0.9052389061404388,
+      "macro_f1": 0.9052382984647401,
+      "correct": 9037,
+      "wrong": 946,
+      "accuracy_95ci_wilson": [
+        0.8993367010904032,
+        0.9108293592563117
+      ],
+      "cross_entropy": 0.284769207239151
+    },
+    "linear_baseline": {
+      "accuracy": 0.8984273264549735,
+      "macro_f1": 0.898409562889898,
+      "correct": 8969,
+      "wrong": 1014,
+      "accuracy_95ci_wilson": [
+        0.8923474219291817,
+        0.9042007192224827
+      ],
+      "cross_entropy": 0.33139148354530334
+    },
+    "majority_baseline": {
+      "accuracy": 0.10017028949213663,
+      "macro_f1": 0.018209960848584176,
+      "correct": 1000,
+      "wrong": 8983,
+      "accuracy_95ci_wilson": [
+        0.09443386187465859,
+        0.10621430772763722
+      ]
+    }
+  },
+  "paired_comparison": {
+    "accuracy_difference_mlp_minus_linear": 0.006811579685465291,
+    "paired_bootstrap_95ci": [
+      0.002504257237303416,
+      0.010921065811880194
+    ],
+    "resamples": 1000,
+    "mlp_only_correct": 245,
+    "linear_only_correct": 177
+  },
+  "main_checkpoint": "17be868849443e49d13b25de7804cbb4bb70f2366e149bb1dee3b8910d60d00c",
+  "frozen_at": "2026-10-22T12:28:36.858845+08:00",
+  "classes": [
+    "财经",
+    "房产",
+    "股票",
+    "教育",
+    "科技",
+    "社会",
+    "时政",
+    "体育",
+    "游戏",
+    "娱乐"
+  ],
+  "final_split_metrics": {
+    "train": {
+      "accuracy": 0.9692737273861685,
+      "macro_f1": 0.9692235138436974,
+      "cross_entropy": 0.11166135966777802
+    },
+    "val": {
+      "accuracy": 0.9051197274822163,
+      "macro_f1": 0.9051071973842845,
+      "cross_entropy": 0.30402395129203796
+    }
+  },
+  "test_zero_vector_count": 0,
+  "test_label_counts": [
+    998,
+    993,
+    994,
+    1000,
+    999,
+    999,
+    1000,
+    1000,
+    1000,
+    1000
+  ],
+  "main_test_mean_cross_entropy_torch": 0.2847691774368286
+}

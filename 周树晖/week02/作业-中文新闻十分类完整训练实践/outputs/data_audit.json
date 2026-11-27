@@ -1,0 +1,180 @@
+{
+  "classes": [
+    "财经",
+    "房产",
+    "股票",
+    "教育",
+    "科技",
+    "社会",
+    "时政",
+    "体育",
+    "游戏",
+    "娱乐"
+  ],
+  "raw_sizes": {
+    "train": 180000,
+    "val": 10000,
+    "test": 10000
+  },
+  "clean_sizes": {
+    "test": 9983,
+    "val": 9981,
+    "train": 178707
+  },
+  "invalid_rows": {
+    "train": [],
+    "val": [],
+    "test": []
+  },
+  "conflicting_title_count": 55,
+  "removal_reasons": {
+    "test": {
+      "conflicting_label": 7,
+      "duplicate_within_split": 10
+    },
+    "val": {
+      "duplicate_in_reserved_split": 8,
+      "duplicate_within_split": 6,
+      "conflicting_label": 5
+    },
+    "train": {
+      "duplicate_in_reserved_split": 394,
+      "conflicting_label": 101,
+      "duplicate_within_split": 798
+    }
+  },
+  "overlaps_before": {
+    "train_val": 91,
+    "train_test": 110,
+    "val_test": 8
+  },
+  "overlaps_after": {
+    "train_val": 0,
+    "train_test": 0,
+    "val_test": 0
+  },
+  "split_policy": "保留原始划分；移除全部标签冲突标题；规范化重复按 test > val > train 保留一次。",
+  "raw_class_counts": {
+    "train": {
+      "3": 18000,
+      "4": 18000,
+      "1": 18000,
+      "7": 18000,
+      "5": 18000,
+      "9": 18000,
+      "8": 18000,
+      "2": 18000,
+      "6": 18000,
+      "0": 18000
+    },
+    "val": {
+      "8": 1000,
+      "5": 1000,
+      "2": 1000,
+      "0": 1000,
+      "7": 1000,
+      "1": 1000,
+      "3": 1000,
+      "6": 1000,
+      "4": 1000,
+      "9": 1000
+    },
+    "test": {
+      "3": 1000,
+      "9": 1000,
+      "0": 1000,
+      "8": 1000,
+      "6": 1000,
+      "1": 1000,
+      "4": 1000,
+      "5": 1000,
+      "7": 1000,
+      "2": 1000
+    }
+  },
+  "clean_class_counts": {
+    "test": {
+      "3": 1000,
+      "9": 1000,
+      "0": 998,
+      "8": 1000,
+      "6": 1000,
+      "1": 993,
+      "4": 999,
+      "5": 999,
+      "7": 1000,
+      "2": 994
+    },
+    "val": {
+      "8": 1000,
+      "5": 999,
+      "2": 991,
+      "0": 1000,
+      "7": 1000,
+      "1": 993,
+      "3": 999,
+      "6": 999,
+      "4": 1000,
+      "9": 1000
+    },
+    "train": {
+      "3": 17971,
+      "4": 17962,
+      "1": 17271,
+      "7": 18000,
+      "5": 17989,
+      "9": 17998,
+      "8": 17946,
+      "2": 17697,
+      "6": 17969,
+      "0": 17904
+    }
+  },
+  "title_lengths": {
+    "test": {
+      "min": 4,
+      "median": 19.0,
+      "p95": 25.0,
+      "max": 32
+    },
+    "val": {
+      "min": 4,
+      "median": 19.0,
+      "p95": 25.0,
+      "max": 33
+    },
+    "train": {
+      "min": 3,
+      "median": 19.0,
+      "p95": 25.0,
+      "max": 38
+    }
+  },
+  "features": {
+    "dimension": 5000,
+    "analyzer": "char",
+    "ngram_range": [
+      1,
+      2
+    ],
+    "fit_split": "train_only",
+    "min_df": 2,
+    "sublinear_tf": true,
+    "train_nonzero": 4311917,
+    "train_density": 0.004825683381177011,
+    "val_zero_vector_count": 0
+  },
+  "preparation_seconds": 9.638528899999983,
+  "source_classes": [
+    "finance",
+    "realty",
+    "stocks",
+    "education",
+    "science",
+    "society",
+    "politics",
+    "sports",
+    "game",
+    "entertainment"
+  ]
+}

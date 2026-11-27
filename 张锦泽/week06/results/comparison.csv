@@ -1,0 +1,3 @@
+﻿method,accuracy,precision_macro,recall_macro,f1_macro,training_seconds,validation_f1_macro,best_epoch,device,seed,n_train,n_val,n_test,data_sha256,model_source,learning_rate
+tfidf_lr,1.0,1.0,1.0,1.0,0.03949758300018402,1.0,,cpu,42,80,20,20,b343e247ee77c6da2aa1a992e314c31d1b779aaf7d0305b65d09d1bdcc629946,TF-IDF(char 1-2gram),
+tfidf_nb,1.0,1.0,1.0,1.0,0.02534050000008392,1.0,,cpu,42,80,20,20,b343e247ee77c6da2aa1a992e314c31d1b779aaf7d0305b65d09d1bdcc629946,TF-IDF(char 1-2gram),

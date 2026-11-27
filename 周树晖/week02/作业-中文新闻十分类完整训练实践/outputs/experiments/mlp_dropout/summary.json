@@ -1,0 +1,38 @@
+{
+  "name": "mlp_dropout",
+  "config": {
+    "hidden_dims": [
+      128,
+      64
+    ],
+    "lr": 0.001,
+    "batch_size": 256,
+    "dropout": 0.2,
+    "weight_decay": 0.0,
+    "scheduler": false,
+    "max_epochs": 18,
+    "early_stopping_patience": 4,
+    "min_delta": 0.0001,
+    "gradient_clip_norm": 5.0,
+    "optimizer": "Adam",
+    "name": "mlp_dropout",
+    "question": "只在隐藏层ReLU后加入Dropout(0.2)"
+  },
+  "seed": 42,
+  "data_signature": {
+    "train": "438c34baa94d0de365731d6c56c9efa2c404587af9ad3765e57539e3a9795ace",
+    "val": "f98dc93a705c831b99446ec9b9219d97bbaf83f788249c0214e46e116dc6aa78",
+    "vectorizer": "bd55a7337b5311d712d77bbcc82383ff49285cae7bc41f3a171671f8d3ba1f17"
+  },
+  "best_epoch": 5,
+  "epochs_ran": 9,
+  "best_val_macro_f1": 0.9006597500112388,
+  "best_val_accuracy": 0.9006111612062919,
+  "best_val_loss": 0.3196147539945036,
+  "parameter_count": 649034,
+  "seconds": 15.384177200000067,
+  "checkpoint": "models/mlp_dropout.pt",
+  "stopped_early": true,
+  "steps_per_epoch": 699,
+  "total_steps": 6291
+}

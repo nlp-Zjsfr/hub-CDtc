@@ -1,0 +1,78 @@
+[
+  {
+    "name": "robustness_seed_7",
+    "config": {
+      "hidden_dims": [
+        128,
+        64
+      ],
+      "lr": 0.001,
+      "batch_size": 256,
+      "dropout": 0.2,
+      "weight_decay": 0.0001,
+      "scheduler": true,
+      "max_epochs": 18,
+      "early_stopping_patience": 4,
+      "min_delta": 0.0001,
+      "gradient_clip_norm": 5.0,
+      "optimizer": "Adam",
+      "name": "mlp_combined",
+      "question": "预先设定的组合策略，不能单独归因于其中任何一项"
+    },
+    "seed": 7,
+    "data_signature": {
+      "train": "438c34baa94d0de365731d6c56c9efa2c404587af9ad3765e57539e3a9795ace",
+      "val": "f98dc93a705c831b99446ec9b9219d97bbaf83f788249c0214e46e116dc6aa78",
+      "vectorizer": "bd55a7337b5311d712d77bbcc82383ff49285cae7bc41f3a171671f8d3ba1f17"
+    },
+    "best_epoch": 17,
+    "epochs_ran": 18,
+    "best_val_macro_f1": 0.9054371407849644,
+    "best_val_accuracy": 0.9055204889289651,
+    "best_val_loss": 0.32006352383248876,
+    "parameter_count": 649034,
+    "seconds": 32.89470829999982,
+    "checkpoint": "models/robustness_seed_7.pt",
+    "stopped_early": false,
+    "steps_per_epoch": 699,
+    "total_steps": 12582
+  },
+  {
+    "name": "robustness_seed_2026",
+    "config": {
+      "hidden_dims": [
+        128,
+        64
+      ],
+      "lr": 0.001,
+      "batch_size": 256,
+      "dropout": 0.2,
+      "weight_decay": 0.0001,
+      "scheduler": true,
+      "max_epochs": 18,
+      "early_stopping_patience": 4,
+      "min_delta": 0.0001,
+      "gradient_clip_norm": 5.0,
+      "optimizer": "Adam",
+      "name": "mlp_combined",
+      "question": "预先设定的组合策略，不能单独归因于其中任何一项"
+    },
+    "seed": 2026,
+    "data_signature": {
+      "train": "438c34baa94d0de365731d6c56c9efa2c404587af9ad3765e57539e3a9795ace",
+      "val": "f98dc93a705c831b99446ec9b9219d97bbaf83f788249c0214e46e116dc6aa78",
+      "vectorizer": "bd55a7337b5311d712d77bbcc82383ff49285cae7bc41f3a171671f8d3ba1f17"
+    },
+    "best_epoch": 11,
+    "epochs_ran": 15,
+    "best_val_macro_f1": 0.9063330997221317,
+    "best_val_accuracy": 0.9065223925458371,
+    "best_val_loss": 0.3076256707201691,
+    "parameter_count": 649034,
+    "seconds": 26.67862359999981,
+    "checkpoint": "models/robustness_seed_2026.pt",
+    "stopped_early": true,
+    "steps_per_epoch": 699,
+    "total_steps": 10485
+  }
+]

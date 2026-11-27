@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+.venv/
+# 可保留 CSV/JSON 作为作业结果，较大的模型权重通常不提交到 Git。
+results/*/model.joblib
+results/*/model.safetensors

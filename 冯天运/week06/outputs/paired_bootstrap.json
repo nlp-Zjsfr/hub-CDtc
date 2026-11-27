@@ -1,0 +1,115 @@
+{
+  "n": 8901,
+  "iters": 2000,
+  "seed": 42,
+  "macro_f1_a": 0.3831,
+  "macro_f1_b": 0.4399,
+  "delta_macro_f1": 0.0567,
+  "ci95": [
+    0.0456,
+    0.0675
+  ],
+  "significant": true,
+  "sample_flips": {
+    "both_correct": 2713,
+    "only_a_correct": 888,
+    "only_b_correct": 1391,
+    "neither_correct": 3909,
+    "net_changed": 503,
+    "net_changed_pct": 5.65
+  },
+  "per_class": [
+    {
+      "cls": "财经",
+      "f1_a": 0.1449,
+      "f1_b": 0.3214,
+      "delta": 0.1766
+    },
+    {
+      "cls": "电竞",
+      "f1_a": 0.4653,
+      "f1_b": 0.5972,
+      "delta": 0.132
+    },
+    {
+      "cls": "证券",
+      "f1_a": 0.1172,
+      "f1_b": 0.246,
+      "delta": 0.1288
+    },
+    {
+      "cls": "军事",
+      "f1_a": 0.3734,
+      "f1_b": 0.502,
+      "delta": 0.1286
+    },
+    {
+      "cls": "房产",
+      "f1_a": 0.4254,
+      "f1_b": 0.523,
+      "delta": 0.0976
+    },
+    {
+      "cls": "旅游",
+      "f1_a": 0.3997,
+      "f1_b": 0.4815,
+      "delta": 0.0818
+    },
+    {
+      "cls": "农业",
+      "f1_a": 0.2978,
+      "f1_b": 0.3561,
+      "delta": 0.0583
+    },
+    {
+      "cls": "教育",
+      "f1_a": 0.459,
+      "f1_b": 0.5031,
+      "delta": 0.044
+    },
+    {
+      "cls": "汽车",
+      "f1_a": 0.5643,
+      "f1_b": 0.5941,
+      "delta": 0.0298
+    },
+    {
+      "cls": "文化",
+      "f1_a": 0.2981,
+      "f1_b": 0.3165,
+      "delta": 0.0183
+    },
+    {
+      "cls": "娱乐",
+      "f1_a": 0.5458,
+      "f1_b": 0.5548,
+      "delta": 0.009
+    },
+    {
+      "cls": "故事",
+      "f1_a": 0.3543,
+      "f1_b": 0.352,
+      "delta": -0.0023
+    },
+    {
+      "cls": "科技",
+      "f1_a": 0.4082,
+      "f1_b": 0.395,
+      "delta": -0.0132
+    },
+    {
+      "cls": "体育",
+      "f1_a": 0.6636,
+      "f1_b": 0.649,
+      "delta": -0.0146
+    },
+    {
+      "cls": "国际",
+      "f1_a": 0.2297,
+      "f1_b": 0.2061,
+      "delta": -0.0235
+    }
+  ],
+  "source_a": "F:\\冯天运\\AI\\AI大模型&Agent\\八斗\\主课程\\week6-分类任务\\作业\\code\\outputs\\bert_pred_bert-base-chinese_s50_full.json",
+  "source_b": "F:\\冯天运\\AI\\AI大模型&Agent\\八斗\\主课程\\week6-分类任务\\作业\\code\\outputs\\bert_pred_chinese-roberta-wwm-ext_s50_full.json"
+}

@@ -1,0 +1,32 @@
+{
+  "repository": "https://github.com/649453932/Chinese-Text-Classification-Pytorch",
+  "commit": "109e2aac8ada85096f839f6e5619a2f0a1774eb4",
+  "prepared_at": "2026-10-22T12:22:57.540920+08:00",
+  "description": "THUCNews 的公开十分类新闻标题子集；不是74万篇原始新闻全文。",
+  "files": [
+    {
+      "file": "class.txt",
+      "url": "https://raw.githubusercontent.com/649453932/Chinese-Text-Classification-Pytorch/109e2aac8ada85096f839f6e5619a2f0a1774eb4/THUCNews/data/class.txt",
+      "bytes": 82,
+      "sha256": "005e8813ad639c219e5902dc84889202b4a717b4238497d26c3fbd5e43927a86"
+    },
+    {
+      "file": "train.txt",
+      "url": "https://raw.githubusercontent.com/649453932/Chinese-Text-Classification-Pytorch/109e2aac8ada85096f839f6e5619a2f0a1774eb4/THUCNews/data/train.txt",
+      "bytes": 9946122,
+      "sha256": "ba6fcbbb8fb809a9eb2be443b6b4db533c147861d94ebe0931b8c6092d8abe94"
+    },
+    {
+      "file": "dev.txt",
+      "url": "https://raw.githubusercontent.com/649453932/Chinese-Text-Classification-Pytorch/109e2aac8ada85096f839f6e5619a2f0a1774eb4/THUCNews/data/dev.txt",
+      "bytes": 551313,
+      "sha256": "6ed73aa2c57ee1560c8f76570d48735c4b1c29ae4983fe3523d56e115813e175"
+    },
+    {
+      "file": "test.txt",
+      "url": "https://raw.githubusercontent.com/649453932/Chinese-Text-Classification-Pytorch/109e2aac8ada85096f839f6e5619a2f0a1774eb4/THUCNews/data/test.txt",
+      "bytes": 551596,
+      "sha256": "ebecc8c896635ad69730083ca7b81d37c42c9a5779bc05c9d2479d894e34f026"
+    }
+  ]
+}

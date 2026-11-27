@@ -1,0 +1,74 @@
+[
+  {
+    "epoch": 1,
+    "train_loss": 0.4120098646107875,
+    "train_accuracy_online": 0.8683095793673443,
+    "val_loss": 0.3432951532472244,
+    "val_accuracy": 0.8889890792505761,
+    "val_macro_f1": 0.8890883301918476,
+    "lr_used": 0.01,
+    "lr_next": 0.01,
+    "max_gradient_norm_before_clip": 0.9401118159294128,
+    "seconds": 1.4718502000000626
+  },
+  {
+    "epoch": 2,
+    "train_loss": 0.23727639725920083,
+    "train_accuracy_online": 0.9205067512744325,
+    "val_loss": 0.3371836359688878,
+    "val_accuracy": 0.8973048792706142,
+    "val_macro_f1": 0.8972503182766767,
+    "lr_used": 0.01,
+    "lr_next": 0.01,
+    "max_gradient_norm_before_clip": 0.4650323688983917,
+    "seconds": 1.5065534000000298
+  },
+  {
+    "epoch": 3,
+    "train_loss": 0.14926853470345314,
+    "train_accuracy_online": 0.948116190188409,
+    "val_loss": 0.3860040100360607,
+    "val_accuracy": 0.8914938382927562,
+    "val_macro_f1": 0.8916830064471603,
+    "lr_used": 0.01,
+    "lr_next": 0.01,
+    "max_gradient_norm_before_clip": 0.7784508466720581,
+    "seconds": 1.45030480000014
+  },
+  {
+    "epoch": 4,
+    "train_loss": 0.09060126942250443,
+    "train_accuracy_online": 0.9682273218172763,
+    "val_loss": 0.45446658710143023,
+    "val_accuracy": 0.8868850816551448,
+    "val_macro_f1": 0.8871180537389949,
+    "lr_used": 0.01,
+    "lr_next": 0.01,
+    "max_gradient_norm_before_clip": 1.5535478591918945,
+    "seconds": 1.4366995000000315
+  },
+  {
+    "epoch": 5,
+    "train_loss": 0.06075441509181229,
+    "train_accuracy_online": 0.9786801860027867,
+    "val_loss": 0.5889249174261174,
+    "val_accuracy": 0.8808736599539124,
+    "val_macro_f1": 0.8806081280660318,
+    "lr_used": 0.01,
+    "lr_next": 0.01,
+    "max_gradient_norm_before_clip": 0.7425367832183838,
+    "seconds": 1.440151099999639
+  },
+  {
+    "epoch": 6,
+    "train_loss": 0.04348482421208319,
+    "train_accuracy_online": 0.9850649386985401,
+    "val_loss": 0.699588996926191,
+    "val_accuracy": 0.8811742310389741,
+    "val_macro_f1": 0.8808904595700883,
+    "lr_used": 0.01,
+    "lr_next": 0.01,
+    "max_gradient_norm_before_clip": 0.8049435615539551,
+    "seconds": 1.5542358000002423
+  }
+]

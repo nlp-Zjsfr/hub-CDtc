@@ -1,0 +1,74 @@
+[
+  {
+    "epoch": 1,
+    "train_loss": 0.44455890962581207,
+    "train_accuracy_online": 0.8655396822732182,
+    "val_loss": 0.335515849254208,
+    "val_accuracy": 0.8897906021440738,
+    "val_macro_f1": 0.8900474805113884,
+    "lr_used": 0.001,
+    "lr_next": 0.001,
+    "max_gradient_norm_before_clip": 1.4874099493026733,
+    "seconds": 5.822394799999984
+  },
+  {
+    "epoch": 2,
+    "train_loss": 0.2645365170012926,
+    "train_accuracy_online": 0.9125663796046042,
+    "val_loss": 0.3202656091495717,
+    "val_accuracy": 0.8983067828874862,
+    "val_macro_f1": 0.898312813913509,
+    "lr_used": 0.001,
+    "lr_next": 0.001,
+    "max_gradient_norm_before_clip": 1.2028292417526245,
+    "seconds": 5.662463800000296
+  },
+  {
+    "epoch": 3,
+    "train_loss": 0.2155406833881717,
+    "train_accuracy_online": 0.9272272490725042,
+    "val_loss": 0.32638110890917355,
+    "val_accuracy": 0.8980062118024246,
+    "val_macro_f1": 0.8977801836314558,
+    "lr_used": 0.001,
+    "lr_next": 0.001,
+    "max_gradient_norm_before_clip": 1.2505015134811401,
+    "seconds": 5.706561299999976
+  },
+  {
+    "epoch": 4,
+    "train_loss": 0.1713573820380567,
+    "train_accuracy_online": 0.9410991175499561,
+    "val_loss": 0.34235295168730745,
+    "val_accuracy": 0.8979060214407374,
+    "val_macro_f1": 0.8981189388850066,
+    "lr_used": 0.001,
+    "lr_next": 0.001,
+    "max_gradient_norm_before_clip": 1.128406286239624,
+    "seconds": 5.954480400000193
+  },
+  {
+    "epoch": 5,
+    "train_loss": 0.12588150576082638,
+    "train_accuracy_online": 0.9573883507640999,
+    "val_loss": 0.38194825723073056,
+    "val_accuracy": 0.8944995491433724,
+    "val_macro_f1": 0.8946203985612753,
+    "lr_used": 0.001,
+    "lr_next": 0.001,
+    "max_gradient_norm_before_clip": 2.0295534133911133,
+    "seconds": 5.556284700000106
+  },
+  {
+    "epoch": 6,
+    "train_loss": 0.08305620154428758,
+    "train_accuracy_online": 0.9727598806985737,
+    "val_loss": 0.4458514329080722,
+    "val_accuracy": 0.8941989780583108,
+    "val_macro_f1": 0.8939518447778999,
+    "lr_used": 0.001,
+    "lr_next": 0.001,
+    "max_gradient_norm_before_clip": 1.1668808460235596,
+    "seconds": 6.005538599999909
+  }
+]

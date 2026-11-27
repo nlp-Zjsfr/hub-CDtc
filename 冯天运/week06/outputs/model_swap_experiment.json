@@ -1,0 +1,108 @@
+{
+  "design": {
+    "steps": 50,
+    "batch_size": 64,
+    "lr": 2e-05,
+    "pool": "cls",
+    "class_weight": true,
+    "loss": "CE",
+    "eval_set": "去重干净集 500 条（seed=42，与 summary.md 同口径）",
+    "note": "受本机 CPU 限制（bert-base 1 epoch 实测 15978 s），采用等步数对照，绝对值低于完整 3 epoch 训练，但两模型之间可比。"
+  },
+  "results": [
+    {
+      "model": "chinese-roberta-wwm-ext",
+      "tag": "chinese-roberta-wwm-ext",
+      "train": {
+        "cmd": [
+          "C:\\Program Files\\Python312\\python.exe",
+          "bert/train_bert.py",
+          "--epochs",
+          "1",
+          "--max_steps",
+          "50",
+          "--max_eval",
+          "500",
+          "--log_every",
+          "10",
+          "--ckpt_out",
+          "ckpt_chinese-roberta-wwm-ext_s50.pt"
+        ],
+        "rc": 0,
+        "seconds": 902.8,
+        "log": "F:\\冯天运\\AI\\AI大模型&Agent\\八斗\\主课程\\week6-分类任务\\作业\\code\\outputs\\swap_chinese-roberta-wwm-ext.log"
+      },
+      "predict": {
+        "cmd": [
+          "C:\\Program Files\\Python312\\python.exe",
+          "bert/predict_bert.py",
+          "--ckpt",
+          "outputs/ckpt_chinese-roberta-wwm-ext_s50.pt",
+          "--n",
+          "500",
+          "--out",
+          "outputs/bert_pred_chinese-roberta-wwm-ext_s50.json"
+        ],
+        "rc": 0,
+        "seconds": 28.5,
+        "log": "F:\\冯天运\\AI\\AI大模型&Agent\\八斗\\主课程\\week6-分类任务\\作业\\code\\outputs\\swap_chinese-roberta-wwm-ext_pred.log"
+      },
+      "eval": {
+        "n_eval": 500,
+        "acc": 0.446,
+        "macro_f1": 0.4277,
+        "acc_incl_unparsed": 0.446,
+        "ece": 0.2573,
+        "ms_per_sample": 38.2,
+        "unparsed": 0
+      }
+    },
+    {
+      "model": "bert-base-chinese",
+      "tag": "bert-base-chinese",
+      "train": {
+        "cmd": [
+          "C:\\Program Files\\Python312\\python.exe",
+          "bert/train_bert.py",
+          "--epochs",
+          "1",
+          "--max_steps",
+          "50",
+          "--max_eval",
+          "500",
+          "--log_every",
+          "10",
+          "--ckpt_out",
+          "ckpt_bert-base-chinese_s50.pt"
+        ],
+        "rc": 0,
+        "seconds": 980.7,
+        "log": "F:\\冯天运\\AI\\AI大模型&Agent\\八斗\\主课程\\week6-分类任务\\作业\\code\\outputs\\swap_bert-base-chinese.log"
+      },
+      "predict": {
+        "cmd": [
+          "C:\\Program Files\\Python312\\python.exe",
+          "bert/predict_bert.py",
+          "--ckpt",
+          "outputs/ckpt_bert-base-chinese_s50.pt",
+          "--n",
+          "500",
+          "--out",
+          "outputs/bert_pred_bert-base-chinese_s50.json"
+        ],
+        "rc": 0,
+        "seconds": 50.6,
+        "log": "F:\\冯天运\\AI\\AI大模型&Agent\\八斗\\主课程\\week6-分类任务\\作业\\code\\outputs\\swap_bert-base-chinese_pred.log"
+      },
+      "eval": {
+        "n_eval": 500,
+        "acc": 0.412,
+        "macro_f1": 0.3964,
+        "acc_incl_unparsed": 0.412,
+        "ece": 0.2053,
+        "ms_per_sample": 85.8,
+        "unparsed": 0
+      }
+    }
+  ]
+}

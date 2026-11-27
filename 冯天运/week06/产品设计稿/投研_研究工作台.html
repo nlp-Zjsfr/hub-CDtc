@@ -1,0 +1,1010 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>八斗投研工作台 · 产品效果图</title>
+<style>
+  /* ============ 设计基调 ============
+     这份 HTML 是「九周做完之后长什么样」的静态效果图，不连后端、不调模型。
+     配色沿用 week6 架构图（蓝/青/绿/紫/琥珀），保证 PPT 里前后一致。 */
+  :root{
+    --ink:#0f172a; --text:#334155; --sub:#64748b; --muted:#94a3b8;
+    --line:#e4eaf2; --line2:#eef2f7;
+    --bg:#eef2f7; --card:#ffffff;
+    --blue:#2563eb; --cyan:#0891b2; --green:#059669; --amber:#d97706;
+    --violet:#7c3aed; --red:#dc2626;
+    --nav:#0f1a2e; --nav2:#16233c;
+    --shadow:0 1px 2px rgba(15,23,42,.05), 0 10px 26px rgba(15,23,42,.07);
+    --sans:"Microsoft YaHei","PingFang SC","Noto Sans SC",system-ui,sans-serif;
+    --mono:Consolas,"Cascadia Mono",ui-monospace,monospace;
+  }
+  *{box-sizing:border-box}
+  html,body{height:100%;margin:0}
+  body{
+    font-family:var(--sans); font-size:13.5px; color:var(--text);
+    background:var(--bg); overflow:hidden;
+    -webkit-font-smoothing:antialiased;
+  }
+  .app{display:grid;grid-template-columns:200px 1fr;height:100vh}
+
+  /* ================= 左侧导航 ================= */
+  .sidebar{
+    background:linear-gradient(175deg,var(--nav),var(--nav2));
+    color:#cbd5e1; display:flex; flex-direction:column; padding:18px 12px 14px;
+  }
+  .brand{display:flex;align-items:center;gap:10px;padding:0 6px 18px}
+  .logo{
+    width:34px;height:34px;border-radius:9px;flex:none;
+    background:linear-gradient(140deg,#22d3ee,#2563eb);
+    color:#fff;font-weight:700;font-size:18px;
+    display:grid;place-items:center;
+    box-shadow:0 4px 12px rgba(37,99,235,.45);
+  }
+  .bname{font-size:14.5px;font-weight:700;color:#f1f5f9;letter-spacing:.3px}
+  .bsub{font-size:10.5px;color:#7c8ca6;font-family:var(--mono);margin-top:2px}
+  .navlabel{font-size:11px;color:#5c708c;padding:0 10px 8px;letter-spacing:1px}
+  nav{display:flex;flex-direction:column;gap:3px}
+  .nav{
+    display:flex;align-items:center;gap:9px;
+    padding:9px 10px;border-radius:8px;border:0;cursor:pointer;
+    background:transparent;color:#a9b8cd;font:inherit;font-size:13px;text-align:left;
+    transition:background .14s,color .14s;
+  }
+  .nav:hover{background:rgba(255,255,255,.06);color:#e2e8f0}
+  .nav.on{background:rgba(37,99,235,.20);color:#fff;box-shadow:inset 2px 0 0 #22d3ee}
+  .nav .ic{width:16px;text-align:center;font-size:12px;opacity:.85;flex:none}
+  .nav .badge{
+    margin-left:auto;font-family:var(--mono);font-size:10px;
+    padding:1px 5px;border-radius:5px;background:rgba(34,211,238,.18);color:#67e8f9;
+  }
+  .sidefoot{margin-top:auto;padding:12px 10px 4px;border-top:1px solid rgba(255,255,255,.08)}
+  .sf-title{font-size:11.5px;color:#8fa2bb}
+  .dots{display:flex;gap:4px;margin:8px 0 7px}
+  .dot{width:100%;height:4px;border-radius:3px;background:#22d3ee;opacity:.85}
+  .dot.wk{background:#fbbf24;opacity:1}
+  .sf-note{font-size:10.5px;color:#5c708c;font-family:var(--mono)}
+
+  /* ================= 主区 ================= */
+  .main{display:grid;grid-template-rows:52px 1fr 34px;min-width:0;background:var(--bg)}
+  .topbar{
+    display:flex;align-items:center;gap:12px;padding:0 18px;
+    background:#fff;border-bottom:1px solid var(--line);
+  }
+  .search{
+    display:flex;align-items:center;gap:8px;width:320px;
+    padding:6px 11px;border:1px solid var(--line);border-radius:8px;
+    color:var(--muted);font-size:12.5px;background:#f8fafc;
+  }
+  .search svg{flex:none}
+  .kbd{margin-left:auto;font-family:var(--mono);font-size:10.5px;color:#b0bccd;border:1px solid var(--line);border-radius:4px;padding:0 4px}
+  .tb-right{margin-left:auto;display:flex;align-items:center;gap:8px}
+  .pill{
+    font-size:11px;padding:4px 9px;border-radius:999px;
+    border:1px solid var(--line);color:var(--sub);background:#fff;
+    display:flex;align-items:center;gap:5px;white-space:nowrap;
+  }
+  .pill .led{width:6px;height:6px;border-radius:50%;background:var(--green);box-shadow:0 0 0 3px rgba(5,150,105,.14)}
+  .pill.model{font-family:var(--mono);font-size:10.5px;color:#0e7490;border-color:#bae6fd;background:#f0f9ff}
+  .avatar{
+    width:28px;height:28px;border-radius:50%;background:#e0e7ff;color:#4338ca;
+    display:grid;place-items:center;font-size:12px;font-weight:700;
+  }
+
+  .views{position:relative;min-height:0;overflow:hidden}
+  .view{
+    position:absolute;inset:0;overflow-y:auto;overflow-x:hidden;padding:16px 18px 20px;
+    display:none;
+  }
+  .view.on{display:block}
+  .vhead{display:flex;align-items:flex-end;gap:12px;margin-bottom:12px}
+  .vtitle{font-size:19px;font-weight:700;color:var(--ink);letter-spacing:.2px}
+  .vsub{font-size:12px;color:var(--sub);padding-bottom:2px}
+  .vhead .sp{margin-left:auto;display:flex;gap:8px;align-items:center}
+  .btn{
+    font:inherit;font-size:12px;padding:6px 11px;border-radius:7px;cursor:pointer;
+    border:1px solid var(--line);background:#fff;color:var(--text);
+  }
+  .btn:hover{border-color:#c7d3e3;background:#fbfdff}
+  .btn.primary{background:var(--blue);border-color:var(--blue);color:#fff}
+  .btn.primary:hover{background:#1d4ed8}
+
+  .card{background:var(--card);border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow)}
+
+  /* ================= 早报面板 ================= */
+  .stats{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-bottom:12px}
+  .stat{padding:11px 13px;border-radius:11px;background:#fff;border:1px solid var(--line)}
+  .stat .k{font-size:11.5px;color:var(--sub);display:flex;align-items:center;gap:5px}
+  .stat .v{font-size:22px;font-weight:700;color:var(--ink);font-family:var(--mono);letter-spacing:-.5px;margin-top:2px}
+  .stat .v small{font-size:12px;font-weight:400;color:var(--muted);font-family:var(--sans);margin-left:3px}
+  .stat.hl{border-color:#a7f3d0;background:linear-gradient(180deg,#f0fdf9,#fff)}
+  .stat.hl .v{color:var(--green)}
+  .stat.warn{border-color:#fde68a;background:linear-gradient(180deg,#fffbeb,#fff)}
+  .stat.warn .v{color:var(--amber)}
+
+  .toolbar{display:flex;align-items:center;gap:6px;margin-bottom:10px}
+  .qtab{
+    font:inherit;font-size:12.5px;padding:6px 13px;border-radius:999px;cursor:pointer;
+    border:1px solid var(--line);background:#fff;color:var(--sub);
+  }
+  .qtab .n{font-family:var(--mono);font-size:11px;margin-left:5px;opacity:.7}
+  .qtab.on{background:var(--ink);border-color:var(--ink);color:#fff}
+  .qtab.on .n{opacity:.85}
+  .toolbar .sp{margin-left:auto;font-size:11.5px;color:var(--muted)}
+
+  table.news{width:100%;border-collapse:collapse;font-size:12.5px}
+  table.news th{
+    text-align:left;font-weight:600;font-size:11.5px;color:var(--sub);
+    padding:8px 10px;background:#f8fafc;border-bottom:1px solid var(--line);
+    white-space:nowrap;
+  }
+  table.news th:first-child{border-radius:10px 0 0 0}
+  table.news th:last-child{border-radius:0 10px 0 0}
+  table.news td{padding:9px 10px;border-bottom:1px solid var(--line2);vertical-align:middle}
+  table.news tbody tr:hover{background:#f8fbff}
+  .tm{font-family:var(--mono);font-size:11.5px;color:var(--muted);white-space:nowrap}
+  .src{font-size:11.5px;color:var(--sub);white-space:nowrap}
+  .title{color:var(--ink);font-weight:500;line-height:1.45}
+  .tag{
+    display:inline-flex;align-items:center;gap:4px;font-size:11px;
+    padding:2px 7px;border-radius:5px;white-space:nowrap;
+  }
+  .tag.fin{background:#eff6ff;color:#1d4ed8;border:1px solid #dbeafe}
+  .tag.ind{background:#ecfdf5;color:#047857;border:1px solid #d1fae5}
+  .tag.mac{background:#faf5ff;color:#6d28d9;border:1px solid #ede9fe}
+  .tag.noi{background:#f1f5f9;color:#64748b;border:1px solid #e2e8f0}
+  .tag .lb{opacity:.62;font-size:10px;border-left:1px solid currentColor;padding-left:4px;margin-left:1px}
+  .conf{display:flex;align-items:center;gap:7px}
+  .track{width:52px;height:5px;border-radius:3px;background:#eef2f7;overflow:hidden;flex:none}
+  .track i{display:block;height:100%;border-radius:3px;background:var(--green)}
+  .track i.mid{background:var(--amber)}
+  .track i.low{background:#cbd5e1}
+  .conf .num{font-family:var(--mono);font-size:11px;color:var(--sub)}
+  .q{
+    font-size:11px;padding:2px 8px;border-radius:999px;font-weight:600;white-space:nowrap;
+  }
+  .q.research{background:#ecfdf5;color:#047857;border:1px solid #a7f3d0}
+  .q.review{background:#fffbeb;color:#b45309;border:1px solid #fde68a}
+  .q.drop{background:#f1f5f9;color:#64748b;border:1px solid #e2e8f0}
+  .footnote{
+    margin-top:10px;padding:10px 13px;border-radius:10px;
+    background:#f8fafc;border:1px dashed #d7e0ec;
+    font-size:11.5px;color:var(--sub);line-height:1.75;
+  }
+  .footnote b{color:var(--ink);font-weight:600}
+  .footnote code{font-family:var(--mono);font-size:10.5px;background:#eef2f7;padding:1px 4px;border-radius:4px;color:#0e7490}
+
+  /* 早报底部：Agent 摘要 + 主题分布 */
+  .mrow{display:grid;grid-template-columns:1.3fr 1fr;gap:12px;margin-top:12px}
+  .pad{padding:13px 15px}
+  .mttl{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:700;color:var(--ink);margin-bottom:9px}
+  .cnt2{font-family:var(--mono);font-size:10.5px;font-weight:400;color:var(--muted);background:#f1f5f9;padding:1px 6px;border-radius:5px}
+  .brief{margin:0;padding-left:18px;font-size:12.5px;line-height:1.95;color:var(--text)}
+  .brief li::marker{color:var(--cyan);font-weight:700}
+  .bnote{margin-top:8px;font-size:11px;color:var(--muted);border-top:1px dashed var(--line);padding-top:7px}
+  .tb{display:flex;align-items:center;gap:9px;font-size:11.5px;color:var(--sub);margin-bottom:8px}
+  .tb .n{width:32px;flex:none}
+  .tb .tr{flex:1;height:10px;border-radius:5px;background:#f1f5f9;overflow:hidden}
+  .tb .tr i{display:block;height:100%;border-radius:5px}
+  .tb .v{width:42px;text-align:right;font-family:var(--mono);font-size:11px;color:var(--ink)}
+
+  .distbar{
+    display:flex;align-items:center;gap:10px;margin:-2px 0 12px;padding:9px 13px;
+    background:#fff;border:1px solid var(--line);border-radius:10px;font-size:11.5px;color:var(--sub);
+  }
+  .distbar .dlab{font-weight:600;color:var(--ink);flex:none}
+  .distbar .dbar{flex:1;display:flex;height:9px;border-radius:5px;overflow:hidden;background:#f1f5f9;min-width:120px}
+  .distbar .dbar i{display:block;height:100%}
+  .distbar .dbar i.ok{background:linear-gradient(90deg,#059669,#34d399)}
+  .distbar .dbar i.warn{background:#fbbf24}
+  .distbar .dnum{flex:none;font-family:var(--mono)}
+  .distbar .dnote{margin-left:auto;color:var(--muted);flex:none}
+  /* 证据句旁的「查看原文」：效果图里只是示意，真做时点开是 PDF 对应页 */
+  .ev::after{
+    content:"查看原文 ↗";margin-left:6px;font-size:10.5px;color:var(--blue);
+    background:#eff6ff;border:1px solid #dbeafe;border-radius:4px;padding:0 4px;white-space:nowrap;
+  }
+
+  /* ================= 对话研究 ================= */
+  .chatgrid{display:grid;grid-template-columns:minmax(0,1fr) 316px;gap:14px;height:calc(100% - 42px)}
+  .conv{display:flex;flex-direction:column;gap:12px;min-width:0;overflow:auto;padding-right:4px}
+  .msg.u{display:flex;justify-content:flex-end}
+  .bubble{
+    max-width:78%;padding:11px 14px;border-radius:12px 12px 3px 12px;
+    background:linear-gradient(140deg,#2563eb,#0891b2);color:#fff;
+    font-size:13.5px;line-height:1.6;box-shadow:0 6px 16px rgba(37,99,235,.25);
+  }
+  .bubble code{font-family:var(--mono);background:rgba(255,255,255,.18);padding:1px 5px;border-radius:4px}
+
+  .trace{border-left:2px solid #dbeafe;margin-left:6px;padding-left:0}
+  .trace-hd{
+    display:flex;align-items:center;gap:8px;padding:8px 12px;border-radius:9px;
+    background:#f8fbff;border:1px solid #e2edfb;font-size:12.5px;color:var(--sub);
+  }
+  .trace-hd .st{font-weight:600;color:var(--blue)}
+  .trace-hd .sp{margin-left:auto;display:flex;gap:8px;align-items:center}
+  .trace-hd .btn{padding:3px 9px;font-size:11.5px}
+  .steps{list-style:none;margin:6px 0 0;padding:0 0 0 12px}
+  .step{position:relative;display:flex;gap:10px;padding:7px 0 7px 14px}
+  .step::before{
+    content:"";position:absolute;left:2px;top:17px;width:7px;height:7px;border-radius:50%;
+    background:#fff;border:2px solid var(--cyan);
+  }
+  .step:not(:last-child)::after{
+    content:"";position:absolute;left:5px;top:24px;bottom:-2px;width:1.5px;background:#e2edfb;
+  }
+  .step .who{
+    flex:none;width:120px;font-size:11.5px;color:#0e7490;font-family:var(--mono);
+    padding-top:1px;word-break:break-all;
+  }
+  .step .what{flex:1;min-width:0;font-size:12.5px;color:var(--text);line-height:1.55}
+  .step .what b{color:var(--ink);font-weight:600}
+  .step .ms{flex:none;font-family:var(--mono);font-size:11px;color:var(--muted);padding-top:1px}
+  .step .ok{color:var(--green);font-weight:700}
+
+  .answer{padding:13px 15px;border-radius:12px;background:#fff;border:1px solid var(--line);box-shadow:var(--shadow)}
+  .answer .who{display:flex;align-items:center;gap:7px;font-size:11.5px;color:var(--muted);margin-bottom:7px}
+  .answer .who .a{width:19px;height:19px;border-radius:5px;background:linear-gradient(140deg,#22d3ee,#2563eb);display:grid;place-items:center;color:#fff;font-size:10px;font-weight:700;font-family:var(--sans)}
+  .answer .lead{font-size:14.5px;color:var(--ink);line-height:1.6}
+  .answer .lead em{font-style:normal;color:var(--blue);font-weight:700}
+  .answer .body{font-size:13px;line-height:1.8;color:var(--text);margin-top:6px}
+  .cite{
+    display:inline-block;font-family:var(--mono);font-size:10.5px;
+    padding:0 4px;border-radius:4px;background:#eff6ff;color:var(--blue);
+    border:1px solid #dbeafe;margin:0 1px;cursor:help;vertical-align:1px;
+  }
+  .bars{margin:11px 0 2px;display:flex;flex-direction:column;gap:7px}
+  .bar{display:flex;align-items:center;gap:9px;font-size:12px}
+  .bar .nm{width:96px;color:var(--sub);flex:none}
+  .bar .tr{flex:1;height:16px;border-radius:5px;background:#f1f5f9;overflow:hidden}
+  .bar .tr i{display:block;height:100%;border-radius:5px}
+  .bar .vl{width:62px;text-align:right;font-family:var(--mono);font-size:12px;color:var(--ink);font-weight:600;flex:none}
+  .answer .note{font-size:11.5px;color:var(--muted);line-height:1.7;margin-top:8px;border-top:1px dashed var(--line);padding-top:7px}
+  .answer .note b{color:var(--sub)}
+  .actions{display:flex;gap:7px;margin-top:10px;flex-wrap:wrap}
+  .chips{display:flex;gap:7px;flex-wrap:wrap;margin-top:2px}
+  .suggest{
+    font:inherit;font-size:12px;padding:5px 11px;border-radius:999px;cursor:pointer;
+    border:1px solid #dbe6f5;background:#f8fbff;color:var(--text);
+  }
+  .suggest:hover{border-color:#bfd4ef;background:#f1f8ff}
+
+  .json{
+    display:none;margin-top:10px;padding:10px 12px;border-radius:9px;
+    background:#0f1a2e;color:#a5e8ff;font-family:var(--mono);font-size:11.5px;
+    line-height:1.75;white-space:pre;overflow:auto;
+  }
+  .json.on{display:block}
+  .json .k{color:#fbbf24}
+  .json .s{color:#86efac}
+
+  .side{display:flex;flex-direction:column;gap:11px;min-width:0;overflow-y:auto;overflow-x:hidden;padding-right:2px}
+  .scard{padding:11px 13px;border-radius:11px;background:#fff;border:1px solid var(--line)}
+  .scard .hd{display:flex;align-items:center;gap:6px;font-size:12px;font-weight:700;color:var(--ink);margin-bottom:8px}
+  .scard .hd .cnt{font-family:var(--mono);font-size:10.5px;font-weight:400;color:var(--muted);background:#f1f5f9;padding:0 5px;border-radius:4px}
+  .ref{padding:8px 9px;border-radius:8px;background:#f8fafc;border:1px solid var(--line2);margin-bottom:7px}
+  .ref:last-child{margin-bottom:0}
+  .ref .t{font-size:11.5px;color:var(--ink);font-weight:600;line-height:1.5}
+  /* 注意：类名不要叫 .q —— 上面对队列徽标已经用了 .q 并且是 nowrap，
+     会造成引用片段不换行、撑出卡片（踩过一次） */
+  .ref .snip{
+    display:block;font-size:11px;color:var(--sub);line-height:1.65;
+    margin-top:3px;background:#fff;border-left:2px solid #bfdbfe;
+    padding:3px 6px;border-radius:0 4px 4px 0;white-space:normal;
+  }
+  .ref .f{display:flex;align-items:center;gap:6px;margin-top:5px;font-size:10.5px;color:var(--muted);font-family:var(--mono)}
+  .ref .f .hit{color:var(--green)}
+  .kv{display:flex;justify-content:space-between;font-size:12px;padding:3px 0}
+  .kv .k{color:var(--sub)}
+  .kv .v{font-family:var(--mono);color:var(--ink);font-weight:600}
+  .mem{display:flex;gap:8px;font-size:11.5px;line-height:1.6;padding:6px 0;border-bottom:1px dashed var(--line2)}
+  .mem:last-child{border:0;padding-bottom:0}
+  .mem .ic{flex:none;font-family:var(--mono);font-size:10px;color:var(--violet);background:#faf5ff;border:1px solid #ede9fe;border-radius:5px;padding:1px 5px;height:18px}
+
+  /* ================= 信息可视化 ================= */
+  .vizgrid{display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:14px;height:calc(100% - 42px)}
+  .graph{padding:6px;position:relative;overflow:hidden;display:grid;place-items:center}
+  .graph svg{width:100%;height:100%;max-height:100%}
+  .legend{position:absolute;left:14px;bottom:12px;display:flex;gap:12px;font-size:11px;color:var(--sub)}
+  .legend i{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:4px}
+  .path{padding:8px 9px;border-radius:8px;background:#fffbeb;border:1px solid #fde68a;margin-bottom:7px;font-size:11.5px;line-height:1.65;color:#78350f}
+  .path b{color:#b45309}
+  .path .hop{font-family:var(--mono);font-size:10px;background:#fff;border:1px solid #fde68a;border-radius:4px;padding:0 4px;margin:0 3px}
+
+  /* ================= 批量分析 ================= */
+  .sumrow{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:12px}
+  .qbar{
+    display:flex;align-items:center;gap:10px;padding:9px 13px;margin-bottom:12px;
+    background:#f8fbff;border:1px solid #e2edfb;border-radius:10px;font-size:12.5px;
+  }
+  .qbar .lab{font-size:11px;color:var(--blue);background:#eff6ff;border:1px solid #dbeafe;border-radius:5px;padding:1px 6px;font-weight:600}
+  .qbar .txt{color:var(--ink)}
+  .qbar .sp{margin-left:auto;font-size:11.5px;color:var(--muted);font-family:var(--mono)}
+  .ev{font-size:11px;color:var(--sub);font-style:italic}
+
+  /* ================= 关注与监控 ================= */
+  .watchgrid{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:14px;align-items:start}
+  .code{font-family:var(--mono);font-size:11.5px;color:var(--muted)}
+  .nm2{font-weight:600;color:var(--ink);font-size:12.5px}
+  .up{color:#dc2626;font-weight:700}
+  .down{color:#059669;font-weight:700}
+  .alert{
+    display:flex;gap:9px;padding:9px 10px;border-radius:9px;background:#fff7ed;
+    border:1px solid #fed7aa;margin-bottom:8px;font-size:11.5px;line-height:1.6;
+  }
+  .alert:last-child{margin-bottom:0}
+  .alert .t{font-family:var(--mono);font-size:10.5px;color:#b45309;flex:none}
+  .alert.info{background:#f8fbff;border-color:#dbe6f5}
+  .alert.info .t{color:var(--blue)}
+
+  .rules{margin-top:0}
+  .wcol{display:flex;flex-direction:column;gap:12px;min-width:0}
+  .rulegrid{display:grid;grid-template-columns:1fr 1fr;gap:7px 26px;font-size:12.5px;line-height:1.75;color:var(--text)}
+  .rule b{color:var(--ink);margin-right:8px}
+  /* ================= 状态栏 ================= */
+  .statusbar{
+    display:flex;align-items:center;gap:14px;padding:0 16px;
+    background:#fff;border-top:1px solid var(--line);
+    font-size:11px;color:var(--muted);font-family:var(--mono);
+  }
+  .statusbar .ok{color:var(--green);font-weight:700}
+  .statusbar .sep{width:1px;height:14px;background:var(--line)}
+  .statusbar .sp{margin-left:auto;display:flex;gap:12px}
+  .statusbar .m{color:var(--sub)}
+  .statusbar .m b{color:var(--ink)}
+
+  ::-webkit-scrollbar{width:9px;height:9px}
+  ::-webkit-scrollbar-thumb{background:#cfd9e6;border-radius:5px;border:2px solid transparent;background-clip:padding-box}
+  ::-webkit-scrollbar-track{background:transparent}
+</style>
+</head>
+<body>
+<div class="app">
+
+  <!-- ========== 左侧导航 ========== -->
+  <aside class="sidebar">
+    <div class="brand">
+      <div class="logo">八</div>
+      <div>
+        <div class="bname">八斗投研</div>
+        <div class="bsub">badou_research</div>
+      </div>
+    </div>
+    <div class="navlabel">工作台</div>
+    <nav>
+      <button class="nav on" data-view="morning"><span class="ic">▤</span>早报面板<span class="badge">w6</span></button>
+      <button class="nav" data-view="chat"><span class="ic">✦</span>对话研究</button>
+      <button class="nav" data-view="viz"><span class="ic">◈</span>信息可视化</button>
+      <button class="nav" data-view="batch"><span class="ic">▦</span>批量分析</button>
+      <button class="nav" data-view="watch"><span class="ic">◎</span>关注与监控</button>
+    </nav>
+    <div class="sidefoot">
+      <div class="sf-title">9 个模块 · 全部就绪</div>
+      <div class="dots">
+        <span class="dot wk" title="week6 数据接入与分流"></span><span class="dot" title="week7 信息抽取"></span>
+        <span class="dot" title="week8 去重与相似"></span><span class="dot" title="week9 工具层与 Agent"></span>
+        <span class="dot" title="week10 知识库与 RAG"></span><span class="dot" title="week11 知识图谱"></span>
+        <span class="dot" title="week12 记忆与上下文"></span><span class="dot" title="week13 Skill 与自进化"></span>
+        <span class="dot" title="week14 数据质量与应用落地"></span>
+      </div>
+      <div class="sf-note">端到端回归 27/30</div>
+    </div>
+  </aside>
+
+  <!-- ========== 主区 ========== -->
+  <div class="main">
+    <div class="topbar">
+      <div class="search">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2.4"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg>
+        搜索公告 / 公司 / 指标
+        <span class="kbd">Ctrl K</span>
+      </div>
+      <div class="tb-right">
+        <span class="pill model">deepseek-v4-flash</span>
+        <span class="pill model">bert-base-chinese · 本地</span>
+        <span class="pill"><span class="led"></span>分流服务正常</span>
+        <span class="pill">2026-11-13 周五</span>
+        <div class="avatar">李</div>
+      </div>
+    </div>
+
+    <div class="views">
+
+      <!-- ==================== 1. 早报面板 ==================== -->
+      <section class="view on" data-view="morning">
+        <div class="vhead">
+          <div class="vtitle">早报面板</div>
+          <div class="vsub">2026-11-13 · 08:47 生成，全程 4.2 秒</div>
+          <div class="sp">
+            <button class="btn">导出 CSV</button>
+            <button class="btn primary">重新分流</button>
+          </div>
+        </div>
+
+        <div class="stats">
+          <div class="stat"><div class="k">今日抓取</div><div class="v">512<small>条</small></div></div>
+          <div class="stat"><div class="k">去重合并</div><div class="v">68<small>条</small></div></div>
+          <div class="stat hl"><div class="k">进研究队列</div><div class="v">87<small>条</small></div></div>
+          <div class="stat warn"><div class="k">待人工复核</div><div class="v">143<small>条</small></div></div>
+          <div class="stat"><div class="k">判定丢弃</div><div class="v">214<small>条</small></div></div>
+        </div>
+
+        <div class="toolbar">
+          <button class="qtab on" data-q="research">研究队列<span class="n">87</span></button>
+          <button class="qtab" data-q="review">待复核<span class="n">143</span></button>
+          <button class="qtab" data-q="drop">已丢弃<span class="n">214</span></button>
+          <div class="sp">按置信度排序 · 显示前 6 条</div>
+        </div>
+
+        <div class="card" style="padding:0 0 2px">
+          <table class="news">
+            <thead>
+              <tr>
+                <th style="width:62px">时间</th>
+                <th style="width:74px">来源</th>
+                <th>标题</th>
+                <th style="width:150px">主题（15 类 → 4 组）</th>
+                <th style="width:118px">相关性</th>
+                <th style="width:88px">队列</th>
+              </tr>
+            </thead>
+            <tbody id="newsBody"><!-- 由脚本按队列渲染 --></tbody>
+          </table>
+        </div>
+
+        <div class="mrow">
+          <div class="card pad">
+            <div class="mttl">今日早报摘要<span class="cnt2">Agent 生成 · 5.2 s</span></div>
+            <ol class="brief">
+              <li><b>白酒</b>：双节动销好于预期，渠道库存回到 1.5 个月；茅台三季报净利同比 +12.4%。</li>
+              <li><b>新能源</b>：宁德时代签 5 年欧洲供货协议；隆基拟 120 亿投建 BC 电池产线。</li>
+              <li><b>风险</b>：隆基绿能股东减持 1.00%（4.12 亿元），已进「关注与监控」提醒。</li>
+            </ol>
+            <div class="bnote">基于研究队列 87 条生成；每条结论都能点回原文，引用片段已存档</div>
+          </div>
+          <div class="card pad">
+            <div class="mttl">主题分布<span class="cnt2">今日 444 条</span></div>
+            <div class="tb"><span class="n">金融</span><span class="tr"><i style="width:49%;background:linear-gradient(90deg,#2563eb,#60a5fa)"></i></span><span class="v">218</span></div>
+            <div class="tb"><span class="n">产业</span><span class="tr"><i style="width:32%;background:linear-gradient(90deg,#059669,#34d399)"></i></span><span class="v">142</span></div>
+            <div class="tb"><span class="n">宏观</span><span class="tr"><i style="width:12%;background:linear-gradient(90deg,#7c3aed,#a78bfa)"></i></span><span class="v">52</span></div>
+            <div class="tb"><span class="n">噪音</span><span class="tr"><i style="width:7%;background:#cbd5e1"></i></span><span class="v">32</span></div>
+            <div class="bnote">噪音 32 条直接丢弃，不占研究员的注意力</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== 2. 对话研究 ==================== -->
+      <section class="view" data-view="chat">
+        <div class="vhead">
+          <div class="vtitle">对话研究</div>
+          <div class="vsub">茅台 vs 五粮液 · 2023 年毛利率</div>
+          <div class="sp">
+            <span class="pill"><span class="led"></span>5 个工具在线</span>
+            <button class="btn">新会话</button>
+          </div>
+        </div>
+
+        <div class="chatgrid">
+          <!-- 左：会话流 -->
+          <div class="conv">
+            <div class="msg u">
+              <div class="bubble">茅台和五粮液 2023 年毛利率谁高，差几个点？</div>
+            </div>
+
+            <div class="trace">
+              <div class="trace-hd">
+                <span class="st">研究过程</span>
+                <span>5 步 · 工具耗时 511 ms · 端到端 3.8 s</span>
+                <span class="sp">
+                  <button class="btn" id="replay">▷ 重跑</button>
+                  <button class="btn" id="toggleJson">结构化输出</button>
+                </span>
+              </div>
+              <ol class="steps" id="steps"><!-- 脚本渲染 --></ol>
+            </div>
+
+            <div class="answer">
+              <div class="who"><span class="a">AI</span>研究结论 <span style="margin-left:auto;font-family:var(--mono)">置信度 0.93</span></div>
+              <div class="lead">2023 年 <em>贵州茅台</em> 毛利率 <em>91.96%</em>，<em>五粮液</em> <em>75.79%</em>，<b>茅台高出 16.17 个百分点</b>。</div>
+
+              <div class="bars">
+                <div class="bar"><span class="nm">贵州茅台</span><span class="tr"><i style="width:92%;background:linear-gradient(90deg,#2563eb,#22d3ee)"></i></span><span class="vl">91.96%</span></div>
+                <div class="bar"><span class="nm">五粮液</span><span class="tr"><i style="width:75.8%;background:linear-gradient(90deg,#0891b2,#34d399)"></i></span><span class="vl">75.79%</span></div>
+              </div>
+
+              <div class="body">
+                算法：<code>(营业收入 − 营业成本) / 营业收入</code>。
+                茅台 <span class="cite" title="贵州茅台 2023 年报 P.58：营业收入 1,505.60 亿元，营业成本 121.06 亿元">1</span>
+                =（1,505.60 − 121.06）/ 1,505.60 = 91.96%；
+                五粮液 <span class="cite" title="五粮液 2023 年报 P.62：营业收入 832.72 亿元，营业成本 201.55 亿元">2</span>
+                =（832.72 − 201.55）/ 832.72 = 75.79%。差值由<b>计算器工具</b>算出，未让模型心算。
+              </div>
+              <div class="note">
+                <b>口径</b>：两家均为年报「营业收入 / 营业成本」口径、不含税；五粮液含系列酒。<br>
+                <b>来源</b>：2023 年年度报告（巨潮资讯）；引用片段已存档，可点右上角「结构化输出」查看字段。
+              </div>
+              <div class="actions">
+                <button class="btn">存进研究笔记</button>
+                <button class="btn">对比近三年趋势</button>
+                <button class="btn">加入监控</button>
+              </div>
+            </div>
+
+            <pre class="json" id="json">
+{
+  "conclusion": "茅台毛利率高于五粮液 16.17 个百分点",
+  "value": { "贵州茅台": 91.96, "五粮液": 75.79, "diff_pt": 16.17 },
+  "citations": [
+    "贵州茅台2023年报 P.58", "五粮液2023年报 P.62"
+  ],
+  "confidence": 0.93,
+  "tool_calls": 5,
+  "stopped_reason": "已满足「必须带引用」→ 提前停止"
+}</pre>
+
+            <div class="chips">
+              <button class="suggest">那费用率呢？</button>
+              <button class="suggest">这两家谁的增长更靠提价？</button>
+              <button class="suggest">把结论发给晨会群</button>
+            </div>
+          </div>
+
+          <!-- 右：引用 / 记忆 / 运行指标 -->
+          <div class="side">
+            <div class="scard">
+              <div class="hd">引用来源 <span class="cnt">2 段 / 命中 6 段</span></div>
+              <div class="ref">
+                <div class="t">贵州茅台 2023 年年度报告</div>
+                <div class="snip">营业收入 1,505.60 亿元，同比 +18.04%；营业成本 121.06 亿元，毛利率 91.96%…</div>
+                <div class="f"><span>P.58 利润表附注</span><span class="hit">精排 #1 · 0.94</span></div>
+              </div>
+              <div class="ref">
+                <div class="t">五粮液 2023 年年度报告</div>
+                <div class="snip">营业收入 832.72 亿元，营业成本 201.55 亿元；酒类毛利率 75.79%…</div>
+                <div class="f"><span>P.62 主营业务分析</span><span class="hit">精排 #2 · 0.91</span></div>
+              </div>
+            </div>
+
+            <div class="scard">
+              <div class="hd">记忆命中</div>
+              <div class="mem"><span class="ic">关注</span><span>关注列表命中 <b>贵州茅台</b>（建仓 2023-04）</span></div>
+              <div class="mem"><span class="ic">偏好</span><span>差值按<b>百分点</b>报，金额按<b>亿元</b>报</span></div>
+              <div class="mem"><span class="ic">历史</span><span>上周问过五粮液渠道库存，可衔接</span></div>
+            </div>
+
+            <div class="scard">
+              <div class="hd">本次运行</div>
+              <div class="kv"><span class="k">规划步数</span><span class="v">5 / 6</span></div>
+              <div class="kv"><span class="k">工具调用</span><span class="v">5 次</span></div>
+              <div class="kv"><span class="k">端到端</span><span class="v">3.8 s</span></div>
+              <div class="kv"><span class="k">tokens</span><span class="v">2.4 k</span></div>
+              <div class="kv"><span class="k">单次成本</span><span class="v">¥0.003</span></div>
+              <div class="kv"><span class="k">降级</span><span class="v" style="color:#059669">无</span></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== 3. 信息可视化 ==================== -->
+      <section class="view" data-view="viz">
+        <div class="vhead">
+          <div class="vtitle">信息可视化</div>
+          <div class="vsub">问「茅台和五粮液什么关系」→ 用图回答，而不是罗列一段话</div>
+          <div class="sp"><button class="btn">切换图谱</button><button class="btn primary">导出图片</button></div>
+        </div>
+
+        <div class="vizgrid">
+          <div class="card graph">
+            <svg viewBox="0 0 980 520" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <marker id="ar" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto">
+                  <polygon points="0 0, 8 3.5, 0 7" fill="#b6c3d4"/>
+                </marker>
+                <marker id="arHl" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto">
+                  <polygon points="0 0, 8 3.5, 0 7" fill="#d97706"/>
+                </marker>
+              </defs>
+              <pattern id="gd" width="34" height="34" patternUnits="userSpaceOnUse">
+                <path d="M 34 0 L 0 0 0 34" fill="none" stroke="#f1f5f9" stroke-width="1"/>
+              </pattern>
+              <rect width="980" height="520" fill="url(#gd)"/>
+
+              <!-- 边：普通 -->
+              <g stroke="#c8d4e3" stroke-width="1.6" fill="none">
+                <line x1="330" y1="150" x2="470" y2="214" marker-end="url(#ar)"/>
+                <line x1="330" y1="392" x2="470" y2="266" marker-end="url(#ar)"/>
+                <line x1="640" y1="222" x2="790" y2="140" marker-end="url(#ar)"/>
+                <line x1="640" y1="254" x2="790" y2="312" marker-end="url(#ar)"/>
+                <line x1="240" y1="90" x2="470" y2="70" marker-end="url(#ar)"/>
+                <!-- 控股股东这条用折线绕开下面的实体，避免和「所属行业」箭头交叉 -->
+                <path d="M240,150 V340 H555 V396" stroke-dasharray="5,4" marker-end="url(#ar)"/>
+              </g>
+              <!-- 边：高亮路径（茅台 → 白酒 ← 五粮液，2 跳） -->
+              <g stroke="#d97706" stroke-width="3" fill="none">
+                <line x1="330" y1="150" x2="470" y2="214" marker-end="url(#arHl)"/>
+                <line x1="330" y1="392" x2="470" y2="266" marker-end="url(#arHl)"/>
+              </g>
+
+              <!-- 边标签 -->
+              <g font-family="Microsoft YaHei" font-size="11.5" fill="#94a3b8">
+                <text x="384" y="168">所属行业</text>
+                <text x="700" y="166">上游</text>
+                <text x="694" y="292">下游需求</text>
+                <text x="336" y="66">产品</text>
+                <text x="252" y="328" fill="#b45309">控股股东</text>
+              </g>
+
+              <!-- 节点：高亮三件套 -->
+              <g>
+                <rect x="150" y="90" width="180" height="60" rx="12" fill="#fffbeb" stroke="#d97706" stroke-width="2"/>
+                <text x="240" y="117" text-anchor="middle" font-family="Microsoft YaHei" font-size="16" font-weight="700" fill="#0f172a">贵州茅台</text>
+                <text x="240" y="136" text-anchor="middle" font-family="Consolas" font-size="11.5" fill="#b45309">600519</text>
+
+                <rect x="150" y="380" width="180" height="60" rx="12" fill="#fffbeb" stroke="#d97706" stroke-width="2"/>
+                <text x="240" y="407" text-anchor="middle" font-family="Microsoft YaHei" font-size="16" font-weight="700" fill="#0f172a">五粮液</text>
+                <text x="240" y="426" text-anchor="middle" font-family="Consolas" font-size="11.5" fill="#b45309">000858</text>
+
+                <rect x="470" y="206" width="170" height="62" rx="12" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
+                <text x="555" y="234" text-anchor="middle" font-family="Microsoft YaHei" font-size="16" font-weight="700" fill="#0f172a">白酒行业</text>
+                <text x="555" y="253" text-anchor="middle" font-family="Microsoft YaHei" font-size="11.5" fill="#1d4ed8">申万二级</text>
+              </g>
+
+              <!-- 节点：周边 -->
+              <g>
+                <rect x="470" y="40" width="160" height="56" rx="11" fill="#fff" stroke="#cbd5e1" stroke-width="1.5"/>
+                <text x="550" y="66" text-anchor="middle" font-family="Microsoft YaHei" font-size="14" fill="#334155">飞天茅台</text>
+                <text x="550" y="84" text-anchor="middle" font-family="Microsoft YaHei" font-size="11" fill="#94a3b8">核心产品</text>
+
+                <rect x="470" y="398" width="170" height="56" rx="11" fill="#fff" stroke="#cbd5e1" stroke-width="1.5"/>
+                <text x="555" y="424" text-anchor="middle" font-family="Microsoft YaHei" font-size="14" fill="#334155">贵州省国资委</text>
+                <text x="555" y="442" text-anchor="middle" font-family="Microsoft YaHei" font-size="11" fill="#94a3b8">实控人</text>
+
+                <rect x="790" y="112" width="160" height="56" rx="11" fill="#fff" stroke="#cbd5e1" stroke-width="1.5"/>
+                <text x="870" y="138" text-anchor="middle" font-family="Microsoft YaHei" font-size="14" fill="#334155">高粱 / 包材</text>
+                <text x="870" y="156" text-anchor="middle" font-family="Microsoft YaHei" font-size="11" fill="#94a3b8">成本端</text>
+
+                <rect x="790" y="284" width="160" height="56" rx="11" fill="#fff" stroke="#cbd5e1" stroke-width="1.5"/>
+                <text x="870" y="310" text-anchor="middle" font-family="Microsoft YaHei" font-size="14" fill="#334155">商务宴请</text>
+                <text x="870" y="328" text-anchor="middle" font-family="Microsoft YaHei" font-size="11" fill="#94a3b8">需求端</text>
+              </g>
+
+              <!-- 图例 -->
+              <g transform="translate(28,470)">
+                <circle cx="6" cy="0" r="5" fill="#d97706"/><text x="18" y="4" font-family="Microsoft YaHei" font-size="11.5" fill="#64748b">命中的 2 跳路径</text>
+                <circle cx="170" cy="0" r="5" fill="#2563eb"/><text x="182" y="4" font-family="Microsoft YaHei" font-size="11.5" fill="#64748b">中心实体</text>
+                <circle cx="300" cy="0" r="5" fill="#cbd5e1"/><text x="312" y="4" font-family="Microsoft YaHei" font-size="11.5" fill="#64748b">一跳邻居</text>
+              </g>
+            </svg>
+          </div>
+
+          <div class="side">
+            <div class="scard">
+              <div class="hd">命中路径 <span class="cnt">2 跳</span></div>
+              <div class="path">
+                <b>贵州茅台</b><span class="hop">所属行业</span>白酒<b>行业</b><span class="hop">所属行业</span><b>五粮液</b><br>
+                <span style="color:#92400e">结论：同业可比，毛利率可以直接对比。</span>
+              </div>
+              <div class="path">
+                <b>贵州茅台</b><span class="hop">控股股东</span>贵州省国资委<br>
+                <span style="color:#92400e">推论：实际控制人不同，治理结构不可比。</span>
+              </div>
+            </div>
+            <div class="scard">
+              <div class="hd">图谱规模</div>
+              <div class="kv"><span class="k">实体</span><span class="v">12,408</span></div>
+              <div class="kv"><span class="k">关系</span><span class="v">38,662</span></div>
+              <div class="kv"><span class="k">三元组准确率</span><span class="v" style="color:#059669">0.92</span></div>
+              <div class="kv"><span class="k">多跳查询通过率</span><span class="v" style="color:#059669">74%</span></div>
+            </div>
+            <div class="scard">
+              <div class="hd">查询</div>
+              <pre class="json on" style="margin:0;font-size:10.5px">MATCH (a:Company {name:'贵州茅台'})
+      -[:BELONGS_TO]->(i:Industry)
+      &lt;-[:BELONGS_TO]-(b:Company)
+RETURN a.name, i.name, b.name</pre>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== 4. 批量分析 ==================== -->
+      <section class="view" data-view="batch">
+        <div class="vhead">
+          <div class="vtitle">批量分析</div>
+          <div class="vsub">同一批 20 份公告，问同一个问题，结果落成一张表</div>
+          <div class="sp"><button class="btn">改问题</button><button class="btn primary">导出 Excel</button></div>
+        </div>
+
+        <div class="qbar">
+          <span class="lab">问题</span>
+          <span class="txt">这份公告涉及股东减持吗？如果涉及，减持金额和减持比例是多少？</span>
+          <span class="sp">20 份 · 33.4 s · 并发 8 · 单份 ¥0.002</span>
+        </div>
+
+        <div class="sumrow">
+          <div class="stat"><div class="k">已处理</div><div class="v">20<small>份</small></div></div>
+          <div class="stat hl"><div class="k">判定涉及减持</div><div class="v">7<small>份</small></div></div>
+          <div class="stat warn"><div class="k">需人工复核</div><div class="v">2<small>份</small></div></div>
+          <div class="stat"><div class="k">解析失败</div><div class="v">0<small>份</small></div></div>
+        </div>
+
+        <!-- 状态分布：批量任务不能只看结果，要一眼看到「有多少条在边缘」 -->
+        <div class="distbar">
+          <span class="dlab">状态分布</span>
+          <span class="dbar"><i class="ok" style="width:90%"></i><i class="warn" style="width:10%"></i></span>
+          <span class="dnum"><b style="color:#059669">成功 18</b>　<b style="color:#b45309">待复核 2</b>　<b style="color:#94a3b8">失败 0</b></span>
+          <span class="dnote">阈值 0.60 以下进复核 · 解析失败不硬猜</span>
+        </div>
+
+        <div class="card" style="padding:0 0 2px">
+          <table class="news">
+            <thead>
+              <tr>
+                <th style="width:400px">公告</th>
+                <th style="width:96px">是否减持</th>
+                <th style="width:120px">金额</th>
+                <th style="width:96px">比例</th>
+                <th>证据句</th>
+                <th style="width:104px">置信度</th>
+                <th style="width:86px">状态</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td class="title">隆基绿能：股东减持计划期限届满暨实施结果公告</td><td><span class="q research">是</span></td><td class="code">4.12 亿元</td><td class="code">1.00%</td><td class="ev">「本次减持计划累计减持公司股份…」</td><td><div class="conf"><span class="track"><i class="" style="width:96%"></i></span><span class="num">0.96</span></div></td><td><span class="q research">已确认</span></td></tr>
+              <tr><td class="title">某某科技：关于持股 5% 以上股东减持计划的预披露公告</td><td><span class="q research">是</span></td><td class="code">—（未定）</td><td class="code">≤2.00%</td><td class="ev">「拟自本公告披露之日起 15 个交易日后的…」</td><td><div class="conf"><span class="track"><i class="" style="width:93%"></i></span><span class="num">0.93</span></div></td><td><span class="q research">已确认</span></td></tr>
+              <tr><td class="title">某某材料：关于股东集中竞价交易减持股份结果公告</td><td><span class="q research">是</span></td><td class="code">2.36 亿元</td><td class="code">0.62%</td><td class="ev">「截至本公告日，减持计划已实施完毕…」</td><td><div class="conf"><span class="track"><i class="" style="width:95%"></i></span><span class="num">0.95</span></div></td><td><span class="q research">已确认</span></td></tr>
+              <tr><td class="title">某某股份：关于董事、监事减持计划实施进展的公告</td><td><span class="q research">是</span></td><td class="code">0.18 亿元</td><td class="code">0.09%</td><td class="ev">「其中董事张某通过集中竞价减持…」</td><td><div class="conf"><span class="track"><i class="" style="width:92%"></i></span><span class="num">0.92</span></div></td><td><span class="q research">已确认</span></td></tr>
+              <tr><td class="title">某某集团：关于回购注销部分限制性股票的公告</td><td><span class="q drop">否</span></td><td class="code">—</td><td class="code">—</td><td class="ev">关键词「减持」出现在「不涉及减持」中</td><td><div class="conf"><span class="track"><i class="mid" style="width:89%"></i></span><span class="num">0.89</span></div></td><td><span class="q research">已确认</span></td></tr>
+              <tr><td class="title">某某能源：关于股东权益变动的提示性公告（扫描件）</td><td><span class="q review">待定</span></td><td class="code">—</td><td class="code">—</td><td class="ev">PDF 为扫描件，表格未解析成功</td><td><div class="conf"><span class="track"><i class="low" style="width:41%"></i></span><span class="num">0.41</span></div></td><td><span class="q review">需复核</span></td></tr>
+              <tr><td class="title">某某光电：关于持股 5% 以上股东减持股份的进展公告</td><td><span class="q research">是</span></td><td class="code">1.05 亿元</td><td class="code">0.38%</td><td class="ev">「本次减持后，该股东持股比例降至 4.99%…」</td><td><div class="conf"><span class="track"><i class="" style="width:94%"></i></span><span class="num">0.94</span></div></td><td><span class="q research">已确认</span></td></tr>
+              <tr><td class="title">某某制药：关于控股股东增持公司股份计划的公告</td><td><span class="q drop">否</span></td><td class="code">—</td><td class="code">—</td><td class="ev">方向是「增持」，不是减持</td><td><div class="conf"><span class="track"><i class="" style="width:96%"></i></span><span class="num">0.96</span></div></td><td><span class="q research">已确认</span></td></tr>
+              <tr><td class="title">某某传媒：关于部分董监高减持计划的预披露公告</td><td><span class="q research">是</span></td><td class="code">—（未定）</td><td class="code">≤0.35%</td><td class="ev">「拟减持不超过其持有公司股份的 25%…」</td><td><div class="conf"><span class="track"><i class="" style="width:90%"></i></span><span class="num">0.90</span></div></td><td><span class="q research">已确认</span></td></tr>
+              <tr><td class="title">某某环保：关于董事亲属短线交易的致歉公告</td><td><span class="q review">待定</span></td><td class="code">—</td><td class="code">—</td><td class="ev">属短线交易认定，口径需人工判断</td><td><div class="conf"><span class="track"><i class="low" style="width:52%"></i></span><span class="num">0.52</span></div></td><td><span class="q review">需复核</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ==================== 5. 关注与监控 ==================== -->
+      <section class="view" data-view="watch">
+        <div class="vhead">
+          <div class="vtitle">关注与监控</div>
+          <div class="vsub">我盯的 5 只票，出事主动找我，不用自己天天翻公告</div>
+          <div class="sp"><button class="btn">加关注</button><button class="btn primary">配置提醒</button></div>
+        </div>
+
+        <div class="sumrow" style="grid-template-columns:repeat(4,1fr)">
+          <div class="stat"><div class="k">关注标的</div><div class="v">5<small>只</small></div></div>
+          <div class="stat hl"><div class="k">今日提醒</div><div class="v">3<small>条</small></div></div>
+          <div class="stat warn"><div class="k">待确认提醒</div><div class="v">1<small>条</small></div></div>
+          <div class="stat"><div class="k">静默标的</div><div class="v">1<small>只</small></div></div>
+        </div>
+
+        <div class="watchgrid">
+          <div class="wcol">
+            <div class="card" style="padding:0 0 2px">
+              <table class="news">
+                <thead>
+                  <tr>
+                    <th style="width:140px">标的</th>
+                    <th style="width:110px">关注理由</th>
+                    <th>最近事件</th>
+                    <th style="width:120px">监控阈值</th>
+                    <th style="width:96px">状态</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="nm2">贵州茅台</span> <span class="code">600519</span></td>
+                    <td class="src">核心持仓</td>
+                    <td class="title">三季报毛利率 91.4%，环比 <span class="down">−0.6pt</span></td>
+                    <td class="code">跌破 1,520 提醒</td>
+                    <td><span class="q review">已提醒</span></td>
+                  </tr>
+                  <tr>
+                    <td><span class="nm2">五粮液</span> <span class="code">000858</span></td>
+                    <td class="src">同业对比</td>
+                    <td class="title">渠道库存回到 1.5 个月，同比 <span class="down">−0.8 月</span></td>
+                    <td class="code">库存 &gt; 2 月</td>
+                    <td><span class="q research">正常</span></td>
+                  </tr>
+                  <tr>
+                    <td><span class="nm2">宁德时代</span> <span class="code">300750</span></td>
+                    <td class="src">新签大单</td>
+                    <td class="title">与欧洲车企签 5 年供货协议，股价 <span class="up">+3.2%</span></td>
+                    <td class="code">公告即提醒</td>
+                    <td><span class="q review">已提醒</span></td>
+                  </tr>
+                  <tr>
+                    <td><span class="nm2">隆基绿能</span> <span class="code">601012</span></td>
+                    <td class="src">行业跟踪</td>
+                    <td class="title">股东减持 1.00%，金额 4.12 亿元</td>
+                    <td class="code">减持 ≥ 0.5%</td>
+                    <td><span class="q review">已提醒</span></td>
+                  </tr>
+                  <tr>
+                    <td><span class="nm2">中国平安</span> <span class="code">601318</span></td>
+                    <td class="src">低优先级</td>
+                    <td class="title">今日无新的相关消息</td>
+                    <td class="code">月报数据变动</td>
+                    <td><span class="q drop">静默</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="card pad">
+              <div class="mttl">提醒触发规则<span class="cnt2">阈值写在 config.yaml，改完即时生效</span></div>
+              <div class="rulegrid">
+                <div class="rule"><b>价格类</b>跌破关注价、当日涨跌 ≥ 5% → 立即推送</div>
+                <div class="rule"><b>事件类</b>减持 / 并购 / 业绩预告 / 监管问询 → 命中即推送</div>
+                <div class="rule"><b>数据类</b>毛利率环比 ±1pt、库存周转环比 ±20% → 收盘汇总</div>
+                <div class="rule"><b>静默</b>同一标的 24 小时最多 2 条，避免消息轰炸</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="side">
+            <div class="scard">
+              <div class="hd">提醒记录 <span class="cnt">今日 3 条</span></div>
+              <div class="alert"><span class="t">09:31</span><span><b>贵州茅台</b> 盘中跌破关注价 1,520 → 已推送微信</span></div>
+              <div class="alert"><span class="t">08:47</span><span><b>隆基绿能</b> 减持公告命中阈值（1.00% ≥ 0.5%）</span></div>
+              <div class="alert"><span class="t">08:46</span><span><b>宁德时代</b> 大额供货协议，已加进早报研究队列</span></div>
+              <div class="alert info"><span class="t">08:47</span><span style="color:#64748b">1 条低于阈值，已<b>静默</b>（中国平安月报未变）</span></div>
+            </div>
+            <div class="scard">
+              <div class="hd">记忆</div>
+              <div class="mem"><span class="ic">偏好</span><span>提醒只看<b>早盘 + 收盘</b>两个时间窗</span></div>
+              <div class="mem"><span class="ic">偏好</span><span>减持类事件<b>必看</b>，不管金额大小</span></div>
+              <div class="mem"><span class="ic">历史</span><span>上次说「宁德时代先别推」，10 天后恢复</span></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- ========== 状态栏：九个模块的验收指标 ========== -->
+    <div class="statusbar">
+      <span class="ok">● 9/9 模块就绪</span>
+      <span class="sep"></span>
+      <span>端到端回归 <b style="color:#0f172a">27/30</b></span>
+      <span class="sep"></span>
+      <span>P50 <b style="color:#0f172a">3.8s</b> · P99 9.1s</span>
+      <span class="sp">
+        <span class="m">分流 <b>0.558</b></span>
+        <span class="m">抽取 <b>0.78</b></span>
+        <span class="m">去重 <b>0.93</b></span>
+        <span class="m">RAG <b>0.91</b></span>
+        <span class="m">图谱 <b>0.74</b></span>
+        <span class="m">记忆 <b>0.87</b></span>
+        <span class="m">自进化 <b>22→70%</b></span>
+      </span>
+    </div>
+  </div>
+</div>
+
+<script>
+/* ============================================================
+   静态效果图：数据全部写死在脚本里，不连后端、不调模型。
+   这么做的原因：这份稿子是给同学看「九周做完长什么样」，
+   要能离线打开、随便投屏，不能因为断网或模型没加载就白屏。
+   ============================================================ */
+
+/* ---------- 1. 早报面板：三个队列的假数据 ---------- */
+// 主题标签用四种颜色区分「金融/产业/宏观/噪音」，和 labels.py 的四组一一对应
+const GROUP_CLS = { 金融:'fin', 产业:'ind', 宏观:'mac', 噪音:'noi' };
+
+const NEWS = {
+  research: [
+    { t:'08:31', src:'巨潮公告', title:'贵州茅台：2026 年三季报净利润同比 +12.4%，环比改善', g:'金融', lb:'证券', s:0.98 },
+    { t:'08:27', src:'巨潮公告', title:'五粮液：关于召开 2026 年第二次临时股东大会的通知', g:'金融', lb:'财经', s:0.95 },
+    { t:'08:22', src:'行业研报', title:'白酒双节动销好于预期，渠道库存回到 1.5 个月', g:'产业', lb:'财经', s:0.93 },
+    { t:'08:18', src:'巨潮公告', title:'宁德时代：与欧洲车企签订 5 年动力电池供货协议', g:'产业', lb:'科技', s:0.97 },
+    { t:'08:12', src:'巨潮公告', title:'隆基绿能：拟 120 亿元投建 BC 电池产线', g:'产业', lb:'科技', s:0.96 },
+    { t:'08:06', src:'行业研报', title:'半导体设备招标数据：国产化率升至 41%', g:'产业', lb:'科技', s:0.92 }
+  ],
+  review: [
+    { t:'07:56', src:'财经快讯', title:'美联储 11 月议息会议纪要：多数委员支持放缓降息', g:'宏观', lb:'国际', s:0.72 },
+    { t:'07:49', src:'巨潮公告', title:'某某公司：关于董事会换届选举的补充公告', g:'金融', lb:'财经', s:0.61 },
+    { t:'07:42', src:'交易所', title:'关于对某某公司 2026 年半年报问询函的回复', g:'金融', lb:'证券', s:0.58 },
+    { t:'07:38', src:'基金公告', title:'某某基金 2026 年 10 月净值公告（信息量低）', g:'金融', lb:'财经', s:0.52 },
+    { t:'07:34', src:'券商晨会', title:'晨会纪要（正文缺失，仅抓到标题）', g:'金融', lb:'证券', s:0.44 },
+    { t:'07:29', src:'财经快讯', title:'某地出台楼市新政，首付比例下调', g:'金融', lb:'房产', s:0.41 }
+  ],
+  drop: [
+    { t:'07:38', src:'招聘信息', title:'招聘启事：研究员助理 2 名，base 上海', g:'噪音', lb:'教育', s:0.08 },
+    { t:'07:30', src:'生活服务', title:'双十一图书满减活动，全场 5 折起', g:'噪音', lb:'文化', s:0.05 },
+    { t:'07:24', src:'社会新闻', title:'某中学秋季运动会开幕，师生同场竞技', g:'噪音', lb:'教育', s:0.04 },
+    { t:'07:17', src:'体育快讯', title:'联赛第 28 轮：主队 2:1 逆转取胜', g:'噪音', lb:'体育', s:0.03 },
+    { t:'07:10', src:'娱乐资讯', title:'某剧组官宣杀青，预计明年上线', g:'噪音', lb:'娱乐', s:0.02 },
+    { t:'07:02', src:'旅游攻略', title:'国庆后错峰游：这 8 个小众人少景美', g:'噪音', lb:'旅游', s:0.01 }
+  ]
+};
+
+const tbody = document.getElementById('newsBody');
+
+function renderNews(queue) {
+  // 置信度条只有超过阈值才用绿色，落在复核区用琥珀色——视觉上直接看出「哪条可疑」
+  tbody.innerHTML = NEWS[queue].map(r => {
+    const pct = Math.round(r.s * 100);
+    const cls = r.s >= 0.9 ? '' : (r.s >= 0.4 ? 'mid' : 'low');
+    const qcls = r.s >= 0.9 && r.g !== '噪音' ? 'research' : (r.s >= 0.4 ? 'review' : 'drop');
+    const qtxt = qcls === 'research' ? '研究队列' : (qcls === 'review' ? '待复核' : '丢弃');
+    return `<tr>
+      <td class="tm">${r.t}</td>
+      <td class="src">${r.src}</td>
+      <td class="title">${r.title}</td>
+      <td><span class="tag ${GROUP_CLS[r.g]}">${r.g}<span class="lb">${r.lb}</span></span></td>
+      <td><div class="conf"><span class="track"><i class="${cls}" style="width:${pct}%"></i></span><span class="num">${r.s.toFixed(2)}</span></div></td>
+      <td><span class="q ${qcls}">${qtxt}</span></td>
+    </tr>`;
+  }).join('');
+}
+renderNews('research');
+
+document.querySelectorAll('.qtab').forEach(b => {
+  b.addEventListener('click', () => {
+    document.querySelectorAll('.qtab').forEach(x => x.classList.remove('on'));
+    b.classList.add('on');
+    renderNews(b.dataset.q);
+  });
+});
+
+/* ---------- 2. 对话研究：Agent 的 5 步轨迹 ---------- */
+// 每一步 = [工具名, 干了什么, 耗时]，顺序就是真实的执行顺序
+const STEPS = [
+  ['router.classify',  '判定 <b>金融域 · 相关性 0.97</b> → 放行，进研究队列', '4 ms'],
+  ['extract.event',    '抽出实体 <b>贵州茅台、五粮液</b>，时间 <b>2023</b>，意图 <b>指标对比</b>', '82 ms'],
+  ['memory.recall',    '命中关注列表 <b>贵州茅台</b>；偏好 <b>差值按百分点报</b>', '6 ms'],
+  ['rag.search',       '两次检索年报，召回 6 段 → 精排保留 <b>2 段</b>（P.58 / P.62）', '418 ms'],
+  ['tool.calc',        '<b>91.96 − 75.79 = 16.17</b>（算术交给工具，不让模型心算）', '1 ms'],
+  ['stop',             '已满足「必须带引用」约束 → <b>提前停止</b>，不再多跑一轮', '—']
+];
+
+const stepsEl = document.getElementById('steps');
+
+function renderSteps() {
+  stepsEl.innerHTML = STEPS.map(([who, what, ms]) => `
+    <li class="step">
+      <span class="who">${who}</span>
+      <span class="what">${what}</span>
+      <span class="ms ok">${ms}</span>
+    </li>`).join('');
+}
+
+/* 重跑：把 DOM 重新生成一遍，让每一步重新「跑」一次，纯动画、无副作用 */
+renderSteps();
+document.getElementById('replay').addEventListener('click', () => {
+  stepsEl.innerHTML = '';
+  // 强制造一次重排，否则浏览器会把两次渲染合并成一次，看不出动画
+  void stepsEl.offsetWidth;
+  renderSteps();
+});
+
+// 结构化输出：教学用——让同学看到「结论是字段，不是一段散文字」
+const jsonEl = document.getElementById('json');
+const jbtn = document.getElementById('toggleJson');
+jbtn.addEventListener('click', () => {
+  jsonEl.classList.toggle('on');
+  jbtn.classList.toggle('primary');
+});
+
+/* ---------- 3. 视图切换（地址栏 #hash 也可以直接定位，方便截图） ---------- */
+const navBtns = document.querySelectorAll('.nav');
+const views = document.querySelectorAll('.view');
+
+function show(view) {
+  views.forEach(v => v.classList.toggle('on', v.dataset.view === view));
+  navBtns.forEach(b => b.classList.toggle('on', b.dataset.view === view));
+  // 每屏都从顶部开始，避免来回切换后停在滚动位置
+  document.querySelectorAll('.view').forEach(v => { if (v.classList.contains('on')) v.scrollTop = 0; });
+}
+
+navBtns.forEach(b => b.addEventListener('click', () => show(b.dataset.view)));
+
+const hash = (location.hash || '').replace('#', '');
+if (hash) show(hash);
+</script>
+</body>
+</html>

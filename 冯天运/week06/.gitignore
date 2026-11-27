@@ -1,0 +1,20 @@
+# ---- weights / dataset copies: too big for git ----
+code/outputs/bert_ckpt.pt
+code/outputs/ckpt_*.pt
+code/outputs/*_ckpt*.pt
+pretrain_models/
+# ---- python cache ----
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+# ---- ide / os ----
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+# ---- local temp ----
+*.tmp
+*.bak
+nohup.out

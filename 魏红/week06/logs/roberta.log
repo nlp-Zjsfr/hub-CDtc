@@ -1,0 +1,13 @@
+device: cuda  model: models/chinese-roberta-wwm-ext
+训练 53,360 条 / 验证 10,000 条，去重后 8,901 条，抽样 500 条
+参数量: 102,279,183
+
+ Epoch  Train Loss       Acc(去重全量)      Macro-F1(去重全量)      用时
+------------------------------------------------------------------
+     1      1.4797          0.5390              0.5269     32s
+     2      1.0465          0.5540              0.5496     31s
+     3      0.8740          0.5527              0.5458     31s
+
+课件同款 500 条抽样：Acc 0.5580  Macro-F1 0.5537
+课件参考（500 条）：TF-IDF 0.472 / BERT 0.544 / Qwen3 LoRA 0.484 / API zero-shot 0.471
+已保存 D:\AILearn\AI课程\作业\week06\logs\roberta.json

@@ -1,0 +1,52 @@
+{
+  "baseline_pred": "outputs\\roberta_pred_full.json",
+  "smoke": false,
+  "rows": [
+    {
+      "tag": "baseline",
+      "desc": "基线：cls 池化 + 类别加权 + CE",
+      "args": [],
+      "train_min": 13.3,
+      "val_macro_f1_raw": 0.5674,
+      "val_epochs": [
+        0.5466,
+        0.5674,
+        0.564
+      ],
+      "clean_acc": 0.5634,
+      "clean_macro_f1": 0.555,
+      "clean_ece": 0.0915,
+      "pair_vs_baseline": {}
+    },
+    {
+      "tag": "noclass",
+      "desc": "去掉类别加权（看长尾类会不会塌）",
+      "args": [
+        "--no_class_weight"
+      ],
+      "train_min": 13.9,
+      "val_macro_f1_raw": 0.5783,
+      "val_epochs": [
+        0.5635,
+        0.5736,
+        0.5783
+      ],
+      "clean_acc": 0.5743,
+      "clean_macro_f1": 0.5682,
+      "clean_ece": 0.0969,
+      "pair_vs_baseline": {
+        "n_paired": 8841,
+        "mcnemar": {
+          "baseline_wrong_this_right": 526,
+          "baseline_right_this_wrong": 428,
+          "p_exact": 0.0016726513686215721
+        },
+        "delta_f1_ci95_pt": [
+          0.2613360038600357,
+          2.3862048452535345
+        ],
+        "delta_f1_mean_pt": 1.350325473128375
+      }
+    }
+  ]
+}

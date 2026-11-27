@@ -1,0 +1,6 @@
+# 两个 TF-IDF 基线，无需 PyTorch、Transformers 或预训练权重。
+numpy==1.26.4
+scipy==1.14.1
+scikit-learn==1.5.2
+joblib==1.4.2
+threadpoolctl==3.5.0

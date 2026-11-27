@@ -1,0 +1,28 @@
+device: cuda  model: D:/BaiduNetdiskDownload/八斗精品班/第四周 语言模型/bert-base-chinese/bert-base-chinese
+训练 53,360 条 / 验证 10,000 条，去重后 8,901 条，抽样 500 条
+参数量: 102,279,183
+
+ Epoch  Train Loss       Acc(去重全量)      Macro-F1(去重全量)      用时
+------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\AILearn\AI课程\作业\week06\classify_tnews.py", line 326, in <module>
+    Program.main()
+  File "D:\AILearn\AI课程\作业\week06\classify_tnews.py", line 299, in main
+    train_loss = trainer.train_epoch(train_loader)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\AILearn\AI课程\作业\week06\classify_tnews.py", line 215, in train_epoch
+    logits = self._forward(batch)
+             ^^^^^^^^^^^^^^^^^^^^
+  File "D:\AILearn\AI课程\作业\week06\classify_tnews.py", line 203, in _forward
+    logits = self._model(batch["input_ids"].to(self._device),
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\app\miniconda3\envs\py312\Lib\site-packages\torch\nn\modules\module.py", line 1778, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\app\miniconda3\envs\py312\Lib\site-packages\torch\nn\modules\module.py", line 1789, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\AILearn\AI课程\作业\week06\classify_tnews.py", line 144, in forward
+    token_type_ids=token_type_ids).last_hidden_state   # (B, L, 768)
+                                   ^^^^^^^^^^^^^^^^^
+AttributeError: 'tuple' object has no attribute 'last_hidden_state'

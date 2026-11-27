@@ -1,0 +1,261 @@
+{
+  "split": "val",
+  "n": 1577,
+  "split_seed": 42,
+  "val_fraction": 0.1,
+  "experiments": {
+    "exp1": {
+      "description": "CLS 池化",
+      "models": {
+        "bert-base-chinese": {
+          "macro_f1": 0.9662968550732852,
+          "accuracy": 0.9733671528218135,
+          "change_from_exp1_pp": 0.0,
+          "best_epoch": 3,
+          "training_seconds": 808.5523351249867,
+          "juice_errors": [
+            6,
+            22
+          ]
+        },
+        "roberta_base": {
+          "macro_f1": 0.9710587221853967,
+          "accuracy": 0.9784400760938491,
+          "change_from_exp1_pp": 0.0,
+          "best_epoch": 3,
+          "training_seconds": 891.8140346250148,
+          "juice_errors": [
+            5,
+            20
+          ]
+        }
+      },
+      "roberta_minus_bert_pp": 0.4761867112111462
+    },
+    "exp2": {
+      "description": "Mean 池化",
+      "models": {
+        "bert-base-chinese": {
+          "macro_f1": 0.9736885772362301,
+          "accuracy": 0.9803424223208624,
+          "change_from_exp1_pp": 0.7391722162944925,
+          "best_epoch": 3,
+          "training_seconds": 949.0905602499988,
+          "juice_errors": [
+            6,
+            15
+          ]
+        },
+        "roberta_base": {
+          "macro_f1": 0.9721185873637997,
+          "accuracy": 0.9790741915028536,
+          "change_from_exp1_pp": 0.10598651784030633,
+          "best_epoch": 3,
+          "training_seconds": 955.4184835409833,
+          "juice_errors": [
+            6,
+            17
+          ]
+        }
+      },
+      "roberta_minus_bert_pp": -0.15699898724303996
+    },
+    "exp3": {
+      "description": "Max 池化",
+      "models": {
+        "bert-base-chinese": {
+          "macro_f1": 0.9690459023393508,
+          "accuracy": 0.9765377298668357,
+          "change_from_exp1_pp": 0.27490472660656184,
+          "best_epoch": 3,
+          "training_seconds": 965.1543403750111,
+          "juice_errors": [
+            7,
+            21
+          ]
+        },
+        "roberta_base": {
+          "macro_f1": 0.9689329553901688,
+          "accuracy": 0.9759036144578314,
+          "change_from_exp1_pp": -0.21257667952279125,
+          "best_epoch": 3,
+          "training_seconds": 1070.9595417910023,
+          "juice_errors": [
+            6,
+            19
+          ]
+        }
+      },
+      "roberta_minus_bert_pp": -0.011294694918206893
+    },
+    "exp4": {
+      "description": "CLS + Mean 池化",
+      "models": {
+        "bert-base-chinese": {
+          "macro_f1": 0.9705549918551958,
+          "accuracy": 0.9778059606848446,
+          "change_from_exp1_pp": 0.425813678191056,
+          "best_epoch": 3,
+          "training_seconds": 960.5811519589915,
+          "juice_errors": [
+            6,
+            22
+          ]
+        },
+        "roberta_base": {
+          "macro_f1": 0.9744615509019521,
+          "accuracy": 0.9816106531388713,
+          "change_from_exp1_pp": 0.3402828716555395,
+          "best_epoch": 3,
+          "training_seconds": 931.9959518330288,
+          "juice_errors": [
+            7,
+            16
+          ]
+        }
+      },
+      "roberta_minus_bert_pp": 0.3906559046756297
+    },
+    "exp5": {
+      "description": "编码器学习率 3e-5",
+      "models": {
+        "bert-base-chinese": {
+          "macro_f1": 0.970718412490877,
+          "accuracy": 0.9784400760938491,
+          "change_from_exp1_pp": 0.44215574175917594,
+          "best_epoch": 3,
+          "training_seconds": 942.7865266659937,
+          "juice_errors": [
+            7,
+            19
+          ]
+        },
+        "roberta_base": {
+          "macro_f1": 0.9721389344685536,
+          "accuracy": 0.9784400760938491,
+          "change_from_exp1_pp": 0.10802122831569116,
+          "best_epoch": 3,
+          "training_seconds": 954.2888363319507,
+          "juice_errors": [
+            5,
+            19
+          ]
+        }
+      },
+      "roberta_minus_bert_pp": 0.14205219776766143
+    },
+    "exp6": {
+      "description": "最大长度 32",
+      "models": {
+        "bert-base-chinese": {
+          "macro_f1": 0.967651122307292,
+          "accuracy": 0.9752694990488269,
+          "change_from_exp1_pp": 0.13542672340067785,
+          "best_epoch": 3,
+          "training_seconds": 460.5864424169995,
+          "juice_errors": [
+            6,
+            23
+          ]
+        },
+        "roberta_base": {
+          "macro_f1": 0.9720325979024776,
+          "accuracy": 0.979708306911858,
+          "change_from_exp1_pp": 0.09738757170809631,
+          "best_epoch": 3,
+          "training_seconds": 507.3690105839778,
+          "juice_errors": [
+            5,
+            18
+          ]
+        }
+      },
+      "roberta_minus_bert_pp": 0.43814755951856466
+    },
+    "exp7": {
+      "description": "FGM（ε=1.0）",
+      "models": {
+        "bert-base-chinese": {
+          "macro_f1": 0.9702248655192973,
+          "accuracy": 0.9784400760938491,
+          "change_from_exp1_pp": 0.3928010446012098,
+          "best_epoch": 3,
+          "training_seconds": 1961.0952614179987,
+          "juice_errors": [
+            6,
+            23
+          ]
+        },
+        "roberta_base": {
+          "macro_f1": 0.9649857805499844,
+          "accuracy": 0.974001268230818,
+          "change_from_exp1_pp": -0.6072941635412277,
+          "best_epoch": 3,
+          "training_seconds": 2012.589680123987,
+          "juice_errors": [
+            7,
+            24
+          ]
+        }
+      },
+      "roberta_minus_bert_pp": -0.5239084969312913
+    },
+    "exp8": {
+      "description": "Label Smoothing（ε=0.1）",
+      "models": {
+        "bert-base-chinese": {
+          "macro_f1": 0.9667095811838445,
+          "accuracy": 0.974001268230818,
+          "change_from_exp1_pp": 0.041272611055931385,
+          "best_epoch": 3,
+          "training_seconds": 1001.605358041008,
+          "juice_errors": [
+            6,
+            22
+          ]
+        },
+        "roberta_base": {
+          "macro_f1": 0.9718421352798462,
+          "accuracy": 0.9790741915028536,
+          "change_from_exp1_pp": 0.07834130944495143,
+          "best_epoch": 3,
+          "training_seconds": 986.0774734999577,
+          "juice_errors": [
+            5,
+            19
+          ]
+        }
+      },
+      "roberta_minus_bert_pp": 0.5132554096001662
+    },
+    "exp9": {
+      "description": "Focal Loss（γ=2）",
+      "models": {
+        "bert-base-chinese": {
+          "macro_f1": 0.9633127226692156,
+          "accuracy": 0.9708306911857958,
+          "change_from_exp1_pp": -0.2984132404069584,
+          "best_epoch": 3,
+          "training_seconds": 997.7750714999856,
+          "juice_errors": [
+            7,
+            22
+          ]
+        },
+        "roberta_base": {
+          "macro_f1": 0.9677586035485388,
+          "accuracy": 0.9752694990488269,
+          "change_from_exp1_pp": -0.3300118636857863,
+          "best_epoch": 3,
+          "training_seconds": 960.2658565839811,
+          "juice_errors": [
+            6,
+            20
+          ]
+        }
+      },
+      "roberta_minus_bert_pp": 0.4445880879323183
+    }
+  },
+  "tfidf_macro_f1": 0.9825667697309204
+}

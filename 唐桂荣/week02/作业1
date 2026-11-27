@@ -1,0 +1,143 @@
+"""多分类任务完成模型训练:对于任意五维向量，它最大数字在第几维就属于第几类"""
+import os
+os.environ["KMP_DUPLICATE_LIB_OK"] = "TRUE"
+
+import torch
+import torch.nn as nn
+import matplotlib.pyplot as plt
+import torch
+import torch.nn as nn
+import matplotlib.pyplot as plt
+
+
+
+device = torch.device("cuda" if torch.cuda.is_available() else "mps" if torch.backends.mps.is_available() else "cpu")
+print("使用设备：", device)
+
+class TorchModel(nn.Module):
+    def __init__(self, input_size):
+        super().__init__()
+        self.linear = nn.Linear(input_size, 5)  # 线性层
+        self.loss = nn.functional.cross_entropy  # loss函数采用交叉熵损失
+
+    # 当输入真实标签，返回预测向量和loss值
+    def forward(self, x, y=None): 
+        logits = self.linear(x)
+        prob = torch.softmax(logits, dim=1)
+        if y is None:
+            return prob
+        class_ids = prob.argmax(dim=1)
+        y_pred = nn.functional.one_hot(class_ids, num_classes=5).to(prob.dtype) #  转化为one-hot向量
+        loss = self.loss(logits, y)
+        return y_pred, loss  # 预测值和真实值计算损失
+
+
+# 生成一个样本, 样本的生成方法，代表了我们要学习的规律
+# 随机生成一个5维向量，最大数字在第几维就属于第几类，注意不要出现两个最大的数字
+def build_sample():
+    while True: # 保证每次调用都能返回一个样本
+        x = torch.rand(5)
+        mask = (x == x.max())
+        count = mask.sum().item()
+        if count == 1:
+            y = mask.to(x.dtype)
+            return x, y
+
+
+# 随机生成一批样本
+# 5种类型样本均匀生成
+def build_dataset(total_sample_num):
+    X = []
+    Y = []
+    for i in range(total_sample_num):
+        x, y = build_sample()
+        X.append(x)
+        Y.append(y)
+    # print(X)
+    # print(Y)
+    return torch.stack(X).to(device), torch.stack(Y).to(device) # 转为张量后再传入到GPU
+
+# 测试代码
+# 用来测试每轮模型的准确率
+def evaluate(model):
+    model.eval()
+    test_sample_num = 200
+    x, y = build_dataset(test_sample_num)
+    counts = y.sum(dim=0)
+    for i in range(5):
+        print(f"本次预测集中第{i+1}类样本共有{counts[i]}")
+    with torch.no_grad():
+        y_pred = model(x, y)[0]  # 模型预测 
+        assert type(y_pred) == type(y)
+        raw_equal = (y == y_pred).all(dim=1)
+        correct = raw_equal.sum().item()
+    print(f"正确预测个数：{correct}, 正确率：{correct / test_sample_num}")
+    return correct / test_sample_num
+
+
+def main():
+    # 配置参数
+    epoch_num = 20  # 训练轮数
+    batch_size = 20  # 每次训练样本个数
+    train_sample = 500  # 每轮训练总共训练的样本总数
+    input_size = 5  # 输入向量维度
+    learning_rate = 0.01  # 学习率
+    # 建立模型
+    model = TorchModel(input_size).to(device)
+    # 选择优化器
+    optim = torch.optim.Adam(model.parameters(), lr=learning_rate)
+    log = []
+    # 创建训练集，正常任务是读取训练集
+    train_x, train_y = build_dataset(train_sample)
+    # 训练过程
+    for epoch in range(epoch_num):
+        model.train()
+        watch_loss = []
+        for batch_index in range(train_sample // batch_size): 
+            #取出一个batch数据作为输入   train_x[0:20]  train_y[0:20] train_x[20:40]  train_y[20:40]
+            x = train_x[batch_index * batch_size : (batch_index + 1) * batch_size]
+            y = train_y[batch_index * batch_size : (batch_index + 1) * batch_size]
+            loss = model(x, y)[1]  # 计算loss 
+            loss.backward()  # 计算梯度
+            optim.step()  # 更新权重
+            optim.zero_grad()  # 梯度归零
+            watch_loss.append(loss.item())
+        avg_loss = sum(watch_loss) / len(watch_loss)
+        print(f"=========\n第{epoch + 1}轮平均loss:{avg_loss}" )
+        acc = evaluate(model)  # 测试本轮模型结果
+        log.append([acc, float(avg_loss)])
+    # 保存模型
+    torch.save(model.state_dict(), "model2.bin")
+    # 画图
+    #print(log)
+    plt.plot(range(len(log)), [l[0] for l in log], label="acc")  # 画acc曲线
+    plt.plot(range(len(log)), [l[1] for l in log], label="loss")  # 画loss曲线
+    plt.legend()
+    return
+
+# 使用训练好的模型做预测
+def predict(model_path, input_vec):
+    input_size = 5
+    model = TorchModel(input_size).to(device)
+    state_dict = torch.load(model_path, map_location=device, weights_only=True)
+    model.load_state_dict(state_dict)  # 加载训练好的权重
+    model.eval()  # 测试模式
+    x = torch.tensor(input_vec, dtype=torch.float32, device=device) # 输入转入GPU
+    with torch.no_grad():  # 不计算梯度
+        prob = model(x)
+        class_ids = prob.argmax(dim=1)
+    for vec, probs, class_id in zip(input_vec, prob, class_ids):
+        index = class_id.item() # 类别编号
+        probability = probs[index].item() # 该类别的预测概率
+        print(f"输入：{vec}, 预测类别：第{index + 1}类, 概率值：{probability:.2f}" )  # 打印结果
+
+
+if __name__ == "__main__":
+    main()
+    test_vec = [[0.81889086,0.15229675,0.31082123,0.03504317,0.88920843],
+                [0.94963533,0.5524256,0.95758807,0.95520434,0.84890681],
+                [0.90797868,0.67482528,0.13625847,0.34675372,0.19871392],
+                [0.39349776,0.59416669,0.92579291,0.41567412,0.8358894]]
+    predict("model2.bin", test_vec)
+    plt.show()
+

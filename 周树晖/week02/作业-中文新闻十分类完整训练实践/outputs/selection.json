@@ -1,0 +1,92 @@
+{
+  "frozen_at": "2026-10-22T12:28:36.858845+08:00",
+  "selection_rule": "各实验按验证集Macro-F1选最佳轮次；验证Macro-F1最高的MLP作为主模型；测试前固定主模型与线性基线",
+  "main_model": {
+    "name": "mlp_combined",
+    "config": {
+      "hidden_dims": [
+        128,
+        64
+      ],
+      "lr": 0.001,
+      "batch_size": 256,
+      "dropout": 0.2,
+      "weight_decay": 0.0001,
+      "scheduler": true,
+      "max_epochs": 18,
+      "early_stopping_patience": 4,
+      "min_delta": 0.0001,
+      "gradient_clip_norm": 5.0,
+      "optimizer": "Adam",
+      "name": "mlp_combined",
+      "question": "预先设定的组合策略，不能单独归因于其中任何一项"
+    },
+    "seed": 42,
+    "data_signature": {
+      "train": "438c34baa94d0de365731d6c56c9efa2c404587af9ad3765e57539e3a9795ace",
+      "val": "f98dc93a705c831b99446ec9b9219d97bbaf83f788249c0214e46e116dc6aa78",
+      "vectorizer": "bd55a7337b5311d712d77bbcc82383ff49285cae7bc41f3a171671f8d3ba1f17"
+    },
+    "best_epoch": 8,
+    "epochs_ran": 12,
+    "best_val_macro_f1": 0.9051071973842845,
+    "best_val_accuracy": 0.9051197274822163,
+    "best_val_loss": 0.30402393912447323,
+    "parameter_count": 649034,
+    "seconds": 19.589247800000066,
+    "checkpoint": "models/mlp_combined.pt",
+    "stopped_early": true,
+    "steps_per_epoch": 699,
+    "total_steps": 8388
+  },
+  "linear_baseline": {
+    "name": "linear_adam",
+    "config": {
+      "hidden_dims": [],
+      "lr": 0.001,
+      "batch_size": 256,
+      "dropout": 0.0,
+      "weight_decay": 0.0,
+      "scheduler": false,
+      "max_epochs": 18,
+      "early_stopping_patience": 4,
+      "min_delta": 0.0001,
+      "gradient_clip_norm": 5.0,
+      "optimizer": "Adam",
+      "name": "linear_adam",
+      "question": "单层分类器基线：不使用隐藏层"
+    },
+    "seed": 42,
+    "data_signature": {
+      "train": "438c34baa94d0de365731d6c56c9efa2c404587af9ad3765e57539e3a9795ace",
+      "val": "f98dc93a705c831b99446ec9b9219d97bbaf83f788249c0214e46e116dc6aa78",
+      "vectorizer": "bd55a7337b5311d712d77bbcc82383ff49285cae7bc41f3a171671f8d3ba1f17"
+    },
+    "best_epoch": 18,
+    "epochs_ran": 18,
+    "best_val_macro_f1": 0.8911959513994681,
+    "best_val_accuracy": 0.8911932672076947,
+    "best_val_loss": 0.356480300241357,
+    "parameter_count": 50010,
+    "seconds": 20.873609700000088,
+    "checkpoint": "models/linear_adam.pt",
+    "stopped_early": false,
+    "steps_per_epoch": 699,
+    "total_steps": 12582
+  },
+  "majority_label": 7,
+  "majority_validation": {
+    "accuracy": 0.10019036168720569,
+    "macro_f1": 0.0182132774792824
+  },
+  "main_checkpoint_sha256": "17be868849443e49d13b25de7804cbb4bb70f2366e149bb1dee3b8910d60d00c",
+  "linear_checkpoint_sha256": "c036ee7d982d0fda6b2547141bcd8970d9fa2249949f1bdfe753a6d2c81f7e6f",
+  "vectorizer_sha256": "bd55a7337b5311d712d77bbcc82383ff49285cae7bc41f3a171671f8d3ba1f17",
+  "test_processed_sha256": "4799ee9fc26806b99033255194fbee903bc53a51923aa1f97ede83e265706b67",
+  "test_evaluation_plan": [
+    "majority_baseline",
+    "linear_baseline",
+    "selected_mlp"
+  ],
+  "total_training_seconds": 229.08833559999994
+}

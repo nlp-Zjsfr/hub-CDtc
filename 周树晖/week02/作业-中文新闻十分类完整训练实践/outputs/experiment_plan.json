@@ -1,0 +1,80 @@
+{
+  "seed": 42,
+  "features": {
+    "max_features": 5000,
+    "ngram_range": [
+      1,
+      2
+    ],
+    "min_df": 2
+  },
+  "defaults": {
+    "hidden_dims": [
+      128,
+      64
+    ],
+    "lr": 0.001,
+    "batch_size": 256,
+    "dropout": 0.0,
+    "weight_decay": 0.0,
+    "scheduler": false,
+    "max_epochs": 18,
+    "early_stopping_patience": 4,
+    "min_delta": 0.0001,
+    "gradient_clip_norm": 5.0,
+    "optimizer": "Adam"
+  },
+  "experiments": [
+    {
+      "name": "linear_adam",
+      "hidden_dims": [],
+      "question": "单层分类器基线：不使用隐藏层"
+    },
+    {
+      "name": "mlp_reference",
+      "question": "多层网络参考配置，所有单因素实验与它比较"
+    },
+    {
+      "name": "mlp_lr_small",
+      "lr": 0.0001,
+      "question": "只把学习率从1e-3降到1e-4"
+    },
+    {
+      "name": "mlp_lr_large",
+      "lr": 0.01,
+      "question": "只把学习率从1e-3升到1e-2"
+    },
+    {
+      "name": "mlp_batch64",
+      "batch_size": 64,
+      "question": "只把批大小从256改成64"
+    },
+    {
+      "name": "mlp_dropout",
+      "dropout": 0.2,
+      "question": "只在隐藏层ReLU后加入Dropout(0.2)"
+    },
+    {
+      "name": "mlp_weight_decay",
+      "weight_decay": 0.0001,
+      "question": "只在Adam中加入L2权重衰减1e-4"
+    },
+    {
+      "name": "mlp_scheduler",
+      "scheduler": true,
+      "question": "只加入验证集Macro-F1平台期学习率减半"
+    },
+    {
+      "name": "mlp_combined",
+      "dropout": 0.2,
+      "weight_decay": 0.0001,
+      "scheduler": true,
+      "question": "预先设定的组合策略，不能单独归因于其中任何一项"
+    }
+  ],
+  "selection": "各实验按验证集Macro-F1选最佳轮次；验证Macro-F1最高的MLP作为主模型；测试前固定主模型与线性基线",
+  "robustness_seeds": [
+    7,
+    2026
+  ]
+}

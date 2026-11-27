@@ -1,0 +1,22 @@
+{
+  "python": "3.14.4 (tags/v3.14.4:23116f9, Apr  7 2026, 14:10:54) [MSC v.1944 64 bit (AMD64)]",
+  "executable": "C:\\Python314\\python.exe",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "device": "cuda",
+  "gpu": "NVIDIA GeForce RTX 5070 Laptop GPU",
+  "cuda_build": "13.0",
+  "packages": {
+    "torch": "2.12.0+cu130",
+    "numpy": "2.4.4",
+    "scipy": "1.18.1",
+    "scikit-learn": "1.9.0",
+    "matplotlib": "3.11.1",
+    "joblib": "1.6.0",
+    "tzdata": "2026.4"
+  },
+  "torch_num_threads": 4,
+  "deterministic_algorithms": true,
+  "timezone": "Asia/Shanghai",
+  "training_started": "2026-10-22T12:24:47.960338+08:00",
+  "feature_cache_mode": "GPU cached float32"
+}

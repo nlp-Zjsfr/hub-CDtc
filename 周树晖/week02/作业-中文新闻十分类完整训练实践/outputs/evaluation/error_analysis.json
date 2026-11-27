@@ -1,0 +1,953 @@
+{
+  "most_common_confusions": [
+    {
+      "count": 56,
+      "true": "股票",
+      "predicted": "财经"
+    },
+    {
+      "count": 54,
+      "true": "财经",
+      "predicted": "股票"
+    },
+    {
+      "count": 40,
+      "true": "股票",
+      "predicted": "科技"
+    },
+    {
+      "count": 39,
+      "true": "游戏",
+      "predicted": "科技"
+    },
+    {
+      "count": 36,
+      "true": "科技",
+      "predicted": "游戏"
+    },
+    {
+      "count": 35,
+      "true": "时政",
+      "predicted": "社会"
+    },
+    {
+      "count": 34,
+      "true": "科技",
+      "predicted": "股票"
+    },
+    {
+      "count": 32,
+      "true": "股票",
+      "predicted": "时政"
+    },
+    {
+      "count": 27,
+      "true": "时政",
+      "predicted": "股票"
+    },
+    {
+      "count": 26,
+      "true": "娱乐",
+      "predicted": "体育"
+    }
+  ],
+  "high_probability_errors": [
+    {
+      "id": "test:4539",
+      "text": "英宣布留学生签证新政 攻读本科雅思需高于5分",
+      "true_label": "时政",
+      "prediction": "教育",
+      "probability": 0.9999938011169434,
+      "correct": false,
+      "top3": [
+        {
+          "label": "教育",
+          "probability": 0.9999938011169434
+        },
+        {
+          "label": "社会",
+          "probability": 2.5856409138214076e-06
+        },
+        {
+          "label": "时政",
+          "probability": 2.345718712604139e-06
+        }
+      ]
+    },
+    {
+      "id": "test:1517",
+      "text": "男篮国手幽会兽兽举止亲密 篮协谨慎回应恐重罚",
+      "true_label": "娱乐",
+      "prediction": "体育",
+      "probability": 0.9990150928497314,
+      "correct": false,
+      "top3": [
+        {
+          "label": "体育",
+          "probability": 0.9990150928497314
+        },
+        {
+          "label": "娱乐",
+          "probability": 0.0006829694611951709
+        },
+        {
+          "label": "游戏",
+          "probability": 0.0001427150855306536
+        }
+      ]
+    },
+    {
+      "id": "test:9208",
+      "text": "胡锦涛肯定香港应对金融危机努力 称赞施政团队",
+      "true_label": "股票",
+      "prediction": "时政",
+      "probability": 0.9984733462333679,
+      "correct": false,
+      "top3": [
+        {
+          "label": "时政",
+          "probability": 0.9984733462333679
+        },
+        {
+          "label": "体育",
+          "probability": 0.0006772473570890725
+        },
+        {
+          "label": "股票",
+          "probability": 0.00045075116213411093
+        }
+      ]
+    },
+    {
+      "id": "test:3016",
+      "text": "QTE测试员招募条件苛刻 堪比考公务员",
+      "true_label": "游戏",
+      "prediction": "教育",
+      "probability": 0.9976048469543457,
+      "correct": false,
+      "top3": [
+        {
+          "label": "教育",
+          "probability": 0.9976048469543457
+        },
+        {
+          "label": "游戏",
+          "probability": 0.0014600417343899608
+        },
+        {
+          "label": "财经",
+          "probability": 0.00040557875763624907
+        }
+      ]
+    },
+    {
+      "id": "test:6116",
+      "text": "陈永正无力再战 NBA中国僵局难破",
+      "true_label": "科技",
+      "prediction": "体育",
+      "probability": 0.9971822500228882,
+      "correct": false,
+      "top3": [
+        {
+          "label": "体育",
+          "probability": 0.9971822500228882
+        },
+        {
+          "label": "游戏",
+          "probability": 0.0010208789026364684
+        },
+        {
+          "label": "股票",
+          "probability": 0.0007016243180260062
+        }
+      ]
+    },
+    {
+      "id": "test:1196",
+      "text": "飞轮海：我们和F4是“接力赛” 接过他们的枪",
+      "true_label": "娱乐",
+      "prediction": "体育",
+      "probability": 0.9962961077690125,
+      "correct": false,
+      "top3": [
+        {
+          "label": "体育",
+          "probability": 0.9962961077690125
+        },
+        {
+          "label": "娱乐",
+          "probability": 0.0030420830007642508
+        },
+        {
+          "label": "游戏",
+          "probability": 0.00045540014980360866
+        }
+      ]
+    },
+    {
+      "id": "test:2796",
+      "text": "温家宝总理表示：有信心维护中国金融市场稳定",
+      "true_label": "财经",
+      "prediction": "时政",
+      "probability": 0.9955239295959473,
+      "correct": false,
+      "top3": [
+        {
+          "label": "时政",
+          "probability": 0.9955239295959473
+        },
+        {
+          "label": "股票",
+          "probability": 0.004003474023193121
+        },
+        {
+          "label": "财经",
+          "probability": 0.00017808862321544439
+        }
+      ]
+    },
+    {
+      "id": "test:4481",
+      "text": "孙中山孙女遇车祸疑因肇事者疲劳驾驶",
+      "true_label": "时政",
+      "prediction": "社会",
+      "probability": 0.9954996705055237,
+      "correct": false,
+      "top3": [
+        {
+          "label": "社会",
+          "probability": 0.9954996705055237
+        },
+        {
+          "label": "时政",
+          "probability": 0.0039079319685697556
+        },
+        {
+          "label": "娱乐",
+          "probability": 0.0004660982813220471
+        }
+      ]
+    },
+    {
+      "id": "test:7408",
+      "text": "廉租房业主拿房现场跪谢市领导(图)",
+      "true_label": "社会",
+      "prediction": "房产",
+      "probability": 0.9942857623100281,
+      "correct": false,
+      "top3": [
+        {
+          "label": "房产",
+          "probability": 0.9942857623100281
+        },
+        {
+          "label": "社会",
+          "probability": 0.00470525398850441
+        },
+        {
+          "label": "财经",
+          "probability": 0.0004620507825165987
+        }
+      ]
+    },
+    {
+      "id": "test:5299",
+      "text": "中国世界和平基金会率团访问巴基斯坦签署系列协议",
+      "true_label": "房产",
+      "prediction": "时政",
+      "probability": 0.9942342638969421,
+      "correct": false,
+      "top3": [
+        {
+          "label": "时政",
+          "probability": 0.9942342638969421
+        },
+        {
+          "label": "财经",
+          "probability": 0.0029670787043869495
+        },
+        {
+          "label": "房产",
+          "probability": 0.0011981704737991095
+        }
+      ]
+    },
+    {
+      "id": "test:9460",
+      "text": "华商基金开通第三方支付业务 享4折申购优惠",
+      "true_label": "股票",
+      "prediction": "财经",
+      "probability": 0.9933358430862427,
+      "correct": false,
+      "top3": [
+        {
+          "label": "财经",
+          "probability": 0.9933358430862427
+        },
+        {
+          "label": "科技",
+          "probability": 0.005765488371253014
+        },
+        {
+          "label": "股票",
+          "probability": 0.0005129288183525205
+        }
+      ]
+    },
+    {
+      "id": "test:7454",
+      "text": "北师大博导投师四川大学重读博士(组图)",
+      "true_label": "社会",
+      "prediction": "教育",
+      "probability": 0.993123471736908,
+      "correct": false,
+      "top3": [
+        {
+          "label": "教育",
+          "probability": 0.993123471736908
+        },
+        {
+          "label": "社会",
+          "probability": 0.004444511607289314
+        },
+        {
+          "label": "科技",
+          "probability": 0.001135763362981379
+        }
+      ]
+    }
+  ],
+  "low_probability_errors": [
+    {
+      "id": "test:1798",
+      "text": "霍格沃茨毕业生就业调查 波特三人组前途光明",
+      "true_label": "娱乐",
+      "prediction": "体育",
+      "probability": 0.2145233154296875,
+      "correct": false,
+      "top3": [
+        {
+          "label": "体育",
+          "probability": 0.2145233154296875
+        },
+        {
+          "label": "教育",
+          "probability": 0.20596234500408173
+        },
+        {
+          "label": "娱乐",
+          "probability": 0.1840868890285492
+        }
+      ]
+    },
+    {
+      "id": "test:9214",
+      "text": "图文：蜘蛛人挑战世界第一高楼",
+      "true_label": "股票",
+      "prediction": "房产",
+      "probability": 0.22066424787044525,
+      "correct": false,
+      "top3": [
+        {
+          "label": "房产",
+          "probability": 0.22066424787044525
+        },
+        {
+          "label": "股票",
+          "probability": 0.21293169260025024
+        },
+        {
+          "label": "教育",
+          "probability": 0.18292123079299927
+        }
+      ]
+    },
+    {
+      "id": "test:2884",
+      "text": "印章收藏热滚滚袭来 名家印章5年涨10倍",
+      "true_label": "财经",
+      "prediction": "社会",
+      "probability": 0.23111774027347565,
+      "correct": false,
+      "top3": [
+        {
+          "label": "社会",
+          "probability": 0.23111774027347565
+        },
+        {
+          "label": "娱乐",
+          "probability": 0.1604142040014267
+        },
+        {
+          "label": "时政",
+          "probability": 0.14368969202041626
+        }
+      ]
+    },
+    {
+      "id": "test:8661",
+      "text": "金河珍淘汰8次幸入圣乔治 蓄发明志誓言不虚此行",
+      "true_label": "体育",
+      "prediction": "娱乐",
+      "probability": 0.24058791995048523,
+      "correct": false,
+      "top3": [
+        {
+          "label": "娱乐",
+          "probability": 0.24058791995048523
+        },
+        {
+          "label": "游戏",
+          "probability": 0.21295295655727386
+        },
+        {
+          "label": "社会",
+          "probability": 0.15156584978103638
+        }
+      ]
+    },
+    {
+      "id": "test:1509",
+      "text": "薛家燕身家蒸发数百万 呼吁中国政府临危救市",
+      "true_label": "娱乐",
+      "prediction": "股票",
+      "probability": 0.24070392549037933,
+      "correct": false,
+      "top3": [
+        {
+          "label": "股票",
+          "probability": 0.24070392549037933
+        },
+        {
+          "label": "房产",
+          "probability": 0.2400130331516266
+        },
+        {
+          "label": "娱乐",
+          "probability": 0.19710074365139008
+        }
+      ]
+    },
+    {
+      "id": "test:8187",
+      "text": "南勇案提起公诉至少等年底 涉案人太多年内难结案",
+      "true_label": "体育",
+      "prediction": "时政",
+      "probability": 0.2528807818889618,
+      "correct": false,
+      "top3": [
+        {
+          "label": "时政",
+          "probability": 0.2528807818889618
+        },
+        {
+          "label": "体育",
+          "probability": 0.23685678839683533
+        },
+        {
+          "label": "股票",
+          "probability": 0.11071688681840897
+        }
+      ]
+    },
+    {
+      "id": "test:2798",
+      "text": "福利纳入工资总额 房补饭补交补今后要缴个税",
+      "true_label": "财经",
+      "prediction": "房产",
+      "probability": 0.25520968437194824,
+      "correct": false,
+      "top3": [
+        {
+          "label": "房产",
+          "probability": 0.25520968437194824
+        },
+        {
+          "label": "财经",
+          "probability": 0.20625275373458862
+        },
+        {
+          "label": "股票",
+          "probability": 0.17754635214805603
+        }
+      ]
+    },
+    {
+      "id": "test:6269",
+      "text": "方舟子美国导师：他处境危险早晚会挨打",
+      "true_label": "科技",
+      "prediction": "教育",
+      "probability": 0.25771284103393555,
+      "correct": false,
+      "top3": [
+        {
+          "label": "教育",
+          "probability": 0.25771284103393555
+        },
+        {
+          "label": "娱乐",
+          "probability": 0.22878095507621765
+        },
+        {
+          "label": "时政",
+          "probability": 0.20054705440998077
+        }
+      ]
+    },
+    {
+      "id": "test:3305",
+      "text": "《城市通》全国公共交通查询宝典",
+      "true_label": "游戏",
+      "prediction": "教育",
+      "probability": 0.26611027121543884,
+      "correct": false,
+      "top3": [
+        {
+          "label": "教育",
+          "probability": 0.26611027121543884
+        },
+        {
+          "label": "游戏",
+          "probability": 0.25668469071388245
+        },
+        {
+          "label": "房产",
+          "probability": 0.24574564397335052
+        }
+      ]
+    },
+    {
+      "id": "test:5614",
+      "text": "玉树历史上第一个“急救中心”启动援建",
+      "true_label": "房产",
+      "prediction": "娱乐",
+      "probability": 0.27359259128570557,
+      "correct": false,
+      "top3": [
+        {
+          "label": "娱乐",
+          "probability": 0.27359259128570557
+        },
+        {
+          "label": "科技",
+          "probability": 0.24704968929290771
+        },
+        {
+          "label": "时政",
+          "probability": 0.22196733951568604
+        }
+      ]
+    },
+    {
+      "id": "test:6015",
+      "text": "深圳山寨机再度风声鹤唳 督察组赴多地打击伪劣",
+      "true_label": "科技",
+      "prediction": "财经",
+      "probability": 0.27385368943214417,
+      "correct": false,
+      "top3": [
+        {
+          "label": "财经",
+          "probability": 0.27385368943214417
+        },
+        {
+          "label": "娱乐",
+          "probability": 0.24765069782733917
+        },
+        {
+          "label": "体育",
+          "probability": 0.10854241251945496
+        }
+      ]
+    },
+    {
+      "id": "test:5085",
+      "text": "地下室冒烟 盘古大观称演习",
+      "true_label": "房产",
+      "prediction": "游戏",
+      "probability": 0.27537035942077637,
+      "correct": false,
+      "top3": [
+        {
+          "label": "游戏",
+          "probability": 0.27537035942077637
+        },
+        {
+          "label": "科技",
+          "probability": 0.1869741976261139
+        },
+        {
+          "label": "社会",
+          "probability": 0.16073714196681976
+        }
+      ]
+    }
+  ],
+  "examples_by_confusion": [
+    {
+      "true": "股票",
+      "predicted": "财经",
+      "count": 56,
+      "examples": [
+        {
+          "id": "test:9021",
+          "text": "图文：中国大豆需求或将攀升",
+          "true_label": "股票",
+          "prediction": "财经",
+          "probability": 0.9832834005355835,
+          "correct": false,
+          "top3": [
+            {
+              "label": "财经",
+              "probability": 0.9832834005355835
+            },
+            {
+              "label": "股票",
+              "probability": 0.011644029058516026
+            },
+            {
+              "label": "房产",
+              "probability": 0.004291963297873735
+            }
+          ]
+        },
+        {
+          "id": "test:9022",
+          "text": "保费收入增速持续下滑 险资成债市最大减持主力",
+          "true_label": "股票",
+          "prediction": "财经",
+          "probability": 0.8441427946090698,
+          "correct": false,
+          "top3": [
+            {
+              "label": "财经",
+              "probability": 0.8441427946090698
+            },
+            {
+              "label": "股票",
+              "probability": 0.15529845654964447
+            },
+            {
+              "label": "科技",
+              "probability": 0.0001482891821069643
+            }
+          ]
+        },
+        {
+          "id": "test:9023",
+          "text": "有色金属煤炭钢铁 反弹急先锋",
+          "true_label": "股票",
+          "prediction": "财经",
+          "probability": 0.9605370163917542,
+          "correct": false,
+          "top3": [
+            {
+              "label": "财经",
+              "probability": 0.9605370163917542
+            },
+            {
+              "label": "股票",
+              "probability": 0.03942257538437843
+            },
+            {
+              "label": "房产",
+              "probability": 1.6194566342164762e-05
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "true": "财经",
+      "predicted": "股票",
+      "count": 54,
+      "examples": [
+        {
+          "id": "test:2002",
+          "text": "国家意志或影响汇市 对美元暂宜持多头思路",
+          "true_label": "财经",
+          "prediction": "股票",
+          "probability": 0.7356594204902649,
+          "correct": false,
+          "top3": [
+            {
+              "label": "股票",
+              "probability": 0.7356594204902649
+            },
+            {
+              "label": "财经",
+              "probability": 0.2602343261241913
+            },
+            {
+              "label": "房产",
+              "probability": 0.0016128490678966045
+            }
+          ]
+        },
+        {
+          "id": "test:2009",
+          "text": "中投少壮派何宝空降博时接替肖风出任总裁",
+          "true_label": "财经",
+          "prediction": "股票",
+          "probability": 0.6753572821617126,
+          "correct": false,
+          "top3": [
+            {
+              "label": "股票",
+              "probability": 0.6753572821617126
+            },
+            {
+              "label": "房产",
+              "probability": 0.09556736052036285
+            },
+            {
+              "label": "财经",
+              "probability": 0.07569166272878647
+            }
+          ]
+        },
+        {
+          "id": "test:2043",
+          "text": "REITs将比炒股还火爆",
+          "true_label": "财经",
+          "prediction": "股票",
+          "probability": 0.812384307384491,
+          "correct": false,
+          "top3": [
+            {
+              "label": "股票",
+              "probability": 0.812384307384491
+            },
+            {
+              "label": "科技",
+              "probability": 0.16974690556526184
+            },
+            {
+              "label": "游戏",
+              "probability": 0.010396232828497887
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "true": "股票",
+      "predicted": "科技",
+      "count": 40,
+      "examples": [
+        {
+          "id": "test:9002",
+          "text": "2008经济领域十大败笔",
+          "true_label": "股票",
+          "prediction": "科技",
+          "probability": 0.4396422505378723,
+          "correct": false,
+          "top3": [
+            {
+              "label": "科技",
+              "probability": 0.4396422505378723
+            },
+            {
+              "label": "时政",
+              "probability": 0.20992884039878845
+            },
+            {
+              "label": "股票",
+              "probability": 0.18539920449256897
+            }
+          ]
+        },
+        {
+          "id": "test:9004",
+          "text": "快讯：奥本海默调升谷歌目标价至715美元",
+          "true_label": "股票",
+          "prediction": "科技",
+          "probability": 0.6838147640228271,
+          "correct": false,
+          "top3": [
+            {
+              "label": "科技",
+              "probability": 0.6838147640228271
+            },
+            {
+              "label": "股票",
+              "probability": 0.3132674992084503
+            },
+            {
+              "label": "游戏",
+              "probability": 0.001792328548617661
+            }
+          ]
+        },
+        {
+          "id": "test:9037",
+          "text": "快讯：康强电子科技年看电子元器件",
+          "true_label": "股票",
+          "prediction": "科技",
+          "probability": 0.8825669288635254,
+          "correct": false,
+          "top3": [
+            {
+              "label": "科技",
+              "probability": 0.8825669288635254
+            },
+            {
+              "label": "股票",
+              "probability": 0.1163790374994278
+            },
+            {
+              "label": "游戏",
+              "probability": 0.00041934396722353995
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "true": "游戏",
+      "predicted": "科技",
+      "count": 39,
+      "examples": [
+        {
+          "id": "test:3028",
+          "text": "动漫新闻联播纸片人打造第一网络节目",
+          "true_label": "游戏",
+          "prediction": "科技",
+          "probability": 0.8607630729675293,
+          "correct": false,
+          "top3": [
+            {
+              "label": "科技",
+              "probability": 0.8607630729675293
+            },
+            {
+              "label": "娱乐",
+              "probability": 0.05197138339281082
+            },
+            {
+              "label": "社会",
+              "probability": 0.038741838186979294
+            }
+          ]
+        },
+        {
+          "id": "test:3030",
+          "text": "九城悠游“抢”数据 圈地时代或终结",
+          "true_label": "游戏",
+          "prediction": "科技",
+          "probability": 0.5061664581298828,
+          "correct": false,
+          "top3": [
+            {
+              "label": "科技",
+              "probability": 0.5061664581298828
+            },
+            {
+              "label": "游戏",
+              "probability": 0.4245573878288269
+            },
+            {
+              "label": "房产",
+              "probability": 0.04994902014732361
+            }
+          ]
+        },
+        {
+          "id": "test:3047",
+          "text": "亚马逊将首发Android版愤怒小鸟Rio",
+          "true_label": "游戏",
+          "prediction": "科技",
+          "probability": 0.9572475552558899,
+          "correct": false,
+          "top3": [
+            {
+              "label": "科技",
+              "probability": 0.9572475552558899
+            },
+            {
+              "label": "游戏",
+              "probability": 0.03921322897076607
+            },
+            {
+              "label": "股票",
+              "probability": 0.0026866823900491
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "true": "科技",
+      "predicted": "游戏",
+      "count": 36,
+      "examples": [
+        {
+          "id": "test:6012",
+          "text": "迅雷腾讯竞争加剧 邹胜龙称反对不创新的模仿",
+          "true_label": "科技",
+          "prediction": "游戏",
+          "probability": 0.6110491752624512,
+          "correct": false,
+          "top3": [
+            {
+              "label": "游戏",
+              "probability": 0.6110491752624512
+            },
+            {
+              "label": "科技",
+              "probability": 0.32158076763153076
+            },
+            {
+              "label": "娱乐",
+              "probability": 0.051886625587940216
+            }
+          ]
+        },
+        {
+          "id": "test:6026",
+          "text": "买不起真的还玩得起 乐高版相机外壳出炉",
+          "true_label": "科技",
+          "prediction": "游戏",
+          "probability": 0.4805605411529541,
+          "correct": false,
+          "top3": [
+            {
+              "label": "游戏",
+              "probability": 0.4805605411529541
+            },
+            {
+              "label": "科技",
+              "probability": 0.4694743752479553
+            },
+            {
+              "label": "娱乐",
+              "probability": 0.02833055704832077
+            }
+          ]
+        },
+        {
+          "id": "test:6036",
+          "text": "网络游戏成为文化产业“新贵”",
+          "true_label": "科技",
+          "prediction": "游戏",
+          "probability": 0.7174853682518005,
+          "correct": false,
+          "top3": [
+            {
+              "label": "游戏",
+              "probability": 0.7174853682518005
+            },
+            {
+              "label": "科技",
+              "probability": 0.26831525564193726
+            },
+            {
+              "label": "娱乐",
+              "probability": 0.004743215627968311
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

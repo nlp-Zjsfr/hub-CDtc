@@ -1,0 +1,98 @@
+{
+  "sample_id": "train-0000",
+  "prompt_length": 150,
+  "sequence_length": 181,
+  "positions": [
+    {
+      "position": 146,
+      "token_id": 198,
+      "decoded_piece": "\n",
+      "label": -100,
+      "attention_mask": 1
+    },
+    {
+      "position": 147,
+      "token_id": 151644,
+      "decoded_piece": "<|im_start|>",
+      "label": -100,
+      "attention_mask": 1
+    },
+    {
+      "position": 148,
+      "token_id": 77091,
+      "decoded_piece": "assistant",
+      "label": -100,
+      "attention_mask": 1
+    },
+    {
+      "position": 149,
+      "token_id": 198,
+      "decoded_piece": "\n",
+      "label": -100,
+      "attention_mask": 1
+    },
+    {
+      "position": 150,
+      "token_id": 4913,
+      "decoded_piece": "{\"",
+      "label": 4913,
+      "attention_mask": 1
+    },
+    {
+      "position": 151,
+      "token_id": 1358,
+      "decoded_piece": "order",
+      "label": 1358,
+      "attention_mask": 1
+    },
+    {
+      "position": 152,
+      "token_id": 842,
+      "decoded_piece": "_id",
+      "label": 842,
+      "attention_mask": 1
+    },
+    {
+      "position": 153,
+      "token_id": 3252,
+      "decoded_piece": "\":\"",
+      "label": 3252,
+      "attention_mask": 1
+    },
+    {
+      "position": 154,
+      "token_id": 13880,
+      "decoded_piece": "SO",
+      "label": 13880,
+      "attention_mask": 1
+    },
+    {
+      "position": 155,
+      "token_id": 17,
+      "decoded_piece": "2",
+      "label": 17,
+      "attention_mask": 1
+    },
+    {
+      "position": 156,
+      "token_id": 22,
+      "decoded_piece": "7",
+      "label": 22,
+      "attention_mask": 1
+    },
+    {
+      "position": 157,
+      "token_id": 15,
+      "decoded_piece": "0",
+      "label": 15,
+      "attention_mask": 1
+    },
+    {
+      "position": 180,
+      "token_id": 151643,
+      "decoded_piece": "<|endoftext|>",
+      "label": 151643,
+      "attention_mask": 1
+    }
+  ]
+}

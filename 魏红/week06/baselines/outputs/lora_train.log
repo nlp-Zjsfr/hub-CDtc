@@ -1,0 +1,30 @@
+trainable params: 2,293,760 || all params: 598,343,680 || trainable%: 0.3834
+  epoch 1 0/1250 loss=3.7029
+  epoch 1 100/1250 loss=0.8383
+  epoch 1 200/1250 loss=0.2856
+  epoch 1 300/1250 loss=1.3343
+  epoch 1 400/1250 loss=0.5288
+  epoch 1 500/1250 loss=0.5181
+  epoch 1 600/1250 loss=1.2154
+  epoch 1 700/1250 loss=0.3192
+  epoch 1 800/1250 loss=0.4338
+  epoch 1 900/1250 loss=0.5703
+  epoch 1 1000/1250 loss=0.6698
+  epoch 1 1100/1250 loss=0.3263
+  epoch 1 1200/1250 loss=0.4535
+epoch 1: train_loss=0.792 val_loss=0.7134
+  epoch 2 0/1250 loss=0.5208
+  epoch 2 100/1250 loss=0.8567
+  epoch 2 200/1250 loss=1.0256
+  epoch 2 300/1250 loss=0.3023
+  epoch 2 400/1250 loss=0.2397
+  epoch 2 500/1250 loss=1.0226
+  epoch 2 600/1250 loss=0.3170
+  epoch 2 700/1250 loss=0.7979
+  epoch 2 800/1250 loss=0.7760
+  epoch 2 900/1250 loss=0.7730
+  epoch 2 1000/1250 loss=0.4437
+  epoch 2 1100/1250 loss=0.3524
+  epoch 2 1200/1250 loss=0.4714
+epoch 2: train_loss=0.6463 val_loss=0.6507
+adapter → D:\AILearn\AI课程\作业\week06\baselines\outputs\lora_adapter

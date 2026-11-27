@@ -1,0 +1,62 @@
+{
+  "config": {
+    "model_id": "Qwen/Qwen3-0.6B-Base",
+    "revision": "da87bfb608c14b7cf20ba1ce41287e8de496c0cd",
+    "seed": 42,
+    "train_size": 1200,
+    "val_size": 120,
+    "test_size": 120,
+    "max_length": 384,
+    "micro_batch_size": 8,
+    "gradient_accumulation_steps": 2,
+    "epochs": 3,
+    "patience": 2,
+    "learning_rate": 0.0002,
+    "min_learning_rate": 2e-05,
+    "warmup_ratio": 0.03,
+    "weight_decay": 0.01,
+    "gradient_clip": 1.0,
+    "lora_r": 8,
+    "lora_alpha": 16,
+    "lora_dropout": 0.05,
+    "lora_target_modules": [
+      "q_proj",
+      "k_proj",
+      "v_proj",
+      "o_proj",
+      "gate_proj",
+      "up_proj",
+      "down_proj"
+    ],
+    "generation_batch_size": 8,
+    "max_new_tokens": 128
+  },
+  "base_parameters": 596049920,
+  "trainable_parameters": 5046272,
+  "trainable_fraction": 0.008395115569123418,
+  "initial_val": {
+    "answer_nll": 0.35073804564753397,
+    "answer_ppl": 1.4201152718072734,
+    "answer_tokens": 3610,
+    "teacher_forced_token_accuracy": 0.9216066481994459
+  },
+  "best_epoch": 3,
+  "epochs_run": 3,
+  "optimizer_updates": 225,
+  "training_seconds_this_run": 208.1226641999965,
+  "resumed": false,
+  "frozen_base_fingerprint_unchanged": true,
+  "test_used_for_selection": false,
+  "best_adapter_sha256": "e3bc9e050e743831f552494aa9ca7965fe500516c76f517503031b00843a45bf",
+  "template_sha256": "a883d6f73a37aad36d5f2e5643d291189a497a9745111f880e238a6fd85f3425",
+  "environment": {
+    "python": "3.14.4",
+    "torch": "2.12.0+cu130",
+    "transformers": "4.57.6",
+    "peft": "0.18.0",
+    "device": "cuda",
+    "gpu": "NVIDIA GeForce RTX 5070 Laptop GPU",
+    "peak_allocated_GB": 2.640737533569336,
+    "precision": "BF16 base/autocast; FP32 trainable LoRA and optimizer"
+  }
+}
