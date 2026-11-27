@@ -1,0 +1,8 @@
+__pycache__/
+data/.cache/
+*.pyc
+pretrain_models/
+outputs/lora_adapter/
+outputs/*.pt
+.cache/
+*.safetensors

@@ -1,0 +1,4922 @@
+[
+  {
+    "idx": 0,
+    "gold": 8,
+    "pred": 8,
+    "sentence": "series of shocking comments"
+  },
+  {
+    "idx": 1,
+    "gold": 13,
+    "pred": 5,
+    "sentence": "Take note that what he means here is that people were being shot at from ground level rather than the 32nd floor of the hotel"
+  },
+  {
+    "idx": 2,
+    "gold": 8,
+    "pred": 8,
+    "sentence": "huge bombshell"
+  },
+  {
+    "idx": 3,
+    "gold": 5,
+    "pred": 5,
+    "sentence": "we are not being told what actually happened that fateful night"
+  },
+  {
+    "idx": 4,
+    "gold": 5,
+    "pred": 8,
+    "sentence": "a huge bombshell in the ongoing investigation"
+  },
+  {
+    "idx": 5,
+    "gold": 13,
+    "pred": 5,
+    "sentence": "while Francis does nothing"
+  },
+  {
+    "idx": 6,
+    "gold": 13,
+    "pred": 5,
+    "sentence": "Mr. Ferrara, however, bases his critique upon an assumption that the “generous response” offered to God is a sin.\nThis, though, is not what AL is saying"
+  },
+  {
+    "idx": 7,
+    "gold": 0,
+    "pred": 5,
+    "sentence": "Pope Francis explains this again in AL 305 when he says “a small step, in the midst of great human limitations, can be more pleasing to God than a life which appears outwardly in order"
+  },
+  {
+    "idx": 8,
+    "gold": 5,
+    "pred": 4,
+    "sentence": "With all due respect to Dr. Fastiggi, his argument and that of Buttiglione, that a “move away from sin” is what is pleasing to God, even if the moral norm is not adhered to, is sophistical"
+  },
+  {
+    "idx": 9,
+    "gold": 1,
+    "pred": 4,
+    "sentence": "A moral catastrophe is self-evidently underway and it is not possible honestly to deny its cause"
+  },
+  {
+    "idx": 10,
+    "gold": 12,
+    "pred": 8,
+    "sentence": "with an open heart and mind"
+  },
+  {
+    "idx": 11,
+    "gold": 8,
+    "pred": 12,
+    "sentence": "with an open heart and mind, but above all with open eyes"
+  },
+  {
+    "idx": 12,
+    "gold": 13,
+    "pred": 5,
+    "sentence": "He mentions the Holy Father's letter to the Buenos Aires bishops, but he fails to take into account that the statement of those Argentine bishops can be interpreted in an orthodox way"
+  },
+  {
+    "idx": 13,
+    "gold": 0,
+    "pred": 0,
+    "sentence": "I have read the Cardinal's exposition in both Italian and English, and I only find mention of the help of the sacraments in certain cases"
+  },
+  {
+    "idx": 14,
+    "gold": 3,
+    "pred": 5,
+    "sentence": "Does Mr. Ferrara believe that the Catholic Church under Pope Francis is a “Leviathan Church” and not the Catholic Church?\nIf this is so, then it would suggest that Mr. Ferrara is refusing submission to the Roman Pontiff and communion with the members of the Church subject to him"
+  },
+  {
+    "idx": 15,
+    "gold": 8,
+    "pred": 8,
+    "sentence": "Dr. Fastiggi has succumbed to an unfortunate literal-mindedness"
+  },
+  {
+    "idx": 16,
+    "gold": 8,
+    "pred": 8,
+    "sentence": "demonstrate a pronounced lack of comprehension of pertinent ecclesiological and theological basics, and a rather embarrassing lack of rhetorical finesse"
+  },
+  {
+    "idx": 17,
+    "gold": 5,
+    "pred": 5,
+    "sentence": "I respectfully suggest that Dr. Fastiggi’s comments evince a need for serious study and reflection before he ventures further opinions on this controversy in public"
+  },
+  {
+    "idx": 19,
+    "gold": 9,
+    "pred": 8,
+    "sentence": "foot soldiers of a Leviathan Church"
+  },
+  {
+    "idx": 20,
+    "gold": 8,
+    "pred": 8,
+    "sentence": "High Alert"
+  },
+  {
+    "idx": 21,
+    "gold": 0,
+    "pred": 6,
+    "sentence": "“no one is safe”"
+  },
+  {
+    "idx": 22,
+    "gold": 0,
+    "pred": 1,
+    "sentence": "continuing to spread and worsen"
+  },
+  {
+    "idx": 23,
+    "gold": 0,
+    "pred": 6,
+    "sentence": "no one is safe"
+  },
+  {
+    "idx": 24,
+    "gold": 10,
+    "pred": 6,
+    "sentence": "no one is safe"
+  },
+  {
+    "idx": 25,
+    "gold": 10,
+    "pred": 6,
+    "sentence": "“no one is safe”"
+  },
+  {
+    "idx": 26,
+    "gold": 10,
+    "pred": 6,
+    "sentence": "No One Is Safe"
+  },
+  {
+    "idx": 27,
+    "gold": 0,
+    "pred": 1,
+    "sentence": "much more dangerous"
+  },
+  {
+    "idx": 29,
+    "gold": 0,
+    "pred": 5,
+    "sentence": "the number of cases is growing by the day"
+  },
+  {
+    "idx": 30,
+    "gold": 0,
+    "pred": 8,
+    "sentence": "safe and dignified"
+  },
+  {
+    "idx": 31,
+    "gold": 8,
+    "pred": 8,
+    "sentence": "incredibly"
+  },
+  {
+    "idx": 32,
+    "gold": 0,
+    "pred": 0,
+    "sentence": "“It has been a long time since we have seen the plague in an urban environment"
+  },
+  {
+    "idx": 33,
+    "gold": 10,
+    "pred": 6,
+    "sentence": "no one in Madagascar is safe"
+  },
+  {
+    "idx": 34,
+    "gold": 1,
+    "pred": 6,
+    "sentence": "people in every place in society are catching the disease"
+  },
+  {
+    "idx": 35,
+    "gold": 1,
+    "pred": 6,
+    "sentence": "no one in Madagascar is safe"
+  },
+  {
+    "idx": 36,
+    "gold": 9,
+    "pred": 9,
+    "sentence": "Donald “Art of the Deal” Trump"
+  },
+  {
+    "idx": 37,
+    "gold": 9,
+    "pred": 9,
+    "sentence": "Art of the Deal” Trump"
+  },
+  {
+    "idx": 38,
+    "gold": 5,
+    "pred": 13,
+    "sentence": "they demonstrate their lack of understanding about how things work in Washington, D.C"
+  },
+  {
+    "idx": 39,
+    "gold": 6,
+    "pred": 8,
+    "sentence": "isn’t even questioning that ludicrous notion"
+  },
+  {
+    "idx": 40,
+    "gold": 6,
+    "pred": 1,
+    "sentence": "a grave threat to “national security"
+  },
+  {
+    "idx": 41,
+    "gold": 8,
+    "pred": 8,
+    "sentence": "suspension of logic and common sense"
+  },
+  {
+    "idx": 42,
+    "gold": 7,
+    "pred": 9,
+    "sentence": "America’s sworn Cold War enemy"
+  },
+  {
+    "idx": 43,
+    "gold": 6,
+    "pred": 6,
+    "sentence": "skate blissfully across the Cold War stage of history with nary any abuse or harassment at all"
+  },
+  {
+    "idx": 44,
+    "gold": 5,
+    "pred": 8,
+    "sentence": "Don’t make me laugh"
+  },
+  {
+    "idx": 45,
+    "gold": 6,
+    "pred": 5,
+    "sentence": "A blind man could see what was happening"
+  },
+  {
+    "idx": 46,
+    "gold": 4,
+    "pred": 5,
+    "sentence": "obviously sat on the request, undoubtedly hoping that he could get what he wanted in return if he just continued holding out and conveying that he was ready to release the records"
+  },
+  {
+    "idx": 47,
+    "gold": 6,
+    "pred": 8,
+    "sentence": "with some earthshattering new information"
+  },
+  {
+    "idx": 48,
+    "gold": 6,
+    "pred": 7,
+    "sentence": "the United States would fall into the ocean if Americans were finally permitted to see the CIA’s long-secret"
+  },
+  {
+    "idx": 49,
+    "gold": 4,
+    "pred": 4,
+    "sentence": "it is a virtual certainly that when Art of the Deal Trump sent out those two tweets, he was sending a message to the CIA as part of the negotiations"
+  },
+  {
+    "idx": 50,
+    "gold": 10,
+    "pred": 9,
+    "sentence": "Art of the Deal Trump"
+  },
+  {
+    "idx": 51,
+    "gold": 4,
+    "pred": 1,
+    "sentence": "the records undoubtedly contain more incriminating circumstantial evidence that fills in the mosaic of a U.S. national-security regime-change operation on November 22, 1963"
+  },
+  {
+    "idx": 52,
+    "gold": 8,
+    "pred": 8,
+    "sentence": "ridiculous and illogical"
+  },
+  {
+    "idx": 53,
+    "gold": 4,
+    "pred": 4,
+    "sentence": "it knew would point to the CIA’s guilt in the assassination"
+  },
+  {
+    "idx": 54,
+    "gold": 4,
+    "pred": 5,
+    "sentence": "the obvious inference that people would draw — that the CIA was continuing to cover up incriminatory evidence"
+  },
+  {
+    "idx": 55,
+    "gold": 8,
+    "pred": 8,
+    "sentence": "ludicrous notion"
+  },
+  {
+    "idx": 56,
+    "gold": 8,
+    "pred": 12,
+    "sentence": "is, well, laughable"
+  },
+  {
+    "idx": 57,
+    "gold": 4,
+    "pred": 5,
+    "sentence": "Let’s state the obvious: The CIA records that are still being suppressed have nothing to do with “national security.” They have everything to do with covering up the CIA’s role"
+  },
+  {
+    "idx": 58,
+    "gold": 1,
+    "pred": 1,
+    "sentence": "a grave threat to “national security,” i.e., befriending the Russians (i.e., the Soviets) and Cubans and entering into peaceful coexistence with the communist world"
+  },
+  {
+    "idx": 59,
+    "gold": 6,
+    "pred": 6,
+    "sentence": "who had absolutely no motive to kill President Kennedy"
+  },
+  {
+    "idx": 60,
+    "gold": 13,
+    "pred": 9,
+    "sentence": "who Kennedy admired)"
+  },
+  {
+    "idx": 61,
+    "gold": 0,
+    "pred": 8,
+    "sentence": "For a more detailed analysis of motive, read FFF’s ebook"
+  },
+  {
+    "idx": 62,
+    "gold": 4,
+    "pred": 4,
+    "sentence": "the same motive that motivated the CIA and Pentagon to target other political leaders for regime change or assassination around that time"
+  },
+  {
+    "idx": 63,
+    "gold": 9,
+    "pred": 9,
+    "sentence": "a lone nut, former U.S. Marine communist"
+  },
+  {
+    "idx": 64,
+    "gold": 5,
+    "pred": 5,
+    "sentence": "For anyone who has a critical, analytical, independent mindset, the official story is filled with holes"
+  },
+  {
+    "idx": 65,
+    "gold": 13,
+    "pred": 9,
+    "sentence": "and former World War II partner and ally)"
+  },
+  {
+    "idx": 66,
+    "gold": 9,
+    "pred": 9,
+    "sentence": "Red wife"
+  },
+  {
+    "idx": 67,
+    "gold": 6,
+    "pred": 6,
+    "sentence": "or even an iota of harassment"
+  },
+  {
+    "idx": 68,
+    "gold": 8,
+    "pred": 4,
+    "sentence": "It skewers them"
+  },
+  {
+    "idx": 69,
+    "gold": 9,
+    "pred": 8,
+    "sentence": "they call Julian Assange a traitor"
+  },
+  {
+    "idx": 70,
+    "gold": 9,
+    "pred": 9,
+    "sentence": "self-avowed communist"
+  },
+  {
+    "idx": 71,
+    "gold": 4,
+    "pred": 4,
+    "sentence": "They needed to get rid of Kennedy to protect national security and elevate Johnson, who had the same anti-communist mindset as the Pentagon and the CIA, to the presidency"
+  },
+  {
+    "idx": 72,
+    "gold": 4,
+    "pred": 4,
+    "sentence": "no doubt being told that he was being prepared for an important mission"
+  },
+  {
+    "idx": 73,
+    "gold": 12,
+    "pred": 6,
+    "sentence": "no government operation ever goes perfectly"
+  },
+  {
+    "idx": 75,
+    "gold": 8,
+    "pred": 8,
+    "sentence": "shrouded in mystery"
+  },
+  {
+    "idx": 76,
+    "gold": 6,
+    "pred": 3,
+    "sentence": "the United States did not fall into the ocean or fall to the communists"
+  },
+  {
+    "idx": 77,
+    "gold": 12,
+    "pred": 8,
+    "sentence": "So interesting"
+  },
+  {
+    "idx": 78,
+    "gold": 8,
+    "pred": 8,
+    "sentence": "earthshattering new"
+  },
+  {
+    "idx": 79,
+    "gold": 5,
+    "pred": 5,
+    "sentence": "But how likely is that"
+  },
+  {
+    "idx": 80,
+    "gold": 1,
+    "pred": 4,
+    "sentence": "Give me what I want or I will release the records"
+  },
+  {
+    "idx": 81,
+    "gold": 7,
+    "pred": 7,
+    "sentence": "the CIA has argued that the release of any of its JFK records would threaten “national security"
+  },
+  {
+    "idx": 82,
+    "gold": 1,
+    "pred": 5,
+    "sentence": "I have done what I believe God wanted me to do,["
+  },
+  {
+    "idx": 83,
+    "gold": 8,
+    "pred": 13,
+    "sentence": "bolstered my own “Great Clarifier” theory"
+  },
+  {
+    "idx": 84,
+    "gold": 8,
+    "pred": 9,
+    "sentence": "the poor, poor woman"
+  },
+  {
+    "idx": 85,
+    "gold": 9,
+    "pred": 9,
+    "sentence": "brave defenders of the status quo"
+  },
+  {
+    "idx": 86,
+    "gold": 8,
+    "pred": 8,
+    "sentence": "cheap and vulgar ritual humiliation"
+  },
+  {
+    "idx": 87,
+    "gold": 9,
+    "pred": 9,
+    "sentence": "bully-boy Church"
+  },
+  {
+    "idx": 88,
+    "gold": 9,
+    "pred": 9,
+    "sentence": "midget bishops and minicardinals"
+  },
+  {
+    "idx": 89,
+    "gold": 9,
+    "pred": 9,
+    "sentence": "episcopal bullies"
+  },
+  {
+    "idx": 90,
+    "gold": 8,
+    "pred": 9,
+    "sentence": "who “scandalize” believers"
+  },
+  {
+    "idx": 91,
+    "gold": 8,
+    "pred": 8,
+    "sentence": "supreme shepherd.”"
+  },
+  {
+    "idx": 92,
+    "gold": 10,
+    "pred": 8,
+    "sentence": "got rid of"
+  },
+  {
+    "idx": 93,
+    "gold": 9,
+    "pred": 9,
+    "sentence": "the “cool kids” in the Vatican"
+  },
+  {
+    "idx": 94,
+    "gold": 8,
+    "pred": 8,
+    "sentence": "Signaling furiously"
+  },
+  {
+    "idx": 95,
+    "gold": 4,
+    "pred": 4,
+    "sentence": "with whom, I guess, she has also no choice but to have sexual relations.\nBecause of kind-heartedness"
+  },
+  {
+    "idx": 96,
+    "gold": 3,
+    "pred": 5,
+    "sentence": "falsely elevated to the rank of a decisive question of Catholicism and a measure of ideological comparison in order to decide whether one is conservative or liberal, in favor or against the pope.”"
+  },
+  {
+    "idx": 97,
+    "gold": 8,
+    "pred": 8,
+    "sentence": "howling tantrums"
+  },
+  {
+    "idx": 98,
+    "gold": 1,
+    "pred": 5,
+    "sentence": "To teach with such an intentional lack of clarity inevitably risks sinning against the Holy Spirit, the Spirit of truth"
+  },
+  {
+    "idx": 99,
+    "gold": 1,
+    "pred": 1,
+    "sentence": "don’t speak out publicly for fear they will be “marginalized or worse"
+  },
+  {
+    "idx": 100,
+    "gold": 8,
+    "pred": 9,
+    "sentence": "given the boot"
+  },
+  {
+    "idx": 101,
+    "gold": 6,
+    "pred": 8,
+    "sentence": "little incident"
+  },
+  {
+    "idx": 102,
+    "gold": 8,
+    "pred": 8,
+    "sentence": "extremely bad"
+  },
+  {
+    "idx": 103,
+    "gold": 1,
+    "pred": 3,
+    "sentence": "they’ll be “marginalized or worse” if they speak out"
+  },
+  {
+    "idx": 104,
+    "gold": 8,
+    "pred": 9,
+    "sentence": "the “cool kids"
+  },
+  {
+    "idx": 105,
+    "gold": 8,
+    "pred": 8,
+    "sentence": "blithering incoherence"
+  },
+  {
+    "idx": 106,
+    "gold": 4,
+    "pred": 11,
+    "sentence": "Presumably because adultery itself is no longer sinful"
+  },
+  {
+    "idx": 107,
+    "gold": 9,
+    "pred": 8,
+    "sentence": "relativistic Zeitgeist"
+  },
+  {
+    "idx": 108,
+    "gold": 1,
+    "pred": 1,
+    "sentence": "even threatening to go into schism if they didn’t get their way"
+  },
+  {
+    "idx": 109,
+    "gold": 8,
+    "pred": 8,
+    "sentence": "lionized"
+  },
+  {
+    "idx": 110,
+    "gold": 8,
+    "pred": 8,
+    "sentence": "truly disgusting"
+  },
+  {
+    "idx": 111,
+    "gold": 8,
+    "pred": 8,
+    "sentence": "completely and utterly out of control"
+  },
+  {
+    "idx": 112,
+    "gold": 1,
+    "pred": 3,
+    "sentence": "We have no choice but to clean up our government because the rest of the world is laughing at us"
+  },
+  {
+    "idx": 113,
+    "gold": 10,
+    "pred": 4,
+    "sentence": "She left, she found another job"
+  },
+  {
+    "idx": 114,
+    "gold": 9,
+    "pred": 9,
+    "sentence": "Weinstein-level” predatory behavior"
+  },
+  {
+    "idx": 115,
+    "gold": 9,
+    "pred": 8,
+    "sentence": "Weinstein-level” sexual assault"
+  },
+  {
+    "idx": 116,
+    "gold": 8,
+    "pred": 8,
+    "sentence": "deeply disturbing"
+  },
+  {
+    "idx": 117,
+    "gold": 1,
+    "pred": 4,
+    "sentence": "and once people truly understand how deep the corruaption runs I believe that they will get motivated to finally drain the swamp once and for all"
+  },
+  {
+    "idx": 118,
+    "gold": 9,
+    "pred": 9,
+    "sentence": "corrupt career politicians"
+  },
+  {
+    "idx": 121,
+    "gold": 7,
+    "pred": 5,
+    "sentence": "The American people are not going to put up with this any longer"
+  },
+  {
+    "idx": 122,
+    "gold": 8,
+    "pred": 3,
+    "sentence": "Are you going to be a good girl?”"
+  },
+  {
+    "idx": 123,
+    "gold": 8,
+    "pred": 8,
+    "sentence": "has exposed his genitals"
+  },
+  {
+    "idx": 124,
+    "gold": 8,
+    "pred": 8,
+    "sentence": "their private parts grabbed on the House floor.”"
+  },
+  {
+    "idx": 125,
+    "gold": 8,
+    "pred": 8,
+    "sentence": "exposed his private parts to a female staffer"
+  },
+  {
+    "idx": 126,
+    "gold": 7,
+    "pred": 7,
+    "sentence": "and that goes double for someone that is supposed to be one of the leaders of our nation"
+  },
+  {
+    "idx": 127,
+    "gold": 8,
+    "pred": 6,
+    "sentence": "completely naked"
+  },
+  {
+    "idx": 128,
+    "gold": 6,
+    "pred": 1,
+    "sentence": "would mess with every single woman or teen,”"
+  },
+  {
+    "idx": 129,
+    "gold": 8,
+    "pred": 7,
+    "sentence": "would grope all of our wives and girlfriend’s asses.”"
+  },
+  {
+    "idx": 130,
+    "gold": 6,
+    "pred": 7,
+    "sentence": "would grope all of our wives and girlfriend’s asses.”"
+  },
+  {
+    "idx": 131,
+    "gold": 7,
+    "pred": 1,
+    "sentence": "We are supposed to serve as an example to the rest of the world, and instead, we have become a bad joke"
+  },
+  {
+    "idx": 132,
+    "gold": 1,
+    "pred": 5,
+    "sentence": "Those that have been engaging in this sort of shameful behavior have got to go because we simply are not going to put up with it anymore"
+  },
+  {
+    "idx": 133,
+    "gold": 7,
+    "pred": 7,
+    "sentence": "it is time to take our government back from the corrupt career politicians that are completely and utterly out of control"
+  },
+  {
+    "idx": 134,
+    "gold": 8,
+    "pred": 8,
+    "sentence": "a bad joke"
+  },
+  {
+    "idx": 135,
+    "gold": 10,
+    "pred": 8,
+    "sentence": "potentially hazardous"
+  },
+  {
+    "idx": 136,
+    "gold": 8,
+    "pred": 9,
+    "sentence": "a spectacular show"
+  },
+  {
+    "idx": 138,
+    "gold": 8,
+    "pred": 4,
+    "sentence": "sexual assaults by Muslim migrants, attacks on Christians and there's no telling the amount of damage to the unethical welfare system in the country"
+  },
+  {
+    "idx": 139,
+    "gold": 8,
+    "pred": 0,
+    "sentence": "Thank you Prime Minister Orban for saying what needed to be said!"
+  },
+  {
+    "idx": 140,
+    "gold": 9,
+    "pred": 9,
+    "sentence": "man behind the curtain"
+  },
+  {
+    "idx": 141,
+    "gold": 9,
+    "pred": 10,
+    "sentence": "\"Muslim Invaders\""
+  },
+  {
+    "idx": 142,
+    "gold": 0,
+    "pred": 10,
+    "sentence": "Refugees Are Actually \"Muslim Invaders\""
+  },
+  {
+    "idx": 143,
+    "gold": 10,
+    "pred": 10,
+    "sentence": "Muslim Invaders\""
+  },
+  {
+    "idx": 144,
+    "gold": 10,
+    "pred": 10,
+    "sentence": "Muslim invasion"
+  },
+  {
+    "idx": 148,
+    "gold": 10,
+    "pred": 10,
+    "sentence": "Muslim invasion"
+  },
+  {
+    "idx": 149,
+    "gold": 10,
+    "pred": 10,
+    "sentence": "Muslim invasion"
+  },
+  {
+    "idx": 151,
+    "gold": 0,
+    "pred": 4,
+    "sentence": "they “don’t want” immigration"
+  },
+  {
+    "idx": 152,
+    "gold": 6,
+    "pred": 9,
+    "sentence": "the best example of discipline and the rule of law,”"
+  },
+  {
+    "idx": 153,
+    "gold": 10,
+    "pred": 10,
+    "sentence": "invasion"
+  },
+  {
+    "idx": 154,
+    "gold": 0,
+    "pred": 10,
+    "sentence": "Christian and Muslim societies “will never unite.”"
+  },
+  {
+    "idx": 155,
+    "gold": 6,
+    "pred": 6,
+    "sentence": "They have absolutely nothing in common"
+  },
+  {
+    "idx": 156,
+    "gold": 8,
+    "pred": 1,
+    "sentence": "They are in Europe to conquer and Islamize it, with willing and eager help from Europe’s short-sighted, self-serving, internationalist intelligentsia.\""
+  },
+  {
+    "idx": 157,
+    "gold": 12,
+    "pred": 8,
+    "sentence": "Indeed!"
+  },
+  {
+    "idx": 158,
+    "gold": 8,
+    "pred": 9,
+    "sentence": "an Islamic dominionist attitude"
+  },
+  {
+    "idx": 159,
+    "gold": 7,
+    "pred": 5,
+    "sentence": "He has genuinely reached out his hand to help Christian migrants instead of Muslim migrants and he seems to be one that holds to the Christian faith, as emulated by the Protestant Reformers, saying, \"That which serves the glory of God is the best for the people.\""
+  },
+  {
+    "idx": 160,
+    "gold": 8,
+    "pred": 6,
+    "sentence": "Hits Nail On The Head"
+  },
+  {
+    "idx": 161,
+    "gold": 8,
+    "pred": 8,
+    "sentence": "putting their noses"
+  },
+  {
+    "idx": 162,
+    "gold": 8,
+    "pred": 8,
+    "sentence": "untold numbers"
+  },
+  {
+    "idx": 163,
+    "gold": 3,
+    "pred": 4,
+    "sentence": "The reason why people are in your country is not because they are refugees, but because they want a German life"
+  },
+  {
+    "idx": 164,
+    "gold": 8,
+    "pred": 8,
+    "sentence": "chaos, anarchy and illegal border crossings"
+  },
+  {
+    "idx": 165,
+    "gold": 7,
+    "pred": 7,
+    "sentence": "including the united States"
+  },
+  {
+    "idx": 166,
+    "gold": 1,
+    "pred": 4,
+    "sentence": "They cannot agree on God's law, which most Western societies were base on"
+  },
+  {
+    "idx": 167,
+    "gold": 10,
+    "pred": 3,
+    "sentence": "They cannot agree"
+  },
+  {
+    "idx": 168,
+    "gold": 10,
+    "pred": 3,
+    "sentence": "They cannot agree on"
+  },
+  {
+    "idx": 169,
+    "gold": 7,
+    "pred": 8,
+    "sentence": "leave Hungary and never come back"
+  },
+  {
+    "idx": 170,
+    "gold": 7,
+    "pred": 1,
+    "sentence": "Hungary would defend its borders, and it has"
+  },
+  {
+    "idx": 171,
+    "gold": 10,
+    "pred": 12,
+    "sentence": "Many, all too many"
+  },
+  {
+    "idx": 172,
+    "gold": 1,
+    "pred": 7,
+    "sentence": "them want to overwhelm German values, and European values in general, with sharia values"
+  },
+  {
+    "idx": 173,
+    "gold": 1,
+    "pred": 1,
+    "sentence": "to conquer and Islamize it"
+  },
+  {
+    "idx": 174,
+    "gold": 9,
+    "pred": 8,
+    "sentence": "internationalist intelligentsia"
+  },
+  {
+    "idx": 176,
+    "gold": 8,
+    "pred": 8,
+    "sentence": "fraudulent"
+  },
+  {
+    "idx": 178,
+    "gold": 1,
+    "pred": 10,
+    "sentence": "“threatened”"
+  },
+  {
+    "idx": 179,
+    "gold": 13,
+    "pred": 5,
+    "sentence": "Arabic Linguist for the Navy for five years"
+  },
+  {
+    "idx": 180,
+    "gold": 13,
+    "pred": 8,
+    "sentence": "a Senior Intel Analyst for the Department of Defense (DoD)"
+  },
+  {
+    "idx": 181,
+    "gold": 13,
+    "pred": 8,
+    "sentence": "Lambert also speaks fluent Arabic and Farsi (Persian), along with French and Italian"
+  },
+  {
+    "idx": 182,
+    "gold": 13,
+    "pred": 9,
+    "sentence": "former Reagan Justice Dept"
+  },
+  {
+    "idx": 183,
+    "gold": 5,
+    "pred": 3,
+    "sentence": "If Islam is a good religion in itself, as you seem to teach, why did we become Catholic"
+  },
+  {
+    "idx": 184,
+    "gold": 1,
+    "pred": 3,
+    "sentence": "if you don’t believe that Islam is a Religion of Peace, you will be ruthlessly harassed and silenced by the U.S. Conference of Catholic Bishops and the hierarchy elsewhere as well"
+  },
+  {
+    "idx": 185,
+    "gold": 9,
+    "pred": 6,
+    "sentence": "the worst of Creation”"
+  },
+  {
+    "idx": 186,
+    "gold": 1,
+    "pred": 1,
+    "sentence": "“Naiveté in the face of Islam is suicidal and very dangerous”"
+  },
+  {
+    "idx": 187,
+    "gold": 8,
+    "pred": 5,
+    "sentence": "disgusted by her cowardice, wounded by equivocal gestures, confused by the lack of evangelization, scandalized by the praise given to Islam.”"
+  },
+  {
+    "idx": 188,
+    "gold": 6,
+    "pred": 5,
+    "sentence": "The bishops of the Catholic Church are much more concerned that you believe that Islam is a religion of peace than that you believe in, say, the Nicene Creed"
+  },
+  {
+    "idx": 189,
+    "gold": 3,
+    "pred": 5,
+    "sentence": "it does not account for the fact that Islam came AFTER Christ, and so is, and can only be, an Antichrist"
+  },
+  {
+    "idx": 190,
+    "gold": 3,
+    "pred": 4,
+    "sentence": "As a proper Antichrist, Islam exists only as an enemy of all"
+  },
+  {
+    "idx": 191,
+    "gold": 3,
+    "pred": 5,
+    "sentence": "For the Qur’an, Christians “are only impurity”"
+  },
+  {
+    "idx": 192,
+    "gold": 8,
+    "pred": 6,
+    "sentence": "the worst of Creation”"
+  },
+  {
+    "idx": 193,
+    "gold": 8,
+    "pred": 8,
+    "sentence": "all condemned to Hell"
+  },
+  {
+    "idx": 194,
+    "gold": 8,
+    "pred": 8,
+    "sentence": "so Allah must exterminate them"
+  },
+  {
+    "idx": 195,
+    "gold": 3,
+    "pred": 5,
+    "sentence": "Allah has nothing to offer but war and murder of the “infidels” in exchange for his paradise"
+  },
+  {
+    "idx": 196,
+    "gold": 2,
+    "pred": 4,
+    "sentence": "The authors say that Islam can be no ally in the battle “against the powers that want to dominate and enslave the world” because “they share the same totalitarian logic based on the rejection of the kingship of Christ"
+  },
+  {
+    "idx": 197,
+    "gold": 3,
+    "pred": 5,
+    "sentence": "Jesus has never indicated any other way than that of the Cross"
+  },
+  {
+    "idx": 198,
+    "gold": 13,
+    "pred": 5,
+    "sentence": "The letter also contrasts the stance of Islamic countries like Turkey and Saudi Arabia who “do not welcome any refugee” while Pope Francis preaches"
+  },
+  {
+    "idx": 199,
+    "gold": 8,
+    "pred": 6,
+    "sentence": "the utter scandal of the pope’s failure"
+  },
+  {
+    "idx": 200,
+    "gold": 8,
+    "pred": 5,
+    "sentence": "disgusted by her cowardice, wounded by equivocal gestures, confused by the lack of evangelization, scandalized by the praise given to Islam … Thus ignorant souls are misled…"
+  },
+  {
+    "idx": 201,
+    "gold": 1,
+    "pred": 5,
+    "sentence": "Taking the matter further, they warn, too, of the physical danger the pope’s disposition toward Islam invites, saying that it has resulted in Christians\nnot preparing for a confrontation with Islam"
+  },
+  {
+    "idx": 202,
+    "gold": 3,
+    "pred": 5,
+    "sentence": "The headquarters of my archdiocese and my apostolate have been occupied by radical Islamists who want us to convert or die"
+  },
+  {
+    "idx": 203,
+    "gold": 1,
+    "pred": 6,
+    "sentence": "You are welcoming into your country an ever increasing number of Muslims.\nYou are in danger as well.\nYou must make strong and courageous decisions"
+  },
+  {
+    "idx": 204,
+    "gold": 1,
+    "pred": 1,
+    "sentence": "This is a matter of life and death, and any complacency towards Islam is treasonous.\nWe do not wish the West to continue with Islamization, nor that your actions contribute to it"
+  },
+  {
+    "idx": 205,
+    "gold": 8,
+    "pred": 4,
+    "sentence": "This is a matter of life and death"
+  },
+  {
+    "idx": 206,
+    "gold": 1,
+    "pred": 1,
+    "sentence": "Our present sufferings are the prelude to those that you, Europeans and Western Christians, will suffer in the near future"
+  },
+  {
+    "idx": 207,
+    "gold": 10,
+    "pred": 7,
+    "sentence": "people"
+  },
+  {
+    "idx": 208,
+    "gold": 12,
+    "pred": 12,
+    "sentence": "That’s crazy"
+  },
+  {
+    "idx": 209,
+    "gold": 6,
+    "pred": 7,
+    "sentence": "This is the new Sweden; the new, exciting dynamic, multicultural paradise that so many here in this assembly … have fought to create for so many years"
+  },
+  {
+    "idx": 210,
+    "gold": 8,
+    "pred": 8,
+    "sentence": "shocking claim"
+  },
+  {
+    "idx": 211,
+    "gold": 5,
+    "pred": 5,
+    "sentence": "government is covering up a big story about terrorism"
+  },
+  {
+    "idx": 212,
+    "gold": 5,
+    "pred": 5,
+    "sentence": "something is not adding up,”"
+  },
+  {
+    "idx": 213,
+    "gold": 4,
+    "pred": 5,
+    "sentence": "“If ISIS warns about an attack and then an attack occurs and claims responsibility after the fact, it seems to me that at a minimum, they should have some portion of the investigation to clearly debunk that claim and, yet, it hasn’t happened,” he said"
+  },
+  {
+    "idx": 214,
+    "gold": 10,
+    "pred": 1,
+    "sentence": "waiting and waiting and waiting"
+  },
+  {
+    "idx": 215,
+    "gold": 7,
+    "pred": 7,
+    "sentence": "all Americans"
+  },
+  {
+    "idx": 216,
+    "gold": 4,
+    "pred": 1,
+    "sentence": "Let’s face it, twice before the attack ISIS warned the United States that they would attack Las Vegas and then after the attack claimed responsibility four times,”"
+  },
+  {
+    "idx": 218,
+    "gold": 5,
+    "pred": 5,
+    "sentence": "One can imagine that"
+  },
+  {
+    "idx": 219,
+    "gold": 5,
+    "pred": 8,
+    "sentence": "Interestingly"
+  },
+  {
+    "idx": 220,
+    "gold": 9,
+    "pred": 2,
+    "sentence": "Hitler the Great"
+  },
+  {
+    "idx": 221,
+    "gold": 6,
+    "pred": 8,
+    "sentence": "deeply disappointed"
+  },
+  {
+    "idx": 222,
+    "gold": 8,
+    "pred": 8,
+    "sentence": "ridiculous exercise in virtue-signaling"
+  },
+  {
+    "idx": 223,
+    "gold": 6,
+    "pred": 5,
+    "sentence": "for the crime of telling the truth about Islam and jihad"
+  },
+  {
+    "idx": 226,
+    "gold": 8,
+    "pred": 8,
+    "sentence": "“doesn’t applaud diversity"
+  },
+  {
+    "idx": 227,
+    "gold": 1,
+    "pred": 11,
+    "sentence": "We must be vigorous in our intolerance of his intolerance.”"
+  },
+  {
+    "idx": 228,
+    "gold": 6,
+    "pred": 2,
+    "sentence": "Hitler the Great.’"
+  },
+  {
+    "idx": 229,
+    "gold": 8,
+    "pred": 9,
+    "sentence": "corruptly elected"
+  },
+  {
+    "idx": 230,
+    "gold": 8,
+    "pred": 9,
+    "sentence": "Islamophobic propaganda"
+  },
+  {
+    "idx": 231,
+    "gold": 8,
+    "pred": 0,
+    "sentence": "he has allegedly “bigoted attitude towards women, ethnic minorities and Muslims"
+  },
+  {
+    "idx": 232,
+    "gold": 2,
+    "pred": 0,
+    "sentence": "The motion also notes that the neighbouring Royal Borough of Greenwich formally adopted a similar motion in December last year…"
+  },
+  {
+    "idx": 234,
+    "gold": 8,
+    "pred": 8,
+    "sentence": "hypocrisy and double standards"
+  },
+  {
+    "idx": 237,
+    "gold": 9,
+    "pred": 8,
+    "sentence": "bigot"
+  },
+  {
+    "idx": 238,
+    "gold": 0,
+    "pred": 1,
+    "sentence": "He is failing in his leadership and we should not welcome him here.\nWe must be vigorous in our intolerance of his intolerance"
+  },
+  {
+    "idx": 239,
+    "gold": 8,
+    "pred": 8,
+    "sentence": "shock and alarm"
+  },
+  {
+    "idx": 240,
+    "gold": 8,
+    "pred": 13,
+    "sentence": "racking my brain"
+  },
+  {
+    "idx": 241,
+    "gold": 1,
+    "pred": 5,
+    "sentence": "but if one dares something, one might win, but one also can perish"
+  },
+  {
+    "idx": 242,
+    "gold": 3,
+    "pred": 3,
+    "sentence": "there is only one Catholic answer: No!"
+  },
+  {
+    "idx": 243,
+    "gold": 8,
+    "pred": 6,
+    "sentence": "your addition “in individual cases” is absolutely worthless, it has no argumentative force"
+  },
+  {
+    "idx": 244,
+    "gold": 6,
+    "pred": 5,
+    "sentence": "Why not, one could say, since the Church is ready to bless nearly everything on the earth?"
+  },
+  {
+    "idx": 245,
+    "gold": 3,
+    "pred": 3,
+    "sentence": "only then when there is a blessing upon a cause or a project, will something good come out of it"
+  },
+  {
+    "idx": 246,
+    "gold": 3,
+    "pred": 3,
+    "sentence": "That is to say, one could not consecrate a brothel, one could not bless a concentration camp or weapons which are not explicitly ordained for hunting or for legitimate self-defense"
+  },
+  {
+    "idx": 247,
+    "gold": 2,
+    "pred": 3,
+    "sentence": "one may not bless a relationship which is sinful; [one may not bless] the mafia; no blessing for organizations or institutions which promote or procure abortions or which propagate ideologies which are against the Faith, antisemitic contents, or other forms of racist thought"
+  },
+  {
+    "idx": 248,
+    "gold": 4,
+    "pred": 3,
+    "sentence": "If one considers and weighs this matter, one knows: one may not bless a union of two homosexual men or of lesbian women"
+  },
+  {
+    "idx": 249,
+    "gold": 12,
+    "pred": 5,
+    "sentence": "This position which is really simple and easily to be understood"
+  },
+  {
+    "idx": 250,
+    "gold": 2,
+    "pred": 12,
+    "sentence": "I am sure there are many many others, too, who think alike, but whom I do not know"
+  },
+  {
+    "idx": 251,
+    "gold": 3,
+    "pred": 3,
+    "sentence": "there is only one Catholic answer: No!"
+  },
+  {
+    "idx": 252,
+    "gold": 6,
+    "pred": 5,
+    "sentence": "To contradict two popes – whom the Church has already “beatified” the one and “canonized” the other – so shortly after their deaths, and in such a radical and open manner, probably has never happened before in the Church's history"
+  },
+  {
+    "idx": 253,
+    "gold": 0,
+    "pred": 8,
+    "sentence": "Isaiah says that such people draw unto them God's punishment, with thick cords!"
+  },
+  {
+    "idx": 254,
+    "gold": 8,
+    "pred": 5,
+    "sentence": "but if one dares something, one might win, but one also can perish"
+  },
+  {
+    "idx": 255,
+    "gold": 2,
+    "pred": 5,
+    "sentence": "Why not, one could say, since the Church is ready to bless nearly everything on the earth?"
+  },
+  {
+    "idx": 256,
+    "gold": 4,
+    "pred": 3,
+    "sentence": "To bless always means that something shall flourish, because only then when there is a blessing upon a cause or a project, will something good come out of it"
+  },
+  {
+    "idx": 257,
+    "gold": 10,
+    "pred": 3,
+    "sentence": "know.\nDear Cardinal Marx and dear Bishop Bode, there is only one Catholic answer: No!\nAnd your addition “in individual cases” is absolutely worthless, it has no argumentative force"
+  },
+  {
+    "idx": 258,
+    "gold": 1,
+    "pred": 8,
+    "sentence": "Isaiah says that such people draw unto them God's punishment, with thick cords"
+  },
+  {
+    "idx": 259,
+    "gold": 0,
+    "pred": 4,
+    "sentence": "it's good odds that it began with Obama holdovers ensconced in the governme"
+  },
+  {
+    "idx": 260,
+    "gold": 8,
+    "pred": 8,
+    "sentence": "reckless disregard"
+  },
+  {
+    "idx": 261,
+    "gold": 8,
+    "pred": 8,
+    "sentence": "just keeps getting worse"
+  },
+  {
+    "idx": 263,
+    "gold": 8,
+    "pred": 10,
+    "sentence": "there is no doubt that businesses employing illegal aliens are committing a crime"
+  },
+  {
+    "idx": 264,
+    "gold": 8,
+    "pred": 13,
+    "sentence": "white people are “devils” and Jewish people are satanic"
+  },
+  {
+    "idx": 265,
+    "gold": 9,
+    "pred": 8,
+    "sentence": "devils"
+  },
+  {
+    "idx": 267,
+    "gold": 9,
+    "pred": 13,
+    "sentence": "white people are devils"
+  },
+  {
+    "idx": 268,
+    "gold": 9,
+    "pred": 8,
+    "sentence": "devils"
+  },
+  {
+    "idx": 270,
+    "gold": 9,
+    "pred": 8,
+    "sentence": "useful idiots"
+  },
+  {
+    "idx": 271,
+    "gold": 11,
+    "pred": 11,
+    "sentence": "deserve to die”"
+  },
+  {
+    "idx": 272,
+    "gold": 6,
+    "pred": 0,
+    "sentence": "plays a big role in the lives of thousands and thousands"
+  },
+  {
+    "idx": 273,
+    "gold": 6,
+    "pred": 6,
+    "sentence": "outstanding human being"
+  },
+  {
+    "idx": 274,
+    "gold": 6,
+    "pred": 6,
+    "sentence": "very great man.”"
+  },
+  {
+    "idx": 275,
+    "gold": 6,
+    "pred": 6,
+    "sentence": "outstanding human being”"
+  },
+  {
+    "idx": 276,
+    "gold": 6,
+    "pred": 8,
+    "sentence": "outstanding work”"
+  },
+  {
+    "idx": 277,
+    "gold": 5,
+    "pred": 5,
+    "sentence": "wonder how far a white congressman would get"
+  },
+  {
+    "idx": 278,
+    "gold": 0,
+    "pred": 0,
+    "sentence": "I personally know [Farrakhan], I’ve been to his home, done meetings, participated in events with him,” Davis told TheDC.\n“I don’t regard Louis Farrakhan as an aberration or anything, I regard him as an outstanding human being who commands a following of individuals who are learned and articulate and he plays a big role in the lives of thousands and thousands and thousands and thousands of people,” he emphasized later"
+  },
+  {
+    "idx": 280,
+    "gold": 9,
+    "pred": 9,
+    "sentence": "a notorious racist and anti-Semite"
+  },
+  {
+    "idx": 281,
+    "gold": 13,
+    "pred": 0,
+    "sentence": "\"I don’t spend a lot of time, I buy Final Call when I see them.\nI’ve been to Saviour’s Day, I’ve read, I’ve been a fan of Elijah Muhammad, so those are my positions, but I do disagree with the notion that white people are devils.”"
+  },
+  {
+    "idx": 282,
+    "gold": 13,
+    "pred": 13,
+    "sentence": "I wonder how far a white congressman would get saying, \"I attended the Klavern, but I don't agree with the KKK's views about black people.\""
+  },
+  {
+    "idx": 283,
+    "gold": 9,
+    "pred": 9,
+    "sentence": "a politician who praised a racist hate group leader and discussed the \"Jewish question.\""
+  },
+  {
+    "idx": 284,
+    "gold": 9,
+    "pred": 9,
+    "sentence": "darling child"
+  },
+  {
+    "idx": 288,
+    "gold": 8,
+    "pred": 6,
+    "sentence": "none other than"
+  },
+  {
+    "idx": 289,
+    "gold": 11,
+    "pred": 10,
+    "sentence": "Free Iran"
+  },
+  {
+    "idx": 290,
+    "gold": 5,
+    "pred": 5,
+    "sentence": "Who was in that room?"
+  },
+  {
+    "idx": 291,
+    "gold": 8,
+    "pred": 8,
+    "sentence": "incredibly stupid"
+  },
+  {
+    "idx": 292,
+    "gold": 8,
+    "pred": 8,
+    "sentence": "disaster after disaster"
+  },
+  {
+    "idx": 294,
+    "gold": 5,
+    "pred": 5,
+    "sentence": "How did that work in Libya?"
+  },
+  {
+    "idx": 295,
+    "gold": 7,
+    "pred": 7,
+    "sentence": "killed dozens of Americans"
+  },
+  {
+    "idx": 296,
+    "gold": 5,
+    "pred": 1,
+    "sentence": "Does anyone really think Iran will be better off if Trump puts a bunch of “former” terrorists in charge of the country?"
+  },
+  {
+    "idx": 297,
+    "gold": 1,
+    "pred": 7,
+    "sentence": "We need to worry about blowback from President Trump’s fully-neoconized Middle East policy!"
+  },
+  {
+    "idx": 298,
+    "gold": 1,
+    "pred": 1,
+    "sentence": "That’s the real threat!"
+  },
+  {
+    "idx": 299,
+    "gold": 8,
+    "pred": 9,
+    "sentence": "Death-Knell"
+  },
+  {
+    "idx": 300,
+    "gold": 8,
+    "pred": 9,
+    "sentence": "death-knell"
+  },
+  {
+    "idx": 303,
+    "gold": 9,
+    "pred": 8,
+    "sentence": "despots"
+  },
+  {
+    "idx": 304,
+    "gold": 8,
+    "pred": 9,
+    "sentence": "death spiral"
+  },
+  {
+    "idx": 305,
+    "gold": 8,
+    "pred": 9,
+    "sentence": "the frost of Vatican II’s perpetual winter"
+  },
+  {
+    "idx": 306,
+    "gold": 3,
+    "pred": 6,
+    "sentence": "the world, or Christ"
+  },
+  {
+    "idx": 308,
+    "gold": 8,
+    "pred": 8,
+    "sentence": "frightening"
+  },
+  {
+    "idx": 309,
+    "gold": 3,
+    "pred": 7,
+    "sentence": "those that are distancing themselves from the council to make another path are killing themselves"
+  },
+  {
+    "idx": 310,
+    "gold": 6,
+    "pred": 6,
+    "sentence": "the most virulently anti-Catholic organisation of “Catholic” religious in the world"
+  },
+  {
+    "idx": 311,
+    "gold": 3,
+    "pred": 8,
+    "sentence": "mutually exclusive alternatives"
+  },
+  {
+    "idx": 313,
+    "gold": 8,
+    "pred": 7,
+    "sentence": "complete loss of our rights"
+  },
+  {
+    "idx": 315,
+    "gold": 8,
+    "pred": 6,
+    "sentence": "million"
+  },
+  {
+    "idx": 316,
+    "gold": 8,
+    "pred": 1,
+    "sentence": "would not rest until"
+  },
+  {
+    "idx": 317,
+    "gold": 8,
+    "pred": 6,
+    "sentence": "absolutely dismal"
+  },
+  {
+    "idx": 318,
+    "gold": 1,
+    "pred": 3,
+    "sentence": "sooner or later, they will die"
+  },
+  {
+    "idx": 319,
+    "gold": 1,
+    "pred": 1,
+    "sentence": "They will be outside the church"
+  },
+  {
+    "idx": 321,
+    "gold": 10,
+    "pred": 10,
+    "sentence": "intense and fruitful path"
+  },
+  {
+    "idx": 322,
+    "gold": 10,
+    "pred": 10,
+    "sentence": "intense and fruitful path"
+  },
+  {
+    "idx": 323,
+    "gold": 10,
+    "pred": 10,
+    "sentence": "intense and fruitful path"
+  },
+  {
+    "idx": 325,
+    "gold": 8,
+    "pred": 8,
+    "sentence": "depressing"
+  },
+  {
+    "idx": 326,
+    "gold": 6,
+    "pred": 6,
+    "sentence": "most desperate"
+  },
+  {
+    "idx": 327,
+    "gold": 6,
+    "pred": 8,
+    "sentence": "still less"
+  },
+  {
+    "idx": 328,
+    "gold": 8,
+    "pred": 8,
+    "sentence": "downright bizarre"
+  },
+  {
+    "idx": 329,
+    "gold": 8,
+    "pred": 10,
+    "sentence": "controlled, systematized extinction"
+  },
+  {
+    "idx": 331,
+    "gold": 8,
+    "pred": 9,
+    "sentence": "death throes"
+  },
+  {
+    "idx": 332,
+    "gold": 8,
+    "pred": 8,
+    "sentence": "impending total extinction"
+  },
+  {
+    "idx": 333,
+    "gold": 5,
+    "pred": 5,
+    "sentence": "What are these people smoking?"
+  },
+  {
+    "idx": 334,
+    "gold": 8,
+    "pred": 2,
+    "sentence": "like a funeral bell"
+  },
+  {
+    "idx": 335,
+    "gold": 8,
+    "pred": 5,
+    "sentence": "What are these people smoking?"
+  },
+  {
+    "idx": 336,
+    "gold": 10,
+    "pred": 8,
+    "sentence": "new dawn"
+  },
+  {
+    "idx": 337,
+    "gold": 8,
+    "pred": 8,
+    "sentence": "demolition"
+  },
+  {
+    "idx": 338,
+    "gold": 8,
+    "pred": 8,
+    "sentence": "terrible"
+  },
+  {
+    "idx": 340,
+    "gold": 11,
+    "pred": 6,
+    "sentence": "No Collusion"
+  },
+  {
+    "idx": 341,
+    "gold": 4,
+    "pred": 5,
+    "sentence": "It is commonly said that wage stagnation contributed to an economic anxiety in middle America that carried Donald Trump into the White House…"
+  },
+  {
+    "idx": 343,
+    "gold": 8,
+    "pred": 0,
+    "sentence": "the Wolff book brouhaha"
+  },
+  {
+    "idx": 344,
+    "gold": 4,
+    "pred": 10,
+    "sentence": "and which I argued meant that an unreported illegal alien surge was underway"
+  },
+  {
+    "idx": 345,
+    "gold": 8,
+    "pred": 8,
+    "sentence": "especially striking"
+  },
+  {
+    "idx": 346,
+    "gold": 8,
+    "pred": 12,
+    "sentence": "roared back"
+  },
+  {
+    "idx": 350,
+    "gold": 8,
+    "pred": 8,
+    "sentence": "woke up"
+  },
+  {
+    "idx": 351,
+    "gold": 8,
+    "pred": 8,
+    "sentence": "an outright retreat"
+  },
+  {
+    "idx": 352,
+    "gold": 8,
+    "pred": 8,
+    "sentence": "dramatic contrast"
+  },
+  {
+    "idx": 353,
+    "gold": 8,
+    "pred": 8,
+    "sentence": "rocket"
+  },
+  {
+    "idx": 354,
+    "gold": 9,
+    "pred": 8,
+    "sentence": "Obama-era levels"
+  },
+  {
+    "idx": 355,
+    "gold": 8,
+    "pred": 8,
+    "sentence": "wishy-washy"
+  },
+  {
+    "idx": 356,
+    "gold": 8,
+    "pred": 8,
+    "sentence": "startling"
+  },
+  {
+    "idx": 357,
+    "gold": 7,
+    "pred": 7,
+    "sentence": "betraying the interest of the American people"
+  },
+  {
+    "idx": 358,
+    "gold": 5,
+    "pred": 5,
+    "sentence": "How could Ryan possibly know this?"
+  },
+  {
+    "idx": 359,
+    "gold": 8,
+    "pred": 1,
+    "sentence": "lacking push, zeal and enthusiasm"
+  },
+  {
+    "idx": 360,
+    "gold": 8,
+    "pred": 9,
+    "sentence": "the rotten inner workings"
+  },
+  {
+    "idx": 361,
+    "gold": 13,
+    "pred": 4,
+    "sentence": "They want to preserve the FBI’s reputation"
+  },
+  {
+    "idx": 362,
+    "gold": 13,
+    "pred": 4,
+    "sentence": "They don’t care to see Trump vindicated"
+  },
+  {
+    "idx": 363,
+    "gold": 5,
+    "pred": 5,
+    "sentence": "Isn’t he prejudging the case without even finding out what actually happened?"
+  },
+  {
+    "idx": 364,
+    "gold": 10,
+    "pred": 5,
+    "sentence": "It did not allow"
+  },
+  {
+    "idx": 365,
+    "gold": 10,
+    "pred": 5,
+    "sentence": "It did not allow"
+  },
+  {
+    "idx": 366,
+    "gold": 10,
+    "pred": 5,
+    "sentence": "It did not allow"
+  },
+  {
+    "idx": 367,
+    "gold": 10,
+    "pred": 5,
+    "sentence": "it did not allow"
+  },
+  {
+    "idx": 369,
+    "gold": 6,
+    "pred": 8,
+    "sentence": "widely"
+  },
+  {
+    "idx": 370,
+    "gold": 6,
+    "pred": 6,
+    "sentence": "absolutely"
+  },
+  {
+    "idx": 372,
+    "gold": 8,
+    "pred": 8,
+    "sentence": "Yikes"
+  },
+  {
+    "idx": 375,
+    "gold": 8,
+    "pred": 8,
+    "sentence": "Treason"
+  },
+  {
+    "idx": 376,
+    "gold": 6,
+    "pred": 6,
+    "sentence": "Even Worse"
+  },
+  {
+    "idx": 377,
+    "gold": 6,
+    "pred": 6,
+    "sentence": "the worst"
+  },
+  {
+    "idx": 378,
+    "gold": 9,
+    "pred": 9,
+    "sentence": "black-hearted Presbyterian bigot"
+  },
+  {
+    "idx": 379,
+    "gold": 9,
+    "pred": 9,
+    "sentence": "crook and an economic Leftist"
+  },
+  {
+    "idx": 380,
+    "gold": 10,
+    "pred": 8,
+    "sentence": "treason"
+  },
+  {
+    "idx": 381,
+    "gold": 10,
+    "pred": 8,
+    "sentence": "treason"
+  },
+  {
+    "idx": 382,
+    "gold": 10,
+    "pred": 8,
+    "sentence": "treason"
+  },
+  {
+    "idx": 383,
+    "gold": 10,
+    "pred": 8,
+    "sentence": "treason"
+  },
+  {
+    "idx": 384,
+    "gold": 10,
+    "pred": 8,
+    "sentence": "treason"
+  },
+  {
+    "idx": 385,
+    "gold": 10,
+    "pred": 8,
+    "sentence": "treason"
+  },
+  {
+    "idx": 386,
+    "gold": 10,
+    "pred": 8,
+    "sentence": "treason"
+  },
+  {
+    "idx": 387,
+    "gold": 6,
+    "pred": 8,
+    "sentence": "for years, and probably decades"
+  },
+  {
+    "idx": 388,
+    "gold": 6,
+    "pred": 9,
+    "sentence": "Nothing good"
+  },
+  {
+    "idx": 389,
+    "gold": 11,
+    "pred": 11,
+    "sentence": "“Death to America”"
+  },
+  {
+    "idx": 390,
+    "gold": 8,
+    "pred": 8,
+    "sentence": "massacres"
+  },
+  {
+    "idx": 392,
+    "gold": 6,
+    "pred": 6,
+    "sentence": "even worse"
+  },
+  {
+    "idx": 393,
+    "gold": 9,
+    "pred": 8,
+    "sentence": "Blind to corruption"
+  },
+  {
+    "idx": 394,
+    "gold": 8,
+    "pred": 8,
+    "sentence": "incompetent"
+  },
+  {
+    "idx": 396,
+    "gold": 8,
+    "pred": 8,
+    "sentence": "dishonest"
+  },
+  {
+    "idx": 397,
+    "gold": 1,
+    "pred": 9,
+    "sentence": "committing jihad massacres"
+  },
+  {
+    "idx": 398,
+    "gold": 7,
+    "pred": 7,
+    "sentence": "of Americans"
+  },
+  {
+    "idx": 399,
+    "gold": 8,
+    "pred": 8,
+    "sentence": "catastrophe"
+  },
+  {
+    "idx": 400,
+    "gold": 8,
+    "pred": 8,
+    "sentence": "INSANE"
+  },
+  {
+    "idx": 401,
+    "gold": 9,
+    "pred": 9,
+    "sentence": "big bad guy"
+  },
+  {
+    "idx": 403,
+    "gold": 5,
+    "pred": 1,
+    "sentence": "How in the world can we trust them"
+  },
+  {
+    "idx": 404,
+    "gold": 8,
+    "pred": 8,
+    "sentence": "unpersuasive"
+  },
+  {
+    "idx": 405,
+    "gold": 8,
+    "pred": 8,
+    "sentence": "illogical"
+  },
+  {
+    "idx": 407,
+    "gold": 8,
+    "pred": 8,
+    "sentence": "mishandled"
+  },
+  {
+    "idx": 408,
+    "gold": 8,
+    "pred": 8,
+    "sentence": "terrible"
+  },
+  {
+    "idx": 410,
+    "gold": 8,
+    "pred": 8,
+    "sentence": "damn"
+  },
+  {
+    "idx": 411,
+    "gold": 8,
+    "pred": 8,
+    "sentence": "disturbing"
+  },
+  {
+    "idx": 412,
+    "gold": 8,
+    "pred": 8,
+    "sentence": "damaging"
+  },
+  {
+    "idx": 413,
+    "gold": 5,
+    "pred": 1,
+    "sentence": "Peter Strzok, a key investigator on both the Clinton email case and the investigation of Russia and the Trump campaign, assured an FBI lawyer in August 2016 that “we’ll stop” Trump from making it to the White House"
+  },
+  {
+    "idx": 414,
+    "gold": 8,
+    "pred": 8,
+    "sentence": "disparaging"
+  },
+  {
+    "idx": 415,
+    "gold": 8,
+    "pred": 8,
+    "sentence": "FIVE"
+  },
+  {
+    "idx": 416,
+    "gold": 8,
+    "pred": 8,
+    "sentence": "DURING"
+  },
+  {
+    "idx": 417,
+    "gold": 8,
+    "pred": 8,
+    "sentence": "damned"
+  },
+  {
+    "idx": 419,
+    "gold": 5,
+    "pred": 5,
+    "sentence": "we did not have confidence that Strzok’s decision to prioritize the Russia investigation over following up on the Midyear-related investigative lead discovered on the Weiner laptop was free from bias"
+  },
+  {
+    "idx": 420,
+    "gold": 5,
+    "pred": 1,
+    "sentence": "“unpersuasive,” “illogical,” and inconsistent"
+  },
+  {
+    "idx": 422,
+    "gold": 0,
+    "pred": 0,
+    "sentence": "I fully believe IG Horowitz’ findings"
+  },
+  {
+    "idx": 423,
+    "gold": 8,
+    "pred": 8,
+    "sentence": "mess"
+  },
+  {
+    "idx": 425,
+    "gold": 8,
+    "pred": 6,
+    "sentence": "even worse"
+  },
+  {
+    "idx": 426,
+    "gold": 8,
+    "pred": 8,
+    "sentence": "thoughtless"
+  },
+  {
+    "idx": 427,
+    "gold": 1,
+    "pred": 7,
+    "sentence": "to end national security"
+  },
+  {
+    "idx": 428,
+    "gold": 2,
+    "pred": 5,
+    "sentence": "Anything a Republican president does is exactly like the Holocaust"
+  },
+  {
+    "idx": 429,
+    "gold": 2,
+    "pred": 2,
+    "sentence": "compared US immigration policy to Nazi Germany"
+  },
+  {
+    "idx": 430,
+    "gold": 1,
+    "pred": 9,
+    "sentence": "death-camp"
+  },
+  {
+    "idx": 431,
+    "gold": 8,
+    "pred": 8,
+    "sentence": "particularly stupid"
+  },
+  {
+    "idx": 432,
+    "gold": 3,
+    "pred": 1,
+    "sentence": "only shameless Zionists would attempt to equate killing Jews with killing Jews"
+  },
+  {
+    "idx": 433,
+    "gold": 1,
+    "pred": 8,
+    "sentence": "killed them all"
+  },
+  {
+    "idx": 434,
+    "gold": 1,
+    "pred": 8,
+    "sentence": "extermination"
+  },
+  {
+    "idx": 435,
+    "gold": 4,
+    "pred": 5,
+    "sentence": "The attacks here are motivated by a desire for open borders"
+  },
+  {
+    "idx": 437,
+    "gold": 8,
+    "pred": 8,
+    "sentence": "human shields"
+  },
+  {
+    "idx": 438,
+    "gold": 9,
+    "pred": 8,
+    "sentence": "shameless"
+  },
+  {
+    "idx": 439,
+    "gold": 10,
+    "pred": 8,
+    "sentence": "Nazi"
+  },
+  {
+    "idx": 440,
+    "gold": 10,
+    "pred": 8,
+    "sentence": "Nazi"
+  },
+  {
+    "idx": 441,
+    "gold": 10,
+    "pred": 8,
+    "sentence": "Nazi"
+  },
+  {
+    "idx": 442,
+    "gold": 10,
+    "pred": 8,
+    "sentence": "Nazi"
+  },
+  {
+    "idx": 443,
+    "gold": 8,
+    "pred": 6,
+    "sentence": "remarkable ignorance of history"
+  },
+  {
+    "idx": 444,
+    "gold": 8,
+    "pred": 8,
+    "sentence": "useless"
+  },
+  {
+    "idx": 445,
+    "gold": 8,
+    "pred": 8,
+    "sentence": "Sure"
+  },
+  {
+    "idx": 446,
+    "gold": 8,
+    "pred": 8,
+    "sentence": "degradation"
+  },
+  {
+    "idx": 447,
+    "gold": 8,
+    "pred": 8,
+    "sentence": "vilify and humiliate"
+  },
+  {
+    "idx": 448,
+    "gold": 8,
+    "pred": 8,
+    "sentence": "humiliate"
+  },
+  {
+    "idx": 449,
+    "gold": 8,
+    "pred": 6,
+    "sentence": "The non-Muslims are nothing but dirt"
+  },
+  {
+    "idx": 450,
+    "gold": 8,
+    "pred": 8,
+    "sentence": "stance of denial and appeasement"
+  },
+  {
+    "idx": 451,
+    "gold": 8,
+    "pred": 1,
+    "sentence": "to exterminate the infidels"
+  },
+  {
+    "idx": 452,
+    "gold": 8,
+    "pred": 8,
+    "sentence": "exalted"
+  },
+  {
+    "idx": 453,
+    "gold": 9,
+    "pred": 6,
+    "sentence": "partisans of Satan; most treacherous in regard to all they do"
+  },
+  {
+    "idx": 454,
+    "gold": 9,
+    "pred": 8,
+    "sentence": "just another mainstream hack politician"
+  },
+  {
+    "idx": 455,
+    "gold": 9,
+    "pred": 1,
+    "sentence": "the global jihad threat"
+  },
+  {
+    "idx": 457,
+    "gold": 9,
+    "pred": 9,
+    "sentence": "the “moderates"
+  },
+  {
+    "idx": 458,
+    "gold": 9,
+    "pred": 9,
+    "sentence": "jihad terror"
+  },
+  {
+    "idx": 459,
+    "gold": 9,
+    "pred": 9,
+    "sentence": "the infidels"
+  },
+  {
+    "idx": 460,
+    "gold": 9,
+    "pred": 7,
+    "sentence": "the People of the Book"
+  },
+  {
+    "idx": 461,
+    "gold": 9,
+    "pred": 9,
+    "sentence": "the infidels"
+  },
+  {
+    "idx": 462,
+    "gold": 9,
+    "pred": 8,
+    "sentence": "a real believer"
+  },
+  {
+    "idx": 463,
+    "gold": 9,
+    "pred": 9,
+    "sentence": "the race of infidels"
+  },
+  {
+    "idx": 464,
+    "gold": 1,
+    "pred": 1,
+    "sentence": "If dealing with Islamic fundamentalism becomes a battle between us and the entire religion, I’ll tell you the result: we’ll lose.\nWe will simply lose….We absolutely have to get that Muslim majority living in many of our towns and cities on our side, more attuned to Western values than some pretty hardline interpretations of the Qur’an"
+  },
+  {
+    "idx": 465,
+    "gold": 1,
+    "pred": 9,
+    "sentence": "exterminate the infidels"
+  },
+  {
+    "idx": 466,
+    "gold": 1,
+    "pred": 5,
+    "sentence": "But if we don’t speak about such facts, how will we ever convince Muslims not to follow “hardline interpretations of the Qur’an"
+  },
+  {
+    "idx": 467,
+    "gold": 6,
+    "pred": 9,
+    "sentence": "a battle between us and the entire religion"
+  },
+  {
+    "idx": 468,
+    "gold": 6,
+    "pred": 8,
+    "sentence": "innumerable examples"
+  },
+  {
+    "idx": 469,
+    "gold": 6,
+    "pred": 8,
+    "sentence": "the highest dignity"
+  },
+  {
+    "idx": 470,
+    "gold": 6,
+    "pred": 12,
+    "sentence": "nothing but dirt"
+  },
+  {
+    "idx": 471,
+    "gold": 6,
+    "pred": 6,
+    "sentence": "most treacherous in regard to all they do"
+  },
+  {
+    "idx": 472,
+    "gold": 6,
+    "pred": 1,
+    "sentence": "everything they could"
+  },
+  {
+    "idx": 473,
+    "gold": 6,
+    "pred": 9,
+    "sentence": "a “battle between us and the entire religion"
+  },
+  {
+    "idx": 474,
+    "gold": 6,
+    "pred": 8,
+    "sentence": "with the entire Islamic world"
+  },
+  {
+    "idx": 475,
+    "gold": 6,
+    "pred": 8,
+    "sentence": "a “battle” with the “entire religion"
+  },
+  {
+    "idx": 476,
+    "gold": 6,
+    "pred": 1,
+    "sentence": "entire religion to be at war with the entire non-Muslim world"
+  },
+  {
+    "idx": 477,
+    "gold": 6,
+    "pred": 6,
+    "sentence": "whose whole endeavor in this nether life is useless"
+  },
+  {
+    "idx": 478,
+    "gold": 6,
+    "pred": 8,
+    "sentence": "at war with the entire religion"
+  },
+  {
+    "idx": 479,
+    "gold": 10,
+    "pred": 8,
+    "sentence": "entire religion"
+  },
+  {
+    "idx": 480,
+    "gold": 10,
+    "pred": 8,
+    "sentence": "a “battle” with the “entire religion”"
+  },
+  {
+    "idx": 481,
+    "gold": 10,
+    "pred": 8,
+    "sentence": "entire religion"
+  },
+  {
+    "idx": 482,
+    "gold": 10,
+    "pred": 8,
+    "sentence": "entire religion"
+  },
+  {
+    "idx": 483,
+    "gold": 10,
+    "pred": 11,
+    "sentence": "We will simply lose"
+  },
+  {
+    "idx": 485,
+    "gold": 5,
+    "pred": 12,
+    "sentence": "but British establishment politicians have done everything they could to sabotage that vote since then"
+  },
+  {
+    "idx": 486,
+    "gold": 5,
+    "pred": 1,
+    "sentence": "No sane person is saying that the West should go to war with the entire Islamic world"
+  },
+  {
+    "idx": 487,
+    "gold": 5,
+    "pred": 5,
+    "sentence": "Another problem with Farage’s statement is that it manifests a remarkable ignorance of history.\nWhile he is deeply concerned that British people not begin to think that resisting jihad terror means that they are in a “battle” with the “entire religion” of Islam, he appears unaware of the fact that many Muslims throughout history have considered their entire religion to be at war with the entire non-Muslim world"
+  },
+  {
+    "idx": 488,
+    "gold": 5,
+    "pred": 8,
+    "sentence": "Nigel Farage has become just another mainstream hack politician"
+  },
+  {
+    "idx": 489,
+    "gold": 12,
+    "pred": 1,
+    "sentence": "if he can’t beat them, he’ll join them"
+  },
+  {
+    "idx": 490,
+    "gold": 0,
+    "pred": 0,
+    "sentence": "I document this abundantly in my new book The History of Jihad From Muhammad to ISIS"
+  },
+  {
+    "idx": 491,
+    "gold": 0,
+    "pred": 5,
+    "sentence": "Sharaf ad-Din Ali Yazdi, a fifteenth-century Persian who wrote a biography of the Mongol Muslim warrior Tamerlane, observed that “the Qur’an says the highest dignity man can attain is that of making war in person against the enemies of his religion"
+  },
+  {
+    "idx": 492,
+    "gold": 0,
+    "pred": 0,
+    "sentence": "Muhammad advises the same thing, according to the tradition of the Muslim doctors"
+  },
+  {
+    "idx": 493,
+    "gold": 0,
+    "pred": 4,
+    "sentence": "Fatimid caliph Al-Amir bi-Ahkamillah issued this edict:\nNow, the prior degradation of the infidels in this world before the life to come—where it is their lot—is considered an act of piety; and the imposition of their poll tax [jizya], “until they pay the tribute out of hand and have been humbled” (Koran 9:29) is a divinely ordained obligation….The dhimmi’s payment of his dues by a bill drawn on a Muslim, or by delegating a real believer to pay it in his name will not be tolerated.\nIt must be exacted from him directly in order to vilify and humiliate him, so that Islam and its people may be exalted and the race of infidels brought low.\nThe jizya is to be imposed on all of them in full, without exception"
+  },
+  {
+    "idx": 494,
+    "gold": 0,
+    "pred": 4,
+    "sentence": "the Umayyad caliph Umar ibn Abd al-Aziz sent out a message to the governors of the various Islamic provinces:\nO you who believe!\nThe non-Muslims are nothing but dirt.\nAllah has created them to be partisans of Satan; most treacherous in regard to all they do; whose whole endeavor in this nether life is useless, though they themselves imagine that they are doing fine work.\nUpon them rests the curse of Allah, of the Angels and of man collectively"
+  },
+  {
+    "idx": 495,
+    "gold": 4,
+    "pred": 4,
+    "sentence": "and the imposition of their poll tax [jizya], “until they pay the tribute out of hand and have been humbled” (Koran 9:29) is a divinely ordained obligation"
+  },
+  {
+    "idx": 496,
+    "gold": 13,
+    "pred": 5,
+    "sentence": "But what, Mr. Farage, are we to think about the Muslims who consider themselves and their religion to be at war with us"
+  },
+  {
+    "idx": 497,
+    "gold": 8,
+    "pred": 8,
+    "sentence": "hypocrisy"
+  },
+  {
+    "idx": 498,
+    "gold": 10,
+    "pred": 9,
+    "sentence": "law-abiding citizens"
+  },
+  {
+    "idx": 499,
+    "gold": 11,
+    "pred": 11,
+    "sentence": "\"Take the guns first and then due process\""
+  },
+  {
+    "idx": 500,
+    "gold": 7,
+    "pred": 7,
+    "sentence": "America’s"
+  },
+  {
+    "idx": 501,
+    "gold": 8,
+    "pred": 8,
+    "sentence": "unconstitutional and unlawful laws"
+  },
+  {
+    "idx": 502,
+    "gold": 11,
+    "pred": 8,
+    "sentence": "#NeverAgain"
+  },
+  {
+    "idx": 503,
+    "gold": 3,
+    "pred": 5,
+    "sentence": "despite the fact that government has never been given authority to restrict or regulate arms"
+  },
+  {
+    "idx": 505,
+    "gold": 3,
+    "pred": 6,
+    "sentence": "attacking the rights of the people"
+  },
+  {
+    "idx": 506,
+    "gold": 9,
+    "pred": 8,
+    "sentence": "geniuses"
+  },
+  {
+    "idx": 507,
+    "gold": 3,
+    "pred": 1,
+    "sentence": "We wouldn’t be doing our jobs as mayors if we weren’t focusing on gun violence"
+  },
+  {
+    "idx": 508,
+    "gold": 10,
+    "pred": 8,
+    "sentence": "gun violence crisis"
+  },
+  {
+    "idx": 509,
+    "gold": 10,
+    "pred": 8,
+    "sentence": "unlawful policies"
+  },
+  {
+    "idx": 510,
+    "gold": 6,
+    "pred": 1,
+    "sentence": "nothing could be further from the truth"
+  },
+  {
+    "idx": 511,
+    "gold": 3,
+    "pred": 3,
+    "sentence": "the Second Amendment recognizes the right to keep and bear arms is a right given to us by our Creator, not a permission we gain from government"
+  },
+  {
+    "idx": 512,
+    "gold": 10,
+    "pred": 8,
+    "sentence": "consistent"
+  },
+  {
+    "idx": 513,
+    "gold": 10,
+    "pred": 8,
+    "sentence": "consistent"
+  },
+  {
+    "idx": 514,
+    "gold": 10,
+    "pred": 8,
+    "sentence": "consistent"
+  },
+  {
+    "idx": 515,
+    "gold": 5,
+    "pred": 5,
+    "sentence": "And just what kind of policies are we talking about?"
+  },
+  {
+    "idx": 516,
+    "gold": 10,
+    "pred": 9,
+    "sentence": "law-abiding citizens"
+  },
+  {
+    "idx": 517,
+    "gold": 10,
+    "pred": 9,
+    "sentence": "law-abiding citizens"
+  },
+  {
+    "idx": 522,
+    "gold": 5,
+    "pred": 8,
+    "sentence": "excuse"
+  },
+  {
+    "idx": 523,
+    "gold": 5,
+    "pred": 6,
+    "sentence": "some very good actors on the Left"
+  },
+  {
+    "idx": 524,
+    "gold": 9,
+    "pred": 8,
+    "sentence": "idol"
+  },
+  {
+    "idx": 525,
+    "gold": 10,
+    "pred": 8,
+    "sentence": "separating"
+  },
+  {
+    "idx": 526,
+    "gold": 10,
+    "pred": 8,
+    "sentence": "separated"
+  },
+  {
+    "idx": 527,
+    "gold": 10,
+    "pred": 8,
+    "sentence": "separating"
+  },
+  {
+    "idx": 528,
+    "gold": 10,
+    "pred": 8,
+    "sentence": "separating"
+  },
+  {
+    "idx": 529,
+    "gold": 10,
+    "pred": 8,
+    "sentence": "separating"
+  },
+  {
+    "idx": 530,
+    "gold": 10,
+    "pred": 8,
+    "sentence": "separated"
+  },
+  {
+    "idx": 531,
+    "gold": 10,
+    "pred": 8,
+    "sentence": "separation"
+  },
+  {
+    "idx": 532,
+    "gold": 8,
+    "pred": 8,
+    "sentence": "cruel"
+  },
+  {
+    "idx": 533,
+    "gold": 8,
+    "pred": 8,
+    "sentence": "insensitive"
+  },
+  {
+    "idx": 534,
+    "gold": 8,
+    "pred": 10,
+    "sentence": "A Fool’s Errand"
+  },
+  {
+    "idx": 535,
+    "gold": 8,
+    "pred": 8,
+    "sentence": "created a ruckus"
+  },
+  {
+    "idx": 536,
+    "gold": 5,
+    "pred": 5,
+    "sentence": "This isn’t a case where the underlying facts of the law changed.\nThe only thing that changed was the administration"
+  },
+  {
+    "idx": 537,
+    "gold": 8,
+    "pred": 8,
+    "sentence": "deals a death blow"
+  },
+  {
+    "idx": 538,
+    "gold": 6,
+    "pred": 1,
+    "sentence": "extremely restrictive handgun regulations in those countries"
+  },
+  {
+    "idx": 539,
+    "gold": 6,
+    "pred": 1,
+    "sentence": "it will be difficult, if not impossible"
+  },
+  {
+    "idx": 540,
+    "gold": 6,
+    "pred": 8,
+    "sentence": "make the already extremely difficult job of controlling access to guns practically impossible"
+  },
+  {
+    "idx": 541,
+    "gold": 8,
+    "pred": 6,
+    "sentence": "even more laughable"
+  },
+  {
+    "idx": 542,
+    "gold": 5,
+    "pred": 0,
+    "sentence": "which have proven quite useless anyway"
+  },
+  {
+    "idx": 543,
+    "gold": 5,
+    "pred": 0,
+    "sentence": "The government has been no more effective at stopping criminals from getting guns than at stopping them from obtaining drugs"
+  },
+  {
+    "idx": 544,
+    "gold": 8,
+    "pred": 9,
+    "sentence": "the government \"capitulated"
+  },
+  {
+    "idx": 545,
+    "gold": 8,
+    "pred": 10,
+    "sentence": "the administration “capitulated"
+  },
+  {
+    "idx": 546,
+    "gold": 8,
+    "pred": 8,
+    "sentence": "a game changer"
+  },
+  {
+    "idx": 549,
+    "gold": 10,
+    "pred": 5,
+    "sentence": "Trump has obviously been tougher against Russia than Obama ever was"
+  },
+  {
+    "idx": 550,
+    "gold": 8,
+    "pred": 8,
+    "sentence": "lethal"
+  },
+  {
+    "idx": 551,
+    "gold": 8,
+    "pred": 8,
+    "sentence": "incredibly repressive"
+  },
+  {
+    "idx": 552,
+    "gold": 9,
+    "pred": 8,
+    "sentence": "standard politician"
+  },
+  {
+    "idx": 553,
+    "gold": 10,
+    "pred": 6,
+    "sentence": "more"
+  },
+  {
+    "idx": 554,
+    "gold": 10,
+    "pred": 6,
+    "sentence": "more"
+  },
+  {
+    "idx": 555,
+    "gold": 9,
+    "pred": 8,
+    "sentence": "puppet"
+  },
+  {
+    "idx": 559,
+    "gold": 9,
+    "pred": 2,
+    "sentence": "fascist"
+  },
+  {
+    "idx": 560,
+    "gold": 9,
+    "pred": 9,
+    "sentence": "lavender mafia"
+  },
+  {
+    "idx": 561,
+    "gold": 6,
+    "pred": 6,
+    "sentence": "the most prolific serial predator"
+  },
+  {
+    "idx": 563,
+    "gold": 8,
+    "pred": 8,
+    "sentence": "manipulative"
+  },
+  {
+    "idx": 565,
+    "gold": 10,
+    "pred": 8,
+    "sentence": "Influential"
+  },
+  {
+    "idx": 566,
+    "gold": 10,
+    "pred": 8,
+    "sentence": "influential"
+  },
+  {
+    "idx": 567,
+    "gold": 10,
+    "pred": 8,
+    "sentence": "influential"
+  },
+  {
+    "idx": 568,
+    "gold": 10,
+    "pred": 8,
+    "sentence": "Influential"
+  },
+  {
+    "idx": 569,
+    "gold": 10,
+    "pred": 8,
+    "sentence": "Influential"
+  },
+  {
+    "idx": 570,
+    "gold": 10,
+    "pred": 8,
+    "sentence": "Influential"
+  },
+  {
+    "idx": 571,
+    "gold": 10,
+    "pred": 8,
+    "sentence": "Influential"
+  },
+  {
+    "idx": 572,
+    "gold": 10,
+    "pred": 8,
+    "sentence": "Influential"
+  },
+  {
+    "idx": 573,
+    "gold": 10,
+    "pred": 8,
+    "sentence": "Influential"
+  },
+  {
+    "idx": 574,
+    "gold": 10,
+    "pred": 8,
+    "sentence": "influential"
+  },
+  {
+    "idx": 575,
+    "gold": 9,
+    "pred": 8,
+    "sentence": "Molester"
+  },
+  {
+    "idx": 576,
+    "gold": 10,
+    "pred": 8,
+    "sentence": "Molester"
+  },
+  {
+    "idx": 577,
+    "gold": 10,
+    "pred": 8,
+    "sentence": "Molester"
+  },
+  {
+    "idx": 578,
+    "gold": 10,
+    "pred": 8,
+    "sentence": "Molester"
+  },
+  {
+    "idx": 579,
+    "gold": 10,
+    "pred": 8,
+    "sentence": "Molester"
+  },
+  {
+    "idx": 580,
+    "gold": 10,
+    "pred": 8,
+    "sentence": "Molester"
+  },
+  {
+    "idx": 581,
+    "gold": 10,
+    "pred": 8,
+    "sentence": "Molester"
+  },
+  {
+    "idx": 582,
+    "gold": 10,
+    "pred": 8,
+    "sentence": "Molester"
+  },
+  {
+    "idx": 583,
+    "gold": 10,
+    "pred": 8,
+    "sentence": "Molester"
+  },
+  {
+    "idx": 584,
+    "gold": 8,
+    "pred": 8,
+    "sentence": "tyrannical"
+  },
+  {
+    "idx": 585,
+    "gold": 8,
+    "pred": 8,
+    "sentence": "earthquake"
+  },
+  {
+    "idx": 586,
+    "gold": 8,
+    "pred": 8,
+    "sentence": "eerily"
+  },
+  {
+    "idx": 587,
+    "gold": 8,
+    "pred": 8,
+    "sentence": "orgy"
+  },
+  {
+    "idx": 588,
+    "gold": 8,
+    "pred": 8,
+    "sentence": "infuriating"
+  },
+  {
+    "idx": 589,
+    "gold": 8,
+    "pred": 8,
+    "sentence": "pathetic and laughable"
+  },
+  {
+    "idx": 590,
+    "gold": 8,
+    "pred": 8,
+    "sentence": "dreaded"
+  },
+  {
+    "idx": 591,
+    "gold": 11,
+    "pred": 8,
+    "sentence": "Expose and rout every last predator"
+  },
+  {
+    "idx": 592,
+    "gold": 11,
+    "pred": 8,
+    "sentence": "Purge every homosexual from its clerical ranks"
+  },
+  {
+    "idx": 593,
+    "gold": 8,
+    "pred": 8,
+    "sentence": "pervasive prelate coverup"
+  },
+  {
+    "idx": 594,
+    "gold": 9,
+    "pred": 11,
+    "sentence": "swarmy power brokers"
+  },
+  {
+    "idx": 595,
+    "gold": 11,
+    "pred": 10,
+    "sentence": "reform the Church"
+  },
+  {
+    "idx": 596,
+    "gold": 11,
+    "pred": 10,
+    "sentence": "reform the Church"
+  },
+  {
+    "idx": 597,
+    "gold": 8,
+    "pred": 8,
+    "sentence": "predation is unrelenting"
+  },
+  {
+    "idx": 598,
+    "gold": 9,
+    "pred": 8,
+    "sentence": "hijacked"
+  },
+  {
+    "idx": 599,
+    "gold": 9,
+    "pred": 9,
+    "sentence": "St. Gallen Mafia"
+  },
+  {
+    "idx": 600,
+    "gold": 8,
+    "pred": 5,
+    "sentence": "Are you thoroughly disgusted by this farce?"
+  },
+  {
+    "idx": 601,
+    "gold": 8,
+    "pred": 1,
+    "sentence": "to hell"
+  },
+  {
+    "idx": 602,
+    "gold": 11,
+    "pred": 6,
+    "sentence": "All credibility is lost"
+  },
+  {
+    "idx": 605,
+    "gold": 8,
+    "pred": 8,
+    "sentence": "psycho babble"
+  },
+  {
+    "idx": 606,
+    "gold": 1,
+    "pred": 6,
+    "sentence": "will destroy the future of the Church"
+  },
+  {
+    "idx": 607,
+    "gold": 5,
+    "pred": 5,
+    "sentence": "What proof of this can possibly be offered?\nHow can we know"
+  },
+  {
+    "idx": 608,
+    "gold": 6,
+    "pred": 6,
+    "sentence": "a miscarriage of human justice beyond any the world could ever have imagined"
+  },
+  {
+    "idx": 609,
+    "gold": 4,
+    "pred": 1,
+    "sentence": "TO ARGUE AGAINST THE DEATH PENALTY is to contend with constituted reality"
+  },
+  {
+    "idx": 610,
+    "gold": 6,
+    "pred": 8,
+    "sentence": "punished sevenfold"
+  },
+  {
+    "idx": 611,
+    "gold": 11,
+    "pred": 4,
+    "sentence": "life for life, eye for eye, tooth for tooth, hand for hand, foot for foot"
+  },
+  {
+    "idx": 612,
+    "gold": 8,
+    "pred": 8,
+    "sentence": "fruitless, guilty “vengeance"
+  },
+  {
+    "idx": 613,
+    "gold": 6,
+    "pred": 6,
+    "sentence": "most odious sins"
+  },
+  {
+    "idx": 614,
+    "gold": 6,
+    "pred": 8,
+    "sentence": "totally terminated"
+  },
+  {
+    "idx": 615,
+    "gold": 6,
+    "pred": 8,
+    "sentence": "total extinction"
+  },
+  {
+    "idx": 616,
+    "gold": 8,
+    "pred": 8,
+    "sentence": "settle their accounts"
+  },
+  {
+    "idx": 617,
+    "gold": 6,
+    "pred": 6,
+    "sentence": "Every one of us is born on Death Row and lives out his allotted lifespan in its shadow without hope of reprieve"
+  },
+  {
+    "idx": 618,
+    "gold": 8,
+    "pred": 9,
+    "sentence": "thou shalt die the death"
+  },
+  {
+    "idx": 619,
+    "gold": 4,
+    "pred": 0,
+    "sentence": "there has always been a death penalty.\nGod instituted it, and He was the first to impose it, embedding it in the very fabric of natural law"
+  },
+  {
+    "idx": 620,
+    "gold": 8,
+    "pred": 8,
+    "sentence": "God curses him"
+  },
+  {
+    "idx": 621,
+    "gold": 8,
+    "pred": 8,
+    "sentence": "dooming him"
+  },
+  {
+    "idx": 622,
+    "gold": 9,
+    "pred": 8,
+    "sentence": "a “vagabond"
+  },
+  {
+    "idx": 623,
+    "gold": 8,
+    "pred": 8,
+    "sentence": "so wicked"
+  },
+  {
+    "idx": 624,
+    "gold": 4,
+    "pred": 1,
+    "sentence": "from that point in history lawful killing in atonement for taking the life of another is sanctioned by God"
+  },
+  {
+    "idx": 625,
+    "gold": 8,
+    "pred": 12,
+    "sentence": "so heinous"
+  },
+  {
+    "idx": 626,
+    "gold": 4,
+    "pred": 4,
+    "sentence": "After all, it is not the injury to relatives or any other human consideration that makes homicide the serious sin that it is, but as God Himself pointed out to Noah, it is the fact that “man was made to the image of God” that makes an assault on him tantamount to an assault on God.\nIt is therefore to God, and not to His creatures that reparation is primarily due"
+  },
+  {
+    "idx": 627,
+    "gold": 4,
+    "pred": 5,
+    "sentence": "it was instituted by God Himself"
+  },
+  {
+    "idx": 628,
+    "gold": 9,
+    "pred": 9,
+    "sentence": "the new man-centered conciliar religion"
+  },
+  {
+    "idx": 629,
+    "gold": 9,
+    "pred": 6,
+    "sentence": "threats to the sacredness of human life"
+  },
+  {
+    "idx": 630,
+    "gold": 9,
+    "pred": 9,
+    "sentence": "the new man-centered theology"
+  },
+  {
+    "idx": 631,
+    "gold": 10,
+    "pred": 4,
+    "sentence": "life for life, eye for eye, tooth for tooth, hand for hand, foot for foot"
+  },
+  {
+    "idx": 632,
+    "gold": 1,
+    "pred": 5,
+    "sentence": "when “sentence is not speedily pronounced against the evil, the children of men commit evils without any fear"
+  },
+  {
+    "idx": 633,
+    "gold": 9,
+    "pred": 8,
+    "sentence": "immoral heretics"
+  },
+  {
+    "idx": 634,
+    "gold": 8,
+    "pred": 8,
+    "sentence": "imprudent"
+  },
+  {
+    "idx": 635,
+    "gold": 9,
+    "pred": 9,
+    "sentence": "a tool for revenge"
+  },
+  {
+    "idx": 636,
+    "gold": 8,
+    "pred": 8,
+    "sentence": "ruthlessly remedied"
+  },
+  {
+    "idx": 637,
+    "gold": 8,
+    "pred": 6,
+    "sentence": "the fallen human condition"
+  },
+  {
+    "idx": 638,
+    "gold": 12,
+    "pred": 5,
+    "sentence": "such injustices are bound to occur in any judicial system"
+  },
+  {
+    "idx": 639,
+    "gold": 5,
+    "pred": 6,
+    "sentence": "the author of the letter falls headlong into the very error Pius XII warns against"
+  },
+  {
+    "idx": 640,
+    "gold": 8,
+    "pred": 9,
+    "sentence": "The supernatural dimension of the punishment"
+  },
+  {
+    "idx": 641,
+    "gold": 8,
+    "pred": 9,
+    "sentence": "the spiritual good"
+  },
+  {
+    "idx": 642,
+    "gold": 8,
+    "pred": 8,
+    "sentence": "to rise dramatically"
+  },
+  {
+    "idx": 643,
+    "gold": 8,
+    "pred": 5,
+    "sentence": "have abolished"
+  },
+  {
+    "idx": 644,
+    "gold": 8,
+    "pred": 8,
+    "sentence": "leaps to the eye"
+  },
+  {
+    "idx": 645,
+    "gold": 8,
+    "pred": 9,
+    "sentence": "the spiritual welfare of citizens"
+  },
+  {
+    "idx": 646,
+    "gold": 8,
+    "pred": 6,
+    "sentence": "future bliss in heaven"
+  },
+  {
+    "idx": 647,
+    "gold": 6,
+    "pred": 6,
+    "sentence": "completely obliterates"
+  },
+  {
+    "idx": 648,
+    "gold": 3,
+    "pred": 1,
+    "sentence": "the death penalty as administered by society must be viewed against the backdrop of divine revelation if it is to make any real sense"
+  },
+  {
+    "idx": 649,
+    "gold": 8,
+    "pred": 1,
+    "sentence": "it terminates only his temporal life on earth, catapulting him into eternity for his final judgment before almighty God"
+  },
+  {
+    "idx": 650,
+    "gold": 4,
+    "pred": 1,
+    "sentence": "Suffering the penalty not only allows the criminal to render expiation to God and to society, but if accepted in Christ’s grace with due repentance, it preserves his soul from hell and eliminates much of his purgatory"
+  },
+  {
+    "idx": 651,
+    "gold": 4,
+    "pred": 7,
+    "sentence": "the problem of the death penalty is insoluble except from a Christian point of view"
+  },
+  {
+    "idx": 652,
+    "gold": 8,
+    "pred": 9,
+    "sentence": "the spiritual welfare of citizens"
+  },
+  {
+    "idx": 653,
+    "gold": 9,
+    "pred": 8,
+    "sentence": "Modern secularized society"
+  },
+  {
+    "idx": 654,
+    "gold": 8,
+    "pred": 8,
+    "sentence": "physical extinction"
+  },
+  {
+    "idx": 655,
+    "gold": 6,
+    "pred": 1,
+    "sentence": "the faith teaches that eternal damnation is incalculably worse"
+  },
+  {
+    "idx": 656,
+    "gold": 6,
+    "pred": 3,
+    "sentence": "cannot be compared with his future endless existence in heaven"
+  },
+  {
+    "idx": 657,
+    "gold": 8,
+    "pred": 0,
+    "sentence": "through the fabric of human civilizations"
+  },
+  {
+    "idx": 658,
+    "gold": 10,
+    "pred": 8,
+    "sentence": "abolished"
+  },
+  {
+    "idx": 659,
+    "gold": 9,
+    "pred": 8,
+    "sentence": "Converts to the prevailing conciliar religion and its “New Pentecost"
+  },
+  {
+    "idx": 660,
+    "gold": 8,
+    "pred": 9,
+    "sentence": "obliterating the death penalty"
+  },
+  {
+    "idx": 661,
+    "gold": 4,
+    "pred": 3,
+    "sentence": "without the shedding of blood there is no remission"
+  },
+  {
+    "idx": 662,
+    "gold": 8,
+    "pred": 8,
+    "sentence": "eternal bliss in heaven"
+  },
+  {
+    "idx": 663,
+    "gold": 6,
+    "pred": 6,
+    "sentence": "one of the cruelest means ever devised"
+  },
+  {
+    "idx": 664,
+    "gold": 9,
+    "pred": 9,
+    "sentence": "the glorified man who is Christ the King"
+  },
+  {
+    "idx": 665,
+    "gold": 4,
+    "pred": 4,
+    "sentence": "From that point on it is Christ who delegates the divine authority to punish by killing, and both Scripture and tradition testify that it is lawfully wielded by those to whom He entrusts the temporal sword in His Kingdom"
+  },
+  {
+    "idx": 666,
+    "gold": 9,
+    "pred": 8,
+    "sentence": "the minister of God: and avenger to execute wrath upon him that doth evil"
+  },
+  {
+    "idx": 667,
+    "gold": 8,
+    "pred": 8,
+    "sentence": "abolish"
+  },
+  {
+    "idx": 668,
+    "gold": 8,
+    "pred": 4,
+    "sentence": "the wages of sin"
+  },
+  {
+    "idx": 669,
+    "gold": 6,
+    "pred": 6,
+    "sentence": "capable of committing incalculably more grievous sins than heretofore"
+  },
+  {
+    "idx": 670,
+    "gold": 8,
+    "pred": 7,
+    "sentence": "our hereditary inclination to evil"
+  },
+  {
+    "idx": 671,
+    "gold": 8,
+    "pred": 7,
+    "sentence": "the inescapable consequence of our fallen nature"
+  },
+  {
+    "idx": 672,
+    "gold": 4,
+    "pred": 3,
+    "sentence": "As with everyone else the moment of death ushers them either into heaven, hell or purgatory"
+  },
+  {
+    "idx": 673,
+    "gold": 8,
+    "pred": 8,
+    "sentence": "transcends human legislation"
+  },
+  {
+    "idx": 674,
+    "gold": 4,
+    "pred": 1,
+    "sentence": "By divine decree it will perdure until the end of time, when “the former things are passed away.” Only then “death shall be no more, nor mourning, nor crying, nor sorrow shall be any more,” and not one minute sooner"
+  },
+  {
+    "idx": 675,
+    "gold": 8,
+    "pred": 8,
+    "sentence": "shallow"
+  },
+  {
+    "idx": 676,
+    "gold": 5,
+    "pred": 5,
+    "sentence": "how shallow Catholic thinking on the death penalty has become and how far it has deviated from the age-old doctrine of the Church"
+  },
+  {
+    "idx": 677,
+    "gold": 1,
+    "pred": 5,
+    "sentence": "The desire for swift and firm convictions has sent many to death who never deserved such a punishment, nor was such a punishment truly necessary for the safety of society"
+  },
+  {
+    "idx": 678,
+    "gold": 8,
+    "pred": 6,
+    "sentence": "incalculably more grievous"
+  },
+  {
+    "idx": 679,
+    "gold": 5,
+    "pred": 5,
+    "sentence": "What kind of man is this"
+  },
+  {
+    "idx": 681,
+    "gold": 8,
+    "pred": 8,
+    "sentence": "fired back"
+  },
+  {
+    "idx": 682,
+    "gold": 8,
+    "pred": 12,
+    "sentence": "lashes back"
+  },
+  {
+    "idx": 683,
+    "gold": 6,
+    "pred": 8,
+    "sentence": "nearly constant complaints from Trump"
+  },
+  {
+    "idx": 684,
+    "gold": 5,
+    "pred": 10,
+    "sentence": "You’re wrong, Mr. President"
+  },
+  {
+    "idx": 685,
+    "gold": 9,
+    "pred": 9,
+    "sentence": "one of Trump’s favorite pinatas"
+  },
+  {
+    "idx": 686,
+    "gold": 8,
+    "pred": 6,
+    "sentence": "the president’s public scorn"
+  },
+  {
+    "idx": 687,
+    "gold": 5,
+    "pred": 9,
+    "sentence": "the former Alabama senator “never took control of the Justice Department"
+  },
+  {
+    "idx": 688,
+    "gold": 6,
+    "pred": 6,
+    "sentence": "unprecedented success at effectuating the President’s agenda"
+  },
+  {
+    "idx": 689,
+    "gold": 6,
+    "pred": 0,
+    "sentence": "no nation has a more talented, more dedicated group of law enforcement investigators and prosecutors than the United States"
+  },
+  {
+    "idx": 690,
+    "gold": 7,
+    "pred": 7,
+    "sentence": "one that protects the safety and security and rights of the American people, reduces violent crime, enforces our immigration laws, promotes economic growth, and advances religious liberty"
+  },
+  {
+    "idx": 691,
+    "gold": 7,
+    "pred": 0,
+    "sentence": "However, no nation has a more talented, more dedicated group of law enforcement investigators and prosecutors than the United States"
+  },
+  {
+    "idx": 693,
+    "gold": 9,
+    "pred": 9,
+    "sentence": "disgraced anti-Trump FBI agent"
+  },
+  {
+    "idx": 695,
+    "gold": 9,
+    "pred": 9,
+    "sentence": "silent donations"
+  },
+  {
+    "idx": 696,
+    "gold": 8,
+    "pred": 8,
+    "sentence": "touts Google’s multi-faceted efforts"
+  },
+  {
+    "idx": 697,
+    "gold": 6,
+    "pred": 6,
+    "sentence": "record-breaking numbers"
+  },
+  {
+    "idx": 698,
+    "gold": 8,
+    "pred": 5,
+    "sentence": "She brags that the company used its power"
+  },
+  {
+    "idx": 699,
+    "gold": 8,
+    "pred": 5,
+    "sentence": "also brags that Google, “used its power"
+  },
+  {
+    "idx": 700,
+    "gold": 10,
+    "pred": 5,
+    "sentence": "brags that Google, “used its power to ensure that millions of people saw certain hashtags and social media impressions, with the goal of influencing their behavior during the election"
+  },
+  {
+    "idx": 701,
+    "gold": 10,
+    "pred": 8,
+    "sentence": "Latino"
+  },
+  {
+    "idx": 702,
+    "gold": 9,
+    "pred": 8,
+    "sentence": "his mistress"
+  },
+  {
+    "idx": 703,
+    "gold": 6,
+    "pred": 12,
+    "sentence": "NOTHING is being done"
+  },
+  {
+    "idx": 704,
+    "gold": 6,
+    "pred": 6,
+    "sentence": "the world is watching, and they get it completely"
+  },
+  {
+    "idx": 705,
+    "gold": 4,
+    "pred": 5,
+    "sentence": "a couple hundred thousand dollars of ad spends and some Russian bots on Facebook swayed the election to Donald Trump"
+  },
+  {
+    "idx": 706,
+    "gold": 4,
+    "pred": 4,
+    "sentence": "It goes without saying that this retraction and surrender by Facebook occurred only because of the wide publicity that Jamie's banning had received"
+  },
+  {
+    "idx": 707,
+    "gold": 8,
+    "pred": 8,
+    "sentence": "of the insane variety"
+  },
+  {
+    "idx": 708,
+    "gold": 8,
+    "pred": 8,
+    "sentence": "their unrelenting effort to suffocate dissent and conservative voices"
+  },
+  {
+    "idx": 709,
+    "gold": 8,
+    "pred": 8,
+    "sentence": "vociferous protest"
+  },
+  {
+    "idx": 710,
+    "gold": 8,
+    "pred": 8,
+    "sentence": "leftist brownshirt-style assault on free speech"
+  },
+  {
+    "idx": 711,
+    "gold": 9,
+    "pred": 9,
+    "sentence": "leftist hate groups"
+  },
+  {
+    "idx": 712,
+    "gold": 9,
+    "pred": 8,
+    "sentence": "a stand-up noble gentleman"
+  },
+  {
+    "idx": 713,
+    "gold": 9,
+    "pred": 8,
+    "sentence": "a racially charged event"
+  },
+  {
+    "idx": 714,
+    "gold": 8,
+    "pred": 8,
+    "sentence": "a vicious lie"
+  },
+  {
+    "idx": 715,
+    "gold": 1,
+    "pred": 7,
+    "sentence": "At this dire moment, we all need to amplify our voices in defense of free speech.\nAnd we need to adamantly defend all the truth-tellers at the very moment they come under attack.\nWe also need to contact our representatives and to call for a Congressional investigation into this pernicious assault by the fascist Left on our liberties"
+  },
+  {
+    "idx": 716,
+    "gold": 2,
+    "pred": 8,
+    "sentence": "in such a fascistic manner"
+  },
+  {
+    "idx": 725,
+    "gold": 8,
+    "pred": 7,
+    "sentence": "our free speech victory"
+  },
+  {
+    "idx": 726,
+    "gold": 4,
+    "pred": 5,
+    "sentence": "We have no doubt, of course, that no “mistake” had actually occurred in this matter and that the ban has only been lifted because of the publicity that we engaged in -- and received"
+  },
+  {
+    "idx": 727,
+    "gold": 6,
+    "pred": 6,
+    "sentence": "this story is crucial to amplify now more than ever"
+  },
+  {
+    "idx": 728,
+    "gold": 9,
+    "pred": 9,
+    "sentence": "leftist-run social media"
+  },
+  {
+    "idx": 729,
+    "gold": 9,
+    "pred": 10,
+    "sentence": "totalitarian attack"
+  },
+  {
+    "idx": 730,
+    "gold": 8,
+    "pred": 8,
+    "sentence": "surreal affair"
+  },
+  {
+    "idx": 731,
+    "gold": 9,
+    "pred": 9,
+    "sentence": "Facebook's Unholy Alliance masters"
+  },
+  {
+    "idx": 732,
+    "gold": 9,
+    "pred": 9,
+    "sentence": "Jihadist attacks"
+  },
+  {
+    "idx": 733,
+    "gold": 4,
+    "pred": 4,
+    "sentence": "This suggested, of course, that giving advice on how to prevent another 9/11, and all other Jihadist attacks against America, is now against Facebook’s ‘community standards"
+  },
+  {
+    "idx": 734,
+    "gold": 9,
+    "pred": 8,
+    "sentence": "tyrannical behavior"
+  },
+  {
+    "idx": 735,
+    "gold": 6,
+    "pred": 5,
+    "sentence": "we are immensely grateful for all the massive support that was given to us across the Internet"
+  },
+  {
+    "idx": 736,
+    "gold": 9,
+    "pred": 9,
+    "sentence": "Leading brave conservative figures"
+  },
+  {
+    "idx": 737,
+    "gold": 6,
+    "pred": 6,
+    "sentence": "with absolutely no explanation"
+  },
+  {
+    "idx": 738,
+    "gold": 9,
+    "pred": 9,
+    "sentence": "the leftist totalitarians"
+  },
+  {
+    "idx": 739,
+    "gold": 10,
+    "pred": 8,
+    "sentence": "totalitarians"
+  },
+  {
+    "idx": 740,
+    "gold": 9,
+    "pred": 9,
+    "sentence": "brave conservative truth-tellers"
+  },
+  {
+    "idx": 741,
+    "gold": 8,
+    "pred": 8,
+    "sentence": "especially disturbing"
+  },
+  {
+    "idx": 743,
+    "gold": 9,
+    "pred": 9,
+    "sentence": "the Southern Poverty Law Center (SPLC) hate machine"
+  },
+  {
+    "idx": 744,
+    "gold": 8,
+    "pred": 8,
+    "sentence": "trying to run the Center out of business and suffocate free speech in America"
+  },
+  {
+    "idx": 745,
+    "gold": 7,
+    "pred": 7,
+    "sentence": "and suffocate free speech in America"
+  },
+  {
+    "idx": 746,
+    "gold": 6,
+    "pred": 9,
+    "sentence": "are preparing new attacks against the Freedom Center and other conservative groups and individuals 24/7"
+  },
+  {
+    "idx": 748,
+    "gold": 8,
+    "pred": 1,
+    "sentence": "falsely and maliciously"
+  },
+  {
+    "idx": 749,
+    "gold": 8,
+    "pred": 8,
+    "sentence": "disgusting and venomous level"
+  },
+  {
+    "idx": 750,
+    "gold": 8,
+    "pred": 8,
+    "sentence": "destructive agenda"
+  },
+  {
+    "idx": 751,
+    "gold": 2,
+    "pred": 2,
+    "sentence": "the Stalinist Left's"
+  },
+  {
+    "idx": 752,
+    "gold": 7,
+    "pred": 7,
+    "sentence": "the Stalinist Left's war on America and on everything on which it stands"
+  },
+  {
+    "idx": 753,
+    "gold": 9,
+    "pred": 9,
+    "sentence": "the truth-tellers"
+  },
+  {
+    "idx": 754,
+    "gold": 8,
+    "pred": 8,
+    "sentence": "pernicious assault"
+  },
+  {
+    "idx": 755,
+    "gold": 2,
+    "pred": 9,
+    "sentence": "the fascist Left"
+  },
+  {
+    "idx": 756,
+    "gold": 7,
+    "pred": 4,
+    "sentence": "The battle for America -- and for the West -- is on"
+  },
+  {
+    "idx": 757,
+    "gold": 8,
+    "pred": 8,
+    "sentence": "immensely grateful"
+  },
+  {
+    "idx": 758,
+    "gold": 5,
+    "pred": 5,
+    "sentence": "why would Facebook remove such a page, let alone in such a fascistic manner -- and never explain why"
+  },
+  {
+    "idx": 759,
+    "gold": 8,
+    "pred": 8,
+    "sentence": "I categorically and unequivocally deny this allegation"
+  },
+  {
+    "idx": 761,
+    "gold": 8,
+    "pred": 8,
+    "sentence": "vehemently denied"
+  },
+  {
+    "idx": 762,
+    "gold": 0,
+    "pred": 11,
+    "sentence": "This is nothing more than a last-minute attempt at character assassination, and there should no delay in confirming Judge Kavanaugh"
+  },
+  {
+    "idx": 764,
+    "gold": 8,
+    "pred": 8,
+    "sentence": "This charade"
+  },
+  {
+    "idx": 765,
+    "gold": 6,
+    "pred": 8,
+    "sentence": "worse than a travesty"
+  },
+  {
+    "idx": 766,
+    "gold": 6,
+    "pred": 6,
+    "sentence": "completely destroy Judge Kavanaugh’s life"
+  },
+  {
+    "idx": 767,
+    "gold": 8,
+    "pred": 8,
+    "sentence": "pulling out all the stops"
+  },
+  {
+    "idx": 768,
+    "gold": 8,
+    "pred": 9,
+    "sentence": "suddenly emerged from left field"
+  },
+  {
+    "idx": 769,
+    "gold": 9,
+    "pred": 11,
+    "sentence": "Haters of Judge Kavanaugh"
+  },
+  {
+    "idx": 771,
+    "gold": 8,
+    "pred": 8,
+    "sentence": "ready to pounce"
+  },
+  {
+    "idx": 773,
+    "gold": 8,
+    "pred": 8,
+    "sentence": "continue to bludgeon"
+  },
+  {
+    "idx": 774,
+    "gold": 9,
+    "pred": 13,
+    "sentence": "the Kavanaugh haters"
+  },
+  {
+    "idx": 776,
+    "gold": 11,
+    "pred": 8,
+    "sentence": "Kavanaugh Derangement Syndrome"
+  },
+  {
+    "idx": 777,
+    "gold": 9,
+    "pred": 8,
+    "sentence": "Me Too” movement"
+  },
+  {
+    "idx": 778,
+    "gold": 4,
+    "pred": 4,
+    "sentence": "simply because Ms. Ford is a woman who has made what they call, without any corroborating evidence to date, a “credible” charge"
+  },
+  {
+    "idx": 779,
+    "gold": 10,
+    "pred": 8,
+    "sentence": "Kavanaugh Derangement Syndrome"
+  },
+  {
+    "idx": 780,
+    "gold": 10,
+    "pred": 11,
+    "sentence": "Judge Kavanaugh’s haters"
+  },
+  {
+    "idx": 782,
+    "gold": 8,
+    "pred": 8,
+    "sentence": "smears"
+  },
+  {
+    "idx": 783,
+    "gold": 5,
+    "pred": 5,
+    "sentence": "What we do know so far tends to undercut the credibility of Ms. Ford’s accusation"
+  },
+  {
+    "idx": 784,
+    "gold": 5,
+    "pred": 4,
+    "sentence": "Whatever corroboration Ms. Ford was hoping for from “witnesses” she claimed were at the alleged party is non-existent"
+  },
+  {
+    "idx": 785,
+    "gold": 5,
+    "pred": 5,
+    "sentence": "The only problem with Dr. Friedman’s thesis is that Ms. Ford has apparently forgotten such key details surrounding the alleged sexual assault as when and where it happened and how she got home"
+  },
+  {
+    "idx": 786,
+    "gold": 5,
+    "pred": 4,
+    "sentence": "she doubts Judge Kavanaugh’s credibility because of “how he approaches his cases"
+  },
+  {
+    "idx": 787,
+    "gold": 0,
+    "pred": 5,
+    "sentence": "I believe her because she is telling the truth and you know it by her story"
+  },
+  {
+    "idx": 788,
+    "gold": 7,
+    "pred": 8,
+    "sentence": "turns the fundamental constitutional principle of due process upside down"
+  },
+  {
+    "idx": 789,
+    "gold": 7,
+    "pred": 1,
+    "sentence": "In a nation guided by fairness and law, a person is innocent until proven guilty"
+  },
+  {
+    "idx": 790,
+    "gold": 8,
+    "pred": 8,
+    "sentence": "total sham"
+  },
+  {
+    "idx": 791,
+    "gold": 8,
+    "pred": 8,
+    "sentence": "ridiculous overall story"
+  },
+  {
+    "idx": 792,
+    "gold": 7,
+    "pred": 7,
+    "sentence": "I hope the American people can see through this sham"
+  },
+  {
+    "idx": 793,
+    "gold": 8,
+    "pred": 8,
+    "sentence": "circus atmosphere"
+  },
+  {
+    "idx": 794,
+    "gold": 9,
+    "pred": 9,
+    "sentence": "porn star lawyers"
+  },
+  {
+    "idx": 795,
+    "gold": 6,
+    "pred": 1,
+    "sentence": "this is worse than Robert Bork, and I didn't think it could get any worse than that.\nThis is worse than Clarence Thomas.\nI didn't think it could get any worse than that.\nThis is a national disgrace, the way you're being treated"
+  },
+  {
+    "idx": 796,
+    "gold": 7,
+    "pred": 7,
+    "sentence": "This is a national disgrace, the way you're being treated"
+  },
+  {
+    "idx": 797,
+    "gold": 9,
+    "pred": 9,
+    "sentence": "perpetually vulnerable red-state senator"
+  },
+  {
+    "idx": 799,
+    "gold": 10,
+    "pred": 8,
+    "sentence": "worse"
+  },
+  {
+    "idx": 801,
+    "gold": 9,
+    "pred": 8,
+    "sentence": "search and destroy strategy"
+  },
+  {
+    "idx": 802,
+    "gold": 8,
+    "pred": 9,
+    "sentence": "trembled with righteous indignation"
+  },
+  {
+    "idx": 803,
+    "gold": 8,
+    "pred": 8,
+    "sentence": "last-minute smears"
+  },
+  {
+    "idx": 805,
+    "gold": 5,
+    "pred": 5,
+    "sentence": "“Hard to do much else when the witness conveniently has no corroborating evidence, no memory of any verifiable facts of what happened, and everyone she says was present at the alleged incident--even her best friend--has denied it.”"
+  },
+  {
+    "idx": 806,
+    "gold": 8,
+    "pred": 8,
+    "sentence": "cried out for vigorous cross-examination"
+  },
+  {
+    "idx": 807,
+    "gold": 8,
+    "pred": 8,
+    "sentence": "lobbing her softballs"
+  },
+  {
+    "idx": 808,
+    "gold": 5,
+    "pred": 9,
+    "sentence": "Ford has a bad long-term memory and a bad short-term memory"
+  },
+  {
+    "idx": 809,
+    "gold": 8,
+    "pred": 9,
+    "sentence": "going rogue"
+  },
+  {
+    "idx": 811,
+    "gold": 4,
+    "pred": 4,
+    "sentence": "What you want to do is destroy this guy's life, hold this seat open and hope you win in 2020"
+  },
+  {
+    "idx": 812,
+    "gold": 8,
+    "pred": 6,
+    "sentence": "Boy, you all want power"
+  },
+  {
+    "idx": 813,
+    "gold": 6,
+    "pred": 6,
+    "sentence": "the most despicable thing I have seen in my time in politics"
+  },
+  {
+    "idx": 814,
+    "gold": 8,
+    "pred": 10,
+    "sentence": "I hope you never get it"
+  },
+  {
+    "idx": 815,
+    "gold": 6,
+    "pred": 6,
+    "sentence": "the worst in our politics"
+  },
+  {
+    "idx": 816,
+    "gold": 5,
+    "pred": 8,
+    "sentence": "porn star lawyers with facially implausible claims"
+  },
+  {
+    "idx": 817,
+    "gold": 0,
+    "pred": 0,
+    "sentence": "The Senate must vote"
+  },
+  {
+    "idx": 818,
+    "gold": 8,
+    "pred": 9,
+    "sentence": "Kavanaugh stole the show"
+  },
+  {
+    "idx": 819,
+    "gold": 10,
+    "pred": 1,
+    "sentence": "and then"
+  },
+  {
+    "idx": 820,
+    "gold": 8,
+    "pred": 8,
+    "sentence": "Afraid of their own shadows"
+  },
+  {
+    "idx": 821,
+    "gold": 5,
+    "pred": 12,
+    "sentence": "is there a political motivation for your coming forward with your account of the assault by Brett Kavanaugh"
+  },
+  {
+    "idx": 822,
+    "gold": 10,
+    "pred": 8,
+    "sentence": "any issue"
+  },
+  {
+    "idx": 823,
+    "gold": 5,
+    "pred": 5,
+    "sentence": "If they're really concerned with going to the truth, why wouldn't you want to talk to the accused"
+  },
+  {
+    "idx": 824,
+    "gold": 8,
+    "pred": 8,
+    "sentence": "stonewalling"
+  },
+  {
+    "idx": 826,
+    "gold": 1,
+    "pred": 6,
+    "sentence": "if you vote no, you're legitimizing the most despicable thing I have seen in my time in politics"
+  },
+  {
+    "idx": 827,
+    "gold": 8,
+    "pred": 8,
+    "sentence": "Blatant MI6 Lies"
+  },
+  {
+    "idx": 828,
+    "gold": 9,
+    "pred": 8,
+    "sentence": "MI6 mouthpiece"
+  },
+  {
+    "idx": 829,
+    "gold": 6,
+    "pred": 6,
+    "sentence": "the most astonishing thing I have witnessed in my lifetime"
+  },
+  {
+    "idx": 830,
+    "gold": 9,
+    "pred": 9,
+    "sentence": "the greatest publisher of his age"
+  },
+  {
+    "idx": 831,
+    "gold": 8,
+    "pred": 8,
+    "sentence": "pathetically failed attempt"
+  },
+  {
+    "idx": 832,
+    "gold": 8,
+    "pred": 1,
+    "sentence": "to curry favour"
+  },
+  {
+    "idx": 833,
+    "gold": 5,
+    "pred": 5,
+    "sentence": "That supposedly great newspaper titles like the Guardian, New York Times and Washington Post are involved in the spreading of lies to damage Assange, and are seeking his imprisonment for publishing state secrets, is clear evidence that the idea of the “liberal media” no longer exists in the new plutocratic age.\nThe press are not on the side of the people, they are an instrument of elite control"
+  },
+  {
+    "idx": 834,
+    "gold": 8,
+    "pred": 8,
+    "sentence": "churn out its production line of fake documents"
+  },
+  {
+    "idx": 835,
+    "gold": 8,
+    "pred": 8,
+    "sentence": "By a wonderful coincidence of timing"
+  },
+  {
+    "idx": 836,
+    "gold": 9,
+    "pred": 9,
+    "sentence": "unspecified “Russians"
+  },
+  {
+    "idx": 838,
+    "gold": 10,
+    "pred": 9,
+    "sentence": "the “Russians"
+  },
+  {
+    "idx": 840,
+    "gold": 5,
+    "pred": 5,
+    "sentence": "Previously Harding and the Guardian have published documents faked by the Moreno government regarding a diplomatic appointment to Russia for Assange of which he had no knowledge.\nNow they follow this up with more documents aimed to provide fictitious evidence to bolster Mueller’s pathetically failed attempt to substantiate the story that Russia deprived Hillary of the Presidency"
+  },
+  {
+    "idx": 841,
+    "gold": 5,
+    "pred": 5,
+    "sentence": "The right wing Ecuadorean government of President Moreno continues to churn out its production line of fake documents regarding Julian Assange, and channel them straight to MI6 mouthpiece Luke Harding of the Guardian"
+  },
+  {
+    "idx": 842,
+    "gold": 6,
+    "pred": 6,
+    "sentence": "probably the world’s greatest expert on electronic surveillance"
+  },
+  {
+    "idx": 843,
+    "gold": 5,
+    "pred": 5,
+    "sentence": "I knew the US security services were conducting a fake investigation the moment it became clear that the FBI did not even themselves look at the DNC servers, instead accepting a report from the Clinton linked DNC “security consultants” Crowdstrike"
+  },
+  {
+    "idx": 844,
+    "gold": 6,
+    "pred": 6,
+    "sentence": "this massive “Big Lie"
+  },
+  {
+    "idx": 845,
+    "gold": 4,
+    "pred": 5,
+    "sentence": "Assange never met Manafort.\nThe DNC emails were downloaded by an insider.\nAssange never even considered fleeing to Russia.\nThose are the facts, and I am in a position to give you a personal assurance of them"
+  },
+  {
+    "idx": 846,
+    "gold": 9,
+    "pred": 5,
+    "sentence": "the partisans of the defeated candidate"
+  },
+  {
+    "idx": 847,
+    "gold": 9,
+    "pred": 8,
+    "sentence": "a particularly obnoxious defeated candidate"
+  },
+  {
+    "idx": 848,
+    "gold": 4,
+    "pred": 5,
+    "sentence": "I can also assure you that Luke Harding, the Guardian, Washington Post and New York Times have been publishing a stream of deliberate lies, in collusion with the security services"
+  },
+  {
+    "idx": 849,
+    "gold": 5,
+    "pred": 5,
+    "sentence": "But to see the partisans of the defeated candidate (and a particularly obnoxious defeated candidate) manipulate the security services and the media to create an entirely false public perception, in order to attempt to overturn the result of the US Presidential election, is the most astonishing thing I have witnessed in my lifetime"
+  },
+  {
+    "idx": 850,
+    "gold": 4,
+    "pred": 4,
+    "sentence": "Plainly the government of Ecuador is releasing lies about Assange to curry favour with the security establishment of the USA and UK, and to damage Assange’s support prior to expelling him from the Embassy.\nHe will then be extradited from London to the USA on charges of espionage"
+  },
+  {
+    "idx": 851,
+    "gold": 9,
+    "pred": 9,
+    "sentence": "a whistleblower or a spy"
+  },
+  {
+    "idx": 852,
+    "gold": 6,
+    "pred": 5,
+    "sentence": "and has done more to bring the crimes of governments to light than the mainstream media will ever be motivated to achieve"
+  },
+  {
+    "idx": 853,
+    "gold": 9,
+    "pred": 6,
+    "sentence": "the world’s greatest expert on electronic surveillance"
+  },
+  {
+    "idx": 854,
+    "gold": 1,
+    "pred": 5,
+    "sentence": "But I fear that state control of propaganda may be such that this massive “Big Lie” will come to enter public consciousness in the same way as the non-existent Russian hack of the DNC servers"
+  },
+  {
+    "idx": 855,
+    "gold": 5,
+    "pred": 5,
+    "sentence": "Luke Harding, the Guardian, Washington Post and New York Times have been publishing a stream of deliberate lies, in collusion with the security services"
+  },
+  {
+    "idx": 856,
+    "gold": 9,
+    "pred": 6,
+    "sentence": "a part of the crazy, crazy, crazies"
+  },
+  {
+    "idx": 857,
+    "gold": 9,
+    "pred": 10,
+    "sentence": "a “F***ed up,” “cracker state"
+  },
+  {
+    "idx": 858,
+    "gold": 10,
+    "pred": 10,
+    "sentence": "that will never happen"
+  },
+  {
+    "idx": 859,
+    "gold": 9,
+    "pred": 10,
+    "sentence": "a “cracker state"
+  },
+  {
+    "idx": 860,
+    "gold": 9,
+    "pred": 8,
+    "sentence": "a “crazy, crazy,” Democrat"
+  },
+  {
+    "idx": 861,
+    "gold": 9,
+    "pred": 9,
+    "sentence": "a Progressive"
+  },
+  {
+    "idx": 862,
+    "gold": 8,
+    "pred": 8,
+    "sentence": "You whip ’em up"
+  },
+  {
+    "idx": 863,
+    "gold": 5,
+    "pred": 5,
+    "sentence": "What we found in the Gillum campaign was just what we found in Missouri, Tennessee and Arizona, a candidate lying to the voters he needs to win the election"
+  },
+  {
+    "idx": 864,
+    "gold": 8,
+    "pred": 8,
+    "sentence": "are f***ed up"
+  },
+  {
+    "idx": 865,
+    "gold": 0,
+    "pred": 5,
+    "sentence": "Omar Smith, who says he went to college with Gillum, reveals Gillum cannot fulfill his campaign promises even if he wanted to"
+  },
+  {
+    "idx": 866,
+    "gold": 8,
+    "pred": 8,
+    "sentence": "Whip up” the poor into a “frenzy"
+  },
+  {
+    "idx": 867,
+    "gold": 8,
+    "pred": 8,
+    "sentence": "whip them up into a frenzy"
+  },
+  {
+    "idx": 868,
+    "gold": 8,
+    "pred": 8,
+    "sentence": "whip ’em up"
+  },
+  {
+    "idx": 869,
+    "gold": 8,
+    "pred": 8,
+    "sentence": "whip up"
+  },
+  {
+    "idx": 870,
+    "gold": 10,
+    "pred": 8,
+    "sentence": "You have to appeal to white guilt"
+  },
+  {
+    "idx": 871,
+    "gold": 5,
+    "pred": 8,
+    "sentence": "Gillum Makes Promises He Can’t Keep"
+  },
+  {
+    "idx": 872,
+    "gold": 6,
+    "pred": 5,
+    "sentence": "You have to whip them up into a frenzy in order for them to vote"
+  },
+  {
+    "idx": 873,
+    "gold": 9,
+    "pred": 9,
+    "sentence": "the moderates"
+  },
+  {
+    "idx": 875,
+    "gold": 5,
+    "pred": 4,
+    "sentence": "Gillum campaign makes promises it knows it can’t keep"
+  },
+  {
+    "idx": 876,
+    "gold": 5,
+    "pred": 3,
+    "sentence": "reveals Gillum cannot fulfill his campaign promises even if he wanted to"
+  },
+  {
+    "idx": 877,
+    "gold": 5,
+    "pred": 5,
+    "sentence": "When asked how Gillum would fund all the programs he says he wants to fund, Smith says Gillum “can’t"
+  },
+  {
+    "idx": 878,
+    "gold": 5,
+    "pred": 1,
+    "sentence": "Smith explains that most of Gillum’s campaign promises could never be implemented"
+  },
+  {
+    "idx": 879,
+    "gold": 5,
+    "pred": 1,
+    "sentence": "So, let’s go back to Mr. Gillum’s platform, right?\nRaise the corporate tax in Florida from 7 to 11 percent.\nThat will never happen.\nRaise teacher’s pay to $50,000, that will never happen.\nGive me another position.\nMedicare for all, that will never happen"
+  },
+  {
+    "idx": 880,
+    "gold": 6,
+    "pred": 6,
+    "sentence": "Whip up” the poor into a “frenzy in order for them to vote"
+  },
+  {
+    "idx": 881,
+    "gold": 9,
+    "pred": 8,
+    "sentence": "Gillum’s fairy tale platform"
+  },
+  {
+    "idx": 882,
+    "gold": 10,
+    "pred": 8,
+    "sentence": "whip” lower income individuals “into a frenzy"
+  },
+  {
+    "idx": 883,
+    "gold": 6,
+    "pred": 5,
+    "sentence": "You whip ’em up.\nThe poor, the middle income.\nYou have to whip them up into a frenzy in order for them to vote"
+  },
+  {
+    "idx": 884,
+    "gold": 8,
+    "pred": 8,
+    "sentence": "needs to appeal to “white guilt"
+  },
+  {
+    "idx": 885,
+    "gold": 12,
+    "pred": 12,
+    "sentence": "be]cause that’s what it is"
+  },
+  {
+    "idx": 886,
+    "gold": 8,
+    "pred": 8,
+    "sentence": "you are way out of left field"
+  },
+  {
+    "idx": 887,
+    "gold": 1,
+    "pred": 5,
+    "sentence": "We don’t, do we have to let [the voters] know what the agenda is ahead of time?\nWe can’t… We cannot… You alienate everybody"
+  },
+  {
+    "idx": 888,
+    "gold": 10,
+    "pred": 6,
+    "sentence": "a part of the crazy crazy crazies"
+  },
+  {
+    "idx": 889,
+    "gold": 5,
+    "pred": 5,
+    "sentence": "Gillum had to campaign on values he does not really believe"
+  },
+  {
+    "idx": 890,
+    "gold": 10,
+    "pred": 9,
+    "sentence": "left of center"
+  },
+  {
+    "idx": 891,
+    "gold": 9,
+    "pred": 9,
+    "sentence": "left of center"
+  },
+  {
+    "idx": 892,
+    "gold": 9,
+    "pred": 9,
+    "sentence": "left, not left of center"
+  },
+  {
+    "idx": 893,
+    "gold": 9,
+    "pred": 9,
+    "sentence": "the moderates"
+  },
+  {
+    "idx": 896,
+    "gold": 10,
+    "pred": 8,
+    "sentence": "whip them up"
+  },
+  {
+    "idx": 897,
+    "gold": 8,
+    "pred": 8,
+    "sentence": "F***ed up"
+  },
+  {
+    "idx": 898,
+    "gold": 9,
+    "pred": 9,
+    "sentence": "a progressive"
+  },
+  {
+    "idx": 899,
+    "gold": 12,
+    "pred": 8,
+    "sentence": "By the way"
+  },
+  {
+    "idx": 900,
+    "gold": 5,
+    "pred": 6,
+    "sentence": "No evidence of fraud in #FloridaElection"
+  },
+  {
+    "idx": 901,
+    "gold": 5,
+    "pred": 5,
+    "sentence": "Why she wasn't fired a long time ago is beyond anyone's ability to answer, but Broward County election supervisor Brenda Snipes has resigned amid what is clearly voter fraud that she oversaw"
+  },
+  {
+    "idx": 902,
+    "gold": 8,
+    "pred": 8,
+    "sentence": "full of botched elections, legal disputes and blistering criticism"
+  },
+  {
+    "idx": 903,
+    "gold": 8,
+    "pred": 1,
+    "sentence": "passion and honor"
+  },
+  {
+    "idx": 904,
+    "gold": 6,
+    "pred": 5,
+    "sentence": "She should be ready for prison bars after the fiasco she has created"
+  },
+  {
+    "idx": 905,
+    "gold": 7,
+    "pred": 5,
+    "sentence": "Now that federal prosecutors have gotten involved, perhaps it's time to quit talking about it and actually arrest this woman and charge her with crimes against the people of Broward County before more people end up dead in Broward County over their corrupt voting practices"
+  },
+  {
+    "idx": 906,
+    "gold": 8,
+    "pred": 8,
+    "sentence": "tumultuous election"
+  },
+  {
+    "idx": 908,
+    "gold": 7,
+    "pred": 5,
+    "sentence": "a county whose supervisor of elections has a history of losing ballots and breaking laws by allowing illegal immigrants and felons to vote, as well as illegally destroying ballots"
+  },
+  {
+    "idx": 909,
+    "gold": 5,
+    "pred": 5,
+    "sentence": "She ignored a court order, mixed invalid provisional ballots in with valid ones, and destroyed ballots, but don't worry, a Democrat attorney says that doing so has nothing to do with fraud or corruption"
+  },
+  {
+    "idx": 910,
+    "gold": 12,
+    "pred": 7,
+    "sentence": "This is a disgrace"
+  },
+  {
+    "idx": 911,
+    "gold": 5,
+    "pred": 5,
+    "sentence": "Have you ever heard of a close election in which a recount and “found” ballots gave the Republican victory"
+  },
+  {
+    "idx": 912,
+    "gold": 12,
+    "pred": 11,
+    "sentence": "Every vote must be counted"
+  },
+  {
+    "idx": 913,
+    "gold": 8,
+    "pred": 7,
+    "sentence": "This is a disgrace"
+  },
+  {
+    "idx": 915,
+    "gold": 8,
+    "pred": 8,
+    "sentence": "back in play"
+  },
+  {
+    "idx": 916,
+    "gold": 5,
+    "pred": 8,
+    "sentence": "Mayor Gillum conceded on Election Day and now Broward County has put him ‘back in play.’ Bill Nelson conceded Election — now he’s back in play"
+  },
+  {
+    "idx": 917,
+    "gold": 1,
+    "pred": 0,
+    "sentence": "This massive Democrat voter fraud could be the end of our free republic"
+  },
+  {
+    "idx": 918,
+    "gold": 7,
+    "pred": 7,
+    "sentence": "This is an embarrassment to our County and to Democracy"
+  }
+]

@@ -1,0 +1,47 @@
+{
+  "source": "deterministic synthetic teaching data, not real customer traffic",
+  "seed": 42,
+  "splits": {
+    "train": {
+      "samples": 1200,
+      "sha256": "33a16ef6253937268153edf3bc5f5d5d4d97c49f9d9987898170f84ee051796c",
+      "intents": {
+        "return": 344,
+        "refund": 370,
+        "replace": 384,
+        "query_shipping": 102
+      },
+      "missing_order": 134,
+      "missing_product": 143,
+      "unseen_products": 0
+    },
+    "val": {
+      "samples": 120,
+      "sha256": "15ce9b354e1f1d211d46bde28654c75ffa391ae875963c70ae64706a6523833c",
+      "intents": {
+        "query_shipping": 7,
+        "return": 42,
+        "replace": 35,
+        "refund": 36
+      },
+      "missing_order": 16,
+      "missing_product": 10,
+      "unseen_products": 0
+    },
+    "test": {
+      "samples": 120,
+      "sha256": "29c8ef3bf8453e4f559100c52ea983fa91c09dce9e081841f30839c50f194b39",
+      "intents": {
+        "return": 26,
+        "refund": 34,
+        "replace": 48,
+        "query_shipping": 12
+      },
+      "missing_order": 17,
+      "missing_product": 12,
+      "unseen_products": 53
+    }
+  },
+  "cross_split_exact_overlap": 0,
+  "split_policy": "disjoint sentence templates and order IDs; ID digit distributions shared; test includes unseen product names"
+}

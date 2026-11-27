@@ -1,0 +1,169 @@
+{
+  "source": "F:\\冯天运\\AI\\AI大模型&Agent\\八斗\\主课程\\week6-分类任务\\作业\\code\\outputs\\bert_pred.json",
+  "n": 8901,
+  "m15": {
+    "acc": 0.5383,
+    "macro_f1": 0.5312
+  },
+  "m4group": {
+    "acc": 0.7216,
+    "macro_f1": 0.6833,
+    "per_group_recall": {
+      "金融": 0.6229,
+      "产业": 0.6063,
+      "宏观": 0.6753,
+      "噪音": 0.8261
+    }
+  },
+  "relevance": {
+    "acc": 0.85,
+    "f1": 0.8009,
+    "n_positive": 3402,
+    "positive_rate": 0.3822
+  },
+  "error_structure": {
+    "n_total": 8901,
+    "n_wrong": 4110,
+    "n_cross_group": 2478,
+    "n_same_group": 1632,
+    "cross_rate": 0.6029,
+    "same_rate": 0.3971
+  },
+  "top_confusions": [
+    {
+      "true": "科技",
+      "pred": "财经",
+      "n": 199,
+      "true_class_total": 969,
+      "true_class_wrong": 581,
+      "true_class_recall": 0.4004,
+      "cross_group": true
+    },
+    {
+      "true": "国际",
+      "pred": "军事",
+      "n": 169,
+      "true_class_total": 749,
+      "true_class_wrong": 450,
+      "true_class_recall": 0.3992,
+      "cross_group": false
+    },
+    {
+      "true": "财经",
+      "pred": "科技",
+      "n": 135,
+      "true_class_total": 879,
+      "true_class_wrong": 505,
+      "true_class_recall": 0.4255,
+      "cross_group": true
+    },
+    {
+      "true": "军事",
+      "pred": "国际",
+      "n": 104,
+      "true_class_total": 597,
+      "true_class_wrong": 260,
+      "true_class_recall": 0.5645,
+      "cross_group": false
+    },
+    {
+      "true": "娱乐",
+      "pred": "故事",
+      "n": 80,
+      "true_class_total": 878,
+      "true_class_wrong": 406,
+      "true_class_recall": 0.5376,
+      "cross_group": false
+    },
+    {
+      "true": "科技",
+      "pred": "汽车",
+      "n": 75,
+      "true_class_total": 969,
+      "true_class_wrong": 581,
+      "true_class_recall": 0.4004,
+      "cross_group": false
+    },
+    {
+      "true": "财经",
+      "pred": "农业",
+      "n": 72,
+      "true_class_total": 879,
+      "true_class_wrong": 505,
+      "true_class_recall": 0.4255,
+      "cross_group": true
+    },
+    {
+      "true": "国际",
+      "pred": "旅游",
+      "n": 64,
+      "true_class_total": 749,
+      "true_class_wrong": 450,
+      "true_class_recall": 0.3992,
+      "cross_group": true
+    },
+    {
+      "true": "旅游",
+      "pred": "农业",
+      "n": 64,
+      "true_class_total": 625,
+      "true_class_wrong": 327,
+      "true_class_recall": 0.4768,
+      "cross_group": true
+    },
+    {
+      "true": "文化",
+      "pred": "教育",
+      "n": 63,
+      "true_class_total": 576,
+      "true_class_wrong": 333,
+      "true_class_recall": 0.4219,
+      "cross_group": false
+    },
+    {
+      "true": "科技",
+      "pred": "教育",
+      "n": 62,
+      "true_class_total": 969,
+      "true_class_wrong": 581,
+      "true_class_recall": 0.4004,
+      "cross_group": true
+    },
+    {
+      "true": "财经",
+      "pred": "房产",
+      "n": 62,
+      "true_class_total": 879,
+      "true_class_wrong": 505,
+      "true_class_recall": 0.4255,
+      "cross_group": false
+    },
+    {
+      "true": "文化",
+      "pred": "旅游",
+      "n": 60,
+      "true_class_total": 576,
+      "true_class_wrong": 333,
+      "true_class_recall": 0.4219,
+      "cross_group": false
+    },
+    {
+      "true": "科技",
+      "pred": "电竞",
+      "n": 60,
+      "true_class_total": 969,
+      "true_class_wrong": 581,
+      "true_class_recall": 0.4004,
+      "cross_group": true
+    },
+    {
+      "true": "娱乐",
+      "pred": "文化",
+      "n": 58,
+      "true_class_total": 878,
+      "true_class_wrong": 406,
+      "true_class_recall": 0.5376,
+      "cross_group": false
+    }
+  ]
+}

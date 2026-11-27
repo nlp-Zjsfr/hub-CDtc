@@ -1,0 +1,109 @@
+{
+  "best_epoch": 3,
+  "adapter_sha256": "e3bc9e050e743831f552494aa9ca7965fe500516c76f517503031b00843a45bf",
+  "test_sha256": "29c8ef3bf8453e4f559100c52ea983fa91c09dce9e081841f30839c50f194b39",
+  "decoding": {
+    "do_sample": false,
+    "max_new_tokens": 128,
+    "eos_token": "<|endoftext|>",
+    "batch_size": 8,
+    "padding_side": "left"
+  },
+  "metric_policy": "strict JSON, exact field names and types, no output repair; all 5 fields correct for exact match",
+  "results": {
+    "base": {
+      "losses": {
+        "val": {
+          "answer_nll": 0.35073804564753397,
+          "answer_ppl": 1.4201152718072734,
+          "answer_tokens": 3610,
+          "teacher_forced_token_accuracy": 0.9216066481994459
+        },
+        "test": {
+          "answer_nll": 0.3562425416454566,
+          "answer_ppl": 1.427953844541604,
+          "answer_tokens": 3622,
+          "teacher_forced_token_accuracy": 0.9116510215350635
+        }
+      },
+      "generation": {
+        "samples": 120,
+        "json_valid": 0.0,
+        "schema_valid": 0.0,
+        "exact_match": 0.0,
+        "eos_stop": 0.5,
+        "field_accuracy": {
+          "order_id": 0.0,
+          "product": 0.0,
+          "intent": 0.0,
+          "problem": 0.0,
+          "urgent": 0.0
+        },
+        "mean_output_tokens": 97.83333333333333,
+        "unseen_products": {
+          "samples": 53,
+          "exact_match": 0.0
+        },
+        "seen_products_or_null": {
+          "samples": 67,
+          "exact_match": 0.0
+        },
+        "missing_order": {
+          "samples": 17,
+          "exact_match": 0.0
+        },
+        "missing_product": {
+          "samples": 12,
+          "exact_match": 0.0
+        }
+      }
+    },
+    "sft": {
+      "losses": {
+        "val": {
+          "answer_nll": 1.0117182412656886e-05,
+          "answer_ppl": 1.0000101172335916,
+          "answer_tokens": 3610,
+          "teacher_forced_token_accuracy": 1.0
+        },
+        "test": {
+          "answer_nll": 0.00013754708562066858,
+          "answer_ppl": 1.0001375565456547,
+          "answer_tokens": 3622,
+          "teacher_forced_token_accuracy": 1.0
+        }
+      },
+      "generation": {
+        "samples": 120,
+        "json_valid": 1.0,
+        "schema_valid": 1.0,
+        "exact_match": 1.0,
+        "eos_stop": 1.0,
+        "field_accuracy": {
+          "order_id": 1.0,
+          "product": 1.0,
+          "intent": 1.0,
+          "problem": 1.0,
+          "urgent": 1.0
+        },
+        "mean_output_tokens": 29.183333333333334,
+        "unseen_products": {
+          "samples": 53,
+          "exact_match": 1.0
+        },
+        "seen_products_or_null": {
+          "samples": 67,
+          "exact_match": 1.0
+        },
+        "missing_order": {
+          "samples": 17,
+          "exact_match": 1.0
+        },
+        "missing_product": {
+          "samples": 12,
+          "exact_match": 1.0
+        }
+      }
+    }
+  }
+}

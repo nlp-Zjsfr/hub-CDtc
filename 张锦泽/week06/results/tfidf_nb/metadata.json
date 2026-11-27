@@ -1,0 +1,34 @@
+{
+  "kind": "sklearn",
+  "training_seconds": 0.02534050000008392,
+  "validation_f1_macro": 1.0,
+  "best_epoch": null,
+  "device": "cpu",
+  "model_source": "TF-IDF(char 1-2gram)",
+  "learning_rate": null,
+  "method": "tfidf_nb",
+  "labels": [
+    "体育",
+    "教育",
+    "科技",
+    "财经"
+  ],
+  "seed": 42,
+  "data_sha256": "b343e247ee77c6da2aa1a992e314c31d1b779aaf7d0305b65d09d1bdcc629946",
+  "trained_at_utc": "2026-11-20T00:54:08.864881+00:00",
+  "environment": {
+    "python": "3.12.13",
+    "platform": "macOS-14.7.5-x86_64-i386-64bit",
+    "packages": {
+      "numpy": "1.26.4",
+      "scipy": "1.14.1",
+      "scikit-learn": "1.5.2",
+      "joblib": "1.4.2",
+      "torch": "2.2.2",
+      "transformers": "4.51.3"
+    }
+  },
+  "n_train": 80,
+  "n_val": 20,
+  "n_test": 20
+}

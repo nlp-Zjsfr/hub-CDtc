@@ -1,0 +1,12 @@
+{
+  "samples": 1200,
+  "min_sequence_length": 154,
+  "max_sequence_length": 186,
+  "mean_sequence_length": 173.28583333333333,
+  "supervised_answer_tokens": 36267,
+  "eos_token": "<|endoftext|>",
+  "eos_token_id": 151643,
+  "pad_token_id": 151643,
+  "truncated_examples": 0,
+  "encoding_policy": "prompt encoded once as at inference; completion encoded separately; native EOS appended"
+}

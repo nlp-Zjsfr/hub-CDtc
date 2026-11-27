@@ -1,0 +1,10 @@
++ C:\Program Files\Python312\python.exe bert/train_bert.py --epochs 1 --max_steps 50 --max_eval 500 --log_every 10 --ckpt_out ckpt_chinese-roberta-wwm-ext_s50.pt
+[cfg] pool=cls loss=CE class_weight=on fgm=off epochs=1 steps/epoch=50 eval_n=500 save=on
+  epoch 1 step 0/50 loss=2.8455
+  epoch 1 step 10/50 loss=2.5967
+  epoch 1 step 20/50 loss=2.5615
+  epoch 1 step 30/50 loss=2.3894
+  epoch 1 step 40/50 loss=2.1932
+epoch 1: val_acc=0.464 val_f1=0.4546
+checkpoint → F:\冯天运\AI\AI大模型&Agent\八斗\主课程\week6-分类任务\作业\code\outputs\ckpt_chinese-roberta-wwm-ext_s50.pt
+最佳 val Macro-F1 = 0.4546 → F:\冯天运\AI\AI大模型&Agent\八斗\主课程\week6-分类任务\作业\code\outputs\bert_ckpt.pt
