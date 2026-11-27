@@ -1,0 +1,151 @@
+{
+  "config": {
+    "model_path": "D:\\BaiduNetdiskDownload\\八斗精品班\\第四周 语言模型\\bert-base-chinese\\bert-base-chinese",
+    "name": "bert_bio_128",
+    "epochs": 3,
+    "batch_size": 32,
+    "max_length": 128,
+    "learning_rate": 2e-05,
+    "head_lr_mult": 5.0,
+    "weight_decay": 0.01,
+    "warmup_ratio": 0.1,
+    "grad_clip": 1.0,
+    "log_every": 50,
+    "seed": 42,
+    "max_steps": 0,
+    "max_eval": 0
+  },
+  "device": "cuda",
+  "params": 102273031,
+  "epochs": [
+    {
+      "epoch": 1,
+      "train_loss": 0.1574428310786357,
+      "val_loss": 0.02291308686723677,
+      "val": {
+        "precision": 0.9052408681842244,
+        "recall": 0.9357045143638851,
+        "f1": 0.9202206376967577,
+        "support": 3655
+      },
+      "illegal_sentences": 86,
+      "elapsed_s": 57.0
+    },
+    {
+      "epoch": 2,
+      "train_loss": 0.017024966691277114,
+      "val_loss": 0.016339599845877593,
+      "val": {
+        "precision": 0.9376679204728641,
+        "recall": 0.9548563611491108,
+        "f1": 0.9461840856716822,
+        "support": 3655
+      },
+      "illegal_sentences": 52,
+      "elapsed_s": 56.6
+    },
+    {
+      "epoch": 3,
+      "train_loss": 0.008475897162754526,
+      "val_loss": 0.0170600813242652,
+      "val": {
+        "precision": 0.9484536082474226,
+        "recall": 0.9564979480164159,
+        "f1": 0.9524587930799618,
+        "support": 3655
+      },
+      "illegal_sentences": 39,
+      "elapsed_s": 59.4
+    }
+  ],
+  "total_s": 173.0,
+  "peak_mem_mb": 3403,
+  "final": {
+    "validation": {
+      "metrics": {
+        "LOC": {
+          "precision": 0.9584026622296173,
+          "recall": 0.9610678531701891,
+          "f1": 0.959733407386837,
+          "support": 1798
+        },
+        "ORG": {
+          "precision": 0.8995024875621891,
+          "recall": 0.9271794871794872,
+          "f1": 0.9131313131313131,
+          "support": 975
+        },
+        "PER": {
+          "precision": 0.9840546697038725,
+          "recall": 0.9795918367346939,
+          "f1": 0.9818181818181818,
+          "support": 882
+        },
+        "ALL": {
+          "precision": 0.9484536082474226,
+          "recall": 0.9564979480164159,
+          "f1": 0.9524587930799618,
+          "support": 3655
+        }
+      },
+      "lost_tail_entities": 162,
+      "crossing_entities": 2,
+      "truncated_sentences": 41,
+      "illegal_sentences": 39,
+      "illegal_transitions": 49,
+      "sentence_exact_match": [
+        2107,
+        2277
+      ],
+      "errors": {
+        "miss": 64,
+        "spurious": 86,
+        "type": 17,
+        "boundary": 70
+      }
+    },
+    "test": {
+      "metrics": {
+        "LOC": {
+          "precision": 0.943601488691669,
+          "recall": 0.9523259173649234,
+          "f1": 0.9479436295657175,
+          "support": 3461
+        },
+        "ORG": {
+          "precision": 0.8826395039858281,
+          "recall": 0.9209796672828097,
+          "f1": 0.9014020805065581,
+          "support": 2164
+        },
+        "PER": {
+          "precision": 0.973224043715847,
+          "recall": 0.9791094007696537,
+          "f1": 0.9761578514661552,
+          "support": 1819
+        },
+        "ALL": {
+          "precision": 0.9325946445060018,
+          "recall": 0.9497581945190757,
+          "f1": 0.9410981697171381,
+          "support": 7444
+        }
+      },
+      "lost_tail_entities": 257,
+      "crossing_entities": 6,
+      "truncated_sentences": 79,
+      "illegal_sentences": 96,
+      "illegal_transitions": 131,
+      "sentence_exact_match": [
+        4161,
+        4557
+      ],
+      "errors": {
+        "miss": 135,
+        "spurious": 243,
+        "type": 38,
+        "boundary": 180
+      }
+    }
+  }
+}
