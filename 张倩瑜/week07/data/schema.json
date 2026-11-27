@@ -1,0 +1,7 @@
+{
+  "DataDepends": ["OutputData", "InputData", "Method", "RiskDomain"],
+  "DataProduces": ["OutputData", "InputData", "Method", "Transform"],
+  "ReportMaps": ["ReportField", "SourceData", "Method", "RiskDomain"],
+  "SystemFlow": ["Dataset", "SourceSystem", "TargetSystem", "Method"],
+  "TransformDerives": ["OutputData", "InputData", "Transform", "Method"]
+}

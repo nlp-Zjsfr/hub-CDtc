@@ -1,0 +1,52 @@
+{
+  "train": 500,
+  "val": 120,
+  "train_types": {
+    "DataDepends": 100,
+    "SystemFlow": 100,
+    "DataProduces": 100,
+    "ReportMaps": 100,
+    "TransformDerives": 100
+  },
+  "val_types": {
+    "TransformDerives": 24,
+    "DataProduces": 24,
+    "ReportMaps": 24,
+    "SystemFlow": 24,
+    "DataDepends": 24
+  },
+  "val_holdout_p": 0.55,
+  "schema": {
+    "DataDepends": [
+      "OutputData",
+      "InputData",
+      "Method",
+      "RiskDomain"
+    ],
+    "DataProduces": [
+      "OutputData",
+      "InputData",
+      "Method",
+      "Transform"
+    ],
+    "ReportMaps": [
+      "ReportField",
+      "SourceData",
+      "Method",
+      "RiskDomain"
+    ],
+    "SystemFlow": [
+      "Dataset",
+      "SourceSystem",
+      "TargetSystem",
+      "Method"
+    ],
+    "TransformDerives": [
+      "OutputData",
+      "InputData",
+      "Transform",
+      "Method"
+    ]
+  },
+  "note": "Synthetic credit/market risk data-lineage IE corpus. No public annotated lineage-from-risk-report dataset found. Val mixes held-out entity names so lexicon rules cannot saturate."
+}

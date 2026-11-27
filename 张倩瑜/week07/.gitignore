@@ -1,0 +1,6 @@
+outputs/l4_lora_runs/
+outputs/**/*.pt
+__pycache__/
+*.pyc
+.cache/
+pretrain_models/
