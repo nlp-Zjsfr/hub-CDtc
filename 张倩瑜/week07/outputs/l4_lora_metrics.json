@@ -1,0 +1,156 @@
+{
+  "num_samples": 120,
+  "missing_predictions": 0,
+  "trigger": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0,
+    "tp": 120,
+    "fp": 0,
+    "fn": 0
+  },
+  "argument": {
+    "precision": 0.9873,
+    "recall": 0.9708,
+    "f1": 0.979,
+    "tp": 466,
+    "fp": 6,
+    "fn": 14
+  },
+  "event_exact": {
+    "precision": 0.9,
+    "recall": 0.9,
+    "f1": 0.9,
+    "tp": 108,
+    "fp": 12,
+    "fn": 12
+  },
+  "per_type": {
+    "DataDepends": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "tp": 24,
+      "fp": 0,
+      "fn": 0
+    },
+    "DataProduces": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "tp": 24,
+      "fp": 0,
+      "fn": 0
+    },
+    "ReportMaps": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "tp": 24,
+      "fp": 0,
+      "fn": 0
+    },
+    "SystemFlow": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "tp": 24,
+      "fp": 0,
+      "fn": 0
+    },
+    "TransformDerives": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "tp": 24,
+      "fp": 0,
+      "fn": 0
+    }
+  },
+  "per_role": {
+    "Dataset": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "tp": 24,
+      "fp": 0,
+      "fn": 0
+    },
+    "InputData": {
+      "precision": 0.9861,
+      "recall": 0.9861,
+      "f1": 0.9861,
+      "tp": 71,
+      "fp": 1,
+      "fn": 1
+    },
+    "Method": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "tp": 120,
+      "fp": 0,
+      "fn": 0
+    },
+    "OutputData": {
+      "precision": 0.9692,
+      "recall": 0.875,
+      "f1": 0.9197,
+      "tp": 63,
+      "fp": 2,
+      "fn": 9
+    },
+    "ReportField": {
+      "precision": 0.9583,
+      "recall": 0.9583,
+      "f1": 0.9583,
+      "tp": 23,
+      "fp": 1,
+      "fn": 1
+    },
+    "RiskDomain": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "tp": 48,
+      "fp": 0,
+      "fn": 0
+    },
+    "SourceData": {
+      "precision": 1.0,
+      "recall": 0.9583,
+      "f1": 0.9787,
+      "tp": 23,
+      "fp": 0,
+      "fn": 1
+    },
+    "SourceSystem": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "tp": 24,
+      "fp": 0,
+      "fn": 0
+    },
+    "TargetSystem": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "tp": 24,
+      "fp": 0,
+      "fn": 0
+    },
+    "Transform": {
+      "precision": 0.9583,
+      "recall": 0.9583,
+      "f1": 0.9583,
+      "tp": 46,
+      "fp": 2,
+      "fn": 2
+    }
+  },
+  "type_macro_f1": 1.0,
+  "role_macro_f1": 0.9801,
+  "macro_f1": 0.9801,
+  "parse_fail": 0
+}
