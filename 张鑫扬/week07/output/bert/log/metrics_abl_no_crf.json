@@ -1,0 +1,99 @@
+{
+  "run_name": "abl_no_crf",
+  "config": {
+    "decoder": "linear",
+    "max_len": 192,
+    "hard_constraint": false,
+    "dropout": 0.1,
+    "bert_layers": 0,
+    "epochs": 3,
+    "batch_size": 8,
+    "lr": 2e-05,
+    "head_lr_mult": 5.0,
+    "seed": 42
+  },
+  "best_epoch": 3,
+  "params_m": 108.3,
+  "train_s": 1545.9,
+  "ms_per_sentence": 15.26,
+  "n_truncated_dev": 0,
+  "dev": {
+    "precision": 0.9448,
+    "recall": 0.9536,
+    "f1": 0.9492,
+    "per_type": {
+      "PER": {
+        "precision": 0.9745,
+        "recall": 0.9761,
+        "f1": 0.9753
+      },
+      "LOC": {
+        "precision": 0.971,
+        "recall": 0.9646,
+        "f1": 0.9678
+      },
+      "ORG": {
+        "precision": 0.9176,
+        "recall": 0.9381,
+        "f1": 0.9277
+      },
+      "MISC": {
+        "precision": 0.8766,
+        "recall": 0.9089,
+        "f1": 0.8924
+      }
+    },
+    "illegal": {
+      "total_seqs": 3250,
+      "illegal_seqs": 34,
+      "illegal_start": 0,
+      "illegal_transition": 40
+    },
+    "illegal_token": {
+      "total_seqs": 3250,
+      "illegal_seqs": 142,
+      "illegal_start": 0,
+      "illegal_transition": 228
+    }
+  },
+  "test": {
+    "precision": 0.9176,
+    "recall": 0.9237,
+    "f1": 0.9206,
+    "per_type": {
+      "PER": {
+        "precision": 0.9762,
+        "recall": 0.9623,
+        "f1": 0.9692
+      },
+      "LOC": {
+        "precision": 0.9384,
+        "recall": 0.9538,
+        "f1": 0.9461
+      },
+      "ORG": {
+        "precision": 0.897,
+        "recall": 0.9038,
+        "f1": 0.9004
+      },
+      "MISC": {
+        "precision": 0.793,
+        "recall": 0.816,
+        "f1": 0.8044
+      }
+    },
+    "illegal": {
+      "total_seqs": 3453,
+      "illegal_seqs": 46,
+      "illegal_start": 0,
+      "illegal_transition": 47
+    },
+    "illegal_token": {
+      "total_seqs": 3453,
+      "illegal_seqs": 177,
+      "illegal_start": 0,
+      "illegal_transition": 240
+    }
+  },
+  "n_truncated_test": 0
+}

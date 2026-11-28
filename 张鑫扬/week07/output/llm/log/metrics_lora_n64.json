@@ -1,0 +1,267 @@
+{
+  "run": "lora_n64",
+  "mode": "lora",
+  "config": {
+    "mode": "lora",
+    "model_path": "/Users/lichulei/gogogo/week7/homework/pretrain_models/Qwen3-0.6B",
+    "data_dir": "/Users/lichulei/gogogo/week7/homework/data/conllpp",
+    "epochs": 1,
+    "batch_size": 2,
+    "grad_accum": 8,
+    "lr": 0.0002,
+    "opt": "adamw",
+    "max_length": 384,
+    "max_new_tokens": 96,
+    "num_train": 64,
+    "max_eval": 4,
+    "eval_batch": 2,
+    "lora_r": 8,
+    "lora_alpha": 16,
+    "max_steps": 3,
+    "seed": 42,
+    "device": "mps"
+  },
+  "train_s": 241.2,
+  "params_m": 598.34,
+  "trainable_m": 2.294,
+  "history": [
+    {
+      "epoch": 1,
+      "train_loss": 0.3672,
+      "optimizer_steps": 3,
+      "elapsed_s": 241.1
+    }
+  ],
+  "dev": {
+    "precision": 0.2727272727272727,
+    "recall": 0.2727272727272727,
+    "f1": 0.2727272727272727,
+    "tp": 3,
+    "fp": 8,
+    "fn": 8,
+    "unmatched_entities": 0,
+    "per_type": {
+      "PER": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "LOC": {
+        "precision": 0.14285714285714285,
+        "recall": 1.0,
+        "f1": 0.25
+      },
+      "ORG": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "MISC": {
+        "precision": 0.3333333333333333,
+        "recall": 1.0,
+        "f1": 0.5
+      }
+    },
+    "split": "dev",
+    "n": 4,
+    "ms_per_sentence": 3249.0,
+    "elapsed_s": 13.1
+  },
+  "test": {
+    "precision": 0.2857142857142857,
+    "recall": 0.25,
+    "f1": 0.26666666666666666,
+    "tp": 2,
+    "fp": 5,
+    "fn": 6,
+    "unmatched_entities": 1,
+    "per_type": {
+      "PER": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "LOC": {
+        "precision": 1.0,
+        "recall": 0.3333333333333333,
+        "f1": 0.5
+      },
+      "ORG": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "MISC": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      }
+    },
+    "split": "test",
+    "n": 4,
+    "ms_per_sentence": 1414.3,
+    "elapsed_s": 5.7
+  },
+  "samples": {
+    "dev": [
+      {
+        "text": "CRICKET - LEICESTERSHIRE TAKE OVER AT TOP AFTER INNINGS VICTORY .",
+        "gold": [
+          [
+            2,
+            3,
+            "ORG"
+          ]
+        ],
+        "pred": [],
+        "raw": "{\"entities\": []}"
+      },
+      {
+        "text": "LONDON 1996-08-30",
+        "gold": [
+          [
+            0,
+            1,
+            "LOC"
+          ]
+        ],
+        "pred": [
+          [
+            0,
+            1,
+            "LOC"
+          ]
+        ],
+        "raw": "{\"entities\": [{\"text\": \"LONDON\", \"type\": \"LOC\"}]}"
+      },
+      {
+        "text": "West Indian all-rounder Phil Simmons took four for 38 on Friday as Leicestershire beat Somerset by an innings and 39 runs in two days to take over at the head of the county championship .",
+        "gold": [
+          [
+            0,
+            2,
+            "MISC"
+          ],
+          [
+            3,
+            5,
+            "PER"
+          ],
+          [
+            12,
+            13,
+            "ORG"
+          ],
+          [
+            14,
+            15,
+            "ORG"
+          ]
+        ],
+        "pred": [
+          [
+            0,
+            2,
+            "MISC"
+          ],
+          [
+            2,
+            3,
+            "MISC"
+          ],
+          [
+            3,
+            5,
+            "PER"
+          ],
+          [
+            12,
+            13,
+            "LOC"
+          ],
+          [
+            14,
+            15,
+            "LOC"
+          ],
+          [
+            32,
+            34,
+            "MISC"
+          ]
+        ],
+        "raw": "{\"entities\": [{\"text\": \"West Indian\", \"type\": \"MISC\"}, {\"text\": \"all-rounder\", \"type\": \"MISC\"}, {\"text\": \"Phil Simmons\", \"type\": \"PER\"}, {\"text\": \"Leicestershire\", \"type\": \"LOC\"}, {\"text\": \"Somerset\", \"type\": \"LOC\"}, {\"text\": \"county championship\", \"type\": \"MISC\"}]}"
+      }
+    ],
+    "test": [
+      {
+        "text": "SOCCER - JAPAN GET LUCKY WIN , CHINA IN SURPRISE DEFEAT .",
+        "gold": [
+          [
+            2,
+            3,
+            "LOC"
+          ],
+          [
+            7,
+            8,
+            "LOC"
+          ]
+        ],
+        "pred": [],
+        "raw": "{\"entities\": []}"
+      },
+      {
+        "text": "Nadim Ladki",
+        "gold": [
+          [
+            0,
+            2,
+            "PER"
+          ]
+        ],
+        "pred": [
+          [
+            0,
+            2,
+            "MISC"
+          ]
+        ],
+        "raw": "{\"entities\": [{\"text\": \"Nadim Ladki\", \"type\": \"MISC\"}]}"
+      },
+      {
+        "text": "AL-AIN , United Arab Emirates 1996-12-06",
+        "gold": [
+          [
+            0,
+            1,
+            "LOC"
+          ],
+          [
+            2,
+            5,
+            "LOC"
+          ]
+        ],
+        "pred": [
+          [
+            0,
+            1,
+            "MISC"
+          ],
+          [
+            2,
+            5,
+            "LOC"
+          ],
+          [
+            5,
+            6,
+            "MISC"
+          ]
+        ],
+        "raw": "{\"entities\": [{\"text\": \"AL-AIN\", \"type\": \"MISC\"}, {\"text\": \"United Arab Emirates\", \"type\": \"LOC\"}, {\"text\": \"1996-12-06\", \"type\": \"MISC\"}]}"
+      }
+    ]
+  }
+}

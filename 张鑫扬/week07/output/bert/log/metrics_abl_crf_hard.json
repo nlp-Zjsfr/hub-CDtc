@@ -1,0 +1,99 @@
+{
+  "run_name": "abl_crf_hard",
+  "config": {
+    "decoder": "crf",
+    "max_len": 192,
+    "hard_constraint": true,
+    "dropout": 0.1,
+    "bert_layers": 0,
+    "epochs": 3,
+    "batch_size": 8,
+    "lr": 2e-05,
+    "head_lr_mult": 5.0,
+    "seed": 42
+  },
+  "best_epoch": 3,
+  "params_m": 108.3,
+  "train_s": 2316.3,
+  "ms_per_sentence": 19.11,
+  "n_truncated_dev": 0,
+  "dev": {
+    "precision": 0.9505,
+    "recall": 0.9541,
+    "f1": 0.9523,
+    "per_type": {
+      "PER": {
+        "precision": 0.9773,
+        "recall": 0.9821,
+        "f1": 0.9797
+      },
+      "LOC": {
+        "precision": 0.971,
+        "recall": 0.9652,
+        "f1": 0.9681
+      },
+      "ORG": {
+        "precision": 0.9326,
+        "recall": 0.9284,
+        "f1": 0.9305
+      },
+      "MISC": {
+        "precision": 0.8845,
+        "recall": 0.9132,
+        "f1": 0.8986
+      }
+    },
+    "illegal": {
+      "total_seqs": 3250,
+      "illegal_seqs": 14,
+      "illegal_start": 0,
+      "illegal_transition": 14
+    },
+    "illegal_token": {
+      "total_seqs": 3250,
+      "illegal_seqs": 0,
+      "illegal_start": 0,
+      "illegal_transition": 0
+    }
+  },
+  "test": {
+    "precision": 0.9181,
+    "recall": 0.9176,
+    "f1": 0.9178,
+    "per_type": {
+      "PER": {
+        "precision": 0.9695,
+        "recall": 0.9642,
+        "f1": 0.9668
+      },
+      "LOC": {
+        "precision": 0.9376,
+        "recall": 0.949,
+        "f1": 0.9432
+      },
+      "ORG": {
+        "precision": 0.9063,
+        "recall": 0.8915,
+        "f1": 0.8989
+      },
+      "MISC": {
+        "precision": 0.7883,
+        "recall": 0.8036,
+        "f1": 0.7959
+      }
+    },
+    "illegal": {
+      "total_seqs": 3453,
+      "illegal_seqs": 25,
+      "illegal_start": 0,
+      "illegal_transition": 25
+    },
+    "illegal_token": {
+      "total_seqs": 3453,
+      "illegal_seqs": 0,
+      "illegal_start": 0,
+      "illegal_transition": 0
+    }
+  },
+  "n_truncated_test": 0
+}
