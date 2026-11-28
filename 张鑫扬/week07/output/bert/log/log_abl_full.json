@@ -1,0 +1,137 @@
+[
+  {
+    "epoch": 1,
+    "train_loss": 6.077731,
+    "dev_loss": 1.457764,
+    "dev_metrics": {
+      "precision": 0.9243,
+      "recall": 0.9335,
+      "f1": 0.9289,
+      "per_type": {
+        "PER": {
+          "precision": 0.9576,
+          "recall": 0.9821,
+          "f1": 0.9697
+        },
+        "LOC": {
+          "precision": 0.9576,
+          "recall": 0.9467,
+          "f1": 0.9521
+        },
+        "ORG": {
+          "precision": 0.8892,
+          "recall": 0.9098,
+          "f1": 0.8994
+        },
+        "MISC": {
+          "precision": 0.8431,
+          "recall": 0.8449,
+          "f1": 0.844
+        }
+      },
+      "illegal": {
+        "total_seqs": 3250,
+        "illegal_seqs": 39,
+        "illegal_start": 0,
+        "illegal_transition": 49
+      },
+      "illegal_token": {
+        "total_seqs": 3250,
+        "illegal_seqs": 44,
+        "illegal_start": 0,
+        "illegal_transition": 61
+      }
+    },
+    "elapsed_s": 568.7
+  },
+  {
+    "epoch": 2,
+    "train_loss": 1.018299,
+    "dev_loss": 1.505257,
+    "dev_metrics": {
+      "precision": 0.9422,
+      "recall": 0.9467,
+      "f1": 0.9444,
+      "per_type": {
+        "PER": {
+          "precision": 0.9673,
+          "recall": 0.9794,
+          "f1": 0.9733
+        },
+        "LOC": {
+          "precision": 0.9744,
+          "recall": 0.9521,
+          "f1": 0.9631
+        },
+        "ORG": {
+          "precision": 0.9084,
+          "recall": 0.9314,
+          "f1": 0.9197
+        },
+        "MISC": {
+          "precision": 0.8802,
+          "recall": 0.8926,
+          "f1": 0.8864
+        }
+      },
+      "illegal": {
+        "total_seqs": 3250,
+        "illegal_seqs": 33,
+        "illegal_start": 0,
+        "illegal_transition": 38
+      },
+      "illegal_token": {
+        "total_seqs": 3250,
+        "illegal_seqs": 39,
+        "illegal_start": 0,
+        "illegal_transition": 49
+      }
+    },
+    "elapsed_s": 561.7
+  },
+  {
+    "epoch": 3,
+    "train_loss": 0.545391,
+    "dev_loss": 1.612663,
+    "dev_metrics": {
+      "precision": 0.9459,
+      "recall": 0.9534,
+      "f1": 0.9496,
+      "per_type": {
+        "PER": {
+          "precision": 0.9726,
+          "recall": 0.9821,
+          "f1": 0.9773
+        },
+        "LOC": {
+          "precision": 0.9715,
+          "recall": 0.9652,
+          "f1": 0.9683
+        },
+        "ORG": {
+          "precision": 0.9225,
+          "recall": 0.9321,
+          "f1": 0.9273
+        },
+        "MISC": {
+          "precision": 0.8778,
+          "recall": 0.9035,
+          "f1": 0.8904
+        }
+      },
+      "illegal": {
+        "total_seqs": 3250,
+        "illegal_seqs": 34,
+        "illegal_start": 0,
+        "illegal_transition": 39
+      },
+      "illegal_token": {
+        "total_seqs": 3250,
+        "illegal_seqs": 35,
+        "illegal_start": 0,
+        "illegal_transition": 47
+      }
+    },
+    "elapsed_s": 559.2
+  }
+]

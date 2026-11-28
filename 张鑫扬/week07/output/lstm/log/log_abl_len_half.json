@@ -1,0 +1,202 @@
+[
+  {
+    "epoch": 1,
+    "train_loss": 8.775053,
+    "dev_loss": 5.77059,
+    "dev_f1": 0.47449,
+    "dev_precision": 0.680468,
+    "dev_recall": 0.364236,
+    "dev_illegal_seqs": 120,
+    "elapsed_s": 41.2
+  },
+  {
+    "epoch": 2,
+    "train_loss": 5.184846,
+    "dev_loss": 4.028431,
+    "dev_f1": 0.633524,
+    "dev_precision": 0.761826,
+    "dev_recall": 0.542209,
+    "dev_illegal_seqs": 58,
+    "elapsed_s": 48.2
+  },
+  {
+    "epoch": 3,
+    "train_loss": 3.883213,
+    "dev_loss": 3.219507,
+    "dev_f1": 0.698578,
+    "dev_precision": 0.81535,
+    "dev_recall": 0.611064,
+    "dev_illegal_seqs": 35,
+    "elapsed_s": 47.8
+  },
+  {
+    "epoch": 4,
+    "train_loss": 3.216531,
+    "dev_loss": 2.882527,
+    "dev_f1": 0.727359,
+    "dev_precision": 0.830906,
+    "dev_recall": 0.64676,
+    "dev_illegal_seqs": 31,
+    "elapsed_s": 42.1
+  },
+  {
+    "epoch": 5,
+    "train_loss": 2.719187,
+    "dev_loss": 2.662902,
+    "dev_f1": 0.748397,
+    "dev_precision": 0.845515,
+    "dev_recall": 0.671291,
+    "dev_illegal_seqs": 17,
+    "elapsed_s": 42.1
+  },
+  {
+    "epoch": 6,
+    "train_loss": 2.365602,
+    "dev_loss": 2.357115,
+    "dev_f1": 0.765825,
+    "dev_precision": 0.833698,
+    "dev_recall": 0.708171,
+    "dev_illegal_seqs": 13,
+    "elapsed_s": 41.0
+  },
+  {
+    "epoch": 7,
+    "train_loss": 2.112513,
+    "dev_loss": 2.285493,
+    "dev_f1": 0.783287,
+    "dev_precision": 0.856598,
+    "dev_recall": 0.721536,
+    "dev_illegal_seqs": 5,
+    "elapsed_s": 39.9
+  },
+  {
+    "epoch": 8,
+    "train_loss": 1.877234,
+    "dev_loss": 2.206616,
+    "dev_f1": 0.781054,
+    "dev_precision": 0.84227,
+    "dev_recall": 0.728134,
+    "dev_illegal_seqs": 5,
+    "elapsed_s": 41.4
+  },
+  {
+    "epoch": 9,
+    "train_loss": 1.711125,
+    "dev_loss": 2.138051,
+    "dev_f1": 0.797012,
+    "dev_precision": 0.863574,
+    "dev_recall": 0.739976,
+    "dev_illegal_seqs": 3,
+    "elapsed_s": 47.6
+  },
+  {
+    "epoch": 10,
+    "train_loss": 1.55911,
+    "dev_loss": 1.996808,
+    "dev_f1": 0.807882,
+    "dev_precision": 0.858394,
+    "dev_recall": 0.762984,
+    "dev_illegal_seqs": 2,
+    "elapsed_s": 42.6
+  },
+  {
+    "epoch": 11,
+    "train_loss": 1.422279,
+    "dev_loss": 1.973687,
+    "dev_f1": 0.812982,
+    "dev_precision": 0.864772,
+    "dev_recall": 0.767044,
+    "dev_illegal_seqs": 4,
+    "elapsed_s": 40.5
+  },
+  {
+    "epoch": 12,
+    "train_loss": 1.311316,
+    "dev_loss": 1.999916,
+    "dev_f1": 0.810161,
+    "dev_precision": 0.862906,
+    "dev_recall": 0.763492,
+    "dev_illegal_seqs": 3,
+    "elapsed_s": 40.5
+  },
+  {
+    "epoch": 13,
+    "train_loss": 1.212878,
+    "dev_loss": 1.856921,
+    "dev_f1": 0.823613,
+    "dev_precision": 0.862165,
+    "dev_recall": 0.788361,
+    "dev_illegal_seqs": 1,
+    "elapsed_s": 46.2
+  },
+  {
+    "epoch": 14,
+    "train_loss": 1.13001,
+    "dev_loss": 1.906259,
+    "dev_f1": 0.827808,
+    "dev_precision": 0.877273,
+    "dev_recall": 0.783624,
+    "dev_illegal_seqs": 2,
+    "elapsed_s": 40.2
+  },
+  {
+    "epoch": 15,
+    "train_loss": 1.031438,
+    "dev_loss": 1.85824,
+    "dev_f1": 0.832359,
+    "dev_precision": 0.87386,
+    "dev_recall": 0.79462,
+    "dev_illegal_seqs": 3,
+    "elapsed_s": 43.0
+  },
+  {
+    "epoch": 16,
+    "train_loss": 0.980211,
+    "dev_loss": 1.855786,
+    "dev_f1": 0.829898,
+    "dev_precision": 0.86967,
+    "dev_recall": 0.793605,
+    "dev_illegal_seqs": 0,
+    "elapsed_s": 46.0
+  },
+  {
+    "epoch": 17,
+    "train_loss": 0.895194,
+    "dev_loss": 1.850896,
+    "dev_f1": 0.835421,
+    "dev_precision": 0.872674,
+    "dev_recall": 0.801218,
+    "dev_illegal_seqs": 1,
+    "elapsed_s": 40.0
+  },
+  {
+    "epoch": 18,
+    "train_loss": 0.851962,
+    "dev_loss": 1.806659,
+    "dev_f1": 0.838213,
+    "dev_precision": 0.878383,
+    "dev_recall": 0.801556,
+    "dev_illegal_seqs": 1,
+    "elapsed_s": 45.7
+  },
+  {
+    "epoch": 19,
+    "train_loss": 0.8125,
+    "dev_loss": 1.891425,
+    "dev_f1": 0.83646,
+    "dev_precision": 0.872337,
+    "dev_recall": 0.803417,
+    "dev_illegal_seqs": 1,
+    "elapsed_s": 41.1
+  },
+  {
+    "epoch": 20,
+    "train_loss": 0.745697,
+    "dev_loss": 1.805289,
+    "dev_f1": 0.836411,
+    "dev_precision": 0.866522,
+    "dev_recall": 0.808323,
+    "dev_illegal_seqs": 2,
+    "elapsed_s": 42.7
+  }
+]

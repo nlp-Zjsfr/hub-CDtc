@@ -1,0 +1,80 @@
+数据 train/dev/test = 14041/3250/3453 句；词表 21011（min_freq=1，含 <PAD>/<UNK>）
+设备 mps | 参数 4.54M | 词向量 200 | hidden 128 | dropout 0.5 | decoder=crf | max_len=64
+  epoch 1 step 200/439 loss=10.7609
+  epoch 1 step 400/439 loss=9.0101
+epoch 1/20 | train_loss=8.7751 | dev_loss=5.7706 | dev_P=0.6805 R=0.3642 F1=0.4745 | 非法序列=120 | 41s
+  ★ dev 最优 → 保存 abl_len_half.pt
+  epoch 2 step 200/439 loss=5.6239
+  epoch 2 step 400/439 loss=5.2289
+epoch 2/20 | train_loss=5.1848 | dev_loss=4.0284 | dev_P=0.7618 R=0.5422 F1=0.6335 | 非法序列=58 | 48s
+  ★ dev 最优 → 保存 abl_len_half.pt
+  epoch 3 step 200/439 loss=4.1144
+  epoch 3 step 400/439 loss=3.9136
+epoch 3/20 | train_loss=3.8832 | dev_loss=3.2195 | dev_P=0.8153 R=0.6111 F1=0.6986 | 非法序列=35 | 48s
+  ★ dev 最优 → 保存 abl_len_half.pt
+  epoch 4 step 200/439 loss=3.3090
+  epoch 4 step 400/439 loss=3.2320
+epoch 4/20 | train_loss=3.2165 | dev_loss=2.8825 | dev_P=0.8309 R=0.6468 F1=0.7274 | 非法序列=31 | 42s
+  ★ dev 最优 → 保存 abl_len_half.pt
+  epoch 5 step 200/439 loss=2.7773
+  epoch 5 step 400/439 loss=2.7294
+epoch 5/20 | train_loss=2.7192 | dev_loss=2.6629 | dev_P=0.8455 R=0.6713 F1=0.7484 | 非法序列=17 | 42s
+  ★ dev 最优 → 保存 abl_len_half.pt
+  epoch 6 step 200/439 loss=2.4035
+  epoch 6 step 400/439 loss=2.3569
+epoch 6/20 | train_loss=2.3656 | dev_loss=2.3571 | dev_P=0.8337 R=0.7082 F1=0.7658 | 非法序列=13 | 41s
+  ★ dev 最优 → 保存 abl_len_half.pt
+  epoch 7 step 200/439 loss=2.1194
+  epoch 7 step 400/439 loss=2.1115
+epoch 7/20 | train_loss=2.1125 | dev_loss=2.2855 | dev_P=0.8566 R=0.7215 F1=0.7833 | 非法序列=5 | 40s
+  ★ dev 最优 → 保存 abl_len_half.pt
+  epoch 8 step 200/439 loss=1.8674
+  epoch 8 step 400/439 loss=1.8677
+epoch 8/20 | train_loss=1.8772 | dev_loss=2.2066 | dev_P=0.8423 R=0.7281 F1=0.7811 | 非法序列=5 | 41s
+  epoch 9 step 200/439 loss=1.6932
+  epoch 9 step 400/439 loss=1.7115
+epoch 9/20 | train_loss=1.7111 | dev_loss=2.1381 | dev_P=0.8636 R=0.7400 F1=0.7970 | 非法序列=3 | 48s
+  ★ dev 最优 → 保存 abl_len_half.pt
+  epoch 10 step 200/439 loss=1.5564
+  epoch 10 step 400/439 loss=1.5546
+epoch 10/20 | train_loss=1.5591 | dev_loss=1.9968 | dev_P=0.8584 R=0.7630 F1=0.8079 | 非法序列=2 | 43s
+  ★ dev 最优 → 保存 abl_len_half.pt
+  epoch 11 step 200/439 loss=1.3934
+  epoch 11 step 400/439 loss=1.4228
+epoch 11/20 | train_loss=1.4223 | dev_loss=1.9737 | dev_P=0.8648 R=0.7670 F1=0.8130 | 非法序列=4 | 41s
+  ★ dev 最优 → 保存 abl_len_half.pt
+  epoch 12 step 200/439 loss=1.3277
+  epoch 12 step 400/439 loss=1.3098
+epoch 12/20 | train_loss=1.3113 | dev_loss=1.9999 | dev_P=0.8629 R=0.7635 F1=0.8102 | 非法序列=3 | 41s
+  epoch 13 step 200/439 loss=1.1976
+  epoch 13 step 400/439 loss=1.2201
+epoch 13/20 | train_loss=1.2129 | dev_loss=1.8569 | dev_P=0.8622 R=0.7884 F1=0.8236 | 非法序列=1 | 46s
+  ★ dev 最优 → 保存 abl_len_half.pt
+  epoch 14 step 200/439 loss=1.1206
+  epoch 14 step 400/439 loss=1.1254
+epoch 14/20 | train_loss=1.1300 | dev_loss=1.9063 | dev_P=0.8773 R=0.7836 F1=0.8278 | 非法序列=2 | 40s
+  ★ dev 最优 → 保存 abl_len_half.pt
+  epoch 15 step 200/439 loss=1.0358
+  epoch 15 step 400/439 loss=1.0360
+epoch 15/20 | train_loss=1.0314 | dev_loss=1.8582 | dev_P=0.8739 R=0.7946 F1=0.8324 | 非法序列=3 | 43s
+  ★ dev 最优 → 保存 abl_len_half.pt
+  epoch 16 step 200/439 loss=0.9798
+  epoch 16 step 400/439 loss=0.9756
+epoch 16/20 | train_loss=0.9802 | dev_loss=1.8558 | dev_P=0.8697 R=0.7936 F1=0.8299 | 非法序列=0 | 46s
+  epoch 17 step 200/439 loss=0.8673
+  epoch 17 step 400/439 loss=0.8987
+epoch 17/20 | train_loss=0.8952 | dev_loss=1.8509 | dev_P=0.8727 R=0.8012 F1=0.8354 | 非法序列=1 | 40s
+  ★ dev 最优 → 保存 abl_len_half.pt
+  epoch 18 step 200/439 loss=0.8404
+  epoch 18 step 400/439 loss=0.8521
+epoch 18/20 | train_loss=0.8520 | dev_loss=1.8067 | dev_P=0.8784 R=0.8016 F1=0.8382 | 非法序列=1 | 46s
+  ★ dev 最优 → 保存 abl_len_half.pt
+  epoch 19 step 200/439 loss=0.7878
+  epoch 19 step 400/439 loss=0.8081
+epoch 19/20 | train_loss=0.8125 | dev_loss=1.8914 | dev_P=0.8723 R=0.8034 F1=0.8365 | 非法序列=1 | 41s
+  epoch 20 step 200/439 loss=0.7454
+  epoch 20 step 400/439 loss=0.7415
+epoch 20/20 | train_loss=0.7457 | dev_loss=1.8053 | dev_P=0.8665 R=0.8083 F1=0.8364 | 非法序列=2 | 43s
+载入最优 checkpoint（epoch 18，dev F1=0.8382）
+【test 最终指标（只跑一次）】P=0.8229 R=0.7201 F1=0.7681
+【abl_len_half 汇总】dev F1=0.8382 test F1=0.7681 | 非法 dev=1 | 2.25 ms/句 | 截断 dev=7 test=7 | 训练 14.3 分钟

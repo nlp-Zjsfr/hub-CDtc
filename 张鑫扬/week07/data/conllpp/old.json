@@ -1,0 +1,16 @@
+{
+    "default": {
+        "train": {
+            "meta": "",
+            "file": "conllpp.zip"
+        },
+        "test": {
+            "meta": "",
+            "file": ""
+        },
+        "validation": {
+            "meta": "",
+            "file": ""
+        }
+    }
+}

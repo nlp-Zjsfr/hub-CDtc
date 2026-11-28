@@ -1,0 +1,83 @@
+数据 train/dev/test = 14041/3250/3453 句；词表 21011（min_freq=1，含 <PAD>/<UNK>）
+设备 mps | 参数 4.54M | 词向量 200 | hidden 128 | dropout 0.5 | decoder=crf(硬约束) | max_len=128
+  epoch 1 step 200/439 loss=8.8279
+  epoch 1 step 400/439 loss=7.3038
+epoch 1/20 | train_loss=7.1139 | dev_loss=4.6334 | dev_P=0.6911 R=0.3972 F1=0.5044 | 非法序列=111 | 42s
+  ★ dev 最优 → 保存 abl_crf_hard.pt
+  epoch 2 step 200/439 loss=4.6119
+  epoch 2 step 400/439 loss=4.3584
+epoch 2/20 | train_loss=4.3338 | dev_loss=3.4145 | dev_P=0.7700 R=0.5510 F1=0.6423 | 非法序列=42 | 43s
+  ★ dev 最优 → 保存 abl_crf_hard.pt
+  epoch 3 step 200/439 loss=3.5834
+  epoch 3 step 400/439 loss=3.4752
+epoch 3/20 | train_loss=3.4489 | dev_loss=2.8659 | dev_P=0.8066 R=0.6128 F1=0.6964 | 非法序列=18 | 40s
+  ★ dev 最优 → 保存 abl_crf_hard.pt
+  epoch 4 step 200/439 loss=2.9791
+  epoch 4 step 400/439 loss=2.8971
+epoch 4/20 | train_loss=2.8945 | dev_loss=2.5276 | dev_P=0.8050 R=0.6675 F1=0.7298 | 非法序列=17 | 41s
+  ★ dev 最优 → 保存 abl_crf_hard.pt
+  epoch 5 step 200/439 loss=2.5457
+  epoch 5 step 400/439 loss=2.5297
+epoch 5/20 | train_loss=2.5245 | dev_loss=2.2828 | dev_P=0.8239 R=0.7025 F1=0.7584 | 非法序列=8 | 41s
+  ★ dev 最优 → 保存 abl_crf_hard.pt
+  epoch 6 step 200/439 loss=2.2763
+  epoch 6 step 400/439 loss=2.2222
+epoch 6/20 | train_loss=2.2284 | dev_loss=2.2157 | dev_P=0.8254 R=0.7065 F1=0.7613 | 非法序列=5 | 46s
+  ★ dev 最优 → 保存 abl_crf_hard.pt
+  epoch 7 step 200/439 loss=2.0194
+  epoch 7 step 400/439 loss=1.9975
+epoch 7/20 | train_loss=1.9911 | dev_loss=2.0694 | dev_P=0.8437 R=0.7322 F1=0.7840 | 非法序列=3 | 41s
+  ★ dev 最优 → 保存 abl_crf_hard.pt
+  epoch 8 step 200/439 loss=1.8009
+  epoch 8 step 400/439 loss=1.7967
+epoch 8/20 | train_loss=1.8086 | dev_loss=2.0217 | dev_P=0.8527 R=0.7356 F1=0.7898 | 非法序列=3 | 44s
+  ★ dev 最优 → 保存 abl_crf_hard.pt
+  epoch 9 step 200/439 loss=1.6382
+  epoch 9 step 400/439 loss=1.6374
+epoch 9/20 | train_loss=1.6304 | dev_loss=1.9632 | dev_P=0.8587 R=0.7457 F1=0.7982 | 非法序列=3 | 46s
+  ★ dev 最优 → 保存 abl_crf_hard.pt
+  epoch 10 step 200/439 loss=1.4679
+  epoch 10 step 400/439 loss=1.4877
+epoch 10/20 | train_loss=1.4925 | dev_loss=1.9165 | dev_P=0.8598 R=0.7536 F1=0.8032 | 非法序列=3 | 43s
+  ★ dev 最优 → 保存 abl_crf_hard.pt
+  epoch 11 step 200/439 loss=1.4147
+  epoch 11 step 400/439 loss=1.4077
+epoch 11/20 | train_loss=1.4057 | dev_loss=1.8856 | dev_P=0.8705 R=0.7605 F1=0.8118 | 非法序列=1 | 39s
+  ★ dev 最优 → 保存 abl_crf_hard.pt
+  epoch 12 step 200/439 loss=1.2648
+  epoch 12 step 400/439 loss=1.2750
+epoch 12/20 | train_loss=1.2792 | dev_loss=1.8657 | dev_P=0.8734 R=0.7694 F1=0.8181 | 非法序列=1 | 41s
+  ★ dev 最优 → 保存 abl_crf_hard.pt
+  epoch 13 step 200/439 loss=1.1633
+  epoch 13 step 400/439 loss=1.1733
+epoch 13/20 | train_loss=1.1758 | dev_loss=1.8589 | dev_P=0.8754 R=0.7721 F1=0.8205 | 非法序列=1 | 43s
+  ★ dev 最优 → 保存 abl_crf_hard.pt
+  epoch 14 step 200/439 loss=1.0611
+  epoch 14 step 400/439 loss=1.0859
+epoch 14/20 | train_loss=1.0873 | dev_loss=1.8603 | dev_P=0.8808 R=0.7738 F1=0.8239 | 非法序列=1 | 42s
+  ★ dev 最优 → 保存 abl_crf_hard.pt
+  epoch 15 step 200/439 loss=1.0474
+  epoch 15 step 400/439 loss=1.0262
+epoch 15/20 | train_loss=1.0194 | dev_loss=1.7210 | dev_P=0.8632 R=0.7954 F1=0.8279 | 非法序列=1 | 41s
+  ★ dev 最优 → 保存 abl_crf_hard.pt
+  epoch 16 step 200/439 loss=0.9214
+  epoch 16 step 400/439 loss=0.9548
+epoch 16/20 | train_loss=0.9614 | dev_loss=1.8308 | dev_P=0.8482 R=0.7869 F1=0.8164 | 非法序列=0 | 43s
+  epoch 17 step 200/439 loss=0.8765
+  epoch 17 step 400/439 loss=0.8952
+epoch 17/20 | train_loss=0.8965 | dev_loss=1.7831 | dev_P=0.8468 R=0.8002 F1=0.8229 | 非法序列=0 | 41s
+  epoch 18 step 200/439 loss=0.8279
+  epoch 18 step 400/439 loss=0.8353
+epoch 18/20 | train_loss=0.8448 | dev_loss=1.7485 | dev_P=0.8717 R=0.7980 F1=0.8332 | 非法序列=0 | 42s
+  ★ dev 最优 → 保存 abl_crf_hard.pt
+  epoch 19 step 200/439 loss=0.7784
+  epoch 19 step 400/439 loss=0.7849
+epoch 19/20 | train_loss=0.7906 | dev_loss=1.8058 | dev_P=0.8703 R=0.8019 F1=0.8347 | 非法序列=0 | 46s
+  ★ dev 最优 → 保存 abl_crf_hard.pt
+  epoch 20 step 200/439 loss=0.7434
+  epoch 20 step 400/439 loss=0.7411
+epoch 20/20 | train_loss=0.7436 | dev_loss=1.7972 | dev_P=0.8732 R=0.8019 F1=0.8360 | 非法序列=0 | 47s
+  ★ dev 最优 → 保存 abl_crf_hard.pt
+载入最优 checkpoint（epoch 20，dev F1=0.8360）
+【test 最终指标（只跑一次）】P=0.8066 R=0.7152 F1=0.7581
+【abl_crf_hard 汇总】dev F1=0.8360 test F1=0.7581 | 非法 dev=0 | 2.28 ms/句 | 截断 dev=0 test=0 | 训练 14.2 分钟

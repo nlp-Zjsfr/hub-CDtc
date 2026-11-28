@@ -1,0 +1,32 @@
+W1128 03:16:54.729000 28138 site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+tokenizer：/Users/lichulei/gogogo/week7/homework/pretrain_models/bert-base-cased（fast=True）
+数据：train 14041 句 / dev 3250 句 / test 3453 句（已过滤 -DOCSTART-）
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 6968.50it/s]
+[transformers] [1mBertModel LOAD REPORT[0m from: /Users/lichulei/gogogo/week7/homework/pretrain_models/bert-base-cased
+Key                                        | Status     |  | 
+-------------------------------------------+------------+--+-
+cls.predictions.transform.LayerNorm.weight | UNEXPECTED |  | 
+cls.seq_relationship.bias                  | UNEXPECTED |  | 
+cls.predictions.transform.dense.weight     | UNEXPECTED |  | 
+cls.predictions.bias                       | UNEXPECTED |  | 
+cls.predictions.transform.dense.bias       | UNEXPECTED |  | 
+cls.seq_relationship.weight                | UNEXPECTED |  | 
+cls.predictions.transform.LayerNorm.bias   | UNEXPECTED |  | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+
+======================================================================
+配置：abl_no_crf | decoder=linear | max_len=192 | hard_constraint=False | dropout=0.1 | 设备=mps | 参数=108.3M
+======================================================================
+epoch 1/3 | train_loss=0.2363 | dev_loss=0.0462 | dev_P=0.9253 R=0.9377 F1=0.9315 | 非法序列=60 | 515s
+  ★ dev F1 创新高 → 保存 abl_no_crf.pt
+epoch 2/3 | train_loss=0.0290 | dev_loss=0.0399 | dev_P=0.9421 R=0.9505 F1=0.9463 | 非法序列=32 | 513s
+  ★ dev F1 创新高 → 保存 abl_no_crf.pt
+epoch 3/3 | train_loss=0.0140 | dev_loss=0.0376 | dev_P=0.9448 R=0.9536 F1=0.9492 | 非法序列=34 | 515s
+  ★ dev F1 创新高 → 保存 abl_no_crf.pt
+载入最优 checkpoint（epoch 3，dev F1=0.9492），开始出最终指标……
+
+【test 最终指标（只跑一次，不参与任何选择）】P=0.9176 R=0.9237 F1=0.9206 | 非法序列 词级=46 token级=177
+
+【abl_no_crf 汇总】dev F1=0.9492 | 非法序列 词级=34/3250 token级=142 | 15.26 ms/句 | 截断 0 句

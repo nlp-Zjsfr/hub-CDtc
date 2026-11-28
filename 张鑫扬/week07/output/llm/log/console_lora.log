@@ -1,0 +1,10 @@
+设备 mps | dtype torch.bfloat16 | 模式 lora | 基座 /Users/lichulei/gogogo/week7/homework/pretrain_models/Qwen3-0.6B
+W1128 17:09:01.037000 64093 site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/311 [00:00<?, ?it/s]Loading weights: 100%|██████████| 311/311 [00:00<00:00, 5063.50it/s]
+训练 3000 句 | 可训练 2.29M / 全部 598.3M (0.38%)
+训练样本 3000 条（截断 2 条）
+可训练参数 2.29M / 598.3M
+  epoch 1 step 20/1500 loss=0.2186
+  epoch 1 step 40/1500 loss=0.1834
+  epoch 1 step 60/1500 loss=0.1515
+  epoch 1 step 80/1500 loss=0.1417

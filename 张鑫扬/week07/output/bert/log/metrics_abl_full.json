@@ -1,0 +1,99 @@
+{
+  "run_name": "abl_full",
+  "config": {
+    "decoder": "crf",
+    "max_len": 192,
+    "hard_constraint": false,
+    "dropout": 0.1,
+    "bert_layers": 0,
+    "epochs": 3,
+    "batch_size": 8,
+    "lr": 2e-05,
+    "head_lr_mult": 5.0,
+    "seed": 42
+  },
+  "best_epoch": 3,
+  "params_m": 108.3,
+  "train_s": 1691.8,
+  "ms_per_sentence": 18.75,
+  "n_truncated_dev": 0,
+  "dev": {
+    "precision": 0.9459,
+    "recall": 0.9534,
+    "f1": 0.9496,
+    "per_type": {
+      "PER": {
+        "precision": 0.9726,
+        "recall": 0.9821,
+        "f1": 0.9773
+      },
+      "LOC": {
+        "precision": 0.9715,
+        "recall": 0.9652,
+        "f1": 0.9683
+      },
+      "ORG": {
+        "precision": 0.9225,
+        "recall": 0.9321,
+        "f1": 0.9273
+      },
+      "MISC": {
+        "precision": 0.8778,
+        "recall": 0.9035,
+        "f1": 0.8904
+      }
+    },
+    "illegal": {
+      "total_seqs": 3250,
+      "illegal_seqs": 34,
+      "illegal_start": 0,
+      "illegal_transition": 39
+    },
+    "illegal_token": {
+      "total_seqs": 3250,
+      "illegal_seqs": 35,
+      "illegal_start": 0,
+      "illegal_transition": 47
+    }
+  },
+  "test": {
+    "precision": 0.9165,
+    "recall": 0.9202,
+    "f1": 0.9184,
+    "per_type": {
+      "PER": {
+        "precision": 0.9679,
+        "recall": 0.9691,
+        "f1": 0.9685
+      },
+      "LOC": {
+        "precision": 0.9392,
+        "recall": 0.9484,
+        "f1": 0.9438
+      },
+      "ORG": {
+        "precision": 0.904,
+        "recall": 0.8898,
+        "f1": 0.8969
+      },
+      "MISC": {
+        "precision": 0.7841,
+        "recall": 0.8188,
+        "f1": 0.8011
+      }
+    },
+    "illegal": {
+      "total_seqs": 3453,
+      "illegal_seqs": 34,
+      "illegal_start": 0,
+      "illegal_transition": 35
+    },
+    "illegal_token": {
+      "total_seqs": 3453,
+      "illegal_seqs": 32,
+      "illegal_start": 0,
+      "illegal_transition": 39
+    }
+  },
+  "n_truncated_test": 0
+}

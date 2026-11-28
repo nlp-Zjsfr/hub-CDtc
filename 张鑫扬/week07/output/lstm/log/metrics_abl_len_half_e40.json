@@ -1,0 +1,105 @@
+{
+  "run_name": "abl_len_half_e40",
+  "ablation": "len_half",
+  "config": {
+    "ablation": "len_half",
+    "all_ablations": false,
+    "data_dir": "",
+    "model_dir": "",
+    "log_dir": "",
+    "run_name": "abl_len_half_e40",
+    "epochs": 40,
+    "batch_size": 32,
+    "lr": 0.001,
+    "weight_decay": 0.0,
+    "dropout": 0.5,
+    "emb_dim": 200,
+    "hidden": 128,
+    "min_freq": 1,
+    "max_grad_norm": 5.0,
+    "seed": 42,
+    "device": "mps",
+    "max_len": 64,
+    "decoder": "crf",
+    "hard_constraint": false,
+    "vocab_size": 21011
+  },
+  "params_m": 4.543,
+  "train_s": 2123.1,
+  "best_epoch": 35,
+  "dev": {
+    "precision": 0.8669467787114846,
+    "recall": 0.8377601082727119,
+    "f1": 0.8521035877140153,
+    "tp": 4952,
+    "fp": 760,
+    "fn": 959,
+    "per_type": {
+      "PER": {
+        "precision": 0.915234143449911,
+        "recall": 0.8520971302428256,
+        "f1": 0.882537867962275
+      },
+      "LOC": {
+        "precision": 0.9323863636363636,
+        "recall": 0.8933043004899293,
+        "f1": 0.9124270225187656
+      },
+      "ORG": {
+        "precision": 0.7280334728033473,
+        "recall": 0.7785234899328859,
+        "f1": 0.7524324324324324
+      },
+      "MISC": {
+        "precision": 0.8700361010830325,
+        "recall": 0.7850162866449512,
+        "f1": 0.8253424657534246
+      }
+    },
+    "illegal": {
+      "total_seqs": 3250,
+      "illegal_seqs": 0,
+      "illegal_start": 0,
+      "illegal_transition": 0
+    }
+  },
+  "test": {
+    "precision": 0.7963582311408398,
+    "recall": 0.7545774647887324,
+    "f1": 0.7749050804556138,
+    "tp": 4286,
+    "fp": 1096,
+    "fn": 1394,
+    "per_type": {
+      "PER": {
+        "precision": 0.8547832071576049,
+        "recall": 0.7747972551466001,
+        "f1": 0.81282722513089
+      },
+      "LOC": {
+        "precision": 0.8729955099422707,
+        "recall": 0.8303843807199512,
+        "f1": 0.8511569731081926
+      },
+      "ORG": {
+        "precision": 0.6798866855524079,
+        "recall": 0.6997084548104956,
+        "f1": 0.6896551724137931
+      },
+      "MISC": {
+        "precision": 0.7983471074380165,
+        "recall": 0.6680497925311203,
+        "f1": 0.7274096385542169
+      }
+    },
+    "illegal": {
+      "total_seqs": 3453,
+      "illegal_seqs": 0,
+      "illegal_start": 0,
+      "illegal_transition": 0
+    }
+  },
+  "n_truncated_dev": 7,
+  "n_truncated_test": 7,
+  "ms_per_sentence": 2.64
+}

@@ -1,0 +1,6 @@
+设备 mps | dtype torch.bfloat16 | 模式 base | 基座 /Users/lichulei/gogogo/week7/homework/pretrain_models/Qwen3-0.6B
+W1128 15:52:15.325000 60495 site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/311 [00:00<?, ?it/s]Loading weights: 100%|██████████| 311/311 [00:00<00:00, 7297.87it/s]
+dev  P=0.4966 R=0.1725 F1=0.2561 | unmatched=18 | 426.6ms/句
+test P=0.4814 R=0.1720 F1=0.2535 | unmatched=15 | 390.6ms/句
+【base 汇总】dev F1=0.2561 test F1=0.2535 | 训练 0.0 分钟 | 日志 → /Users/lichulei/gogogo/week7/homework/output/llm/log/metrics_base.json

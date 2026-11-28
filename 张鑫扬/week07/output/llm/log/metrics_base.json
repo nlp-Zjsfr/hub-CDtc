@@ -1,0 +1,225 @@
+{
+  "run": "base",
+  "mode": "base",
+  "config": {
+    "mode": "base",
+    "model_path": "/Users/lichulei/gogogo/week7/homework/pretrain_models/Qwen3-0.6B",
+    "data_dir": "/Users/lichulei/gogogo/week7/homework/data/conllpp",
+    "epochs": 1,
+    "batch_size": 2,
+    "grad_accum": 8,
+    "lr": 0.0,
+    "opt": "adamw",
+    "max_length": 384,
+    "max_new_tokens": 64,
+    "num_train": -1,
+    "max_eval": 0,
+    "eval_batch": 8,
+    "lora_r": 8,
+    "lora_alpha": 16,
+    "max_steps": 0,
+    "seed": 42,
+    "device": "mps"
+  },
+  "train_s": 0.0,
+  "params_m": 596.05,
+  "trainable_m": 0.0,
+  "history": [],
+  "dev": {
+    "precision": 0.49660852713178294,
+    "recall": 0.17250084146751934,
+    "f1": 0.25605795653260055,
+    "tp": 1025,
+    "fp": 1039,
+    "fn": 4917,
+    "unmatched_entities": 18,
+    "per_type": {
+      "PER": {
+        "precision": 0.5176380368098159,
+        "recall": 0.36644951140065146,
+        "f1": 0.4291163382072473
+      },
+      "LOC": {
+        "precision": 0.5879396984924623,
+        "recall": 0.12738160043549265,
+        "f1": 0.20939597315436242
+      },
+      "ORG": {
+        "precision": 0.4280442804428044,
+        "recall": 0.08650260999254288,
+        "f1": 0.14392059553349876
+      },
+      "MISC": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      }
+    },
+    "split": "dev",
+    "n": 3250,
+    "ms_per_sentence": 426.6,
+    "elapsed_s": 1388.9
+  },
+  "test": {
+    "precision": 0.4813542688910697,
+    "recall": 0.17204489652753419,
+    "f1": 0.2534883720930233,
+    "tp": 981,
+    "fp": 1057,
+    "fn": 4721,
+    "unmatched_entities": 15,
+    "per_type": {
+      "PER": {
+        "precision": 0.4975206611570248,
+        "recall": 0.3720642768850433,
+        "f1": 0.42574257425742573
+      },
+      "LOC": {
+        "precision": 0.5078125,
+        "recall": 0.11846901579586877,
+        "f1": 0.1921182266009852
+      },
+      "ORG": {
+        "precision": 0.5302593659942363,
+        "recall": 0.10728862973760933,
+        "f1": 0.1784675072744908
+      },
+      "MISC": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      }
+    },
+    "split": "test",
+    "n": 3453,
+    "ms_per_sentence": 390.6,
+    "elapsed_s": 1352.0
+  },
+  "samples": {
+    "dev": [
+      {
+        "text": "CRICKET - LEICESTERSHIRE TAKE OVER AT TOP AFTER INNINGS VICTORY .",
+        "gold": [
+          [
+            2,
+            3,
+            "ORG"
+          ]
+        ],
+        "pred": [],
+        "raw": "```json\n{\"entities\": []}\n```"
+      },
+      {
+        "text": "LONDON 1996-08-30",
+        "gold": [
+          [
+            0,
+            1,
+            "LOC"
+          ]
+        ],
+        "pred": [
+          [
+            0,
+            1,
+            "LOC"
+          ]
+        ],
+        "raw": "```json\n{\"entities\": [{\"text\": \"LONDON\", \"type\": \"LOC\"}]}\n```"
+      },
+      {
+        "text": "West Indian all-rounder Phil Simmons took four for 38 on Friday as Leicestershire beat Somerset by an innings and 39 runs in two days to take over at the head of the county championship .",
+        "gold": [
+          [
+            0,
+            2,
+            "MISC"
+          ],
+          [
+            3,
+            5,
+            "PER"
+          ],
+          [
+            12,
+            13,
+            "ORG"
+          ],
+          [
+            14,
+            15,
+            "ORG"
+          ]
+        ],
+        "pred": [
+          [
+            0,
+            5,
+            "PER"
+          ]
+        ],
+        "raw": "```json\n{\"entities\": [{\"text\": \"West Indian all-rounder Phil Simmons\", \"type\": \"PER\"}]}\n```"
+      }
+    ],
+    "test": [
+      {
+        "text": "SOCCER - JAPAN GET LUCKY WIN , CHINA IN SURPRISE DEFEAT .",
+        "gold": [
+          [
+            2,
+            3,
+            "LOC"
+          ],
+          [
+            7,
+            8,
+            "LOC"
+          ]
+        ],
+        "pred": [],
+        "raw": "```json\n{\"entities\": []}\n```"
+      },
+      {
+        "text": "Nadim Ladki",
+        "gold": [
+          [
+            0,
+            2,
+            "PER"
+          ]
+        ],
+        "pred": [
+          [
+            0,
+            2,
+            "PER"
+          ]
+        ],
+        "raw": "```json\n{\"entities\": [{\"text\": \"Nadim Ladki\", \"type\": \"PER\"}]}\n```"
+      },
+      {
+        "text": "AL-AIN , United Arab Emirates 1996-12-06",
+        "gold": [
+          [
+            0,
+            1,
+            "LOC"
+          ],
+          [
+            2,
+            5,
+            "LOC"
+          ]
+        ],
+        "pred": [
+          [
+            0,
+            1,
+            "MISC"
+          ]
+        ],
+        "raw": "```json\n{\"entities\": [{\"text\": \"AL-AIN\", \"type\": \"MISC\"}]}\n```"
+      }
+    ]
+  }
+}
